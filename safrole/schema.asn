@@ -60,7 +60,7 @@ SafroleState ::= SEQUENCE {
     curr_validators ValidatorsData,
     next_validators ValidatorsData,
     designed_validators ValidatorsData,
-    tickets_accumulator SEQUENCE OF TicketBody,
+    tickets_accumulator SEQUENCE (SIZE(0..epoch_length)) OF TicketBody,
     tickets_or_keys TicketsOrKeys,
     tickets_verifier_key SEQUENCE (SIZE(384)) OF u8
 }
@@ -68,7 +68,7 @@ SafroleState ::= SEQUENCE {
 SafroleInput ::= SEQUENCE {
     slot u32,
     entropy OpaqueHash,
-    extrinsics SEQUENCE OF TicketEnvelope
+    extrinsics SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 }
 
 SafroleOutput ::= CHOICE {
