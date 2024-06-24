@@ -1,0 +1,43 @@
+{
+  "name": "inst_set_greater_than_unsigned_imm_0",
+  "initial_regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "code": [
+    0,
+    0,
+    3,
+    39,
+    121,
+    246,
+    249
+  ],
+  "expected_status": "trap",
+  "expected_regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}
