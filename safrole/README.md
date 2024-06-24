@@ -72,8 +72,12 @@ For details refer to ASN.1 [schema](./safrole.asn).
   - Accumulator is filled.
   - One old ticket is removed from the accumulator.
 - [pubblish-tickets-with-mark-3](publish-tickets-with-mark-3.json)
+  - Publish some more tickets.
+  - Accumulator is filled.
+  - Some old ticket are removed to make space for new ones.
+- [pubblish-tickets-with-mark-4](publish-tickets-with-mark-4.json)
   - Progress into epoch tail.
   - Tickets mark is produced.
-- [pubblish-tickets-with-mark-4](publish-tickets-with-mark-4.json)
+- [pubblish-tickets-with-mark-5](publish-tickets-with-mark-5.json)
   - Progress into next epoch.
   - Tickets are enacted.
