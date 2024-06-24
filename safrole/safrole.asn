@@ -14,6 +14,7 @@ epoch_length INTEGER ::= 12
 ByteArray32 ::= SEQUENCE (SIZE(32)) OF u8
 OpaqueHash ::= ByteArray32
 Ed25519Key ::= ByteArray32
+BlsKey ::= SEQUENCE (SIZE(144)) OF u8
 BandersnatchKey ::= ByteArray32
 EpochKeys ::= SEQUENCE (SIZE(epoch_length)) OF BandersnatchKey
 TicketsBodies ::= SEQUENCE (SIZE(epoch_length)) OF TicketBody
@@ -33,7 +34,8 @@ TicketBody ::= SEQUENCE {
 ValidatorData ::= SEQUENCE {
     ed25519 Ed25519Key,
     bandersnatch BandersnatchKey,
-    metadata SEQUENCE (SIZE(64)) OF u8
+    bls BlsKey,
+    metadata SEQUENCE (SIZE(128)) OF u8
 }
 
 ValidatorsData ::= SEQUENCE (SIZE(validators_count)) OF ValidatorData
