@@ -1,13 +1,13 @@
 {
     "input": {
-        "slot": 15,
-        "entropy": "0xa5c6c5a6e8ffbbb8ecc90a4b3b178ea2d9a171323c6d44fbcceb98d85f405297",
+        "slot": 48,
+        "entropy": "0xb2053e5a0852b9a5673f340d1cffe49f63f451e3b8b1e3b8d6c6ae731c888af1",
         "extrinsics": []
     },
     "pre_state": {
-        "timeslot": 10,
+        "timeslot": 36,
         "entropy": [
-            "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
+            "0x2fa3f686df876995167e7c2e5d74c4c7b6e48f8068fe0e44208344d480f7904c",
             "0x9545ba37b230d8a2e716c4707586542780815b7c4088edcb9af6a9452d50f324",
             "0xfb1c50ac4803c1591b6cfb1420f56500facd1428df0e5d07970ab09f28a044e3",
             "0x4fe4da61bcc756071b226843361d74944c72245d23e8245ea678c13fdcd7fe2a"
@@ -140,7 +140,56 @@
                 "metadata": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
             }
         ],
-        "tickets_accumulator": [],
+        "tickets_accumulator": [
+            {
+                "id": "0x0f891161ab2a6a33f59449cf0a18fb0f0a980241d9a045440e9fa0e9ab1d39f8",
+                "attempt": 0
+            },
+            {
+                "id": "0x25a56b041ab162d71bbdceef5c62e14dd217b68ed5267ed2c6cf934493deae03",
+                "attempt": 1
+            },
+            {
+                "id": "0x2fa3f686df876995167e7c2e5d74c4c7b6e48f8068fe0e44208344d480f7904c",
+                "attempt": 0
+            },
+            {
+                "id": "0x4fe4da61bcc756071b226843361d74944c72245d23e8245ea678c13fdcd7fe2a",
+                "attempt": 1
+            },
+            {
+                "id": "0x5456d364023d2cc081ae05ab99b56079e15755c0ba2aa9e0718dd48c4f1dec7b",
+                "attempt": 0
+            },
+            {
+                "id": "0x9545ba37b230d8a2e716c4707586542780815b7c4088edcb9af6a9452d50f324",
+                "attempt": 1
+            },
+            {
+                "id": "0xa3f9c3308dba6ae546460930a26ba36a80d3be93960e31dee24d5a9bdf4b187b",
+                "attempt": 0
+            },
+            {
+                "id": "0xa508bcade5c56acb606817f39eb8dbf948728e6b34d643039fc3a529b7b15530",
+                "attempt": 1
+            },
+            {
+                "id": "0xc3fd8f085f18d380c9cafff7213ef009ca6d8b21f87dfbef9d99368be8f58e5e",
+                "attempt": 1
+            },
+            {
+                "id": "0xca6914d2e33b83f2b2c66e4e625bc1d08674fae605008a215165d3c3a997d7d9",
+                "attempt": 0
+            },
+            {
+                "id": "0xdc19b62fbd4e480a12134892649b0c86c21540830bf61aa81e7e13868e7d23ed",
+                "attempt": 1
+            },
+            {
+                "id": "0xfb1c50ac4803c1591b6cfb1420f56500facd1428df0e5d07970ab09f28a044e3",
+                "attempt": 0
+            }
+        ],
         "tickets_or_keys": {
             "keys": [
                 "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
@@ -162,7 +211,7 @@
     "output": {
         "ok": {
             "epoch_mark": {
-                "entropy": "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
+                "entropy": "0x2fa3f686df876995167e7c2e5d74c4c7b6e48f8068fe0e44208344d480f7904c",
                 "validators": [
                     "0xf16e5352840afb47e206b5c89f560f2611835855cf2e6ebad1acc9520a72591d",
                     "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33",
@@ -176,10 +225,10 @@
         }
     },
     "post_state": {
-        "timeslot": 15,
+        "timeslot": 48,
         "entropy": [
-            "0xa8ae6f65b78ea9a1c38c71796b04c6c2f27a016e1cee96ac36f7cf9f8672cbf2",
-            "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
+            "0x9c2d3bce7aa0a5857c67a85247365d2035f7d9daec2b515e86086584ad5e8644",
+            "0x2fa3f686df876995167e7c2e5d74c4c7b6e48f8068fe0e44208344d480f7904c",
             "0x9545ba37b230d8a2e716c4707586542780815b7c4088edcb9af6a9452d50f324",
             "0xfb1c50ac4803c1591b6cfb1420f56500facd1428df0e5d07970ab09f28a044e3"
         ],

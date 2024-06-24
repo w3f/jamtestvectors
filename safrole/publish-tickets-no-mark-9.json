@@ -1,13 +1,13 @@
 {
     "input": {
-        "slot": 15,
-        "entropy": "0xa5c6c5a6e8ffbbb8ecc90a4b3b178ea2d9a171323c6d44fbcceb98d85f405297",
+        "slot": 12,
+        "entropy": "0x298da3deba5f300d939a1dfc4290ab5e7cf0cf175f7c5b1a9d009c11106135ff",
         "extrinsics": []
     },
     "pre_state": {
         "timeslot": 10,
         "entropy": [
-            "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
+            "0xa8ae6f65b78ea9a1c38c71796b04c6c2f27a016e1cee96ac36f7cf9f8672cbf2",
             "0x9545ba37b230d8a2e716c4707586542780815b7c4088edcb9af6a9452d50f324",
             "0xfb1c50ac4803c1591b6cfb1420f56500facd1428df0e5d07970ab09f28a044e3",
             "0x4fe4da61bcc756071b226843361d74944c72245d23e8245ea678c13fdcd7fe2a"
@@ -140,7 +140,32 @@
                 "metadata": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
             }
         ],
-        "tickets_accumulator": [],
+        "tickets_accumulator": [
+            {
+                "id": "0x0a197e5056b76b3b37c0815a4e1ac81044b3baca6a74bdc1ea4f57931256639d",
+                "attempt": 0
+            },
+            {
+                "id": "0x4252603fa8b584704528da6dace299a05cb6891e4c59260e8d2fea39053db84c",
+                "attempt": 1
+            },
+            {
+                "id": "0x7080cc86061e66039816a80472522e2c9eecdad56ce05f5f076a1621882c4f7f",
+                "attempt": 1
+            },
+            {
+                "id": "0xb4e9728e699ed9b8fa2cb1609d8b9ca644cd2e0a0b5a2780a0e40d73f9db0c17",
+                "attempt": 0
+            },
+            {
+                "id": "0xd4340dddd7896ae9c5ee9b822bec9e29693dceff5b4fa642aa5462ffd27876b1",
+                "attempt": 0
+            },
+            {
+                "id": "0xf2f2bc02763b99882bf268731c30c6271269e1c64f43b996954daaee1c3f9fbf",
+                "attempt": 1
+            }
+        ],
         "tickets_or_keys": {
             "keys": [
                 "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
@@ -162,7 +187,7 @@
     "output": {
         "ok": {
             "epoch_mark": {
-                "entropy": "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
+                "entropy": "0xa8ae6f65b78ea9a1c38c71796b04c6c2f27a016e1cee96ac36f7cf9f8672cbf2",
                 "validators": [
                     "0xf16e5352840afb47e206b5c89f560f2611835855cf2e6ebad1acc9520a72591d",
                     "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33",
@@ -176,10 +201,10 @@
         }
     },
     "post_state": {
-        "timeslot": 15,
+        "timeslot": 12,
         "entropy": [
+            "0x881c643640ff8296acd5b20997e8ebd5499ab7d3a8eb41d1a74893c8d5ea5f6f",
             "0xa8ae6f65b78ea9a1c38c71796b04c6c2f27a016e1cee96ac36f7cf9f8672cbf2",
-            "0x2348f19620e0dbae876da42770b05ad0a03e2a59ce3916fac8a3291852e12ce0",
             "0x9545ba37b230d8a2e716c4707586542780815b7c4088edcb9af6a9452d50f324",
             "0xfb1c50ac4803c1591b6cfb1420f56500facd1428df0e5d07970ab09f28a044e3"
         ],
