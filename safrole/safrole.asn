@@ -1,3 +1,5 @@
+-- Syntax for Safrole protocol test vectors
+
 SafroleModule DEFINITIONS ::= BEGIN
 
 -- Define basic types
@@ -48,39 +50,64 @@ EpochMark ::= SEQUENCE {
 
 TicketsMark ::= SEQUENCE (SIZE(epoch_length)) OF TicketBody
 
+-- Output markers.
 OutputMarks ::= SEQUENCE {
+    -- New epoch signal.
     epoch_mark [0] EpochMark OPTIONAL,
+    -- Tickets signal.
     tickets_mark [1] TicketsMark OPTIONAL
 }
 
-SafroleState ::= SEQUENCE {
+-- State relevant to Safrole protocol
+State ::= SEQUENCE {
+    -- tau: The most recent block's timeslog.
     timeslot u32,
+    -- eta: The entropy accumulator and epochal randomness.
     entropy SEQUENCE (SIZE(4)) OF OpaqueHash,
+    -- lambda: The validator keys and metadata which were active in the prior epoch.
     prev_validators ValidatorsData,
+    -- The validator keys and metadata currently active.
     curr_validators ValidatorsData,
+    -- gamma_k: The validator keys for the following epoch.
     next_validators ValidatorsData,
+    -- iota: The validator keys and metadata to be drawn from next.
     designed_validators ValidatorsData,
+    -- gamma_a: The sealing-key contest ticket accumulator.
     tickets_accumulator SEQUENCE (SIZE(0..epoch_length)) OF TicketBody,
+    -- gamma_s: The sealing-key series of the current epoch.
     tickets_or_keys TicketsOrKeys,
+    -- gamma_z: The Bandersnatch ring root.
     tickets_verifier_key SEQUENCE (SIZE(384)) OF u8
 }
 
-SafroleInput ::= SEQUENCE {
+-- Input for Safrole protocol.
+Input ::= SEQUENCE {
+    -- Current slot.
     slot u32,
+    -- Per block entropy (originated from block entropy source VRF).
     entropy OpaqueHash,
+    -- Safrole extrinsics (aka tickets evelopes).
     extrinsics SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 }
 
-SafroleOutput ::= CHOICE {
+-- Output from Safrole protocol
+Output ::= CHOICE {
+    -- Markers
     ok OutputMarks,
+    -- Error code (not in the spec, feel free to ignore the actual)
     err u8
 }
 
+-- Safrole state transition function execution dump
 ExecDump ::= SEQUENCE {
-    input SafroleInput,
-    pre_state SafroleState,
-    output SafroleOutput,
-    post_state SafroleState
+    -- Input.
+    input Input,
+    -- Pre-execution state.
+    pre_state State,
+    -- Output.
+    output Output,
+    -- Post-execution state.
+    post_state State
 }
 
 END
