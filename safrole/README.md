@@ -4,13 +4,12 @@ For details refer to ASN.1 [schema](./safrole.asn).
 
 ## NOTES
 
-- Error codes returned as output are not part of the spec.
+- Error codes returned as output are not part of the specification. Feel free to ignore actual values.
 - On error, post-state must match pre-state.
-- Ring verifier is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs) procedures
+- Ring verifier is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs) procedures.
 
 ## TODO
 
-- Different sets for prev, curr, next, designed validators in order to observe validators rotation.
 - Better specify the procedure used to construct test ring verifier.
 
 ## Vectors
