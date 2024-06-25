@@ -311,11 +311,15 @@ Program should end with: trap
 Initial non-zero registers:
    * r7 = 0x80000000
    * r8 = 0xffffffff
+   * r9 = 0x1234
 
 ```
       :                          @0
      0: 44 79 08                 r9 = r7 /u r8
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0x1234)
 
 Program should end with: trap
 
