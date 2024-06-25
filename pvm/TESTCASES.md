@@ -637,7 +637,7 @@ Initial non-zero registers:
 
 Program should end with: halt
 
-Final value of the program counter: 2
+Final value of the program counter: 0
 
 
 ## inst_ret_invalid
