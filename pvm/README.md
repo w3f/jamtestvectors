@@ -15,7 +15,6 @@ See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test
 ## TODO
 
    * 100% instruction coverage
-   * Verify the final value of the instruction counter (ı)
    * Tests for abnormal skip values for each instruction type
    * Tests for when the initial instruction counter (ı) starts somewhere else than 0
    * Tests for gas metering (ξ)

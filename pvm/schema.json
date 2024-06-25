@@ -15,6 +15,11 @@
       "minItems": 13,
       "maxItems": 13
     },
+    "initial-pc": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
     "code": {
       "type": "array",
       "items": {
@@ -36,6 +41,11 @@
       },
       "minItems": 13,
       "maxItems": 13
+    },
+    "expected-pc": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
     }
   },
   "required": ["name", "initial-regs", "code", "expected-status", "expected-regs"],

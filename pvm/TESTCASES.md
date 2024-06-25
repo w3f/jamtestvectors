@@ -20,6 +20,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_add_imm
 
@@ -35,6 +37,8 @@ Registers after execution (only changed registers):
    * r9 = 0x3 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_add_with_overflow
@@ -53,6 +57,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_and
 
@@ -70,6 +76,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_and_imm
 
@@ -85,6 +93,8 @@ Registers after execution (only changed registers):
    * r9 = 0x1 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_branch_eq_nok
@@ -106,6 +116,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 11
+
 
 ## inst_branch_eq_ok
 
@@ -125,6 +137,8 @@ Registers after execution (only changed registers):
    * r8 = 0x4d2 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 18
 
 
 ## inst_branch_not_eq_nok
@@ -146,6 +160,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 11
+
 
 ## inst_branch_not_eq_ok
 
@@ -166,6 +182,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 18
+
 
 ## inst_cmov_if_zero_imm_nok
 
@@ -178,6 +196,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_cmov_if_zero_imm_ok
@@ -192,6 +212,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_cmov_if_zero_nok
 
@@ -205,6 +227,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_cmov_if_zero_ok
@@ -221,6 +245,8 @@ Registers after execution (only changed registers):
    * r7 = 0x64 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_div_signed
@@ -239,6 +265,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_div_signed_by_zero
 
@@ -254,6 +282,8 @@ Registers after execution (only changed registers):
    * r9 = 0xffffffff (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_div_signed_with_overflow
@@ -272,6 +302,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_div_unsigned
 
@@ -289,6 +321,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_div_unsigned_by_zero
 
@@ -304,6 +338,8 @@ Registers after execution (only changed registers):
    * r9 = 0xffffffff (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_div_unsigned_with_overflow
@@ -323,6 +359,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_fallthrough
 
@@ -332,6 +370,8 @@ Program should end with: trap
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 1
 
 
 ## inst_jump
@@ -351,6 +391,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 13
+
 
 ## inst_load_imm
 
@@ -363,6 +405,8 @@ Registers after execution (only changed registers):
    * r7 = 0xdeadbeef (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 6
 
 
 ## inst_move_reg
@@ -379,6 +423,8 @@ Registers after execution (only changed registers):
    * r9 = 0x1 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 2
 
 
 ## inst_mul
@@ -397,6 +443,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_mul_imm
 
@@ -413,6 +461,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_negate_and_add_imm
 
@@ -428,6 +478,8 @@ Registers after execution (only changed registers):
    * r9 = 0xffffffff (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_or
@@ -446,6 +498,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_or_imm
 
@@ -462,6 +516,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_rem_signed
 
@@ -475,6 +531,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_rem_signed_by_zero
@@ -492,6 +550,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_rem_signed_with_overflow
 
@@ -505,6 +565,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_rem_unsigned
@@ -523,6 +585,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_rem_unsigned_by_zero
 
@@ -538,6 +602,8 @@ Registers after execution (only changed registers):
    * r9 = 0x80000010 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_rem_unsigned_with_overflow
@@ -556,6 +622,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_ret_halt
 
@@ -569,6 +637,8 @@ Initial non-zero registers:
 
 Program should end with: halt
 
+Final value of the program counter: 2
+
 
 ## inst_ret_invalid
 
@@ -578,6 +648,8 @@ Program should end with: halt
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 0
 
 
 ## inst_set_greater_than_signed_imm_0
@@ -591,6 +663,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_greater_than_signed_imm_1
@@ -608,6 +682,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_set_greater_than_unsigned_imm_0
 
@@ -620,6 +696,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_greater_than_unsigned_imm_1
@@ -637,6 +715,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_set_less_than_signed_0
 
@@ -650,6 +730,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_less_than_signed_1
@@ -668,6 +750,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_set_less_than_signed_imm_0
 
@@ -680,6 +764,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_less_than_signed_imm_1
@@ -697,6 +783,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_set_less_than_unsigned_0
 
@@ -710,6 +798,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_less_than_unsigned_1
@@ -728,6 +818,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_set_less_than_unsigned_imm_0
 
@@ -740,6 +832,8 @@ Initial non-zero registers:
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_set_less_than_unsigned_imm_1
@@ -756,6 +850,8 @@ Registers after execution (only changed registers):
    * r9 = 0x1 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_shift_arithmetic_right
@@ -774,6 +870,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_arithmetic_right_imm
 
@@ -790,6 +888,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_arithmetic_right_imm_alt
 
@@ -805,6 +905,8 @@ Registers after execution (only changed registers):
    * r9 = 0xf000000e (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 6
 
 
 ## inst_shift_arithmetic_right_with_overflow
@@ -823,6 +925,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_left
 
@@ -840,6 +944,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_left_imm
 
@@ -856,6 +962,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_left_imm_alt
 
@@ -871,6 +979,8 @@ Registers after execution (only changed registers):
    * r9 = 0x3a8 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 6
 
 
 ## inst_shift_logical_left_with_overflow
@@ -889,6 +999,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_right
 
@@ -906,6 +1018,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_right_imm
 
@@ -922,6 +1036,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_shift_logical_right_imm_alt
 
@@ -937,6 +1053,8 @@ Registers after execution (only changed registers):
    * r9 = 0x1000000e (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 6
 
 
 ## inst_shift_logical_right_with_overflow
@@ -955,6 +1073,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_sub
 
@@ -972,6 +1092,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_sub_imm
 
@@ -987,6 +1109,8 @@ Registers after execution (only changed registers):
    * r9 = 0x1 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
 ## inst_sub_with_overflow
@@ -1005,6 +1129,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_trap
 
@@ -1014,6 +1140,8 @@ Program should end with: trap
 ```
 
 Program should end with: trap
+
+Final value of the program counter: 0
 
 
 ## inst_xor
@@ -1032,6 +1160,8 @@ Registers after execution (only changed registers):
 
 Program should end with: trap
 
+Final value of the program counter: 3
+
 
 ## inst_xor_imm
 
@@ -1047,5 +1177,7 @@ Registers after execution (only changed registers):
    * r9 = 0x6 (initially was 0x0)
 
 Program should end with: trap
+
+Final value of the program counter: 3
 
 
