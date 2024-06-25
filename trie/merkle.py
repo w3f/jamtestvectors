@@ -4,22 +4,21 @@ import hashlib
 import json
 import sys
 
-## Reference implementation
-
+## Graypaper conforming implementation
 def hash(data):
     return hashlib.blake2b(data, digest_size=32).digest()
 
 def fork(l, r):
     assert len(l) == 32
     assert len(r) == 32
-    head = l[0] & 0x7f
+    head = l[0] & 0xfe
     return bytes([head]) + l[1:] + r
 
 def leaf(k, v):
-    if 0 <= len(v) <= 32:
-        head = (0b10 << 6) | len(v)
+    if len(v) <= 32:
+        head = 0b01 | (len(v) << 2)
         return bytes([head]) + k[:-1] + v + ((32 - len(v)) * b'\0')
-    head = (0b11 << 6)
+    head = 0b11
     return bytes([head]) + k[:-1] + hash(v)
 
 def bit(k, i):
