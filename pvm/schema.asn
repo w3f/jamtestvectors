@@ -61,7 +61,7 @@ Testcase ::= SEQUENCE {
 
     -- (part of the "µ′" from the paper)
     -- lists all non-zero values after the execution finishes; all accessible address not on this list must be filled with zeroes
-    expected-memory MemoryChunk OPTIONAL
+    expected-memory MemoryChunk
 }
 
 END
