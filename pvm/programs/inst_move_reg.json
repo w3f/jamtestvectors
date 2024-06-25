@@ -1,6 +1,6 @@
 {
   "name": "inst_move_reg",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -23,8 +23,8 @@
     121,
     253
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

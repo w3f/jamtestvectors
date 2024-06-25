@@ -1,6 +1,6 @@
 {
   "name": "inst_shift_arithmetic_right_imm_alt",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -27,8 +27,8 @@
     128,
     193
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

@@ -1,6 +1,6 @@
 {
   "name": "inst_fallthrough",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -22,8 +22,8 @@
     17,
     255
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

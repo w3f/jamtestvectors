@@ -1,6 +1,6 @@
 {
   "name": "inst_sub_imm",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -24,8 +24,8 @@
     255,
     249
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

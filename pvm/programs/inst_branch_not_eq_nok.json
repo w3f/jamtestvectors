@@ -1,6 +1,6 @@
 {
   "name": "inst_branch_not_eq_nok",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -41,8 +41,8 @@
     25,
     252
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

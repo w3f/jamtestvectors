@@ -1,6 +1,6 @@
 {
   "name": "inst_set_less_than_unsigned_imm_1",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -24,8 +24,8 @@
     246,
     249
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

@@ -1,6 +1,6 @@
 {
   "name": "inst_cmov_if_zero_imm_nok",
-  "initial_regs": [
+  "initial-regs": [
     0,
     0,
     0,
@@ -24,8 +24,8 @@
     100,
     249
   ],
-  "expected_status": "trap",
-  "expected_regs": [
+  "expected-status": "trap",
+  "expected-regs": [
     0,
     0,
     0,

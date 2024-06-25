@@ -1,6 +1,6 @@
 {
   "name": "inst_ret_halt",
-  "initial_regs": [
+  "initial-regs": [
     4294901760,
     0,
     0,
@@ -23,8 +23,8 @@
     0,
     253
   ],
-  "expected_status": "halt",
-  "expected_regs": [
+  "expected-status": "halt",
+  "expected-regs": [
     4294901760,
     0,
     0,
