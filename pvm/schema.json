@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "initial-regs": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4294967295
+      },
+      "minItems": 13,
+      "maxItems": 13
+    },
+    "code": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+      }
+    },
+    "expected-status": {
+      "type": "string",
+      "enum": ["trap", "halt"]
+    },
+    "expected-regs": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4294967295
+      },
+      "minItems": 13,
+      "maxItems": 13
+    }
+  },
+  "required": ["name", "initial-regs", "code", "expected-status", "expected-regs"],
+  "additionalProperties": false
+}

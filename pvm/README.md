@@ -24,6 +24,8 @@ Here's an example of such a test:
    - `"halt"` -- the execution finished gracefully (a dynamic jump to address `0xffff0000` was made)
 * `expected-regs` -- the expected values of each of the 13 registers *after* the test program is executed
 
+See [schema.json](./schema.json) for a JSON Schema of the test files, or [schema.asn](./schema.asn) for an ASN.1 schema.
+
 See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test cases.
 
 ## Changelog
