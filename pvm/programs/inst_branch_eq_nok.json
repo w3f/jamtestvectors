@@ -16,6 +16,8 @@
     0
   ],
   "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
   "code": [
     0,
     0,
@@ -58,5 +60,6 @@
     0,
     0
   ],
-  "expected-pc": 11
+  "expected-pc": 11,
+  "expected-memory": []
 }

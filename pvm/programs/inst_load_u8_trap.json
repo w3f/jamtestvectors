@@ -1,5 +1,5 @@
 {
-  "name": "inst_cmov_if_zero_ok",
+  "name": "inst_load_u8_trap",
   "initial-regs": [
     0,
     0,
@@ -9,7 +9,7 @@
     0,
     0,
     0,
-    100,
+    0,
     0,
     0,
     0,
@@ -21,11 +21,13 @@
   "code": [
     0,
     0,
-    3,
-    83,
-    135,
-    10,
-    249
+    5,
+    60,
+    7,
+    0,
+    0,
+    2,
+    225
   ],
   "expected-status": "trap",
   "expected-regs": [
@@ -36,13 +38,13 @@
     0,
     0,
     0,
-    100,
-    100,
+    0,
+    0,
     0,
     0,
     0,
     0
   ],
-  "expected-pc": 3,
+  "expected-pc": 0,
   "expected-memory": []
 }

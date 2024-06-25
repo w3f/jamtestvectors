@@ -18,7 +18,6 @@ See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test
    * Tests for abnormal skip values for each instruction type
    * Tests for when the initial instruction counter (ı) starts somewhere else than 0
    * Tests for gas metering (ξ)
-   * Tests involving memory (µ)
    * Tests involving host calls
    * Tests for invalid/malformed program blobs
    * Add bigger integration-like tests

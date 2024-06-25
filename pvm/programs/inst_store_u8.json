@@ -1,5 +1,5 @@
 {
-  "name": "inst_jump",
+  "name": "inst_store_u8",
   "initial-regs": [
     0,
     0,
@@ -8,7 +8,7 @@
     0,
     0,
     0,
-    0,
+    305419896,
     0,
     0,
     0,
@@ -16,27 +16,24 @@
     0
   ],
   "initial-pc": 0,
-  "initial-page-map": [],
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
   "initial-memory": [],
   "code": [
     0,
     0,
-    13,
-    4,
-    7,
-    210,
-    4,
     5,
-    3,
-    0,
-    4,
+    71,
     7,
-    239,
-    190,
-    173,
-    222,
-    209,
-    224
+    0,
+    0,
+    2,
+    225
   ],
   "expected-status": "trap",
   "expected-regs": [
@@ -47,13 +44,20 @@
     0,
     0,
     0,
-    3735928559,
+    305419896,
     0,
     0,
     0,
     0,
     0
   ],
-  "expected-pc": 13,
-  "expected-memory": []
+  "expected-pc": 5,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        120
+      ]
+    }
+  ]
 }

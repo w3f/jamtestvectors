@@ -1,5 +1,5 @@
 {
-  "name": "inst_cmov_if_zero_ok",
+  "name": "inst_store_u8_trap_read_only",
   "initial-regs": [
     0,
     0,
@@ -8,24 +8,32 @@
     0,
     0,
     0,
+    305419896,
     0,
-    100,
     0,
     0,
     0,
     0
   ],
   "initial-pc": 0,
-  "initial-page-map": [],
+  "initial-page-map": [
+    {
+      "address": 65536,
+      "length": 4096,
+      "is-writable": false
+    }
+  ],
   "initial-memory": [],
   "code": [
     0,
     0,
-    3,
-    83,
-    135,
-    10,
-    249
+    5,
+    71,
+    7,
+    0,
+    0,
+    1,
+    225
   ],
   "expected-status": "trap",
   "expected-regs": [
@@ -36,13 +44,13 @@
     0,
     0,
     0,
-    100,
-    100,
+    305419896,
+    0,
     0,
     0,
     0,
     0
   ],
-  "expected-pc": 3,
+  "expected-pc": 0,
   "expected-memory": []
 }

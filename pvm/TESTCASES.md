@@ -409,6 +409,41 @@ Program should end with: trap
 Final value of the program counter: 6
 
 
+## inst_load_u8
+
+Initial page map:
+   * RW: 0x20000-0x21000 (0x1000 bytes)
+
+Initial non-zero memory chunks:
+   * 0x20000-0x20004 (0x4 bytes) = [0x12, 0x34, 0x56, 0x78]
+
+```
+      :                          @0
+     0: 3c 07 00 00 02           r7 = u8 [0x20000]
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0x12 (initially was 0x0)
+
+The memory contents after execution should be unchanged.
+
+Program should end with: trap
+
+Final value of the program counter: 5
+
+
+## inst_load_u8_trap
+
+```
+      :                          @0
+     0: 3c 07 00 00 02           r7 = u8 [0x20000]
+```
+
+Program should end with: trap
+
+Final value of the program counter: 0
+
+
 ## inst_move_reg
 
 Initial non-zero registers:
@@ -1074,6 +1109,102 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+
+## inst_store_u16
+
+Initial page map:
+   * RW: 0x20000-0x21000 (0x1000 bytes)
+
+Initial non-zero registers:
+   * r7 = 0x12345678
+
+```
+      :                          @0
+     0: 45 07 00 00 02           u16 [0x20000] = r7
+```
+
+Final non-zero memory chunks:
+   * 0x20000-0x20002 (0x2 bytes) = [0x78, 0x56]
+
+Program should end with: trap
+
+Final value of the program counter: 5
+
+
+## inst_store_u32
+
+Initial page map:
+   * RW: 0x20000-0x21000 (0x1000 bytes)
+
+Initial non-zero registers:
+   * r7 = 0x12345678
+
+```
+      :                          @0
+     0: 16 07 00 00 02           u32 [0x20000] = r7
+```
+
+Final non-zero memory chunks:
+   * 0x20000-0x20004 (0x4 bytes) = [0x78, 0x56, 0x34, 0x12]
+
+Program should end with: trap
+
+Final value of the program counter: 5
+
+
+## inst_store_u8
+
+Initial page map:
+   * RW: 0x20000-0x21000 (0x1000 bytes)
+
+Initial non-zero registers:
+   * r7 = 0x12345678
+
+```
+      :                          @0
+     0: 47 07 00 00 02           u8 [0x20000] = r7
+```
+
+Final non-zero memory chunks:
+   * 0x20000-0x20001 (0x1 bytes) = [0x78]
+
+Program should end with: trap
+
+Final value of the program counter: 5
+
+
+## inst_store_u8_trap_inaccessible
+
+Initial non-zero registers:
+   * r7 = 0x12345678
+
+```
+      :                          @0
+     0: 47 07 00 00 02           u8 [0x20000] = r7
+```
+
+Program should end with: trap
+
+Final value of the program counter: 0
+
+
+## inst_store_u8_trap_read_only
+
+Initial page map:
+   * RO: 0x10000-0x11000 (0x1000 bytes)
+
+Initial non-zero registers:
+   * r7 = 0x12345678
+
+```
+      :                          @0
+     0: 47 07 00 00 01           u8 [0x10000] = r7
+```
+
+Program should end with: trap
+
+Final value of the program counter: 0
 
 
 ## inst_sub
