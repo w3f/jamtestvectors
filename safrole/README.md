@@ -1,7 +1,5 @@
 # Safrole Test Vectors
 
-For details refer to ASN.1 [schema](./safrole.asn).
-
 ## NOTES
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
@@ -12,7 +10,13 @@ For details refer to ASN.1 [schema](./safrole.asn).
 
 - Better specify the procedure used to construct test ring verifier.
 
-## Vectors
+## Tiny Vectors
+
+Vectors with reduced validators number (6) and epoch duration (12).
+
+May be useful for manual tweaking or inspection.
+
+For details refer to ASN.1 [schema](./safrole-tiny.asn).
 
 - [enact-epoch-change-no-tickets-1.json](enact-epoch-change-with-no-tickets-1.json)
   - Progress from slot 0 to 1.
@@ -81,3 +85,9 @@ For details refer to ASN.1 [schema](./safrole.asn).
 - [pubblish-tickets-with-mark-5](publish-tickets-with-mark-5.json)
   - Progress into next epoch.
   - Tickets are enacted.
+
+## Full Vectors
+
+Vectors with production validators number (1023) and epoch duration (600).
+
+For details refer to ASN.1 [schema](./full/safrole-full.asn).

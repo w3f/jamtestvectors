@@ -2,13 +2,13 @@
 
 SafroleModule DEFINITIONS ::= BEGIN
 
--- Define basic types
-u8 ::= INTEGER (0..255)
-u32 ::= INTEGER (0..4294967295)
-
 -- Define constants
 validators_count INTEGER ::= 6
 epoch_length INTEGER ::= 12
+
+-- Define basic types
+u8 ::= INTEGER (0..255)
+u32 ::= INTEGER (0..4294967295)
 
 -- Define fixed-length arrays
 ByteArray32 ::= SEQUENCE (SIZE(32)) OF u8
