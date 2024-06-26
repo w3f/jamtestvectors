@@ -17,10 +17,10 @@ See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test
    * 100% instruction coverage
    * Tests for abnormal skip values for each instruction type
    * Tests for when the initial instruction counter (ı) starts somewhere else than 0
-   * Tests for gas metering (ξ)
    * Tests involving host calls
    * Tests for invalid/malformed program blobs
    * Add bigger integration-like tests
+   * More gas metering tests; proper gas cost model (current one is a placeholder)
 
 ## Changelog
 

@@ -18,6 +18,7 @@
   "initial-pc": 0,
   "initial-page-map": [],
   "initial-memory": [],
+  "initial-gas": 10000,
   "code": [
     0,
     0,
@@ -44,5 +45,6 @@
     0
   ],
   "expected-pc": 3,
-  "expected-memory": []
+  "expected-memory": [],
+  "expected-gas": 9998
 }

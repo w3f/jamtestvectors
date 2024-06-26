@@ -1,5 +1,5 @@
 {
-  "name": "inst_or",
+  "name": "gas_basic_consume_all",
   "initial-regs": [
     0,
     0,
@@ -8,8 +8,8 @@
     0,
     0,
     0,
-    5,
-    3,
+    0,
+    0,
     0,
     0,
     0,
@@ -18,15 +18,14 @@
   "initial-pc": 0,
   "initial-page-map": [],
   "initial-memory": [],
-  "initial-gas": 10000,
+  "initial-gas": 2,
   "code": [
     0,
     0,
-    3,
-    12,
-    121,
-    8,
-    249
+    2,
+    82,
+    0,
+    253
   ],
   "expected-status": "trap",
   "expected-regs": [
@@ -37,14 +36,14 @@
     0,
     0,
     0,
-    5,
-    3,
-    7,
+    0,
+    0,
+    0,
     0,
     0,
     0
   ],
-  "expected-pc": 3,
+  "expected-pc": 2,
   "expected-memory": [],
-  "expected-gas": 9998
+  "expected-gas": 0
 }

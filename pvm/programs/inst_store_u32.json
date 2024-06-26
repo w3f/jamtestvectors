@@ -24,6 +24,7 @@
     }
   ],
   "initial-memory": [],
+  "initial-gas": 10000,
   "code": [
     0,
     0,
@@ -62,5 +63,6 @@
         18
       ]
     }
-  ]
+  ],
+  "expected-gas": 9998
 }

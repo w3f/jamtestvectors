@@ -4,6 +4,20 @@ This file contains a human-readable index of all of the testcases,
 along with their disassemblies and other relevant information.
 
 
+## gas_basic_consume_all
+
+```
+      :                          @0
+     0: 52 00                    r0 = r0
+```
+
+Program should end with: trap
+
+Final value of the program counter: 2
+
+Gas consumed: 2 -> 0
+
+
 ## inst_add
 
 Initial non-zero registers:
@@ -22,6 +36,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_add_imm
 
@@ -39,6 +55,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_add_with_overflow
@@ -59,6 +77,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_and
 
@@ -78,6 +98,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_and_imm
 
@@ -95,6 +117,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_branch_eq_nok
@@ -118,6 +142,8 @@ Program should end with: trap
 
 Final value of the program counter: 11
 
+Gas consumed: 10000 -> 9996
+
 
 ## inst_branch_eq_ok
 
@@ -139,6 +165,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 18
+
+Gas consumed: 10000 -> 9995
 
 
 ## inst_branch_not_eq_nok
@@ -162,6 +190,8 @@ Program should end with: trap
 
 Final value of the program counter: 11
 
+Gas consumed: 10000 -> 9996
+
 
 ## inst_branch_not_eq_ok
 
@@ -184,6 +214,8 @@ Program should end with: trap
 
 Final value of the program counter: 18
 
+Gas consumed: 10000 -> 9995
+
 
 ## inst_cmov_if_zero_imm_nok
 
@@ -198,6 +230,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_cmov_if_zero_imm_ok
@@ -214,6 +248,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_cmov_if_zero_nok
 
@@ -229,6 +265,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_cmov_if_zero_ok
@@ -247,6 +285,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_div_signed
@@ -267,6 +307,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_div_signed_by_zero
 
@@ -284,6 +326,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_div_signed_with_overflow
@@ -304,6 +348,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_div_unsigned
 
@@ -323,6 +369,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_div_unsigned_by_zero
 
@@ -340,6 +388,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_div_unsigned_with_overflow
@@ -361,6 +411,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_fallthrough
 
@@ -372,6 +424,8 @@ Final value of the program counter: 3
 Program should end with: trap
 
 Final value of the program counter: 1
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_jump
@@ -393,6 +447,8 @@ Program should end with: trap
 
 Final value of the program counter: 13
 
+Gas consumed: 10000 -> 9996
+
 
 ## inst_load_imm
 
@@ -407,6 +463,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 6
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_load_u8
@@ -431,6 +489,8 @@ Program should end with: trap
 
 Final value of the program counter: 5
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_load_u8_trap
 
@@ -442,6 +502,8 @@ Final value of the program counter: 5
 Program should end with: trap
 
 Final value of the program counter: 0
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_move_reg
@@ -460,6 +522,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 2
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_mul
@@ -480,6 +544,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_mul_imm
 
@@ -498,6 +564,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_negate_and_add_imm
 
@@ -515,6 +583,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_or
@@ -535,6 +605,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_or_imm
 
@@ -553,6 +625,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_rem_signed
 
@@ -568,6 +642,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_rem_signed_by_zero
@@ -587,6 +663,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_rem_signed_with_overflow
 
@@ -602,6 +680,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_rem_unsigned
@@ -622,6 +702,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_rem_unsigned_by_zero
 
@@ -639,6 +721,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_rem_unsigned_with_overflow
@@ -659,6 +743,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_ret_halt
 
@@ -674,6 +760,8 @@ Program should end with: halt
 
 Final value of the program counter: 0
 
+Gas consumed: 10000 -> 9999
+
 
 ## inst_ret_invalid
 
@@ -685,6 +773,8 @@ Final value of the program counter: 0
 Program should end with: trap
 
 Final value of the program counter: 0
+
+Gas consumed: 10000 -> 9999
 
 
 ## inst_set_greater_than_signed_imm_0
@@ -700,6 +790,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_greater_than_signed_imm_1
@@ -719,6 +811,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_set_greater_than_unsigned_imm_0
 
@@ -733,6 +827,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_greater_than_unsigned_imm_1
@@ -752,6 +848,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_set_less_than_signed_0
 
@@ -767,6 +865,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_less_than_signed_1
@@ -787,6 +887,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_set_less_than_signed_imm_0
 
@@ -801,6 +903,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_less_than_signed_imm_1
@@ -820,6 +924,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_set_less_than_unsigned_0
 
@@ -835,6 +941,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_less_than_unsigned_1
@@ -855,6 +963,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_set_less_than_unsigned_imm_0
 
@@ -869,6 +979,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_set_less_than_unsigned_imm_1
@@ -887,6 +999,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_shift_arithmetic_right
@@ -907,6 +1021,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_arithmetic_right_imm
 
@@ -925,6 +1041,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_arithmetic_right_imm_alt
 
@@ -942,6 +1060,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 6
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_shift_arithmetic_right_with_overflow
@@ -962,6 +1082,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_left
 
@@ -981,6 +1103,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_left_imm
 
@@ -999,6 +1123,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_left_imm_alt
 
@@ -1016,6 +1142,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 6
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_shift_logical_left_with_overflow
@@ -1036,6 +1164,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_right
 
@@ -1055,6 +1185,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_right_imm
 
@@ -1072,6 +1204,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_shift_logical_right_imm_alt
@@ -1091,6 +1225,8 @@ Program should end with: trap
 
 Final value of the program counter: 6
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_shift_logical_right_with_overflow
 
@@ -1109,6 +1245,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_store_u16
@@ -1131,6 +1269,8 @@ Program should end with: trap
 
 Final value of the program counter: 5
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_store_u32
 
@@ -1151,6 +1291,8 @@ Final non-zero memory chunks:
 Program should end with: trap
 
 Final value of the program counter: 5
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_store_u8
@@ -1173,6 +1315,8 @@ Program should end with: trap
 
 Final value of the program counter: 5
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_store_u8_trap_inaccessible
 
@@ -1187,6 +1331,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 0
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_store_u8_trap_read_only
@@ -1205,6 +1351,8 @@ Initial non-zero registers:
 Program should end with: trap
 
 Final value of the program counter: 0
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_sub
@@ -1225,6 +1373,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_sub_imm
 
@@ -1242,6 +1392,8 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
 ## inst_sub_with_overflow
@@ -1262,6 +1414,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_trap
 
@@ -1273,6 +1427,8 @@ Final value of the program counter: 3
 Program should end with: trap
 
 Final value of the program counter: 0
+
+Gas consumed: 10000 -> 9999
 
 
 ## inst_xor
@@ -1293,6 +1449,8 @@ Program should end with: trap
 
 Final value of the program counter: 3
 
+Gas consumed: 10000 -> 9998
+
 
 ## inst_xor_imm
 
@@ -1310,5 +1468,7 @@ Registers after execution (only changed registers):
 Program should end with: trap
 
 Final value of the program counter: 3
+
+Gas consumed: 10000 -> 9998
 
 
