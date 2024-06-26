@@ -1,93 +1,85 @@
 # Safrole Test Vectors
 
+Vectors are provided in two flavors:
+- tiny: reduced validators number (6) and epoch duration (12). Useful for fast tweaking and prototyping.
+- full: production validators number (1023) and epoch duration (600).
+
+For details refer to ASN.1 [schema](./safrole.asn).
+
 ## NOTES
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
 - On error, post-state must match pre-state.
 - Ring verifier is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs) procedures.
-
-## TODO
-
-- Better specify the procedure used to construct test ring verifier.
+  - Better specify the procedure used to construct test ring verifier.
 
 ## Tiny Vectors
 
-Vectors with reduced validators number (6) and epoch duration (12).
-
-May be useful for manual tweaking or inspection.
-
-For details refer to ASN.1 [schema](./safrole-tiny.asn).
-
-- [enact-epoch-change-no-tickets-1.json](enact-epoch-change-with-no-tickets-1.json)
-  - Progress from slot 0 to 1.
-  - No tickets extrinsic.
-- [enact-epoch-change-no-tickets-2.json](enact-epoch-change-with-no-tickets-2.json)
-  - Progress from slot 1 to slot 1.
+- [enact-epoch-change-no-tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json)
+  - Progress by one slot.
+  - Randomness accumulator is updated.
+- [enact-epoch-change-no-tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json)
+  - Progress from slot X to slot X.
   - Fail: Timeslot must be strictly monotonic.
-- [enact-epoch-change-no-tickets-3.json](enact-epoch-change-with-no-tickets-3.json)
-  - Progress from slot 1 to a slot in epoch's tail.
-  - Tickets mark is not generated (no enough ticket).
-- [enact-epoch-change-no-tickets-4.json](enact-epoch-change-with-no-tickets-4.json)
+- [enact-epoch-change-no-tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json)
+  - Progress from a slot at the begin of the epoch to a slot in the epoch's tail.
+  - Tickets mark is not generated (no enough tickets).
+- [enact-epoch-change-no-tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json)
   - Progress from epoch's tail to next epoch.
-  - Authorities / entropies rotated.
-  - Epoch mark generated.
-
-- [skip-epochs-1](skip-epochs-1.json)
-  - Progress by skipping epochs.
-  - Accumulated tickets are discarded>
-  - Tickets mark is not generated (skipped epochs).
+  - Authorities and entropies are rotated.
+  - Epoch mark is generated.
+- [skip-epochs-1](./tiny/skip-epochs-1.json)
+  - Progress skipping epochs with a full tickets accumulator.
+  - Tickets mark is not generated.
+  - Accumulated tickets are discarded.
   - Fallback method is enacted.
-
-- [skip-epoch-tail-1](skip-epoch-tail-1.json)
-  - Progress to next epoch by skipping epochs tail.
+- [skip-epoch-tail-1](./tiny/skip-epoch-tail-1.json)
+  - Progress to next epoch by skipping epochs tail with a full tickets accumulator.
   - Tickets mark has no chance to be generated.
-  - Even tough we have enough tickets, these are discarded when next epoch is enacted.
+  - Accumulated tickets are discarded.
   - Fallback method is enacted.
-
-- [publish-tickets-no-mark-1](publish-tickets-no-mark-1.json)
-  - Fail: Submit an extrinsic with more tickets than allwed.
-- [publish-tickets-no-mark-2](publish-tickets-no-mark-2.json)
-  - Submit tickets extrinsics from authority 0 and 1.
-- [publish-tickets-no-mark-3](publish-tickets-no-mark-3.json)
-  - Fail: Re-submit tickets from authority 0.
-- [publish-tickets-no-mark-4](publish-tickets-no-mark-4.json)
+- [publish-tickets-no-mark-1](./tiny/publish-tickets-no-mark-1.json)
+  - Fail: Submit an extrinsic with a bad ticket attempt number.
+- [publish-tickets-no-mark-2](./tiny/publish-tickets-no-mark-2.json)
+  - Submit good tickets extrinsics from authority 0 and 1.
+- [publish-tickets-no-mark-3](./tiny/publish-tickets-no-mark-3.json)
+  - Fail: Re-submit tickets from authority 0 (together with tickets from authority 2).
+- [publish-tickets-no-mark-4](./tiny/publish-tickets-no-mark-4.json)
   - Fail: Submit tickets in bad order.
-- [publish-tickets-no-mark-5](publish-tickets-no-mark-5.json)
+- [publish-tickets-no-mark-5](./tiny/publish-tickets-no-mark-5.json)
   - Fail: Submit tickets with bad ring proof.
-- [publish-tickets-no-mark-6](publish-tickets-no-mark-6.json)
-  - Submit a ticket from authority 2.
-- [publish-tickets-no-mark-7](publish-tickets-no-mark-7.json)
-  - Fail: Submit a ticket while in epoch's tail.
-- [publish-tickets-no-mark-8](publish-tickets-no-mark-8.json)
+- [publish-tickets-no-mark-6](./tiny/publish-tickets-no-mark-6.json)
+  - Submit tickets from authority 2.
+- [publish-tickets-no-mark-7](./tiny/publish-tickets-no-mark-7.json)
+  - Fail: Submit authority 3 tickets while in epoch's tail.
+- [publish-tickets-no-mark-8](./tiny/publish-tickets-no-mark-8.json)
   - Progress into epoch tail.
-  - No enough tickets, thus no tickets mark.
-  - TODO: technically we can already drop the tickets from accumulator (check graypaper).
-- [publish-tickets-no-mark-9](publish-tickets-no-mark-9.json)
+  - No enough tickets, thus no tickets mark is generated.
+- [publish-tickets-no-mark-9](./tiny/publish-tickets-no-mark-9.json)
   - Progress into next epoch with no enough tickets.
-  - Tickets are dropped.
+  - Accumulated tickets are discarded.
+  - Epoch mark is generated.
   - Fallback method is enacted.
-
-- [pubblish-tickets-with-mark-1](publish-tickets-with-mark-1.json)
-  - Publish some tickets with a half filled accumulator.
-  - Accumulator is not filled yet.
-  - No ticket is dropped from accumulator.
-- [pubblish-tickets-with-mark-2](publish-tickets-with-mark-2.json)
+- [pubblish-tickets-with-mark-1](./tiny/publish-tickets-with-mark-1.json)
+  - Publish some tickets with an almost full tickets accumulator.
+  - Tickets accumulator is not full yet.
+  - No ticket are dropped from accumulator.
+- [pubblish-tickets-with-mark-2](./tiny/publish-tickets-with-mark-2.json)
   - Publish some more tickets.
-  - Accumulator is filled.
-  - One old ticket is removed from the accumulator.
-- [pubblish-tickets-with-mark-3](publish-tickets-with-mark-3.json)
+  - Tickets accumulator is filled.
+  - Two old ticket are removed from the accumulator.
+- [pubblish-tickets-with-mark-3](./tiny/publish-tickets-with-mark-3.json)
   - Publish some more tickets.
-  - Accumulator is filled.
+  - Accumulator is full before execution.
   - Some old ticket are removed to make space for new ones.
-- [pubblish-tickets-with-mark-4](publish-tickets-with-mark-4.json)
+- [pubblish-tickets-with-mark-4](./tiny/publish-tickets-with-mark-4.json)
   - Progress into epoch tail.
-  - Tickets mark is produced.
-- [pubblish-tickets-with-mark-5](publish-tickets-with-mark-5.json)
+  - Tickets mark is generated.
+- [pubblish-tickets-with-mark-5](./tiny/publish-tickets-with-mark-5.json)
   - Progress into next epoch.
+  - Epoch mark is generated.
   - Tickets are enacted.
 
 ## Full Vectors
 
-Vectors with production validators number (1023) and epoch duration (600).
-
-For details refer to ASN.1 [schema](./full/safrole-full.asn).
+Currently, the same test cases as tiny vectors but at a larger scale.
