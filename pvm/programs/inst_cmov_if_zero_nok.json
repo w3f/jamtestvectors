@@ -19,7 +19,7 @@
   "initial-page-map": [],
   "initial-memory": [],
   "initial-gas": 10000,
-  "code": [
+  "program": [
     0,
     0,
     3,

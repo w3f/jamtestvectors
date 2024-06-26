@@ -25,7 +25,7 @@
   ],
   "initial-memory": [],
   "initial-gas": 10000,
-  "code": [
+  "program": [
     0,
     0,
     5,
