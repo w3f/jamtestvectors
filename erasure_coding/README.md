@@ -30,7 +30,6 @@ Left empty in some case see `TODO`.
 - construction of segments root is valid ? I just concatenate the segments hash and the root of pages of hashes to build this.
 - binary tree implementation may not be aligned with spec, it follows existing code (pad with 0 hashes up to next power of 2 and does hash internally against those hashes which is not strictly necessary). TODO not using $leaf or $node from spec appendix.
 - The export subshards are fix size to 6 point (12 bytes), so the vector for a single point (684 data size) is padded with 0. This comes from the fact that implementation runs over 4104 chunks and not 684. TODO switch to align on 684 ?
-- Page proof segment hash use in segments root is infered to be a binary root (subtree root from spec), padded to next power of 2, so its depth vary from 6 to 1.
 
 ## Changelog
 
