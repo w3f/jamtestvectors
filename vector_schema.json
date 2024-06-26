@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EC vector",
+  "description": "Test vector for erasure coding",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "contentEncoding": "base64"
+    },
+    "chunks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "contentEncoding": "base64"
+      }
+    },
+    "chunks_root": {
+        "type": "string",
+        "contentEncoding": "base64"
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subshards": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "contentEncoding": "base64"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "segments_root": {
+      "type": "string",
+      "contentEncoding": "base64"
+    }
+  },
+  "required": [
+    "data",
+    "chunks",
+    "segments"
+  ],
+  "additionalProperties": false
+}
