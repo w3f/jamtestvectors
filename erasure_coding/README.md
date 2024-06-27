@@ -4,6 +4,7 @@
 
 Each file under `vectors` directory is a json with:
 - "data": the erasure encoded data. Currently random bytes to avoid having to change data if package format move (actualy data does not matter).
+- GP-0.2.1-306-C: TODO create chunks from data (with proof inside).
 - "chunks": the data erasure coded between 1023 participant. 341 first chunk are from original data. Chunk size is aligned to 64 bytes. Last chunk is padded to 64 bytes with 0.
 Left empty in some case see `TODO`.
 - "chunks_root": EC root calculated from "chunks".
@@ -14,8 +15,9 @@ Left empty in some case see `TODO`.
 
 ## Vector check
 
-- "chunks" produce from data matches the ones in the json.
+- GP-0.2.1-307-R:  "chunks" produce from data matches the ones in the json.
 - "subshards" produce from data matcehs the ones from the json.
+
 ## NOTES
 
 - chunks are recoverable from any 341 chunks.
