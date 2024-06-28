@@ -45,10 +45,12 @@ def main():
     # Validate tiny
     schema = asn1tools.compile_files(["safrole.asn", "tiny.asn"], codec="jer")
     for path in Path("tiny").iterdir():
-        validate_case(schema, path)
+        if path.is_file() and path.suffix == ".json":
+            validate_case(schema, path)
     # Validate full
     schema = asn1tools.compile_files(["safrole.asn", "full.asn"], codec="jer")
     for path in Path("full").iterdir():
-        validate_case(schema, path)
+        if path.is_file() and path.suffix == ".json":
+            validate_case(schema, path)
 
 main()
