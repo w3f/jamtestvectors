@@ -1,5 +1,5 @@
 {
-  "name": "inst_set_less_than_unsigned_1",
+  "name": "inst_branch_less_unsigned_nok",
   "initial-regs": [
     0,
     0,
@@ -8,8 +8,8 @@
     0,
     0,
     0,
-    10,
-    4294967286,
+    0,
+    0,
     0,
     0,
     0,
@@ -22,11 +22,25 @@
   "program": [
     0,
     0,
-    3,
-    36,
+    16,
+    4,
+    7,
+    246,
+    4,
+    8,
+    10,
+    47,
     135,
-    9,
-    249
+    4,
+    0,
+    4,
+    7,
+    239,
+    190,
+    173,
+    222,
+    73,
+    6
   ],
   "expected-status": "trap",
   "expected-regs": [
@@ -37,14 +51,14 @@
     0,
     0,
     0,
-    10,
     4294967286,
-    1,
+    10,
+    0,
     0,
     0,
     0
   ],
-  "expected-pc": 3,
+  "expected-pc": 9,
   "expected-memory": [],
-  "expected-gas": 9998
+  "expected-gas": 9996
 }

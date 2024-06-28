@@ -26,7 +26,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 08 79 08                 r9 = r7 + r8
+     0: 08 87 09                 r9 = r7 + r8
 ```
 
 Registers after execution (only changed registers):
@@ -67,7 +67,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 08 79 08                 r9 = r7 + r8
+     0: 08 87 09                 r9 = r7 + r8
 ```
 
 Registers after execution (only changed registers):
@@ -88,7 +88,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 17 79 08                 r9 = r7 & r8
+     0: 17 87 09                 r9 = r7 & r8
 ```
 
 Registers after execution (only changed registers):
@@ -119,6 +119,50 @@ Program should end with: trap
 Final value of the program counter: 3
 
 Gas consumed: 10000 -> 9998
+
+
+## inst_branch_eq_imm_nok
+
+```
+      :                          @0
+     0: 04 07 d2 04              r7 = 0x4d2
+     4: 07 27 d3 04 06           jump 10 if r7 == 1235
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0x4d2 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_eq_imm_ok
+
+```
+      :                          @0
+     0: 04 07 d2 04              r7 = 0x4d2
+     4: 07 27 d2 04 06           jump 10 if r7 == 1234
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9996
 
 
 ## inst_branch_eq_nok
@@ -167,6 +211,594 @@ Program should end with: trap
 Final value of the program counter: 18
 
 Gas consumed: 10000 -> 9995
+
+
+## inst_branch_greater_or_equal_signed_imm_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 2d 17 0a 05              jump 8 if r7 >=s 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_greater_or_equal_signed_imm_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 2d 17 f6 05              jump 8 if r7 >=s 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_greater_or_equal_signed_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 04 08 0a                 r8 = 0xa
+     6: 2b 87 04                 jump 10 if r7 >=s r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+   * r8 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_greater_or_equal_signed_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 04 08 f6                 r8 = 0xfffffff6
+     6: 2b 87 04                 jump 10 if r7 >=s r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+   * r8 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9995
+
+
+## inst_branch_greater_or_equal_unsigned_imm_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 34 17 f6 05              jump 8 if r7 >=u 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_greater_or_equal_unsigned_imm_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 34 17 0a 05              jump 8 if r7 >=u 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_greater_or_equal_unsigned_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 04 08 f6                 r8 = 0xfffffff6
+     6: 29 87 04                 jump 10 if r7 >=u r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+   * r8 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_greater_or_equal_unsigned_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 04 08 0a                 r8 = 0xa
+     6: 29 87 04                 jump 10 if r7 >=u r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+   * r8 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9995
+
+
+## inst_branch_greater_signed_imm_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 35 17 0a 05              jump 8 if r7 >s 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_greater_signed_imm_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 35 17 f6 05              jump 8 if r7 >s 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_greater_unsigned_imm_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 32 17 f6 05              jump 8 if r7 >u 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_greater_unsigned_imm_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 32 17 0a 05              jump 8 if r7 >u 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_or_equal_signed_imm_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 2e 17 f6 05              jump 8 if r7 <=s 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_less_or_equal_signed_imm_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 2e 17 0a 05              jump 8 if r7 <=s 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_or_equal_unsigned_imm_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 3b 17 0a 05              jump 8 if r7 <=u 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_less_or_equal_unsigned_imm_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 3b 17 f6 05              jump 8 if r7 <=u 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_signed_imm_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 20 17 f5 05              jump 8 if r7 <s 4294967285
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_less_signed_imm_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 20 17 0a 05              jump 8 if r7 <s 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_signed_nok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 04 08 f6                 r8 = 0xfffffff6
+     6: 30 87 04                 jump 10 if r7 <s r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xa (initially was 0x0)
+   * r8 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_signed_ok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 04 08 0a                 r8 = 0xa
+     6: 30 87 04                 jump 10 if r7 <s r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+   * r8 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9995
+
+
+## inst_branch_less_unsigned_imm_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 2c 17 0a 05              jump 8 if r7 <u 10
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 7
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_less_unsigned_imm_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 2c 17 f6 05              jump 8 if r7 <u 4294967286
+      :                          @1
+     7: 00                       trap
+      :                          @2
+     8: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 14
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_unsigned_nok
+
+```
+      :                          @0
+     0: 04 07 f6                 r7 = 0xfffffff6
+     3: 04 08 0a                 r8 = 0xa
+     6: 2f 87 04                 jump 10 if r7 <u r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xfffffff6 (initially was 0x0)
+   * r8 = 0xa (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9996
+
+
+## inst_branch_less_unsigned_ok
+
+```
+      :                          @0
+     0: 04 07 0a                 r7 = 0xa
+     3: 04 08 f6                 r8 = 0xfffffff6
+     6: 2f 87 04                 jump 10 if r7 <u r8
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+   * r8 = 0xfffffff6 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9995
+
+
+## inst_branch_not_eq_imm_nok
+
+```
+      :                          @0
+     0: 04 07 d2 04              r7 = 0x4d2
+     4: 0f 27 d2 04 06           jump 10 if r7 != 1234
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0x4d2 (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 9
+
+Gas consumed: 10000 -> 9997
+
+
+## inst_branch_not_eq_imm_ok
+
+```
+      :                          @0
+     0: 04 07 d2 04              r7 = 0x4d2
+     4: 0f 27 d3 04 06           jump 10 if r7 != 1235
+      :                          @1
+     9: 00                       trap
+      :                          @2
+    10: 04 07 ef be ad de        r7 = 0xdeadbeef
+```
+
+Registers after execution (only changed registers):
+   * r7 = 0xdeadbeef (initially was 0x0)
+
+Program should end with: trap
+
+Final value of the program counter: 16
+
+Gas consumed: 10000 -> 9996
 
 
 ## inst_branch_not_eq_nok
@@ -259,7 +891,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 53 87 0a                 r7 = r8 if r10 == 0
+     0: 53 a8 07                 r7 = r8 if r10 == 0
 ```
 
 Program should end with: trap
@@ -276,7 +908,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 53 87 0a                 r7 = r8 if r10 == 0
+     0: 53 a8 07                 r7 = r8 if r10 == 0
 ```
 
 Registers after execution (only changed registers):
@@ -297,7 +929,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 40 79 08                 r9 = r7 /s r8
+     0: 40 87 09                 r9 = r7 /s r8
 ```
 
 Registers after execution (only changed registers):
@@ -317,7 +949,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 40 79 08                 r9 = r7 /s r8
+     0: 40 87 09                 r9 = r7 /s r8
 ```
 
 Registers after execution (only changed registers):
@@ -338,7 +970,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 40 79 08                 r9 = r7 /s r8
+     0: 40 87 09                 r9 = r7 /s r8
 ```
 
 Registers after execution (only changed registers):
@@ -359,7 +991,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 44 79 08                 r9 = r7 /u r8
+     0: 44 87 09                 r9 = r7 /u r8
 ```
 
 Registers after execution (only changed registers):
@@ -379,7 +1011,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 44 79 08                 r9 = r7 /u r8
+     0: 44 87 09                 r9 = r7 /u r8
 ```
 
 Registers after execution (only changed registers):
@@ -401,7 +1033,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 44 79 08                 r9 = r7 /u r8
+     0: 44 87 09                 r9 = r7 /u r8
 ```
 
 Registers after execution (only changed registers):
@@ -534,7 +1166,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 22 79 08                 r9 = r7 * r8
+     0: 22 87 09                 r9 = r7 * r8
 ```
 
 Registers after execution (only changed registers):
@@ -595,7 +1227,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 0c 79 08                 r9 = r7 | r8
+     0: 0c 87 09                 r9 = r7 | r8
 ```
 
 Registers after execution (only changed registers):
@@ -636,7 +1268,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 46 79 08                 r9 = r7 %s r8
+     0: 46 87 09                 r9 = r7 %s r8
 ```
 
 Program should end with: trap
@@ -653,7 +1285,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 46 79 08                 r9 = r7 %s r8
+     0: 46 87 09                 r9 = r7 %s r8
 ```
 
 Registers after execution (only changed registers):
@@ -674,7 +1306,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 46 79 08                 r9 = r7 %s r8
+     0: 46 87 09                 r9 = r7 %s r8
 ```
 
 Program should end with: trap
@@ -692,7 +1324,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 49 79 08                 r9 = r7 %u r8
+     0: 49 87 09                 r9 = r7 %u r8
 ```
 
 Registers after execution (only changed registers):
@@ -712,7 +1344,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 49 79 08                 r9 = r7 %u r8
+     0: 49 87 09                 r9 = r7 %u r8
 ```
 
 Registers after execution (only changed registers):
@@ -733,7 +1365,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 49 79 08                 r9 = r7 %u r8
+     0: 49 87 09                 r9 = r7 %u r8
 ```
 
 Registers after execution (only changed registers):
@@ -859,7 +1491,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 3a 79 08                 r9 = r7 <s r8
+     0: 3a 87 09                 r9 = r7 <s r8
 ```
 
 Program should end with: trap
@@ -877,7 +1509,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 3a 79 08                 r9 = r7 <s r8
+     0: 3a 87 09                 r9 = r7 <s r8
 ```
 
 Registers after execution (only changed registers):
@@ -935,7 +1567,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 24 79 08                 r9 = r7 <u r8
+     0: 24 87 09                 r9 = r7 <u r8
 ```
 
 Program should end with: trap
@@ -953,7 +1585,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 24 79 08                 r9 = r7 <u r8
+     0: 24 87 09                 r9 = r7 <u r8
 ```
 
 Registers after execution (only changed registers):
@@ -1011,7 +1643,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 4d 79 08                 r9 = r7 >>a r8
+     0: 4d 87 09                 r9 = r7 >>a r8
 ```
 
 Registers after execution (only changed registers):
@@ -1072,7 +1704,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 4d 79 08                 r9 = r7 >>a r8
+     0: 4d 87 09                 r9 = r7 >>a r8
 ```
 
 Registers after execution (only changed registers):
@@ -1093,7 +1725,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 37 79 08                 r9 = r7 << r8
+     0: 37 87 09                 r9 = r7 << r8
 ```
 
 Registers after execution (only changed registers):
@@ -1154,7 +1786,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 37 79 08                 r9 = r7 << r8
+     0: 37 87 09                 r9 = r7 << r8
 ```
 
 Registers after execution (only changed registers):
@@ -1175,7 +1807,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 33 79 08                 r9 = r7 >> r8
+     0: 33 87 09                 r9 = r7 >> r8
 ```
 
 Registers after execution (only changed registers):
@@ -1236,7 +1868,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 33 79 08                 r9 = r7 >> r8
+     0: 33 87 09                 r9 = r7 >> r8
 ```
 
 Registers after execution (only changed registers):
@@ -1363,7 +1995,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 14 79 08                 r9 = r7 - r8
+     0: 14 87 09                 r9 = r7 - r8
 ```
 
 Registers after execution (only changed registers):
@@ -1404,7 +2036,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 14 79 08                 r9 = r7 - r8
+     0: 14 87 09                 r9 = r7 - r8
 ```
 
 Registers after execution (only changed registers):
@@ -1439,7 +2071,7 @@ Initial non-zero registers:
 
 ```
       :                          @0
-     0: 1c 79 08                 r9 = r7 ^ r8
+     0: 1c 87 09                 r9 = r7 ^ r8
 ```
 
 Registers after execution (only changed registers):
