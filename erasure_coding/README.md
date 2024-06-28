@@ -43,6 +43,7 @@ under "page_proof"
 - construction of segments root is valid ? I just concatenate  the segments hash and the root of pages of hashes to build this.
 - binary tree implementation may not be aligned with spec, it follows existing code (pad with 0 hashes up to next power of 2 and does hash internally against those hashes which is not strictly necessary). TODO not using $leaf or $node from spec appendix.
 - The export subshards are fix size to 6 point (12 bytes), so the vector for a single point (684 data size) is padded with 0. This comes from the fact that implementation runs over 4104 chunks and not 684. TODO switch to align on 684 ?
+- $leaf from GP-0.2.1-292 is not applied , rather not sure what it is at this point (I infer rewrite on bit of hashes to indicate if leaf, but leaf are preimage of 2048 bytes when branch are preimage of 64 byte data, so not too sure what is this $leaf).
 
 ## Changelog
 

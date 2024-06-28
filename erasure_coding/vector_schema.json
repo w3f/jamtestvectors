@@ -21,13 +21,6 @@
         "chunks_root": {
           "type": "string",
           "contentEncoding": "base64"
-        },
-        "chunks_ec": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "contentEncoding": "base64"
-          }
         }
       },
       "additionalProperties": false
@@ -40,13 +33,6 @@
           "items": {
             "type": "object",
             "properties": {
-              "encoded": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "contentEncoding": "base64"
-                }
-              },
               "segment_ec": {
                 "type": "array",
                 "items": {
@@ -79,8 +65,8 @@
           "type": "string",
           "contentEncoding": "base64"
         }
-      }
-  "additionalProperties": false
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
