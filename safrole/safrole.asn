@@ -31,8 +31,8 @@ TicketBody ::= SEQUENCE {
 }
 
 ValidatorData ::= SEQUENCE {
-    ed25519 Ed25519Key,
     bandersnatch BandersnatchKey,
+    ed25519 Ed25519Key,
     bls BlsKey,
     metadata SEQUENCE (SIZE(128)) OF U8
 }
