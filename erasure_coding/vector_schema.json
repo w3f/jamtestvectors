@@ -8,42 +8,80 @@
       "type": "string",
       "contentEncoding": "base64"
     },
-    "chunks": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "contentEncoding": "base64"
-      }
-    },
-    "chunks_root": {
-        "type": "string",
-        "contentEncoding": "base64"
-    },
-    "segments": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "subshards": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "contentEncoding": "base64"
-            }
+    "work_package": {
+      "type": "object",
+      "properties": {
+        "chunks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "contentEncoding": "base64"
           }
         },
-        "additionalProperties": false
-      }
+        "chunks_root": {
+          "type": "string",
+          "contentEncoding": "base64"
+        },
+        "chunks_ec": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "contentEncoding": "base64"
+          }
+        }
+      },
+      "additionalProperties": false
     },
-    "segments_root": {
-      "type": "string",
-      "contentEncoding": "base64"
+    "segment": {
+      "type": "object",
+      "properties": {
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "encoded": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "contentEncoding": "base64"
+                }
+              },
+              "segment_ec": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "contentEncoding": "base64"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "segments_root": {
+          "type": "string",
+          "contentEncoding": "base64"
+        }
+      },
+      "additionalProperties": false
+    },
+    "page_proof": {
+      "type": "object",
+      "properties": {
+        "page_proofs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "contentEncoding": "base64"
+          }
+        },
+        "segments_root": {
+          "type": "string",
+          "contentEncoding": "base64"
+        }
+      }
+  "additionalProperties": false
     }
   },
-  "required": [
-    "data",
-    "chunks",
-    "segments"
-  ],
   "additionalProperties": false
 }
