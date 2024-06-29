@@ -1,17 +1,22 @@
 # Safrole Test Vectors
 
-Vectors are provided in two flavors:
-- tiny: reduced validators number (6) and epoch duration (12). Useful for fast tweaking and prototyping.
-- full: production validators number (1023) and epoch duration (600).
+We offer two types of test vectors:
 
-For details refer to ASN.1 [schema](./safrole.asn).
+- Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
+  and a shorter epoch duration (12). They are provided in both JSON format for easy inspection
+  and modification, and in SCALE format, which is the production binary codec.
+
+- Full: These vectors use production validators count (1023) and epoch duration (600).
+  Similar to the tiny vectors, they are available in JSON and SCALE format.
+
+Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./safrole.asn).
 
 ## NOTES
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
 - On error, post-state must match pre-state.
-- Ring verifier is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs) procedures.
-  - Better specify the procedure used to construct test ring verifier.
+- Ring verifier key is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs)
+  from a `RingContext` built using a 32 zero octets seed (`[0; 32]`) and domain size of 2048.
 
 ## Tiny Vectors
 

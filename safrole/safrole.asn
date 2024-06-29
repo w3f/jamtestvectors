@@ -103,7 +103,7 @@ Input ::= SEQUENCE {
 Output ::= CHOICE {
     -- Markers
     ok OutputMarks,
-    -- Error code (not in the spec, feel free to ignore the actual)
+    -- Error code (not in the spec, feel free to ignore the actual value)
     err U8
 }
 
