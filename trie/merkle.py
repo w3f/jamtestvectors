@@ -4,16 +4,21 @@ import hashlib
 import json
 import sys
 
-## Graypaper conforming implementation
+## Graypaper conforming implementation of the trie merklization (Appendix D)
+## Based on GP 0.2.2
+
+# Blake2b-256
 def hash(data):
     return hashlib.blake2b(data, digest_size=32).digest()
 
-def fork(l, r):
+# GP (286)
+def branch(l, r):
     assert len(l) == 32
     assert len(r) == 32
     head = l[0] & 0xfe
     return bytes([head]) + l[1:] + r
 
+# GP (287)
 def leaf(k, v):
     if len(v) <= 32:
         head = 0b01 | (len(v) << 2)
@@ -24,6 +29,7 @@ def leaf(k, v):
 def bit(k, i):
     return (k[i >> 3] & (1 << (i & 7))) != 0
 
+# GP (289)
 def merkle(kvs, i=0):
     if not kvs:
         return 32 * b'\0'
@@ -37,7 +43,7 @@ def merkle(kvs, i=0):
                 r.append((k, v))
             else:
                 l.append((k, v))
-        encoded = fork(merkle(l, i + 1), merkle(r, i + 1))
+        encoded = branch(merkle(l, i + 1), merkle(r, i + 1))
     assert len(encoded) == 64
     return hash(encoded)
 
