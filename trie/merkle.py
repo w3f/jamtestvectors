@@ -4,7 +4,7 @@ import hashlib
 import json
 import sys
 
-## Graypaper conforming implementation of the trie merklization (Appendix D)
+## Graypaper conforming implementation of the binary tree used for the state merklization (Appendix D)
 ## Based on GP 0.2.2
 
 # Blake2b-256
