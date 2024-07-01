@@ -61,32 +61,32 @@ OutputMarks ::= SEQUENCE {
 
 -- State relevant to Safrole protocol
 State ::= SEQUENCE {
-    -- tau: The most recent block's timeslog.
-    timeslot U32,
+    -- Most recent block's timeslot.
+    tau U32,
 
-    -- eta: The entropy accumulator and epochal randomness.
-    entropy SEQUENCE (SIZE(4)) OF OpaqueHash,
+    -- Entropy accumulator and epochal randomness.
+    eta SEQUENCE (SIZE(4)) OF OpaqueHash,
 
-    -- lambda: The validator keys and metadata which were active in the prior epoch.
-    prev-validators ValidatorsData,
+    -- Validator keys and metadata which were active in the prior epoch.
+    lambda ValidatorsData,
 
-    -- kappa: The validator keys and metadata currently active.
-    curr-validators ValidatorsData,
+    -- Validator keys and metadata currently active.
+    kappa ValidatorsData,
 
-    -- gamma_k: The validator keys for the following epoch.
-    next-validators ValidatorsData,
+    -- Validator keys for the following epoch.
+    gamma-k ValidatorsData,
 
-    -- iota: The validator keys and metadata to be drawn from next.
-    designed-validators ValidatorsData,
+    -- Validator keys and metadata to be drawn from next.
+    iota ValidatorsData,
 
-    -- gamma_a: The sealing-key contest ticket accumulator.
-    tickets-accumulator SEQUENCE (SIZE(0..epoch-length)) OF TicketBody,
+    -- Sealing-key contest ticket accumulator.
+    gamma-a SEQUENCE (SIZE(0..epoch-length)) OF TicketBody,
 
-    -- gamma_s: The sealing-key series of the current epoch.
-    tickets-or-keys TicketsOrKeys,
+    -- Sealing-key series of the current epoch.
+    gamma-s TicketsOrKeys,
 
-    -- gamma_z: The Bandersnatch ring root.
-    tickets-verifier-key SEQUENCE (SIZE(384)) OF U8
+    -- Bandersnatch ring commitment.
+    gamma-z SEQUENCE (SIZE(144)) OF U8
 }
 
 -- Input for Safrole protocol.
@@ -95,8 +95,8 @@ Input ::= SEQUENCE {
     slot U32,
     -- Per block entropy (originated from block entropy source VRF).
     entropy OpaqueHash,
-    -- Safrole extrinsics (aka tickets evelopes).
-    extrinsics SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+    -- Safrole extrinsic.
+    extrinsic SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 }
 
 -- Output from Safrole protocol
