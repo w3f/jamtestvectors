@@ -11,12 +11,19 @@ We offer two types of test vectors:
 
 Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./safrole.asn).
 
-## NOTES
+## Ring Context Construction
+
+Ring context is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs).
+
+The context object is built using the [Zcash SRS](zcash-srs-2-11-uncompressed.bin)
+([powers of tau ceremony details](https://zfnd.org/conclusion-of-the-powers-of-tau-ceremony)).
+
+For construction and usage refer to Bandersnatch vrfs spec [example](https://github.com/davxy/bandersnatch-vrfs-spec/tree/main/example).
+
+## Additional Notes
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
 - On error, post-state must match pre-state.
-- Ring verifier key is constructed using [ark-ec-vrfs](https://github.com/davxy/ark-ec-vrfs)
-  from a `RingContext` built using a 32 zero octets seed (`[0; 32]`) and domain size of 2048.
 
 ## Tiny Vectors
 
