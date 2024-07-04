@@ -20,6 +20,26 @@ For construction and usage refer to Bandersnatch vrfs spec [example](https://git
 
 NOTE: for "tiny" initialize the `RingContext` with `ring_size = 6`; while for full `ring size = 1023`.
 
+## Safrole **is not** Sassafras
+
+You can use the Sassafras [RFC](https://github.com/polkadot-fellows/RFCs/blob/main/text/0026-sassafras-consensus.md)
+as a guideline provided it does not conflict with the protocol described by the *Graypaper*
+If case of any discrepancy, the *Graypaper* **must** be considered the authoritative source
+for the JAM protocol.
+
+Here are some key differences:
+- Safrole does not use a threshold to determine if a ticket score should be considered.
+  A ticket is persisted in the state if the ticket accumulator is not full or if the
+  score is lower than the highest score currently in the accumulator (which is removed
+  after the new ticket is inserted).
+- Safrole requires the entire ticket accumulator to be filled before it can be used.
+  If not enough tickets are received, a fallback mechanism is enacted. In contrast,
+  Sassafras can operate with an epoch that is only partially filled with tickets.
+- In Safrole, the ticket envelope contains no additional application-specific data,
+  it includes only the "attempt" and the "ring proof".
+
+Most of these differences aim to provide a clear and concise protocol specification.
+
 ## Additional Notes
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
