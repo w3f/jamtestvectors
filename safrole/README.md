@@ -18,6 +18,8 @@ Ring proofs were constructed using a SNARK built using the the [Zcash SRS parama
 
 For construction and usage refer to Bandersnatch vrfs spec [example](https://github.com/davxy/bandersnatch-vrfs-spec/tree/main/example).
 
+NOTE: for "tiny" initialize the `RingContext` with `ring_size = 6`; while for full `ring size = 1023`.
+
 ## Additional Notes
 
 - Error codes returned as output are not part of the specification. Feel free to ignore actual values.
