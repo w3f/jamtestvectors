@@ -40,23 +40,27 @@ Here are some key differences:
 
 Most of these differences aim to provide a clear and concise protocol specification.
 
-## Additional Notes
+## Error Output
 
-- Error codes returned as output are not part of the specification. Feel free to ignore actual values.
-- On error, post-state must match pre-state.
+On STF (State Transition Function) execution error, post-state must match pre-state.
+
+Possible error codes returned as output are not part of the specification,
+feel free to ignore actual numeric values.
+
+A map for errors codes semantics used by for the test vectors is given in the ASN.1 schema.
 
 ## Tiny Vectors
 
-- [enact-epoch-change-no-tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json)
+- [enact-epoch-change-with-no-tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json)
   - Progress by one slot.
   - Randomness accumulator is updated.
-- [enact-epoch-change-no-tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json)
+- [enact-epoch-change-with-no-tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json)
   - Progress from slot X to slot X.
   - Fail: Timeslot must be strictly monotonic.
-- [enact-epoch-change-no-tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json)
+- [enact-epoch-change-with-no-tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json)
   - Progress from a slot at the begin of the epoch to a slot in the epoch's tail.
   - Tickets mark is not generated (no enough tickets).
-- [enact-epoch-change-no-tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json)
+- [enact-epoch-change-with-no-tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json)
   - Progress from epoch's tail to next epoch.
   - Authorities and entropies are rotated.
   - Epoch mark is generated.
