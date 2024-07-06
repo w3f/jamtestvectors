@@ -73,17 +73,17 @@ Most of these differences aim to provide a clear and concise protocol specificat
 - [publish-tickets-no-mark-1](./tiny/publish-tickets-no-mark-1.json)
   - Fail: Submit an extrinsic with a bad ticket attempt number.
 - [publish-tickets-no-mark-2](./tiny/publish-tickets-no-mark-2.json)
-  - Submit good tickets extrinsics from authority 0 and 1.
+  - Submit good tickets extrinsics from some authorities.
 - [publish-tickets-no-mark-3](./tiny/publish-tickets-no-mark-3.json)
-  - Fail: Re-submit tickets from authority 0 (together with tickets from authority 2).
+  - Fail: Re-submit one ticket already in the state.
 - [publish-tickets-no-mark-4](./tiny/publish-tickets-no-mark-4.json)
   - Fail: Submit tickets in bad order.
 - [publish-tickets-no-mark-5](./tiny/publish-tickets-no-mark-5.json)
   - Fail: Submit tickets with bad ring proof.
 - [publish-tickets-no-mark-6](./tiny/publish-tickets-no-mark-6.json)
-  - Submit tickets from authority 2.
+  - Submit some tickets.
 - [publish-tickets-no-mark-7](./tiny/publish-tickets-no-mark-7.json)
-  - Fail: Submit authority 3 tickets while in epoch's tail.
+  - Fail: Submit tickets while in epoch's tail.
 - [publish-tickets-no-mark-8](./tiny/publish-tickets-no-mark-8.json)
   - Progress into epoch tail.
   - No enough tickets, thus no tickets mark is generated.
