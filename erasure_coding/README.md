@@ -6,19 +6,27 @@ Each file under `vectors` directory is a json with:
 - "data": Base input for different fields.
 
 ## Work package EC
-under "work_package"
+
+files starting by "segment_root_" using "schema_segment_root.json".
 - "chunks": GP-0.2.1-306-C the data erasure coded between 1023 participant. 341 first chunk are from original data. Chunk size is aligned to 64 bytes. Last chunk is padded to 64 bytes with 0.  TODO I don't find any good reference in GP to it
 - "chunks_root": GP-0.2.1-290-M EC root calculated from "chunks".
 
 Left empty in some case see `TODO`.
 
+## Single segment EC
+
+files starting by "ec_" using "schema_ec.json".
+- "segments/segment_ec": GP-0.2.1-306-C: contains N ec point of a single segment. Size of segment is size of data. 342 first subshards are from the segments original data padded with 8 bytes. Next 684 subshards of each segments are recovery subshards.
+
 ## Segments EC
-under "segment"
+
+files starting by "segment_ec_" using "schema_segment_ec.json".
 - "segments_root": GP-0.2.1-289-M: using up to 2048 32 byte segment hashes from start of data, this is the calculated root. (using segments hashes and hashes of page proofs build from those segments).
 - "segments/segment_ec": GP-0.2.1-306-C: contains 12 bytes subshards of ec of each segments. 342 first subshards are from the segments original data padded with 8 bytes. Next 684 subshards of each segments are recovery subshards.
 
 ## Page proof of segments EC
-under "page_proof"
+
+files starting by "page_proof_" using "schema_page_proof.json".
 - "page_proofs": GP-0.2.1-171-P (using GP-0.2.1-291-Jx) considering "data" contains a sequence of 4096 byte segments (last one may be unaligned).
 - "segments_root": GP-0.2.1-289-M: considering "data" as a sequence of segments hashes (bounded to maximum 2^11), this contains page proofs segments.
 - all byte data is base64 encoded with padding (a bit ugly in subshards).
