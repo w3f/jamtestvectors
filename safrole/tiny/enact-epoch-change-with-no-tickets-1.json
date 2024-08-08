@@ -2,6 +2,7 @@
     "input": {
         "slot": 1,
         "entropy": "0x8c2e6d327dfaa6ff8195513810496949210ad20a96e2b0672a3e1b9335080801",
+        "offenders": [],
         "extrinsic": []
     },
     "pre_state": {

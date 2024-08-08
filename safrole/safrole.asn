@@ -115,6 +115,8 @@ Input ::= SEQUENCE {
     slot U32,
     -- Per block entropy (originated from block entropy source VRF).
     entropy OpaqueHash,
+    -- Offenders
+    offenders SEQUENCE OF Ed25519Key,
     -- Safrole extrinsic.
     extrinsic SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 }
