@@ -1,0 +1,79 @@
+{
+    "input": {
+        "verdicts": [
+            {
+                "target": "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
+                "age": 0,
+                "votes": [
+                    {
+                        "vote": true,
+                        "index": 0,
+                        "signature": "0x0b1e29dbda5e3bba5dde21c81a8178b115ebf0cf5920fe1a38e897ecadd91718e34bf01c9fc7fdd0df31d83020231b6e8338c8dc204b618cbde16a03cb269d05"
+                    },
+                    {
+                        "vote": true,
+                        "index": 1,
+                        "signature": "0x0d44746706e09ff6b6f2929e736c2f868a4d17939af6d37ca7d3c7f6d4914bd095a6fd4ff48c320b673e2de92bfdb5ed9f5c0c40749816ab4171a2272386fc05"
+                    },
+                    {
+                        "vote": true,
+                        "index": 2,
+                        "signature": "0x0d5d39f2239b775b22aff53b74a0d708a9b9363ed5017170f0abebc8ffd97fc1cc3cf597c578b555ad5abab26e09ecda727c2909feae99587c6354b86e4cc50c"
+                    },
+                    {
+                        "vote": true,
+                        "index": 3,
+                        "signature": "0x701d277fa78993b343a5d4367f1c2a2fb7ddb77f0246bf9028196feccbb7c0f2bd994966b3e9b1e51ff5dd63d8aa5e2331432b9cca4a125552c4700d51814a04"
+                    },
+                    {
+                        "vote": true,
+                        "index": 4,
+                        "signature": "0x08d96d2e49546931dc3de989a69aa0ae3547d67a038bdaa84f7e549da8318d48aab72b4b30ecc0c588696305fce3e2c4657f409463f6a05c52bf641f2684460f"
+                    }
+                ]
+            }
+        ],
+        "culprits": [],
+        "faults": [
+            {
+                "target": "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
+                "vote": false,
+                "key": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",
+                "signature": "0x826a4bbe7ee3400ffe0f64bdd87ae65aa50d98f48ad6a60da927636cd430ae5d3914d3bc6b87c47c94a9cc5bef84bf30be5534e5c649fc2cd4434918a37a2301"
+            }
+        ]
+    },
+    "pre_state": {
+        "disputes": {
+            "good": [],
+            "bad": [],
+            "wonky": [],
+            "offenders": [
+                "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29"
+            ]
+        },
+        "availability": [
+            null,
+            null
+        ]
+    },
+    "output": {
+        "err": "offender_already_reported"
+    },
+    "post_state": {
+        "disputes": {
+            "good": [
+                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
+            ],
+            "bad": [],
+            "wonky": [],
+            "offenders": [
+                "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29"
+            ]
+        },
+        "availability": [
+            null,
+            null
+        ]
+    }
+}

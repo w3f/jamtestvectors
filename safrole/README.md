@@ -1,4 +1,4 @@
-# Safrole Test Vectors
+# Safrole STF Test Vectors
 
 We offer two types of test vectors:
 

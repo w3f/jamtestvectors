@@ -1,0 +1,37 @@
+{
+    "input": {
+        "verdicts": [],
+        "culprits": [],
+        "faults": []
+    },
+    "pre_state": {
+        "disputes": {
+            "good": [],
+            "bad": [],
+            "wonky": [],
+            "offenders": []
+        },
+        "availability": [
+            null,
+            null
+        ]
+    },
+    "output": {
+        "ok": {
+            "verdicts_mark": [],
+            "offenders_mark": []
+        }
+    },
+    "post_state": {
+        "disputes": {
+            "good": [],
+            "bad": [],
+            "wonky": [],
+            "offenders": []
+        },
+        "availability": [
+            null,
+            null
+        ]
+    }
+}

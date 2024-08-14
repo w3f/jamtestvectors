@@ -3,3 +3,4 @@
 ## Index
 
 - [Safrole](./safrole/README.md)
+- [Disputes](./disputes/README.md)
