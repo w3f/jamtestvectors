@@ -1,0 +1,139 @@
+-- Syntax for Disputes STF test vectors
+
+DisputesModule DEFINITIONS ::= BEGIN
+
+-- Define constants
+IMPORTS validators-count, epoch-length, core-count, validators-super-majority FROM Constants;
+
+-- Define basic types
+U8 ::= INTEGER (0..255)
+U16 ::= INTEGER (0..65535)
+U32 ::= INTEGER (0..4294967295)
+
+-- Application specific types
+EpochIndex ::= U32
+
+-- Define fixed-length arrays
+ByteArray32 ::= SEQUENCE (SIZE(32)) OF U8
+ByteArray64 ::= SEQUENCE (SIZE(64)) OF U8
+
+OpaqueHash ::= ByteArray32
+
+Ed25519Key ::= ByteArray32
+BlsKey ::= SEQUENCE (SIZE(144)) OF U8
+BandersnatchKey ::= ByteArray32
+
+Ed25519Signature ::= ByteArray64
+
+-- Work report hash
+WorkReportHash ::= ByteArray32
+
+-- Recorded disputes sequences and offenders (already judged)
+Disputes ::= SEQUENCE {
+    good SEQUENCE OF WorkReportHash,
+    bad SEQUENCE OF WorkReportHash,
+    wonky SEQUENCE OF WorkReportHash,
+    offenders SEQUENCE OF WorkReportHash
+}
+
+AvailabilityAssignment ::= SEQUENCE {
+    dummy-work-report SEQUENCE (SIZE(269)) OF U8,
+    timeout U32
+}
+
+-- Currently `asn1tools` doesn't support anonymous CHOICE/SEQUENCE items.
+-- AvailabilityAssignmentEntry ::= CHOICE {
+--     AvailabilityAssignment,
+--     NULL
+-- }
+
+AvailabilityAssignmentEntry ::= NULL
+
+AvailabilityAssignments ::= SEQUENCE SIZE(core-count) OF AvailabilityAssignmentEntry
+
+DisputeJudgement ::= SEQUENCE {
+    vote BOOLEAN,
+    index U16,
+    signature Ed25519Signature
+}
+
+DisputeJudgements ::= SEQUENCE SIZE(validators-super-majority) OF DisputeJudgement
+
+DisputeVerdict ::= SEQUENCE {
+    target WorkReportHash,
+    age EpochIndex,
+    votes DisputeJudgements
+}
+
+DisputeCulpritProof ::= SEQUENCE {
+    target    WorkReportHash,
+    key       Ed25519Key,
+    signature Ed25519Signature
+}
+
+DisputeFaultProof ::= SEQUENCE {
+    target    WorkReportHash,
+    vote      BOOLEAN,
+    key       Ed25519Key,
+    signature Ed25519Signature
+}
+
+DisputesXt ::= SEQUENCE {
+    verdicts  SEQUENCE OF DisputeVerdict,
+    culprits  SEQUENCE OF DisputeCulpritProof,
+    faults    SEQUENCE OF DisputeFaultProof
+}
+
+-- Output markers.
+DisputesOutputMarks ::= SEQUENCE {
+    verdicts-mark   SEQUENCE OF WorkReportHash,
+    offenders-mark  Ed25519Key
+}
+
+-- State relevant to Disputes STF
+State ::= SEQUENCE {
+    disputes      Disputes,
+    availability  AvailabilityAssignments
+}
+
+-- Input for Disputes STF.
+Input ::= DisputesXt
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    already-judged (0),
+    bad-vote-split (1),
+    verdicts-not-sorted-unique (2),
+    judgements-not-sorted-unique (3),
+    culprits-not-sorted-unique (4),
+    faults-not-sorted-unique (5),
+    not-enough-culprits (6),
+    not-enough-faults (7),
+    culprits-verdict-not-bad (8),
+    fault-verdict-wrong (9),
+    offender-already-reported (10)
+}
+
+-- Output from Disputes STF
+Output ::= CHOICE {
+    -- Markers
+    ok    DisputesOutputMarks,
+    -- Error code (not specified in the Graypaper)
+    err   ErrorCode
+}
+
+-- Disputes STF execution dump
+Testcase ::= SEQUENCE {
+    -- Input.
+    input Input,
+    -- Pre-execution state.
+    pre-state State,
+    -- Output.
+    output Output,
+    -- Post-execution state.
+    post-state State
+}
+
+END
