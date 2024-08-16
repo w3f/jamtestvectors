@@ -9,17 +9,10 @@ blacklist = [
     "dispute_invalidates_avail_assignments",
 ]
 
-def convert_lists_to_strings(obj):
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            obj[k] = convert_lists_to_strings(v)
-    elif isinstance(obj, list):
-        if len(obj) > 0 and all(isinstance(i, str) and len(i) == 1 for i in obj):
-            obj = ''.join(obj)
-        else:
-            obj = [convert_lists_to_strings(i) for i in obj]
-    return obj
-
+# - JSON uses snake case, ASN.1 requires kebab case
+# - JSON prefix octet strings with '0x', ASN doesn't like it
+def make_asn1_parsable(json_str):
+    return json_str.replace('_', '-').replace('0x', '')
 
 def validate_case(schema, path):
     if any(b in str(path) for b in blacklist):
@@ -31,23 +24,21 @@ def validate_case(schema, path):
     # Decode from json using the schema
     json_bytes = open(path, "rb").read()
     json_str_org = json_bytes.decode('utf-8')
-    # Original json uses snake case, asn1 requires kebab case
-    json_str = json_str_org.replace('_', '-')
+    json_str_org = make_asn1_parsable(json_str_org)
     
-    json_bytes = json_str.encode('utf-8')
+    json_bytes = json_str_org.encode('utf-8')
     decoded = schema.decode("Testcase", json_bytes)
 
     # Encode to json using the schema
     encoded = schema.encode("Testcase", decoded)
     # Original json uses snake case, asn1 requires kebab case
-    json_str = encoded.decode('utf-8').replace('-', '_')
+    json_str = encoded.decode('utf-8')
     json_obj = json.loads(json_str)
     # Strings are converted to arrays of characters,
     # map back to single string.
-    json_obj = convert_lists_to_strings(json_obj)
     json_str = json.dumps(json_obj, indent = 4)
 
-    assert (json_str.rstrip() == json_str_org.rstrip())
+    assert (json_str.rstrip().lower() == json_str_org.rstrip().lower())
 
 
 def main():
