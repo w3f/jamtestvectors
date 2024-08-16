@@ -27,10 +27,10 @@ def validate_case(schema, path):
     json_str_org = make_asn1_parsable(json_str_org)
     
     json_bytes = json_str_org.encode('utf-8')
-    decoded = schema.decode("Testcase", json_bytes, check_constraints=True)
+    decoded = schema.decode("TestCase", json_bytes, check_constraints=True)
 
     # Encode to json using the schema
-    encoded = schema.encode("Testcase", decoded, check_constraints=True)
+    encoded = schema.encode("TestCase", decoded, check_constraints=True)
     # Original json uses snake case, asn1 requires kebab case
     json_str = encoded.decode('utf-8')
     json_obj = json.loads(json_str)

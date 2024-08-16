@@ -120,7 +120,7 @@ Output ::= CHOICE {
 }
 
 -- Disputes STF execution dump
-Testcase ::= SEQUENCE {
+TestCase ::= SEQUENCE {
     -- Input.
     input Input,
     -- Pre-execution state.
