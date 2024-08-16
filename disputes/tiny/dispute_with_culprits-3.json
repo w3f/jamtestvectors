@@ -48,13 +48,13 @@
         "faults": []
     },
     "pre_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null
         ]
@@ -63,15 +63,15 @@
         "err": "culprits_not_sorted_unique"
     },
     "post_state": {
-        "disputes": {
-            "good": [],
-            "bad": [
+        "psi": {
+            "psi_g": [],
+            "psi_b": [
                 "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
             ],
-            "wonky": [],
-            "offenders": []
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null
         ]

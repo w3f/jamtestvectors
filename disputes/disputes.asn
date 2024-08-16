@@ -23,14 +23,6 @@ Ed25519Signature ::= ByteArray64
 -- Work report hash
 WorkReportHash ::= ByteArray32
 
--- Recorded disputes sequences and offenders (already judged)
-Disputes ::= SEQUENCE {
-    good SEQUENCE OF WorkReportHash,
-    bad SEQUENCE OF WorkReportHash,
-    wonky SEQUENCE OF WorkReportHash,
-    offenders SEQUENCE OF Ed25519Key
-}
-
 AvailabilityAssignment ::= SEQUENCE {
     dummy-work-report OCTET STRING (SIZE(269)),
     timeout U32
@@ -85,10 +77,22 @@ DisputesOutputMarks ::= SEQUENCE {
     offenders-mark  SEQUENCE OF Ed25519Key
 }
 
+-- Recorded disputes sequences and offenders (already judged)
+Disputes ::= SEQUENCE {
+    -- Good verdicts set
+    psi-g  SEQUENCE OF WorkReportHash,
+    -- Bad verdicts set
+    psi-b  SEQUENCE OF WorkReportHash,
+    -- Wonky verdicts set
+    psi-w  SEQUENCE OF WorkReportHash,
+    -- Offenders set
+    psi-o  SEQUENCE OF Ed25519Key
+}
+
 -- State relevant to Disputes STF
 State ::= SEQUENCE {
-    disputes      Disputes,
-    availability  AvailabilityAssignments
+    psi  Disputes,
+    rho  AvailabilityAssignments
 }
 
 -- Input for Disputes STF.

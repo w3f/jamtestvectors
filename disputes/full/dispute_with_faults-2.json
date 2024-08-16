@@ -3434,13 +3434,13 @@
         ]
     },
     "pre_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null,
             null,
@@ -3793,17 +3793,17 @@
         }
     },
     "post_state": {
-        "disputes": {
-            "good": [
+        "psi": {
+            "psi_g": [
                 "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
             ],
-            "bad": [],
-            "wonky": [],
-            "offenders": [
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": [
                 "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29"
             ]
         },
-        "availability": [
+        "rho": [
             null,
             null,
             null,

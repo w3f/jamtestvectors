@@ -86,13 +86,13 @@
         ]
     },
     "pre_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null
         ]
@@ -101,13 +101,13 @@
         "err": "verdicts_not_sorted_unique"
     },
     "post_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null
         ]

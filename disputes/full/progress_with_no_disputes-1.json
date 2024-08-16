@@ -5,13 +5,13 @@
         "faults": []
     },
     "pre_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null,
             null,
@@ -362,13 +362,13 @@
         }
     },
     "post_state": {
-        "disputes": {
-            "good": [],
-            "bad": [],
-            "wonky": [],
-            "offenders": []
+        "psi": {
+            "psi_g": [],
+            "psi_b": [],
+            "psi_w": [],
+            "psi_o": []
         },
-        "availability": [
+        "rho": [
             null,
             null,
             null,
