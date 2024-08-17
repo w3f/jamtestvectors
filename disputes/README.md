@@ -22,7 +22,44 @@ A map for errors codes semantics used by for the test vectors is given in the AS
 
 ## Tiny Vectors
 
-TODO: describe
+- [progress_with_no_verdicts-1](tiny/progress_with_no_verdicts.json) 🟢 
+  - No verdicts, nothing special happens
+
+- [progress_with_verdicts-1](tiny/progress_with_verdicts-1.json) 🔴
+  - Not sorted work reports within a verdict
+
+- [progress_with_verdicts-2](tiny/progress_with_verdicts-2.json) 🔴
+  - Not unique votes within a verdict
+
+- [progress_with_verdicts-3](tiny/progress_with_verdicts-3.json)
+- [progress_with_verdicts-4](tiny/progress_with_verdicts-4.json)
+- [progress_with_verdicts-5](tiny/progress_with_verdicts-5.json)
+- [progress_with_verdicts-6](tiny/progress_with_verdicts-6.json)
+
+- [progress_with_faults-1](tiny/progress_with_faults-1.json)
+- [progress_with_faults-2](tiny/progress_with_faults-2.json)
+- [progress_with_faults-3](tiny/progress_with_faults-3.json)
+- [progress_with_faults-4](tiny/progress_with_faults-4.json)
+- [progress_with_faults-5](tiny/progress_with_faults-5.json)
+- [progress_with_faults-6](tiny/progress_with_faults-6.json)
+- [progress_with_faults-7](tiny/progress_with_faults-7.json)
+
+- [progress_with_culprits-1](tiny/progress_with_culprits-1.json)
+- [progress_with_culprits-2](tiny/progress_with_culprits-2.json)
+- [progress_with_culprits-3](tiny/progress_with_culprits-3.json)
+- [progress_with_culprits-4](tiny/progress_with_culprits-4.json)
+- [progress_with_culprits-5](tiny/progress_with_culprits-5.json)
+- [progress_with_culprits-6](tiny/progress_with_culprits-6.json)
+- [progress_with_culprits-7](tiny/progress_with_culprits-7.json)
+
+- [progress_invalidates_avail_assignments-1](tiny/progress_invalidates_avail_assignments-1.json)
+
+- [progress_with_bad_signatures-1](tiny/progress_with_bad_signatures-1.json)
+- [progress_with_bad_signatures-2](tiny/progress_with_bad_signatures-2.json)
+
+
+- [progress_with_verdict_signatures_from_previous_set-1](tiny/progress_with_verdict_signatures_from_previous_set-1.json)
+- [progress_with_verdict_signatures_from_previous_set-2](tiny/progress_with_verdict_signatures_from_previous_set-2.json)
 
 ## Full Vectors
 
