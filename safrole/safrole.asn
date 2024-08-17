@@ -11,7 +11,7 @@ U32 ::= INTEGER (0..4294967295)
 
 -- Define common types
 
-Timeslot ::= U32
+TimeSlot ::= U32
 
 ByteArray32 ::= OCTET STRING (SIZE(32))
 OpaqueHash ::= ByteArray32
@@ -27,26 +27,6 @@ TicketsBodies ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
 TicketsOrKeys ::= CHOICE {
     tickets TicketsBodies,
     keys EpochKeys 
-}
-
--- State transition function execution error.
--- Error codes **are not specified** in the the Graypaper.
--- Feel free to ignore the actual value.
-CustomErrorCode ::= ENUMERATED {
-    -- Timeslot value must be strictly monotonic.
-    bad-slot (0),
-    -- Received a ticket while in epoch's tail.
-    unexpected-ticket (1),
-    -- Tickets must be sorted.
-    bad-ticket-order (2),
-    -- Invalid ticket ring proof.
-    bad-ticket-proof (3),
-    -- Invalid ticket attempt value.
-    bad-ticket-attempt (4),
-    -- Reserved
-    reserved (5),
-    -- Found a ticket duplicate.
-    duplicate-ticket (6)
 }
 
 -- Define structures
@@ -87,7 +67,7 @@ OutputMarks ::= SEQUENCE {
 -- State relevant to Safrole protocol
 State ::= SEQUENCE {
     -- Most recent block's timeslot.
-    tau Timeslot,
+    tau TimeSlot,
 
     -- Entropy accumulator and epochal randomness.
     eta SEQUENCE (SIZE(4)) OF OpaqueHash,
@@ -114,16 +94,39 @@ State ::= SEQUENCE {
     gamma-z OCTET STRING (SIZE(144))
 }
 
+-- Safrole extrinsic
+SafroleXt ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+CustomErrorCode ::= ENUMERATED {
+    -- Timeslot value must be strictly monotonic.
+    bad-slot (0),
+    -- Received a ticket while in epoch's tail.
+    unexpected-ticket (1),
+    -- Tickets must be sorted.
+    bad-ticket-order (2),
+    -- Invalid ticket ring proof.
+    bad-ticket-proof (3),
+    -- Invalid ticket attempt value.
+    bad-ticket-attempt (4),
+    -- Reserved
+    reserved (5),
+    -- Found a ticket duplicate.
+    duplicate-ticket (6)
+}
+
 -- Input for Safrole protocol.
 Input ::= SEQUENCE {
-    -- Current slot.
-    slot Timeslot,
-    -- Per block entropy (originated from block entropy source VRF).
+    -- Current time slot (as stored within the block header)
+    slot TimeSlot,
+    -- Per block entropy (originated from per block entropy source VRF output)
     entropy OpaqueHash,
-    -- Offenders
+    -- Offenders sequence
     offenders SEQUENCE OF Ed25519Key,
-    -- Safrole extrinsic.
-    extrinsic SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+    -- Safrole extrinsic
+    extrinsic SafroleXt
 }
 
 -- Output from Safrole protocol
