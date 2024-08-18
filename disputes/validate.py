@@ -6,7 +6,7 @@ import json
 import sys
 
 blacklist = [
-    "dispute_invalidates_avail_assignments",
+    "progress_invalidates_avail_assignments",
 ]
 
 # - JSON uses snake case, ASN.1 requires kebab case
