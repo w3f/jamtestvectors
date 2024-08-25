@@ -5,10 +5,31 @@ import asn1tools
 import json
 import sys
 
+# Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
+def tweak_sequence_options(state_obj):
+    for entry in state_obj['beta']:
+        peaks = entry['mmr']['peaks']
+        for i in range(len(peaks)):
+            if peaks[i] is None:
+                peaks[i] = {"none": None}
+            else:
+                peaks[i] = {"some": peaks[i]}
+    return state_obj
+
+
 # - JSON uses snake case, ASN.1 requires kebab case
 # - JSON prefix octet strings with '0x', ASN doesn't like it
 def make_asn1_parsable(json_str):
-    return json_str.replace('_', '-').replace('0x', '')
+    json_str = json_str.replace('_', '-').replace('0x', '')
+
+    # tweak sequence of options
+    json_obj = json.loads(json_str)
+    json_obj['pre-state'] = tweak_sequence_options(json_obj['pre-state'])
+    json_obj['post-state'] = tweak_sequence_options(json_obj['post-state'])
+    json_str = json.dumps(json_obj, indent=4)
+
+    return json_str
+
 
 def validate_case(schema, path):
     print("* Validating: ", path)

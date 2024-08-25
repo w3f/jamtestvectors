@@ -8,13 +8,13 @@ IMPORTS core-count FROM Constants;
 -- Define basic types
 Hash ::= OCTET STRING(SIZE(32))
 
-MaybeHash ::= CHOICE {
+MmrPeak ::= CHOICE {
     none [0] NULL,
     some [1] Hash
 }
 
-MMR ::= SEQUENCE {
-    peaks    SEQUENCE OF MaybeHash
+Mmr ::= SEQUENCE {
+    peaks  SEQUENCE OF MmrPeak
 }
 
 Reports ::= SEQUENCE OF Hash
@@ -22,7 +22,7 @@ Reports ::= SEQUENCE OF Hash
 -- Recorded disputes sequences and offenders
 BlockInfo ::= SEQUENCE {
     header-hash    Hash,
-    mmr            MMR,
+    mmr            Mmr,
     state-root     Hash,
     reported       Reports
 }
