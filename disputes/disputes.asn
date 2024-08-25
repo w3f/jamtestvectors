@@ -40,17 +40,13 @@ AvailabilityAssignment ::= SEQUENCE {
     timeout U32
 }
 
--- Currently `asn1tools` doesn't support anonymous CHOICE/SEQUENCE items
--- AvailabilityAssignmentEntry ::= CHOICE {
---     AvailabilityAssignment,
---     NULL
--- }
-
--- Workaround (see above)
-AvailabilityAssignmentEntry ::= NULL
+AvailabilityAssignmentItem ::= CHOICE {
+    none [0] NULL,
+    some [1] AvailabilityAssignment
+}
 
 -- Availability cores assignments
-AvailabilityAssignments ::= SEQUENCE SIZE(core-count) OF AvailabilityAssignmentEntry
+AvailabilityAssignments ::= SEQUENCE SIZE(core-count) OF AvailabilityAssignmentItem
 
 -- Validator judgement for a dispute
 DisputeJudgement ::= SEQUENCE {
