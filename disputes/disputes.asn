@@ -91,7 +91,6 @@ DisputesXt ::= SEQUENCE {
 
 -- Output markers
 DisputesOutputMarks ::= SEQUENCE {
-    verdicts-mark   SEQUENCE OF WorkReportHash,
     offenders-mark  SEQUENCE OF Ed25519Key
 }
 

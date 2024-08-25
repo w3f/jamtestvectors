@@ -137,9 +137,6 @@
     },
     "output": {
         "ok": {
-            "verdicts_mark": [
-                "0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35"
-            ],
             "offenders_mark": []
         }
     },
