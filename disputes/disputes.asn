@@ -138,7 +138,8 @@ ErrorCode ::= ENUMERATED {
     fault-verdict-wrong (9),
     offender-already-reported (10),
     bad-judgement-age (11),
-    bad-signature (12)
+    bad-validator-index (12),
+    bad-signature (13)
 }
 
 -- Output from Disputes STF

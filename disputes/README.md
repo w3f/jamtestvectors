@@ -89,7 +89,7 @@ tests that verify the invalidation of assignments following a verdict.
   - Fault offender already in the offenders list
 
 - [progress_with_faults-7](tiny/progress_with_faults-7.json) 🔴
-  - Auditor included as culprit following a verdict in his favor
+  - Auditor marked as offender, but vote matches the verdict.
 
 - [progress_invalidates_avail_assignments-1](tiny/progress_invalidates_avail_assignments-1.json) 🟢
   - Invalidation of availability assignments
