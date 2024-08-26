@@ -27,7 +27,7 @@
                 "mmr": {
                     "peaks": [
                         null,
-                        "0x3d326f6c4636fb79e9c8196de65fb8ec37baee77fc1e558c8e526ae8af23b4f4"
+                        "0x0df4132e2561139036349d9f883109d15cabdba60a27d93d8b434302282cb9ca"
                     ]
                 },
                 "state_root": "0xf9ca27d76e5daadae15ca8e36f05a234dcb19855d53edb66878dc857a678751c",
@@ -40,7 +40,7 @@
                 "mmr": {
                     "peaks": [
                         "0xe99db82a25081fa6ed4b283161bf7b33439689db613124a2766acc9b4c5431e9",
-                        "0x3d326f6c4636fb79e9c8196de65fb8ec37baee77fc1e558c8e526ae8af23b4f4"
+                        "0x0df4132e2561139036349d9f883109d15cabdba60a27d93d8b434302282cb9ca"
                     ]
                 },
                 "state_root": "0x47163fc0722d6b6e83437f1345a3f62e1dfe02e7b41d39cb4ff2a6f3bd120b21",
@@ -52,7 +52,7 @@
                     "peaks": [
                         null,
                         null,
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x09f858e15ae2d3a820166135d850b46f7d6f5df2719f96c5546007388811334a",
@@ -64,7 +64,7 @@
                     "peaks": [
                         "0xc01cfd7b7f663d52d2d1490b359e0ad1b174dba145642a11babc83f0bc8139a8",
                         null,
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x99b3dd375039f0f03844625d3cde24d288d6b2e21fbe533646d91b1a5fb12719",
@@ -75,8 +75,8 @@
                 "mmr": {
                     "peaks": [
                         null,
-                        "0xa0cf0eae673f8a99d7dc282f32d2ea46f6ce6bd517e17bb3f73e9012e7383444",
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x130c2389504c2eec91b58c0a59a298c756c71b8f02e540fb7ab86e35b32c0b47",
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0xcfa88eb0966a61f0e7fffed57f7b004a4fffc51f9b40b6ae68db08ad5a61a39d",
@@ -87,8 +87,8 @@
                 "mmr": {
                     "peaks": [
                         "0xf986bfeff7411437ca6a23163a96b5582e6739f261e697dc6f3c05a1ada1ed0c",
-                        "0xa0cf0eae673f8a99d7dc282f32d2ea46f6ce6bd517e17bb3f73e9012e7383444",
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x130c2389504c2eec91b58c0a59a298c756c71b8f02e540fb7ab86e35b32c0b47",
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x8a812d298cde0b1d69bc0a2b32a7a36eb5dfff3dd7b20feca8e7087b447eee41",
@@ -101,7 +101,7 @@
                         null,
                         null,
                         null,
-                        "0x8755e286d33a85a1d5ddea9dfd7e1a493952c7843b1b263df1a81380a3f78828"
+                        "0x623737996d94c0b238b3aefde406faa08a784f16099bf6e944ff02c8fba5ed95"
                     ]
                 },
                 "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -119,7 +119,7 @@
                 "mmr": {
                     "peaks": [
                         null,
-                        "0x3d326f6c4636fb79e9c8196de65fb8ec37baee77fc1e558c8e526ae8af23b4f4"
+                        "0x0df4132e2561139036349d9f883109d15cabdba60a27d93d8b434302282cb9ca"
                     ]
                 },
                 "state_root": "0xf9ca27d76e5daadae15ca8e36f05a234dcb19855d53edb66878dc857a678751c",
@@ -132,7 +132,7 @@
                 "mmr": {
                     "peaks": [
                         "0xe99db82a25081fa6ed4b283161bf7b33439689db613124a2766acc9b4c5431e9",
-                        "0x3d326f6c4636fb79e9c8196de65fb8ec37baee77fc1e558c8e526ae8af23b4f4"
+                        "0x0df4132e2561139036349d9f883109d15cabdba60a27d93d8b434302282cb9ca"
                     ]
                 },
                 "state_root": "0x47163fc0722d6b6e83437f1345a3f62e1dfe02e7b41d39cb4ff2a6f3bd120b21",
@@ -144,7 +144,7 @@
                     "peaks": [
                         null,
                         null,
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x09f858e15ae2d3a820166135d850b46f7d6f5df2719f96c5546007388811334a",
@@ -156,7 +156,7 @@
                     "peaks": [
                         "0xc01cfd7b7f663d52d2d1490b359e0ad1b174dba145642a11babc83f0bc8139a8",
                         null,
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x99b3dd375039f0f03844625d3cde24d288d6b2e21fbe533646d91b1a5fb12719",
@@ -167,8 +167,8 @@
                 "mmr": {
                     "peaks": [
                         null,
-                        "0xa0cf0eae673f8a99d7dc282f32d2ea46f6ce6bd517e17bb3f73e9012e7383444",
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x130c2389504c2eec91b58c0a59a298c756c71b8f02e540fb7ab86e35b32c0b47",
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0xcfa88eb0966a61f0e7fffed57f7b004a4fffc51f9b40b6ae68db08ad5a61a39d",
@@ -179,8 +179,8 @@
                 "mmr": {
                     "peaks": [
                         "0xf986bfeff7411437ca6a23163a96b5582e6739f261e697dc6f3c05a1ada1ed0c",
-                        "0xa0cf0eae673f8a99d7dc282f32d2ea46f6ce6bd517e17bb3f73e9012e7383444",
-                        "0xab5d08f8d040ab194178a4025a3a229f86caee04156b61fa418af8f95248f4d6"
+                        "0x130c2389504c2eec91b58c0a59a298c756c71b8f02e540fb7ab86e35b32c0b47",
+                        "0x5daa9c10556f85663fe4d7155ec98e0d2d891eea3dc2f59ddfb56a8683781ca4"
                     ]
                 },
                 "state_root": "0x8a812d298cde0b1d69bc0a2b32a7a36eb5dfff3dd7b20feca8e7087b447eee41",
@@ -193,7 +193,7 @@
                         null,
                         null,
                         null,
-                        "0x8755e286d33a85a1d5ddea9dfd7e1a493952c7843b1b263df1a81380a3f78828"
+                        "0x623737996d94c0b238b3aefde406faa08a784f16099bf6e944ff02c8fba5ed95"
                     ]
                 },
                 "state_root": "0xa6aae15dfd6389e8f18e72a9dd6c03071e73c9a7f47df27415aaca0de068cb50",
@@ -208,7 +208,7 @@
                         "0xa983417440b618f29ed0b7fa65212fce2d363cb2b2c18871a05c4f67217290b0",
                         null,
                         null,
-                        "0x8755e286d33a85a1d5ddea9dfd7e1a493952c7843b1b263df1a81380a3f78828"
+                        "0x623737996d94c0b238b3aefde406faa08a784f16099bf6e944ff02c8fba5ed95"
                     ]
                 },
                 "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
