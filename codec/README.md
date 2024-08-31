@@ -5,16 +5,23 @@ their content.
 
 They are provided for a tiny validator set (6), epoch duration (12) and core count (2).
 
-## Comparison with SCALE
+## Variable-Length encoding
 
-The JAM Codec closely resembles the SCALE encoding format, with the primary
-difference being in the encoding of *"compact"* integers. Currently, this
-difference only applies to the encoding of the length of variable-length
-sequences.
+The JAM Codec is very similar to the SCALE encoding format, with the
+main distinction lying in the compact encoding of integers
+
+We use this variable-length encoding exclusively for the prefix of
+variable-length sequences.
+
+Although this may not be explicitly stated for some internal types within the
+encoded structures, we follow the guideline from the GP that immediately follows
+the variable-length definition. The relevant sentence is as follows:
+
+> *Note that at present this is utilized only in encoding the length prefix of variable-length sequences.*
 
 For detailed information, please refer to Appendix C of the GP.
 
-## ⚠️ Correctness ⚠️
+## Semantic Correctness
 
 These test vectors are designed to be syntactically correct only.
 
@@ -27,17 +34,6 @@ handling of the data structures required by the protocol.
 
 Protocol logic constraints are validated through dedicated STF test vectors and
 any other future vectors focused on logic testing.
-
-## Variable-length integers
-
-We provide variable-length encoding solely for the prefix of variable-length
-sequences.
-
-Although this may not be explicitly stated for some internal types within the
-encoded structures, we follow the guideline from the GP that immediately follows
-the variable-length definition. The relevant sentence is as follows:
-
-> *Note that at present this is utilized only in encoding the length prefix of variable-length sequences.*
 
 ## Vectors
 
