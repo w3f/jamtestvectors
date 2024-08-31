@@ -3,6 +3,8 @@
 The test vectors are provided with a corresponding JSON file that describes
 their content.
 
+They are provided for a tiny validator set (6), epoch duration (12) and core count (2).
+
 ## Comparison with SCALE
 
 The JAM Codec closely resembles the SCALE encoding format, with the primary
@@ -12,7 +14,7 @@ sequences.
 
 For detailed information, please refer to Appendix C of the GP.
 
-## ⚠️ Correctness
+## ⚠️ Correctness ⚠️
 
 These test vectors are designed to be syntactically correct only.
 

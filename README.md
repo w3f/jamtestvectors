@@ -2,4 +2,5 @@
 
 ## Index
 
+- [Codec](./codec/README.md)
 - [Safrole](./safrole/README.md)
