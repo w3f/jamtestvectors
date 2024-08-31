@@ -28,6 +28,17 @@ handling of the data structures required by the protocol.
 Protocol logic constraints are validated through dedicated STF test vectors and
 any other future vectors focused on logic testing.
 
+## Variable-length integers
+
+We provide variable-length encoding solely for the prefix of variable-length
+sequences.
+
+Although this may not be explicitly stated for some internal types within the
+encoded structures, we follow the guideline from the GP that immediately follows
+the variable-length definition. The relevant sentence is as follows:
+
+> *Note that at present this is utilized only in encoding the length prefix of variable-length sequences.*
+
 ## Vectors
 
 - [refine_context](data/refine_context.json)
