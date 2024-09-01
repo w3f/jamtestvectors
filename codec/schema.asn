@@ -16,7 +16,7 @@ avail-bitfield-bytes INTEGER ::= 1
 U8 ::= INTEGER (0..255)
 U16 ::= INTEGER(0..65535)
 U32 ::= INTEGER (0..4294967295)
-I64 ::= INTEGER(-9223372036854775808..9223372036854775807)
+U64 ::= INTEGER (0..18446744073709551615)
 
 ByteSequence ::= OCTET STRING
 ByteArray32 ::= OCTET STRING (SIZE(32))
@@ -27,7 +27,7 @@ OpaqueHash ::= ByteArray32
 
 TimeSlot ::= U32
 ServiceId ::= U32
-Gas ::= I64
+Gas ::= U64
 ValidatorIndex ::= U16
 CoreIndex ::= U16
 
