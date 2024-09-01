@@ -5,6 +5,8 @@ their content.
 
 They are provided for a tiny validator set (6), epoch duration (12) and core count (2).
 
+Both binary and json formats conform to the provided ASN.1 [schema](./schema.asn).
+
 ## Variable-Length encoding
 
 The JAM Codec is very similar to the SCALE encoding format, with the
