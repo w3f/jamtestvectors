@@ -8,7 +8,7 @@ core-count INTEGER ::= 2
 
 -- (validators-count * 2/3 + 1)
 validators-super-majority INTEGER ::= 5
--- (core-count + 1) / 8
+-- (core-count + 7) / 8
 avail-bitfield-bytes INTEGER ::= 1
 
 -- Generic Primitive Types
