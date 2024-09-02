@@ -53,7 +53,7 @@ RefineContext ::= SEQUENCE {
 
 ImportSpec ::= SEQUENCE {
     tree-root OpaqueHash,
-    index U32
+    index U16
 }
 
 ExtrinsicSpec ::= SEQUENCE {
