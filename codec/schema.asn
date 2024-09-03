@@ -4,17 +4,17 @@ TypesModule DEFINITIONS ::= BEGIN
 
 validators-count INTEGER ::= 6
 epoch-length INTEGER ::= 12
-core-count INTEGER ::= 2
+cores-count INTEGER ::= 2
 
 -- (validators-count * 2/3 + 1)
 validators-super-majority INTEGER ::= 5
--- (core-count + 7) / 8
+-- (cores-count + 7) / 8
 avail-bitfield-bytes INTEGER ::= 1
 
 -- Generic Primitive Types
 
 U8 ::= INTEGER (0..255)
-U16 ::= INTEGER(0..65535)
+U16 ::= INTEGER (0..65535)
 U32 ::= INTEGER (0..4294967295)
 U64 ::= INTEGER (0..18446744073709551615)
 
@@ -30,6 +30,7 @@ ServiceId ::= U32
 Gas ::= U64
 ValidatorIndex ::= U16
 CoreIndex ::= U16
+TicketAttempt ::= INTEGER (0..1)
 
 BandersnatchKey ::= ByteArray32
 Ed25519Key ::= ByteArray32
@@ -81,7 +82,7 @@ WorkPackage ::= SEQUENCE {
     auth-code-host ServiceId,
     authorizer Authorizer,
     context RefineContext,
-    items SEQUENCE OF WorkItem
+    items SEQUENCE (SIZE(1..4)) OF WorkItem
 }
 
 -- Work Report
@@ -115,22 +116,22 @@ WorkReport ::= SEQUENCE {
     core-index CoreIndex,
     authorizer-hash OpaqueHash,
     auth-output ByteSequence,
-    results SEQUENCE OF WorkResult
+    results SEQUENCE (SIZE(1..4)) OF WorkResult
 }
 
 -- Header
 
 EpochMark ::= SEQUENCE {
     entropy OpaqueHash,
-    validators SEQUENCE SIZE(validators-count) OF BandersnatchKey
+    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchKey
 }
 
 TicketBody ::= SEQUENCE {
     id OpaqueHash,
-    attempt U8
+    attempt TicketAttempt
 }
 
-TicketsMark ::= SEQUENCE SIZE(epoch-length) OF TicketBody
+TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
 
 Header ::= SEQUENCE {
     parent OpaqueHash,
@@ -148,11 +149,11 @@ Header ::= SEQUENCE {
 -- Tickets
 
 TicketEnvelope ::= SEQUENCE {
-    attempt U8,
+    attempt TicketAttempt,
     signature BandersnatchRingSignature
 }
 
-TicketsExtrinsic ::= SEQUENCE OF TicketEnvelope
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 
 -- Disputes
 
@@ -165,7 +166,7 @@ Judgement ::= SEQUENCE {
 Verdict ::= SEQUENCE {
     target OpaqueHash,
     age U32,
-    votes SEQUENCE SIZE(validators-super-majority) OF Judgement
+    votes SEQUENCE (SIZE(validators-super-majority)) OF Judgement
 }
 
 Culprit ::= SEQUENCE {
@@ -205,7 +206,7 @@ AvailAssurance ::= SEQUENCE {
     signature Ed25519Signature
 }
 
-AssurancesExtrinsic ::= SEQUENCE OF AvailAssurance
+AssurancesExtrinsic ::= SEQUENCE (SIZE(0..validators-count)) OF AvailAssurance
 
 -- Guarantees
 
@@ -220,7 +221,7 @@ ReportGuarantee ::= SEQUENCE {
     signatures SEQUENCE OF ValidatorSignature
 }
 
-GuaranteesExtrinsic ::= SEQUENCE OF ReportGuarantee
+GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 
 -- Block
 
