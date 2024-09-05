@@ -1,0 +1,68 @@
+{
+  "name": "inst_store_u32",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    305419896,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    5,
+    22,
+    7,
+    0,
+    0,
+    2,
+    225
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    305419896,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 5,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        120,
+        86,
+        52,
+        18
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}

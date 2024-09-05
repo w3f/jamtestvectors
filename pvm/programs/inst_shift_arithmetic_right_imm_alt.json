@@ -1,0 +1,53 @@
+{
+  "name": "inst_shift_arithmetic_right_imm_alt",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    6,
+    80,
+    137,
+    117,
+    0,
+    0,
+    128,
+    193
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    4026531854,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 6,
+  "expected-memory": [],
+  "expected-gas": 9998
+}
