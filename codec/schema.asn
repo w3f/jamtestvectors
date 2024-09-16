@@ -106,8 +106,8 @@ WorkResult ::= SEQUENCE {
 WorkPackageSpec ::= SEQUENCE {
     hash OpaqueHash,
     len U32,
-    root OpaqueHash,
-    segments OpaqueHash
+    erasure-root OpaqueHash,
+    exports-root OpaqueHash
 }
 
 WorkReport ::= SEQUENCE {
