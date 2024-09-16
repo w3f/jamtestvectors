@@ -133,8 +133,8 @@
                 "package_spec": {
                     "hash": "0x30466e0ae1b05dde5249872475f6beeac368fd014b5a3413ceb32d3872143284",
                     "len": 42,
-                    "root": "0x7af11fdaa717c398e223211842b41392f18df4bbc4ea0f4cfb972f19c7a64949",
-                    "segments": "0xc2fdd53ecd96faa2b4a53b5acfb113483e4b4a28d17e239824acd22fa05649b3"
+                    "erasure_root": "0x7af11fdaa717c398e223211842b41392f18df4bbc4ea0f4cfb972f19c7a64949",
+                    "exports_root": "0xe8e52949f6e4fb1d943248df48c3f2b538200fddfea22388e5e061be8ebf21a7"
                 },
                 "context": {
                     "anchor": "0xc0564c5e0de0942589df4343ad1956da66797240e2a2f2d6f8116b5047768986",
