@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EC vector",
+  "description": "Test vector for erasure coding",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "contentEncoding": "base16"
+    },
+    "page_proofs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "contentEncoding": "base16"
+      }
+    },
+    "segments_root": {
+      "type": "string",
+      "contentEncoding": "base16"
+    }
+  },
+  "additionalProperties": false
+}
