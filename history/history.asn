@@ -1,0 +1,60 @@
+-- Syntax for Blocks History STF test vectors
+
+HistoryModule DEFINITIONS ::= BEGIN
+
+-- Define constants
+IMPORTS core-count FROM Constants;
+
+-- Define basic types
+Hash ::= OCTET STRING(SIZE(32))
+
+MmrPeak ::= CHOICE {
+    none [0] NULL,
+    some [1] Hash
+}
+
+Mmr ::= SEQUENCE {
+    peaks  SEQUENCE OF MmrPeak
+}
+
+Reports ::= SEQUENCE OF Hash
+
+-- Recorded disputes sequences and offenders
+BlockInfo ::= SEQUENCE {
+    header-hash    Hash,
+    mmr            Mmr,
+    state-root     Hash,
+    reported       Reports
+}
+
+-- State relevant to History STF
+State ::= SEQUENCE {
+    -- Blocks history
+    beta     SEQUENCE OF BlockInfo
+}
+
+-- Input for History STF.
+Input ::= SEQUENCE {
+    -- Current block's header hash
+    header-hash          Hash,
+    parent-state-root    Hash,
+    accumulate-root      Hash,
+    work-packages        Reports
+}
+
+-- Output from History STF
+Output ::= NULL
+
+-- History STF execution dump
+TestCase ::= SEQUENCE {
+    -- Input.
+    input Input,
+    -- Pre-execution state.
+    pre-state State,
+    -- Output.
+    output Output,
+    -- Post-execution state.
+    post-state State
+}
+
+END
