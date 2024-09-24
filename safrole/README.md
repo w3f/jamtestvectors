@@ -124,6 +124,12 @@ A map for errors codes semantics used by for the test vectors is given in the AS
   - With a published tickets mark, progress into next epoch.
   - Epoch mark is generated. Tickets are enacted.
 
+- [progress_enact_epoch_change_requires_padding-1](progress_enact_epoch_change_requires_padding-1.json) 🟢
+  - On epoch change we recompute the ring commitment.
+  - One of the keys to be used is invalidated (zeroed out) because it belongs to the (posterior) offenders list.
+  - One of the keys is just invalid (i.e. it can't be decoded into a valid Bandersnatch point).
+  - Both the invalid keys are replaced with the padding point during ring commitment computation.
+
 ## Full Vectors
 
 Currently, the same test cases as tiny vectors but at a larger scale.
