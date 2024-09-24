@@ -123,10 +123,10 @@ Input ::= SEQUENCE {
     slot TimeSlot,
     -- Per block entropy (originated from per block entropy source VRF output)
     entropy OpaqueHash,
-    -- Offenders sequence
-    offenders SEQUENCE OF Ed25519Key,
     -- Safrole extrinsic
-    extrinsic SafroleXt
+    extrinsic SafroleXt,
+    -- Offenders sequence
+    post-offenders SEQUENCE OF Ed25519Key
 }
 
 -- Output from Safrole protocol
