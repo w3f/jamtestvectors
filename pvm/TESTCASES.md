@@ -1368,12 +1368,16 @@ Gas consumed: 10000 -> 9998
 Initial non-zero registers:
    * r7 = 0x80000000
    * r8 = 0xffffffff
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 46 87 09                 r9 = r7 %s r8
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
