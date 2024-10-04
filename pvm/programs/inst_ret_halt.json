@@ -25,7 +25,7 @@
     2,
     19,
     0,
-    253
+    1
   ],
   "expected-status": "halt",
   "expected-regs": [

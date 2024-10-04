@@ -29,7 +29,7 @@
     0,
     0,
     128,
-    193
+    1
   ],
   "expected-status": "trap",
   "expected-regs": [
