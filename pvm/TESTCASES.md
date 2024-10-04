@@ -1486,12 +1486,16 @@ Gas consumed: 10000 -> 9999
 
 Initial non-zero registers:
    * r7 = 0xfffffff6
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 3d 79 0a                 r9 = r7 >s 10
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
@@ -1525,12 +1529,16 @@ Gas consumed: 10000 -> 9998
 
 Initial non-zero registers:
    * r7 = 0xa
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 27 79 f6                 r9 = r7 >u 0xfffffff6
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
@@ -1565,12 +1573,16 @@ Gas consumed: 10000 -> 9998
 Initial non-zero registers:
    * r7 = 0xa
    * r8 = 0xfffffff6
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 3a 87 09                 r9 = r7 <s r8
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
@@ -1605,12 +1617,16 @@ Gas consumed: 10000 -> 9998
 
 Initial non-zero registers:
    * r7 = 0xa
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 38 79 f6                 r9 = r7 <s -10
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
@@ -1645,12 +1661,16 @@ Gas consumed: 10000 -> 9998
 Initial non-zero registers:
    * r7 = 0xfffffff6
    * r8 = 0xa
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 24 87 09                 r9 = r7 <u r8
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
@@ -1685,12 +1705,16 @@ Gas consumed: 10000 -> 9998
 
 Initial non-zero registers:
    * r7 = 0xfffffff6
+   * r9 = 0xdeadbeef
 
 ```
       :                          @0
      0: 1b 79 0a                 r9 = r7 <u 0xa
      3:                          invalid
 ```
+
+Registers after execution (only changed registers):
+   * r9 = 0x0 (initially was 0xdeadbeef)
 
 Program should end with: trap
 
