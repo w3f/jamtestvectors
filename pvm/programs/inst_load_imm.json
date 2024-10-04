@@ -29,7 +29,7 @@
     190,
     173,
     222,
-    193
+    1
   ],
   "expected-status": "trap",
   "expected-regs": [

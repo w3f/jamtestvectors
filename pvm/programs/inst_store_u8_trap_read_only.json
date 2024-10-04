@@ -34,7 +34,7 @@
     0,
     0,
     1,
-    225
+    1
   ],
   "expected-status": "trap",
   "expected-regs": [

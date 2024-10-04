@@ -43,7 +43,7 @@
     222,
     17,
     25,
-    252
+    0
   ],
   "expected-status": "trap",
   "expected-regs": [
