@@ -1,0 +1,241 @@
+TypesModule DEFINITIONS ::= BEGIN
+
+-- Tiny Constants
+
+validators-count INTEGER ::= 6
+epoch-length INTEGER ::= 12
+cores-count INTEGER ::= 2
+
+-- (validators-count * 2/3 + 1)
+validators-super-majority INTEGER ::= 5
+-- (cores-count + 7) / 8
+avail-bitfield-bytes INTEGER ::= 1
+
+-- Generic Primitive Types
+
+U8 ::= INTEGER (0..255)
+U16 ::= INTEGER (0..65535)
+U32 ::= INTEGER (0..4294967295)
+U64 ::= INTEGER (0..18446744073709551615)
+
+ByteSequence ::= OCTET STRING
+ByteArray32 ::= OCTET STRING (SIZE(32))
+
+-- Application Specific Primitive Types
+
+OpaqueHash ::= ByteArray32
+
+TimeSlot ::= U32
+ServiceId ::= U32
+Gas ::= U64
+ValidatorIndex ::= U16
+CoreIndex ::= U16
+TicketAttempt ::= INTEGER (0..1)
+
+BandersnatchKey ::= ByteArray32
+Ed25519Key ::= ByteArray32
+
+BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
+BandersnatchRingSignature ::= OCTET STRING (SIZE(784))
+Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+-- Refine Context
+
+RefineContext ::= SEQUENCE {
+	anchor OpaqueHash,
+	state-root OpaqueHash,
+	beefy-root OpaqueHash,
+	lookup-anchor OpaqueHash,
+	lookup-anchor-slot TimeSlot,
+	prerequisite OpaqueHash OPTIONAL
+}
+
+-- Work Package
+
+ImportSpec ::= SEQUENCE {
+    tree-root OpaqueHash,
+    index U16
+}
+
+ExtrinsicSpec ::= SEQUENCE {
+    hash OpaqueHash,
+    len U32
+}
+
+Authorizer ::= SEQUENCE {
+    code-hash OpaqueHash,
+    params ByteSequence
+}
+
+WorkItem ::= SEQUENCE {
+    service ServiceId,
+    code-hash OpaqueHash,
+    payload ByteSequence,
+    gas-limit Gas,
+    import-segments SEQUENCE OF ImportSpec,
+    extrinsic SEQUENCE OF ExtrinsicSpec,
+    export-count U16
+}
+
+WorkPackage ::= SEQUENCE {
+    authorization ByteSequence,
+    auth-code-host ServiceId,
+    authorizer Authorizer,
+    context RefineContext,
+    items SEQUENCE (SIZE(1..4)) OF WorkItem
+}
+
+-- Work Report
+
+WorkExecResult ::= CHOICE {
+    ok [0] ByteSequence,
+    out-of-gas [1] NULL,
+    panic [2] NULL,
+    bad-code [3] NULL,
+    code-oversize [4] NULL
+}
+
+WorkResult ::= SEQUENCE {
+    service ServiceId,
+    code-hash OpaqueHash,
+    payload-hash OpaqueHash,
+    gas-ratio Gas,
+    result WorkExecResult
+}
+
+WorkPackageSpec ::= SEQUENCE {
+    hash OpaqueHash,
+    len U32,
+    erasure-root OpaqueHash,
+    exports-root OpaqueHash
+}
+
+WorkReport ::= SEQUENCE {
+    package-spec WorkPackageSpec,
+    context RefineContext,
+    core-index CoreIndex,
+    authorizer-hash OpaqueHash,
+    auth-output ByteSequence,
+    results SEQUENCE (SIZE(1..4)) OF WorkResult
+}
+
+-- Header
+
+EpochMark ::= SEQUENCE {
+    entropy OpaqueHash,
+    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchKey
+}
+
+TicketBody ::= SEQUENCE {
+    id OpaqueHash,
+    attempt TicketAttempt
+}
+
+TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
+
+Header ::= SEQUENCE {
+    parent OpaqueHash,
+    parent-state-root OpaqueHash,
+    extrinsic-hash OpaqueHash,
+    slot TimeSlot,
+    epoch-mark EpochMark OPTIONAL,
+    tickets-mark TicketsMark OPTIONAL,
+    offenders-mark SEQUENCE OF Ed25519Key,
+    author-index ValidatorIndex,
+    entropy-source BandersnatchVrfSignature,
+    seal BandersnatchVrfSignature
+}
+
+-- Tickets
+
+TicketEnvelope ::= SEQUENCE {
+    attempt TicketAttempt,
+    signature BandersnatchRingSignature
+}
+
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+
+-- Disputes
+
+Judgement ::= SEQUENCE {
+    vote BOOLEAN,
+    index ValidatorIndex,
+    signature Ed25519Signature
+}
+
+Verdict ::= SEQUENCE {
+    target OpaqueHash,
+    age U32,
+    votes SEQUENCE (SIZE(validators-super-majority)) OF Judgement
+}
+
+Culprit ::= SEQUENCE {
+    target OpaqueHash,
+    key Ed25519Key,
+    signature Ed25519Signature
+}
+
+Fault ::= SEQUENCE {
+    target OpaqueHash,
+    vote BOOLEAN,
+    key Ed25519Key,
+    signature Ed25519Signature
+}
+
+DisputesExtrinsic ::= SEQUENCE {
+    verdicts SEQUENCE OF Verdict,
+    culprits SEQUENCE OF Culprit,
+    faults SEQUENCE OF Fault
+}
+
+-- Preimages
+
+Preimage ::= SEQUENCE {
+    requester ServiceId,
+    blob ByteSequence
+}
+
+PreimagesExtrinsic ::= SEQUENCE OF Preimage
+
+-- Assurances
+
+AvailAssurance ::= SEQUENCE {
+    anchor OpaqueHash,
+    bitfield OCTET STRING (SIZE(avail-bitfield-bytes)),
+    validator-index ValidatorIndex,
+    signature Ed25519Signature
+}
+
+AssurancesExtrinsic ::= SEQUENCE (SIZE(0..validators-count)) OF AvailAssurance
+
+-- Guarantees
+
+ValidatorSignature ::= SEQUENCE {
+    validator-index ValidatorIndex,
+    signature Ed25519Signature
+}
+
+ReportGuarantee ::= SEQUENCE {
+    report WorkReport,
+    slot TimeSlot,
+    signatures SEQUENCE OF ValidatorSignature
+}
+
+GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
+
+-- Block
+
+Extrinsic ::= SEQUENCE {
+    tickets TicketsExtrinsic,
+    disputes DisputesExtrinsic,
+    preimages PreimagesExtrinsic,
+    assurances AssurancesExtrinsic,
+    guarantees GuaranteesExtrinsic
+}
+
+Block ::= SEQUENCE {
+    header Header,
+    extrinsic Extrinsic
+}
+
+END
