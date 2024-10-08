@@ -15,19 +15,19 @@ def hash(data):
 def branch(l, r):
     assert len(l) == 32
     assert len(r) == 32
-    head = l[0] & 0xfe
+    head = l[0] & 0x7f
     return bytes([head]) + l[1:] + r
 
 # GP (287)
 def leaf(k, v):
     if len(v) <= 32:
-        head = 0b01 | (len(v) << 2)
+        head = 0b10000000 | len(v)
         return bytes([head]) + k[:-1] + v + ((32 - len(v)) * b'\0')
-    head = 0b11
+    head = 0b11000000
     return bytes([head]) + k[:-1] + hash(v)
 
 def bit(k, i):
-    return (k[i >> 3] & (1 << (i & 7))) != 0
+    return (k[i >> 3] & (1 << (7 - i & 7))) != 0
 
 # GP (289)
 def merkle(kvs, i=0):
