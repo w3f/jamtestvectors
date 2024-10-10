@@ -1,0 +1,75 @@
+{
+  "name": "inst_load_indirect_u16_without_offset",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        18,
+        52,
+        86,
+        120
+      ]
+    }
+  ],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    2,
+    37,
+    120,
+    1
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    13330,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 2,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        18,
+        52,
+        86,
+        120
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}
