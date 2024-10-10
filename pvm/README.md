@@ -1,4 +1,4 @@
-# PVM Test Vectors, version 0.1
+# PVM Test Vectors, version 0.3
 
 ## How to use this
 
@@ -23,6 +23,13 @@ See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test
    * More gas metering tests; proper gas cost model (current one is a placeholder)
 
 ## Changelog
+
+### v0.3
+
+   * Removed tests which were testing gas behavior that is not yet described in the GP:
+        - `inst_load_u8_trap.json`,
+        - `inst_store_u8_trap_inaccessible`
+        - `inst_store_u8_trap_read_only`
 
 ### v0.2
 
