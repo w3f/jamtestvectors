@@ -3,18 +3,23 @@
 SafroleModule DEFINITIONS ::= BEGIN
 
 -- Define constants
-IMPORTS validators-count, epoch-length FROM SafroleConstants;
+IMPORTS validators-count, epoch-length FROM Constants;
 
 -- Define basic types
 U8 ::= INTEGER (0..255)
 U32 ::= INTEGER (0..4294967295)
 
--- Define fixed-length arrays
-ByteArray32 ::= SEQUENCE (SIZE(32)) OF U8
+-- Define common types
+
+TimeSlot ::= U32
+
+ByteArray32 ::= OCTET STRING (SIZE(32))
 OpaqueHash ::= ByteArray32
+
 Ed25519Key ::= ByteArray32
-BlsKey ::= SEQUENCE (SIZE(144)) OF U8
+BlsKey ::= OCTET STRING (SIZE(144))
 BandersnatchKey ::= ByteArray32
+
 EpochKeys ::= SEQUENCE (SIZE(epoch-length)) OF BandersnatchKey
 TicketsBodies ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
 
@@ -22,26 +27,6 @@ TicketsBodies ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
 TicketsOrKeys ::= CHOICE {
     tickets TicketsBodies,
     keys EpochKeys 
-}
-
--- State transition function execution error.
--- Error codes **are not specified** in the the Graypaper.
--- Feel free to ignore the actual value.
-CustomErrorCode ::= ENUMERATED {
-    -- Timeslot value must be strictly monotonic.
-    bad-slot (0),
-    -- Received a ticket while in epoch's tail.
-    unexpected-ticket (1),
-    -- Tickets must be sorted.
-    bad-ticket-order (2),
-    -- Invalid ticket ring proof.
-    bad-ticket-proof (3),
-    -- Invalid ticket attempt value.
-    bad-ticket-attempt (4),
-    -- Reserved
-    reserved (5),
-    -- Found a ticket duplicate.
-    duplicate-ticket (6)
 }
 
 -- Define structures
@@ -54,14 +39,14 @@ ValidatorData ::= SEQUENCE {
     bandersnatch BandersnatchKey,
     ed25519 Ed25519Key,
     bls BlsKey,
-    metadata SEQUENCE (SIZE(128)) OF U8
+    metadata OCTET STRING (SIZE(128))
 }
 
 ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
 
 TicketEnvelope ::= SEQUENCE {
     attempt U8,
-    signature SEQUENCE (SIZE(784)) OF U8
+    signature OCTET STRING (SIZE(784))
 }
 
 EpochMark ::= SEQUENCE {
@@ -82,7 +67,7 @@ OutputMarks ::= SEQUENCE {
 -- State relevant to Safrole protocol
 State ::= SEQUENCE {
     -- Most recent block's timeslot.
-    tau U32,
+    tau TimeSlot,
 
     -- Entropy accumulator and epochal randomness.
     eta SEQUENCE (SIZE(4)) OF OpaqueHash,
@@ -106,17 +91,42 @@ State ::= SEQUENCE {
     gamma-s TicketsOrKeys,
 
     -- Bandersnatch ring commitment.
-    gamma-z SEQUENCE (SIZE(144)) OF U8
+    gamma-z OCTET STRING (SIZE(144))
+}
+
+-- Safrole extrinsic
+SafroleXt ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+CustomErrorCode ::= ENUMERATED {
+    -- Timeslot value must be strictly monotonic.
+    bad-slot (0),
+    -- Received a ticket while in epoch's tail.
+    unexpected-ticket (1),
+    -- Tickets must be sorted.
+    bad-ticket-order (2),
+    -- Invalid ticket ring proof.
+    bad-ticket-proof (3),
+    -- Invalid ticket attempt value.
+    bad-ticket-attempt (4),
+    -- Reserved
+    reserved (5),
+    -- Found a ticket duplicate.
+    duplicate-ticket (6)
 }
 
 -- Input for Safrole protocol.
 Input ::= SEQUENCE {
-    -- Current slot.
-    slot U32,
-    -- Per block entropy (originated from block entropy source VRF).
+    -- Current time slot (as stored within the block header)
+    slot TimeSlot,
+    -- Per block entropy (originated from per block entropy source VRF output)
     entropy OpaqueHash,
-    -- Safrole extrinsic.
-    extrinsic SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+    -- Safrole extrinsic
+    extrinsic SafroleXt,
+    -- Offenders sequence
+    post-offenders SEQUENCE OF Ed25519Key
 }
 
 -- Output from Safrole protocol
@@ -128,7 +138,7 @@ Output ::= CHOICE {
 }
 
 -- Safrole state transition function execution dump
-Testcase ::= SEQUENCE {
+TestCase ::= SEQUENCE {
     -- Input.
     input Input,
     -- Pre-execution state.
