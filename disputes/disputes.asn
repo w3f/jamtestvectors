@@ -1,0 +1,165 @@
+-- Syntax for Disputes STF test vectors
+
+DisputesModule DEFINITIONS ::= BEGIN
+
+-- Define constants
+IMPORTS validators-count, epoch-length, core-count, validators-super-majority FROM Constants;
+
+-- Define basic types
+U8 ::= INTEGER (0..255)
+U16 ::= INTEGER (0..65535)
+U32 ::= INTEGER (0..4294967295)
+ByteArray32 ::= OCTET STRING (SIZE(32))
+ByteArray64 ::= OCTET STRING (SIZE(64))
+
+EpochIndex ::= U32
+TimeSlot ::= U32
+
+Ed25519Key ::= ByteArray32
+BlsKey ::= OCTET STRING (SIZE(144))
+BandersnatchKey ::= ByteArray32
+
+Ed25519Signature ::= ByteArray64
+  
+ValidatorData ::= SEQUENCE {
+    bandersnatch BandersnatchKey,
+    ed25519 Ed25519Key,
+    bls BlsKey,
+    metadata OCTET STRING (SIZE(128))
+}
+
+ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
+
+-- Work report hash
+WorkReportHash ::= ByteArray32
+
+-- Availability assignment.
+-- Mostly opaque as content is not relevant for this STF.
+AvailabilityAssignment ::= SEQUENCE {
+    dummy-work-report OCTET STRING (SIZE(353)),
+    timeout U32
+}
+
+AvailabilityAssignmentItem ::= CHOICE {
+    none [0] NULL,
+    some [1] AvailabilityAssignment
+}
+
+-- Availability cores assignments
+AvailabilityAssignments ::= SEQUENCE SIZE(core-count) OF AvailabilityAssignmentItem
+
+-- Validator judgement for a dispute
+DisputeJudgement ::= SEQUENCE {
+    vote BOOLEAN,
+    index U16,
+    signature Ed25519Signature
+}
+
+-- Dispute judgements
+DisputeJudgements ::= SEQUENCE SIZE(validators-super-majority) OF DisputeJudgement
+
+-- Verdict resulting from validators judgements
+DisputeVerdict ::= SEQUENCE {
+    target WorkReportHash,
+    age EpochIndex,
+    votes DisputeJudgements
+}
+
+DisputeCulpritProof ::= SEQUENCE {
+    target    WorkReportHash,
+    key       Ed25519Key,
+    signature Ed25519Signature
+}
+
+DisputeFaultProof ::= SEQUENCE {
+    target    WorkReportHash,
+    vote      BOOLEAN,
+    key       Ed25519Key,
+    signature Ed25519Signature
+}
+
+-- Disputes extrinsic
+DisputesXt ::= SEQUENCE {
+    verdicts  SEQUENCE OF DisputeVerdict,
+    culprits  SEQUENCE OF DisputeCulpritProof,
+    faults    SEQUENCE OF DisputeFaultProof
+}
+
+-- Output markers
+DisputesOutputMarks ::= SEQUENCE {
+    offenders-mark  SEQUENCE OF Ed25519Key
+}
+
+-- Recorded disputes sequences and offenders
+DisputesRecords ::= SEQUENCE {
+    -- Good verdicts
+    psi-g  SEQUENCE OF WorkReportHash,
+    -- Bad verdicts
+    psi-b  SEQUENCE OF WorkReportHash,
+    -- Wonky verdicts
+    psi-w  SEQUENCE OF WorkReportHash,
+    -- Offenders
+    psi-o  SEQUENCE OF Ed25519Key
+}
+
+-- State relevant to Disputes STF
+State ::= SEQUENCE {
+    -- Disputes verdicts and offenders
+    psi     DisputesRecords,
+    -- Availability cores assignments
+    rho     AvailabilityAssignments,
+    -- Timeslot
+    tau     TimeSlot,
+    -- Validators active in the current epoch
+    kappa   ValidatorsData,
+    -- Validators active in the previous epoch
+    lambda  ValidatorsData
+}
+
+-- Input for Disputes STF.
+Input ::= SEQUENCE {
+    -- Disputes extrinsic
+    disputes DisputesXt
+}
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    already-judged (0),
+    bad-vote-split (1),
+    verdicts-not-sorted-unique (2),
+    judgements-not-sorted-unique (3),
+    culprits-not-sorted-unique (4),
+    faults-not-sorted-unique (5),
+    not-enough-culprits (6),
+    not-enough-faults (7),
+    culprits-verdict-not-bad (8),
+    fault-verdict-wrong (9),
+    offender-already-reported (10),
+    bad-judgement-age (11),
+    bad-validator-index (12),
+    bad-signature (13)
+}
+
+-- Output from Disputes STF
+Output ::= CHOICE {
+    -- Markers
+    ok DisputesOutputMarks,
+    -- Error code (not specified in the Graypaper)
+    err ErrorCode
+}
+
+-- Disputes STF execution dump
+TestCase ::= SEQUENCE {
+    -- Input.
+    input Input,
+    -- Pre-execution state.
+    pre-state State,
+    -- Output.
+    output Output,
+    -- Post-execution state.
+    post-state State
+}
+
+END
