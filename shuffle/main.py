@@ -26,21 +26,44 @@ def compute_shuffle_eq329(s, r):
 def number_vector(n): 
     return [x for x in range(n)]
 
-def default_seed():
+def uniform_seed(n):
+    return [n] * 32
+
+def linear_seed():
     return [i for i in range(32)]
 
+def varied_seed(n):
+    # large 32 bit prime
+    large_prime = 2147483647 
+    result = []
+    next = n % large_prime
+
+    # next is always a 32-bit prime, so it fits in 4 bytes.
+    # this loop generates a cycle of modular exponents of a generator.
+    # if this generator is unknown, this cycle is in practice unpredictable,
+    # so this should generate a sequence that looks a bit like random
+    # and should be enough for simple tests.
+    for i in range(8):
+        result = result + list(to_le_bytes(next, 4))
+        next = next * n % large_prime
+    
+    return result
+
 def inputs_Eq331():
-    seed = default_seed()
+    zero_seed = uniform_seed(0)
+    ff_seed = uniform_seed(255)
+    simple_seed = linear_seed()
+    irregular_seed = varied_seed(1_000_000_000_000)
 
-    yield(number_vector(0), seed)
-    yield(number_vector(8), seed)
-    yield(number_vector(16), seed)
-    yield(number_vector(20), seed)
+    yield(number_vector(0), zero_seed)
+    yield(number_vector(8), ff_seed)
+    yield(number_vector(16), simple_seed)
+    yield(number_vector(20), irregular_seed)
 
-    yield(number_vector(50), seed)
-    yield(number_vector(100), seed)
-    yield(number_vector(200), seed)
-    yield(number_vector(341), seed)
+    yield(number_vector(50), zero_seed)
+    yield(number_vector(100), ff_seed)
+    yield(number_vector(200), simple_seed)
+    yield(number_vector(341), irregular_seed)
 
 
 def to_le_bytes(n, k):
