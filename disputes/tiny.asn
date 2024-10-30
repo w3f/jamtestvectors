@@ -1,0 +1,8 @@
+Constants DEFINITIONS ::= BEGIN
+
+validators-count INTEGER ::= 6
+core-count INTEGER ::= 2
+epoch-length INTEGER ::= 12
+validators-super-majority INTEGER ::= 5
+
+END
