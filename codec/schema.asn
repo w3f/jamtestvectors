@@ -99,7 +99,7 @@ WorkResult ::= SEQUENCE {
     service ServiceId,
     code-hash OpaqueHash,
     payload-hash OpaqueHash,
-    gas-ratio Gas,
+    gas Gas,
     result WorkExecResult
 }
 
@@ -110,12 +110,20 @@ WorkPackageSpec ::= SEQUENCE {
     exports-root OpaqueHash
 }
 
+SegmentRootLookupItem ::= SEQUENCE {
+    work-package-hash OpaqueHash,
+    segment-tree-root OpaqueHash
+}
+
+SegmentRootLookup ::= SEQUENCE OF SegmentRootLookupItem
+
 WorkReport ::= SEQUENCE {
     package-spec WorkPackageSpec,
     context RefineContext,
     core-index CoreIndex,
     authorizer-hash OpaqueHash,
     auth-output ByteSequence,
+    segment-root-lookup SegmentRootLookup,
     results SEQUENCE (SIZE(1..4)) OF WorkResult
 }
 
