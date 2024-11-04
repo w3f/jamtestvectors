@@ -36,7 +36,7 @@ WorkReportHash ::= ByteArray32
 -- Availability assignment.
 -- Mostly opaque as content is not relevant for this STF.
 AvailabilityAssignment ::= SEQUENCE {
-    dummy-work-report OCTET STRING (SIZE(353)),
+    dummy-work-report OCTET STRING (SIZE(354)),
     timeout U32
 }
 
