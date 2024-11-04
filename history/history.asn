@@ -17,14 +17,25 @@ Mmr ::= SEQUENCE {
     peaks  SEQUENCE OF MmrPeak
 }
 
-Reports ::= SEQUENCE OF Hash
+ReportedWorkPackage ::= SEQUENCE {
+    -- Work report hash
+    hash            Hash,
+    -- Exports tree root
+    exports-root    Hash
+}
+
+ReportedWorkPackages ::= SEQUENCE OF ReportedWorkPackage
 
 -- Recorded disputes sequences and offenders
 BlockInfo ::= SEQUENCE {
-    header-hash    Hash,
+    -- Header hash
+    hash           Hash,
+    -- Merkle mountain range
     mmr            Mmr,
+    -- Posterior state root
     state-root     Hash,
-    reported       Reports
+    -- Reported work packages
+    reported       ReportedWorkPackages
 }
 
 -- State relevant to History STF
@@ -39,7 +50,7 @@ Input ::= SEQUENCE {
     header-hash          Hash,
     parent-state-root    Hash,
     accumulate-root      Hash,
-    work-packages        Reports
+    work-packages        ReportedWorkPackages
 }
 
 -- Output from History STF
