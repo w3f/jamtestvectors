@@ -51,19 +51,19 @@ A map for errors codes semantics used by for the test vectors is given in the AS
 
 ## Tiny Vectors
 
-- [enact_epoch_change_with_no_tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
+- [enact_epoch_change_with_no_tickets-1](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
   - Progress by one slot.
   - Randomness accumulator is updated.
 
-- [enact_epoch_change_with_no_tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
+- [enact_epoch_change_with_no_tickets-2](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
   - Progress from slot X to slot X.
   - Timeslot must be strictly monotonic.
 
-- [enact_epoch_change_with_no_tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
-  - Progress from a slot at the begin of the epoch to a slot in the epoch's tail.
+- [enact_epoch_change_with_no_tickets-3](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
+  - Progress from a slot at the begining of the epoch to a slot in the epoch's tail.
   - Tickets mark is not generated (no enough tickets).
 
-- [enact_epoch_change_with_no_tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
+- [enact_epoch_change_with_no_tickets-4](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
   - Progress from epoch's tail to next epoch.
   - Authorities and entropies are rotated. Epoch mark is generated.
 
