@@ -9,6 +9,8 @@ IMPORTS validators-count, epoch-length, core-count, validators-super-majority FR
 U8 ::= INTEGER (0..255)
 U16 ::= INTEGER (0..65535)
 U32 ::= INTEGER (0..4294967295)
+U64 ::= INTEGER (0..18446744073709551615)
+
 ByteArray32 ::= OCTET STRING (SIZE(32))
 ByteArray64 ::= OCTET STRING (SIZE(64))
 
@@ -31,12 +33,60 @@ ValidatorData ::= SEQUENCE {
 ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
 
 -- Work report hash
-WorkReportHash ::= ByteArray32
+OpaqueHash ::= ByteArray32
+WorkReportHash ::= OpaqueHash
+
+WorkPackageSpec ::= SEQUENCE {
+    hash OpaqueHash,
+    length U32,
+    erasure-root OpaqueHash,
+    exports-root OpaqueHash,
+    exports-count U16
+}
+
+RefineContext ::= SEQUENCE {
+    anchor OpaqueHash,
+    state-root OpaqueHash,
+    beefy-root OpaqueHash,
+    lookup-anchor OpaqueHash,
+    lookup-anchor-slot TimeSlot,
+    prerequisites SEQUENCE OF OpaqueHash
+}
+
+SegmentRootLookupItem ::= SEQUENCE {
+    work-package-hash OpaqueHash,
+    segment-tree-root OpaqueHash    
+}
+
+WorkExecResult ::= CHOICE {
+    ok [0] OCTET STRING,
+    out-of-gas [1] NULL,
+    panic [2] NULL,
+    bad-code [3] NULL,
+    code-oversize [4] NULL
+}
+
+WorkResult ::= SEQUENCE {
+    service-id U32,
+    code-hash OpaqueHash,
+    payload-hash OpaqueHash,
+    gas U64,
+    result WorkExecResult
+}
+
+WorkReport ::= SEQUENCE {
+    package-spec WorkPackageSpec,
+    context RefineContext,
+    core-index U16,
+    authorizer-hash OpaqueHash,
+    auth-output OCTET STRING,
+    segment-root-lookup SEQUENCE OF SegmentRootLookupItem,
+    results SEQUENCE OF WorkResult
+}
 
 -- Availability assignment.
--- Mostly opaque as content is not relevant for this STF.
 AvailabilityAssignment ::= SEQUENCE {
-    dummy-work-report OCTET STRING (SIZE(354)),
+    report WorkReport,
     timeout U32
 }
 
