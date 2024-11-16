@@ -29,7 +29,7 @@ ReportedWorkPackages ::= SEQUENCE OF ReportedWorkPackage
 -- Recorded disputes sequences and offenders
 BlockInfo ::= SEQUENCE {
     -- Header hash
-    hash           Hash,
+    header-hash    Hash,
     -- Merkle mountain range
     mmr            Mmr,
     -- Posterior state root

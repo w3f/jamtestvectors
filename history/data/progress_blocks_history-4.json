@@ -13,7 +13,7 @@
     "pre_state": {
         "beta": [
             {
-                "hash": "0x530ef4636fedd498e99c7601581271894a53e965e901e8fa49581e525f165dae",
+                "header_hash": "0x530ef4636fedd498e99c7601581271894a53e965e901e8fa49581e525f165dae",
                 "mmr": {
                     "peaks": [
                         "0x8720b97ddd6acc0f6eb66e095524038675a4e4067adc10ec39939eaefc47d842"
@@ -32,7 +32,7 @@
                 ]
             },
             {
-                "hash": "0x241d129c6edc2114e6dfba7d556f7f7c66399b55ceec3078a53d44c752ba7e9a",
+                "header_hash": "0x241d129c6edc2114e6dfba7d556f7f7c66399b55ceec3078a53d44c752ba7e9a",
                 "mmr": {
                     "peaks": [
                         null,
@@ -48,7 +48,7 @@
                 ]
             },
             {
-                "hash": "0xc51005ebb96f1f6485d25e1ced6bed9c8443530de3a319c01ba12b2447905b7b",
+                "header_hash": "0xc51005ebb96f1f6485d25e1ced6bed9c8443530de3a319c01ba12b2447905b7b",
                 "mmr": {
                     "peaks": [
                         "0xe99db82a25081fa6ed4b283161bf7b33439689db613124a2766acc9b4c5431e9",
@@ -59,7 +59,7 @@
                 "reported": []
             },
             {
-                "hash": "0xf270b4d14f179593fb13ef13f9999fc81ecdd1664f4f143d3fdc609f8c970990",
+                "header_hash": "0xf270b4d14f179593fb13ef13f9999fc81ecdd1664f4f143d3fdc609f8c970990",
                 "mmr": {
                     "peaks": [
                         null,
@@ -71,7 +71,7 @@
                 "reported": []
             },
             {
-                "hash": "0x24cca5dbb31594e81fee2c10266d65cc8f5184e841fd5f0992980f74b036ab19",
+                "header_hash": "0x24cca5dbb31594e81fee2c10266d65cc8f5184e841fd5f0992980f74b036ab19",
                 "mmr": {
                     "peaks": [
                         "0xc01cfd7b7f663d52d2d1490b359e0ad1b174dba145642a11babc83f0bc8139a8",
@@ -83,7 +83,7 @@
                 "reported": []
             },
             {
-                "hash": "0xf9667c1f2eee903bb96d130aeda4655887acc50ff12071b4aa6cc3c65e9ba96a",
+                "header_hash": "0xf9667c1f2eee903bb96d130aeda4655887acc50ff12071b4aa6cc3c65e9ba96a",
                 "mmr": {
                     "peaks": [
                         null,
@@ -95,7 +95,7 @@
                 "reported": []
             },
             {
-                "hash": "0xe9209ab342ae35c60e9cb755e4e169bbf5d9ed3b85a1a65c770535a6f0ed1981",
+                "header_hash": "0xe9209ab342ae35c60e9cb755e4e169bbf5d9ed3b85a1a65c770535a6f0ed1981",
                 "mmr": {
                     "peaks": [
                         "0xf986bfeff7411437ca6a23163a96b5582e6739f261e697dc6f3c05a1ada1ed0c",
@@ -107,7 +107,7 @@
                 "reported": []
             },
             {
-                "hash": "0x214facca26763b878b35a9fe988d3b0dd11428d17db1a56d743d678619ce3a08",
+                "header_hash": "0x214facca26763b878b35a9fe988d3b0dd11428d17db1a56d743d678619ce3a08",
                 "mmr": {
                     "peaks": [
                         null,
@@ -130,7 +130,7 @@
     "post_state": {
         "beta": [
             {
-                "hash": "0x241d129c6edc2114e6dfba7d556f7f7c66399b55ceec3078a53d44c752ba7e9a",
+                "header_hash": "0x241d129c6edc2114e6dfba7d556f7f7c66399b55ceec3078a53d44c752ba7e9a",
                 "mmr": {
                     "peaks": [
                         null,
@@ -146,7 +146,7 @@
                 ]
             },
             {
-                "hash": "0xc51005ebb96f1f6485d25e1ced6bed9c8443530de3a319c01ba12b2447905b7b",
+                "header_hash": "0xc51005ebb96f1f6485d25e1ced6bed9c8443530de3a319c01ba12b2447905b7b",
                 "mmr": {
                     "peaks": [
                         "0xe99db82a25081fa6ed4b283161bf7b33439689db613124a2766acc9b4c5431e9",
@@ -157,7 +157,7 @@
                 "reported": []
             },
             {
-                "hash": "0xf270b4d14f179593fb13ef13f9999fc81ecdd1664f4f143d3fdc609f8c970990",
+                "header_hash": "0xf270b4d14f179593fb13ef13f9999fc81ecdd1664f4f143d3fdc609f8c970990",
                 "mmr": {
                     "peaks": [
                         null,
@@ -169,7 +169,7 @@
                 "reported": []
             },
             {
-                "hash": "0x24cca5dbb31594e81fee2c10266d65cc8f5184e841fd5f0992980f74b036ab19",
+                "header_hash": "0x24cca5dbb31594e81fee2c10266d65cc8f5184e841fd5f0992980f74b036ab19",
                 "mmr": {
                     "peaks": [
                         "0xc01cfd7b7f663d52d2d1490b359e0ad1b174dba145642a11babc83f0bc8139a8",
@@ -181,7 +181,7 @@
                 "reported": []
             },
             {
-                "hash": "0xf9667c1f2eee903bb96d130aeda4655887acc50ff12071b4aa6cc3c65e9ba96a",
+                "header_hash": "0xf9667c1f2eee903bb96d130aeda4655887acc50ff12071b4aa6cc3c65e9ba96a",
                 "mmr": {
                     "peaks": [
                         null,
@@ -193,7 +193,7 @@
                 "reported": []
             },
             {
-                "hash": "0xe9209ab342ae35c60e9cb755e4e169bbf5d9ed3b85a1a65c770535a6f0ed1981",
+                "header_hash": "0xe9209ab342ae35c60e9cb755e4e169bbf5d9ed3b85a1a65c770535a6f0ed1981",
                 "mmr": {
                     "peaks": [
                         "0xf986bfeff7411437ca6a23163a96b5582e6739f261e697dc6f3c05a1ada1ed0c",
@@ -205,7 +205,7 @@
                 "reported": []
             },
             {
-                "hash": "0x214facca26763b878b35a9fe988d3b0dd11428d17db1a56d743d678619ce3a08",
+                "header_hash": "0x214facca26763b878b35a9fe988d3b0dd11428d17db1a56d743d678619ce3a08",
                 "mmr": {
                     "peaks": [
                         null,
@@ -223,7 +223,7 @@
                 ]
             },
             {
-                "hash": "0xad6862875431e427df25066819b82c648cf0c0d920904d58391a36a95bd9d481",
+                "header_hash": "0xad6862875431e427df25066819b82c648cf0c0d920904d58391a36a95bd9d481",
                 "mmr": {
                     "peaks": [
                         "0xa983417440b618f29ed0b7fa65212fce2d363cb2b2c18871a05c4f67217290b0",

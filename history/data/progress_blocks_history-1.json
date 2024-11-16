@@ -21,7 +21,7 @@
     "post_state": {
         "beta": [
             {
-                "hash": "0x530ef4636fedd498e99c7601581271894a53e965e901e8fa49581e525f165dae",
+                "header_hash": "0x530ef4636fedd498e99c7601581271894a53e965e901e8fa49581e525f165dae",
                 "mmr": {
                     "peaks": [
                         "0x8720b97ddd6acc0f6eb66e095524038675a4e4067adc10ec39939eaefc47d842"
