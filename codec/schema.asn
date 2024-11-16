@@ -47,7 +47,7 @@ RefineContext ::= SEQUENCE {
 	beefy-root OpaqueHash,
 	lookup-anchor OpaqueHash,
 	lookup-anchor-slot TimeSlot,
-	prerequisite OpaqueHash OPTIONAL
+	prerequisites SEQUENCE OF OpaqueHash
 }
 
 -- Work Package
@@ -96,7 +96,7 @@ WorkExecResult ::= CHOICE {
 }
 
 WorkResult ::= SEQUENCE {
-    service ServiceId,
+    service-id ServiceId,
     code-hash OpaqueHash,
     payload-hash OpaqueHash,
     gas Gas,
@@ -105,9 +105,10 @@ WorkResult ::= SEQUENCE {
 
 WorkPackageSpec ::= SEQUENCE {
     hash OpaqueHash,
-    len U32,
+    length U32,
     erasure-root OpaqueHash,
-    exports-root OpaqueHash
+    exports-root OpaqueHash,
+    exports-count U16
 }
 
 SegmentRootLookupItem ::= SEQUENCE {
