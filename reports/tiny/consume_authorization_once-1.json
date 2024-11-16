@@ -250,6 +250,8 @@
             [
                 "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
                 "0x66ae71c0cc186692ff500c6d4b7dbe88059cd3fe506fe5b908a4bc9bca009fd6",
+                "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                "0x2f230011e9681a6b01f90aeaa6326d7579edf4909f0840e90e2f1928fd03b314",
                 "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb"
             ],
             []
@@ -506,6 +508,8 @@
         "auth_pools": [
             [
                 "0x66ae71c0cc186692ff500c6d4b7dbe88059cd3fe506fe5b908a4bc9bca009fd6",
+                "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                "0x2f230011e9681a6b01f90aeaa6326d7579edf4909f0840e90e2f1928fd03b314",
                 "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb"
             ],
             []
