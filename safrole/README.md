@@ -11,6 +11,17 @@ We offer two types of test vectors:
 
 Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./safrole.asn).
 
+## ⚠️ WARNING  ⚠️
+
+The ring-proof backend used by `ark-ec-vrfs` remains subject to modifications.
+
+If you encounter any issues when processing these vectors, particularly
+regarding the verification of Bandersnatch tickets, please ensure that you
+are using the same `ark-ec-vrfs` revision employed for the production of these
+vectors.
+
+Used `ark-ec-vrfs` revision: [e491b41](https://github.com/davxy/ark-ec-vrfs/tree/e491b41b48d9132f59ff2a4d4f1c6c3e853deab7)
+
 ## zk-SNARK SRS
 
 Ring proofs were constructed using a SNARK built using the the [Zcash SRS paramaters](zcash-srs-2-11-uncompressed.bin).
