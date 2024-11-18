@@ -1,6 +1,6 @@
 -- Syntax for JAM protocol
 
-JamProtocol DEFINITIONS ::= BEGIN
+JamTypes DEFINITIONS ::= BEGIN
 
 IMPORTS
     -- Constants
@@ -106,6 +106,35 @@ WorkReport ::= SEQUENCE {
     auth-output ByteSequence,
     segment-root-lookup SegmentRootLookup,
     results SEQUENCE (SIZE(1..4)) OF WorkResult
+}
+
+-- Block History
+
+MmrPeak ::= CHOICE {
+    none [0] NULL,
+    some [1] OpaqueHash
+}
+
+Mmr ::= SEQUENCE {
+    peaks  SEQUENCE OF MmrPeak
+}
+
+ReportedWorkPackage ::= SEQUENCE {
+    -- Work report hash
+    hash            OpaqueHash,
+    -- Exports tree root
+    exports-root    OpaqueHash
+}
+
+BlockInfo ::= SEQUENCE {
+    -- Header hash
+    header-hash    OpaqueHash,
+    -- Merkle mountain range
+    mmr            Mmr,
+    -- Posterior state root
+    state-root     OpaqueHash,
+    -- Reported work packages
+    reported       SEQUENCE OF ReportedWorkPackage
 }
 
 -- Header
