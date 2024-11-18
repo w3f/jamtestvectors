@@ -19,7 +19,6 @@ ServiceId ::= U32
 Gas ::= U64
 ValidatorIndex ::= U16
 CoreIndex ::= U16
-TicketAttempt ::= INTEGER (0..1)
 
 BandersnatchKey ::= OCTET STRING (SIZE(32))
 Ed25519Key ::= OCTET STRING (SIZE(32))
@@ -32,5 +31,7 @@ Ed25519Signature ::= OCTET STRING (SIZE(64))
 ValidatorMetadata ::= OCTET STRING (SIZE(128))
 
 WorkReportHash ::= OpaqueHash
+
+Entropy ::= OpaqueHash
 
 END

@@ -4,7 +4,7 @@ DisputesModule DEFINITIONS ::= BEGIN
 
 IMPORTS
     TimeSlot, DisputesRecords, AvailabilityAssignments, ValidatorsData, DisputesExtrinsic,
-    DisputesOutputMarks
+    OffendersMark
         FROM JamTypes;
 
 -- State transition function execution error.
@@ -47,11 +47,14 @@ Input ::= SEQUENCE {
     disputes DisputesExtrinsic
 }
 
+-- Output markers
+OutputMarker ::= SEQUENCE {
+    offenders-mark OffendersMark
+}
+
 -- Output from Disputes STF
 Output ::= CHOICE {
-    -- Markers
-    ok DisputesOutputMarks,
-    -- Error code (not specified in the Graypaper)
+    ok OutputMarker,
     err ErrorCode
 }
 

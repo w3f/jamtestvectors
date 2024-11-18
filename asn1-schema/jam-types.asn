@@ -11,7 +11,7 @@ IMPORTS
     -- Simple Types
     U8, U16, U32, U64,
 	Errno, ByteSequence, ByteArray, OpaqueHash,
-	TimeSlot,
+	TimeSlot, Entropy,
     CoreIndex, ValidatorIndex, ValidatorMetadata,
     BandersnatchKey, BandersnatchVrfSignature, BandersnatchRingSignature,
     Ed25519Key, Ed25519Signature,
@@ -21,6 +21,8 @@ IMPORTS
     TicketAttempt
 		FROM SimpleTypes;
 
+
+EntropyBuffer ::= SEQUENCE (SIZE(4)) OF Entropy
 
 ValidatorData ::= SEQUENCE {
     bandersnatch BandersnatchKey,
@@ -164,6 +166,24 @@ BlockInfo ::= SEQUENCE {
     reported       SEQUENCE OF ReportedWorkPackage
 }
 
+-- Tickets
+
+TicketId ::= OpaqueHash
+
+TicketAttempt ::= INTEGER (0..1)
+
+TicketBody ::= SEQUENCE {
+    id TicketId,
+    attempt TicketAttempt
+}
+
+TicketsAccumulator ::= SEQUENCE (SIZE(0..epoch-length)) OF TicketBody
+
+TicketsOrKeys ::= CHOICE {
+    tickets SEQUENCE (SIZE(epoch-length)) OF TicketBody,
+    keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchKey
+}
+
 -- Header
 
 EpochMark ::= SEQUENCE {
@@ -171,12 +191,9 @@ EpochMark ::= SEQUENCE {
     validators SEQUENCE (SIZE(validators-count)) OF BandersnatchKey
 }
 
-TicketBody ::= SEQUENCE {
-    id OpaqueHash,
-    attempt TicketAttempt
-}
-
 TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
+
+OffendersMark ::= SEQUENCE OF Ed25519Key
 
 Header ::= SEQUENCE {
     parent OpaqueHash,
@@ -185,7 +202,7 @@ Header ::= SEQUENCE {
     slot TimeSlot,
     epoch-mark EpochMark OPTIONAL,
     tickets-mark TicketsMark OPTIONAL,
-    offenders-mark SEQUENCE OF Ed25519Key,
+    offenders-mark OffendersMark,
     author-index ValidatorIndex,
     entropy-source BandersnatchVrfSignature,
     seal BandersnatchVrfSignature
@@ -225,11 +242,6 @@ Fault ::= SEQUENCE {
     vote BOOLEAN,
     key Ed25519Key,
     signature Ed25519Signature
-}
-
--- Output markers
-DisputesOutputMarks ::= SEQUENCE {
-    offenders-mark SEQUENCE OF Ed25519Key
 }
 
 -- Recorded disputes sequences and offenders
