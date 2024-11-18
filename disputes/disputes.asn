@@ -1,4 +1,4 @@
--- Syntax for Disputes STF test vectors
+-- Disputes STF test vectors schema
 
 DisputesModule DEFINITIONS ::= BEGIN
 
@@ -7,7 +7,29 @@ IMPORTS
     OffendersMark
         FROM JamTypes;
 
--- State transition function execution error.
+
+State ::= SEQUENCE {
+    -- Disputes verdicts and offenders
+    psi       DisputesRecords,
+    -- Availability cores assignments
+    rho       AvailabilityAssignments,
+    -- Timeslot
+    tau       TimeSlot,
+    -- Validators active in the current epoch
+    kappa     ValidatorsData,
+    -- Validators active in the previous epoch
+    lambda    ValidatorsData
+}
+
+Input ::= SEQUENCE {
+    disputes    DisputesExtrinsic
+}
+
+OutputData ::= SEQUENCE {
+    offenders-mark    OffendersMark
+}
+
+-- STF execution error codes.
 -- Error codes **are not specified** in the the Graypaper.
 -- Feel free to ignore the actual value.
 ErrorCode ::= ENUMERATED {
@@ -27,43 +49,17 @@ ErrorCode ::= ENUMERATED {
     bad-signature (13)
 }
 
--- State relevant to Disputes STF
-State ::= SEQUENCE {
-    -- Disputes verdicts and offenders
-    psi     DisputesRecords,
-    -- Availability cores assignments
-    rho     AvailabilityAssignments,
-    -- Timeslot
-    tau     TimeSlot,
-    -- Validators active in the current epoch
-    kappa   ValidatorsData,
-    -- Validators active in the previous epoch
-    lambda  ValidatorsData
-}
-
--- Input for Disputes STF.
-Input ::= SEQUENCE {
-    -- Disputes extrinsic
-    disputes DisputesExtrinsic
-}
-
--- Output markers
-OutputMarker ::= SEQUENCE {
-    offenders-mark OffendersMark
-}
-
--- Output from Disputes STF
 Output ::= CHOICE {
-    ok OutputMarker,
-    err ErrorCode
+    ok    OutputData,
+    err   ErrorCode
 }
 
 -- Disputes STF execution dump
 TestCase ::= SEQUENCE {
-    input      Input,
-    pre-state  State,
-    output     Output,
-    post-state State
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
 }
 
 END

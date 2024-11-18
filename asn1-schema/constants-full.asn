@@ -8,6 +8,8 @@ validators-count INTEGER ::= 1023
 cores-count INTEGER ::= 341
 epoch-length INTEGER ::= 600
 
+max-blocks-history INTEGER ::= 8
+
 -- Derived constants
 
 -- ceil(validators-count * 2/3 + 1)

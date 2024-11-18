@@ -5,7 +5,8 @@ JamTypes DEFINITIONS ::= BEGIN
 IMPORTS
     -- Constants
     validators-count, epoch-length, cores-count,
-    validators-super-majority, avail-bitfield-bytes
+    validators-super-majority, avail-bitfield-bytes,
+    max-blocks-history
         FROM Constants
 
     -- Simple Types
@@ -165,6 +166,8 @@ BlockInfo ::= SEQUENCE {
     -- Reported work packages
     reported       SEQUENCE OF ReportedWorkPackage
 }
+ 
+BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 
 -- Tickets
 
