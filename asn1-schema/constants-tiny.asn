@@ -1,0 +1,18 @@
+-- Tiny Constants
+
+Constants DEFINITIONS ::= BEGIN
+
+-- True constants
+
+validators-count INTEGER ::= 6
+cores-count INTEGER ::= 2
+epoch-length INTEGER ::= 12
+
+-- Derived constants
+
+-- ceil(validators-count * 2/3 + 1)
+validators-super-majority INTEGER ::= 5
+-- floor((cores-count + 7) / 8)
+avail-bitfield-bytes INTEGER ::= 1
+
+END

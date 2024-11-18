@@ -1,12 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from pathlib import Path
 import asn1tools
 import json
-import sys
 
 import os
 import re
+
+schema_files = [
+    "../asn1-schema/constants-tiny.asn",
+    "../asn1-schema/simple.asn",
+    "../asn1-schema/jam-types.asn",
+]
 
 # - JSON uses snake case, ASN.1 requires kebab case
 # - JSON prefix octet strings with '0x', ASN doesn't like it
@@ -50,8 +55,7 @@ def validate_case(schema, path):
 
 
 def main():
-    # Validate tiny
-    schema = asn1tools.compile_files(["schema.asn"], codec="jer")
+    schema = asn1tools.compile_files(schema_files, codec="jer")
     for path in Path("data").iterdir():
         if path.is_file() and path.suffix == ".json":
             validate_case(schema, path)
