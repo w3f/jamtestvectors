@@ -236,10 +236,10 @@ GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 
 Extrinsic ::= SEQUENCE {
     tickets TicketsExtrinsic,
-    disputes DisputesExtrinsic,
     preimages PreimagesExtrinsic,
+    guarantees GuaranteesExtrinsic,
     assurances AssurancesExtrinsic,
-    guarantees GuaranteesExtrinsic
+    disputes DisputesExtrinsic
 }
 
 Block ::= SEQUENCE {
