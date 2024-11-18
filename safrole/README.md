@@ -11,6 +11,17 @@ We offer two types of test vectors:
 
 Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./safrole.asn).
 
+## ⚠️ WARNING  ⚠️
+
+The ring-proof backend used by `ark-ec-vrfs` remains subject to modifications.
+
+If you encounter any issues when processing these vectors, particularly
+regarding the verification of Bandersnatch tickets, please ensure that you
+are using the same `ark-ec-vrfs` revision employed for the production of these
+vectors.
+
+Used `ark-ec-vrfs` revision: [e491b41](https://github.com/davxy/ark-ec-vrfs/tree/e491b41b48d9132f59ff2a4d4f1c6c3e853deab7)
+
 ## zk-SNARK SRS
 
 Ring proofs were constructed using a SNARK built using the the [Zcash SRS paramaters](zcash-srs-2-11-uncompressed.bin).
@@ -51,19 +62,19 @@ A map for errors codes semantics used by for the test vectors is given in the AS
 
 ## Tiny Vectors
 
-- [enact_epoch_change_with_no_tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
+- [enact_epoch_change_with_no_tickets-1](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
   - Progress by one slot.
   - Randomness accumulator is updated.
 
-- [enact_epoch_change_with_no_tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
+- [enact_epoch_change_with_no_tickets-2](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
   - Progress from slot X to slot X.
   - Timeslot must be strictly monotonic.
 
-- [enact_epoch_change_with_no_tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
-  - Progress from a slot at the begin of the epoch to a slot in the epoch's tail.
+- [enact_epoch_change_with_no_tickets-3](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
+  - Progress from a slot at the begining of the epoch to a slot in the epoch's tail.
   - Tickets mark is not generated (no enough tickets).
 
-- [enact_epoch_change_with_no_tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
+- [enact_epoch_change_with_no_tickets-4](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
   - Progress from epoch's tail to next epoch.
   - Authorities and entropies are rotated. Epoch mark is generated.
 
