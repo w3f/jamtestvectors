@@ -170,7 +170,7 @@ BlockInfo ::= SEQUENCE {
 
 TicketId ::= OpaqueHash
 
-TicketAttempt ::= INTEGER (0..1)
+TicketAttempt ::= U8
 
 TicketBody ::= SEQUENCE {
     id TicketId,
