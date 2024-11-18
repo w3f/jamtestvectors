@@ -21,11 +21,16 @@ ValidatorIndex ::= U16
 CoreIndex ::= U16
 TicketAttempt ::= INTEGER (0..1)
 
-BandersnatchKey ::= ByteArray32
-Ed25519Key ::= ByteArray32
+BandersnatchKey ::= OCTET STRING (SIZE(32))
+Ed25519Key ::= OCTET STRING (SIZE(32))
+BlsKey ::= OCTET STRING (SIZE(144))
 
 BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
 BandersnatchRingSignature ::= OCTET STRING (SIZE(784))
 Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+ValidatorMetadata ::= OCTET STRING (SIZE(128))
+
+WorkReportHash ::= OpaqueHash
 
 END

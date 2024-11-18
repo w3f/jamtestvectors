@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import os
 import sys
@@ -7,7 +7,7 @@ from pathlib import Path
 import asn1tools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../asn1-schema')))
-from utils import schema_files, validate
+from utils import get_schema_files, validate
 
 
 # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
@@ -28,7 +28,7 @@ def tweak_callback(json_obj):
     return json_obj
 
 
-schema = asn1tools.compile_files(schema_files + ["history.asn"], codec="jer")
+schema = asn1tools.compile_files(get_schema_files() + ["history.asn"], codec="jer")
 for path in Path("data").iterdir():
     if path.is_file() and path.suffix == ".json":
         validate(schema, path, "TestCase", tweak_callback)

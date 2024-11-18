@@ -12,12 +12,39 @@ IMPORTS
     U8, U16, U32, U64,
 	Errno, ByteSequence, ByteArray, OpaqueHash,
 	TimeSlot,
-    CoreIndex, ValidatorIndex,
+    CoreIndex, ValidatorIndex, ValidatorMetadata,
     BandersnatchKey, BandersnatchVrfSignature, BandersnatchRingSignature,
     Ed25519Key, Ed25519Signature,
+    BlsKey,
     ServiceId, Gas,
+    WorkReportHash,
     TicketAttempt
 		FROM SimpleTypes;
+
+
+ValidatorData ::= SEQUENCE {
+    bandersnatch BandersnatchKey,
+    ed25519 Ed25519Key,
+    bls BlsKey,
+    metadata ValidatorMetadata
+}
+
+ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
+
+
+-- Availability assignment.
+AvailabilityAssignment ::= SEQUENCE {
+    report WorkReport,
+    timeout U32
+}
+
+AvailabilityAssignmentsItem ::= CHOICE {
+    none [0] NULL,
+    some [1] AvailabilityAssignment
+}
+
+-- Availability cores assignments
+AvailabilityAssignments ::= SEQUENCE SIZE(cores-count) OF AvailabilityAssignmentsItem
 
 -- Refine Context
 
@@ -188,16 +215,33 @@ Verdict ::= SEQUENCE {
 }
 
 Culprit ::= SEQUENCE {
-    target OpaqueHash,
+    target WorkReportHash,
     key Ed25519Key,
     signature Ed25519Signature
 }
 
 Fault ::= SEQUENCE {
-    target OpaqueHash,
+    target WorkReportHash,
     vote BOOLEAN,
     key Ed25519Key,
     signature Ed25519Signature
+}
+
+-- Output markers
+DisputesOutputMarks ::= SEQUENCE {
+    offenders-mark SEQUENCE OF Ed25519Key
+}
+
+-- Recorded disputes sequences and offenders
+DisputesRecords ::= SEQUENCE {
+    -- Good verdicts
+    psi-g  SEQUENCE OF WorkReportHash,
+    -- Bad verdicts
+    psi-b  SEQUENCE OF WorkReportHash,
+    -- Wonky verdicts
+    psi-w  SEQUENCE OF WorkReportHash,
+    -- Offenders
+    psi-o  SEQUENCE OF Ed25519Key
 }
 
 DisputesExtrinsic ::= SEQUENCE {

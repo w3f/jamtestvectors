@@ -2,12 +2,15 @@ import os
 import re
 import json
 
-schema_files = [
-    "../asn1-schema/constants-tiny.asn",
-    "../asn1-schema/simple.asn",
-    "../asn1-schema/jam-types.asn",
-]
 
+def get_schema_files(full = False):
+    schema_files = [ "../asn1-schema/simple.asn", "../asn1-schema/jam-types.asn" ]
+    if full:
+        schema_files += [ "../asn1-schema/constants-full.asn" ]
+    else:
+        schema_files += [ "../asn1-schema/constants-tiny.asn" ]
+    return schema_files
+    
 
 # Tweaks:
 # - JSON uses snake case, ASN.1 requires kebab case.
