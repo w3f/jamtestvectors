@@ -47,7 +47,7 @@ RefineContext ::= SEQUENCE {
 	beefy-root OpaqueHash,
 	lookup-anchor OpaqueHash,
 	lookup-anchor-slot TimeSlot,
-	prerequisite OpaqueHash OPTIONAL
+	prerequisites SEQUENCE OF OpaqueHash
 }
 
 -- Work Package
@@ -96,19 +96,27 @@ WorkExecResult ::= CHOICE {
 }
 
 WorkResult ::= SEQUENCE {
-    service ServiceId,
+    service-id ServiceId,
     code-hash OpaqueHash,
     payload-hash OpaqueHash,
-    gas-ratio Gas,
+    gas Gas,
     result WorkExecResult
 }
 
 WorkPackageSpec ::= SEQUENCE {
     hash OpaqueHash,
-    len U32,
+    length U32,
     erasure-root OpaqueHash,
-    exports-root OpaqueHash
+    exports-root OpaqueHash,
+    exports-count U16
 }
+
+SegmentRootLookupItem ::= SEQUENCE {
+    work-package-hash OpaqueHash,
+    segment-tree-root OpaqueHash
+}
+
+SegmentRootLookup ::= SEQUENCE OF SegmentRootLookupItem
 
 WorkReport ::= SEQUENCE {
     package-spec WorkPackageSpec,
@@ -116,6 +124,7 @@ WorkReport ::= SEQUENCE {
     core-index CoreIndex,
     authorizer-hash OpaqueHash,
     auth-output ByteSequence,
+    segment-root-lookup SegmentRootLookup,
     results SEQUENCE (SIZE(1..4)) OF WorkResult
 }
 
@@ -227,10 +236,10 @@ GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 
 Extrinsic ::= SEQUENCE {
     tickets TicketsExtrinsic,
-    disputes DisputesExtrinsic,
     preimages PreimagesExtrinsic,
+    guarantees GuaranteesExtrinsic,
     assurances AssurancesExtrinsic,
-    guarantees GuaranteesExtrinsic
+    disputes DisputesExtrinsic
 }
 
 Block ::= SEQUENCE {
