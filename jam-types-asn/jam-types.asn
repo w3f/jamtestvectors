@@ -1,4 +1,6 @@
--- Syntax for JAM protocol
+--------------------------------------------
+-- JAM Protocol Types
+--------------------------------------------
 
 JamTypes DEFINITIONS ::= BEGIN
 
@@ -7,36 +9,69 @@ IMPORTS
     validators-count, epoch-length, cores-count,
     validators-super-majority, avail-bitfield-bytes,
     max-blocks-history
-        FROM Constants
+        FROM Constants;
 
-    -- Simple Types
-    U8, U16, U32, U64,
-	Errno, ByteSequence, ByteArray, OpaqueHash,
-	TimeSlot, Entropy,
-    CoreIndex, ValidatorIndex, ValidatorMetadata,
-    BandersnatchKey, BandersnatchVrfSignature, BandersnatchRingSignature,
-    Ed25519Key, Ed25519Signature,
-    BlsKey,
-    Gas,
-    WorkReportHash,
-    TicketAttempt
-		FROM SimpleTypes;
+--------------------------------------------
+-- Simple
+--------------------------------------------
 
+U8 ::= INTEGER (0..255)
+U16 ::= INTEGER (0..65535)
+U32 ::= INTEGER (0..4294967295)
+U64 ::= INTEGER (0..18446744073709551615)
 
+ByteSequence ::= OCTET STRING
+ByteArray32 ::= OCTET STRING (SIZE(32))
+
+--------------------------------------------
+-- Crypto
+--------------------------------------------
+
+BandersnatchPublic ::= OCTET STRING (SIZE(32))
+Ed25519Public ::= OCTET STRING (SIZE(32))
+BlsPublic ::= OCTET STRING (SIZE(144))
+
+BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
+BandersnatchRingVrfSignature ::= OCTET STRING (SIZE(784))
+Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+--------------------------------------------
+-- Application Specific Core
+--------------------------------------------
+
+OpaqueHash ::= ByteArray32
+
+TimeSlot ::= U32
+ValidatorIndex ::= U16
+CoreIndex ::= U16
+
+HeaderHash ::= OpaqueHash
+StateRoot ::= OpaqueHash
+BeefyRoot ::= OpaqueHash
+WorkPackageHash ::= OpaqueHash
+WorkReportHash ::= OpaqueHash
+ExportsRoot ::= OpaqueHash
+ErasureRoot ::= OpaqueHash
+
+Gas ::= U64
+
+Entropy ::= OpaqueHash
 EntropyBuffer ::= SEQUENCE (SIZE(4)) OF Entropy
 
+ValidatorMetadata ::= OCTET STRING (SIZE(128))
+
 ValidatorData ::= SEQUENCE {
-    bandersnatch BandersnatchKey,
-    ed25519 Ed25519Key,
-    bls BlsKey,
+    bandersnatch BandersnatchPublic,
+    ed25519 Ed25519Public,
+    bls BlsPublic,
     metadata ValidatorMetadata
 }
 
 ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
 
-----
--- Service Account
-----
+--------------------------------------------
+-- Service
+--------------------------------------------
 
 ServiceId ::= U32
 
@@ -49,7 +84,10 @@ ServiceInfo ::= SEQUENCE {
     items          U32
 }
 
--- Availability assignment.
+--------------------------------------------
+-- Availability Assignments
+--------------------------------------------
+
 AvailabilityAssignment ::= SEQUENCE {
     report WorkReport,
     timeout U32
@@ -60,21 +98,24 @@ AvailabilityAssignmentsItem ::= CHOICE {
     some [1] AvailabilityAssignment
 }
 
--- Availability cores assignments
 AvailabilityAssignments ::= SEQUENCE SIZE(cores-count) OF AvailabilityAssignmentsItem
 
+--------------------------------------------
 -- Refine Context
+--------------------------------------------
 
 RefineContext ::= SEQUENCE {
-	anchor OpaqueHash,
-	state-root OpaqueHash,
-	beefy-root OpaqueHash,
-	lookup-anchor OpaqueHash,
+	anchor HeaderHash,
+	state-root StateRoot,
+	beefy-root BeefyRoot,
+	lookup-anchor HeaderHash,
 	lookup-anchor-slot TimeSlot,
 	prerequisites SEQUENCE OF OpaqueHash
 }
 
+--------------------------------------------
 -- Work Package
+--------------------------------------------
 
 ImportSpec ::= SEQUENCE {
     tree-root OpaqueHash,
@@ -109,7 +150,9 @@ WorkPackage ::= SEQUENCE {
     items SEQUENCE (SIZE(1..4)) OF WorkItem
 }
 
+--------------------------------------------
 -- Work Report
+--------------------------------------------
 
 WorkExecResult ::= CHOICE {
     ok [0] ByteSequence,
@@ -128,15 +171,15 @@ WorkResult ::= SEQUENCE {
 }
 
 WorkPackageSpec ::= SEQUENCE {
-    hash OpaqueHash,
+    hash WorkPackageHash,
     length U32,
-    erasure-root OpaqueHash,
-    exports-root OpaqueHash,
+    erasure-root ErasureRoot,
+    exports-root ExportsRoot,
     exports-count U16
 }
 
 SegmentRootLookupItem ::= SEQUENCE {
-    work-package-hash OpaqueHash,
+    work-package-hash WorkPackageHash,
     segment-tree-root OpaqueHash
 }
 
@@ -152,7 +195,9 @@ WorkReport ::= SEQUENCE {
     results SEQUENCE (SIZE(1..4)) OF WorkResult
 }
 
+--------------------------------------------
 -- Block History
+--------------------------------------------
 
 MmrPeak ::= CHOICE {
     none [0] NULL,
@@ -164,38 +209,33 @@ Mmr ::= SEQUENCE {
 }
 
 ReportedWorkPackage ::= SEQUENCE {
-    -- Work report hash
-    hash            OpaqueHash,
-    -- Exports tree root
-    exports-root    OpaqueHash
+    hash            WorkReportHash,
+    exports-root    ExportsRoot
 }
 
 BlockInfo ::= SEQUENCE {
-    -- Header hash
-    header-hash    OpaqueHash,
-    -- Merkle mountain range
+    header-hash    HeaderHash,
     mmr            Mmr,
-    -- Posterior state root
-    state-root     OpaqueHash,
-    -- Reported work packages
+    state-root     StateRoot,
     reported       SEQUENCE OF ReportedWorkPackage
 }
  
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 
+--------------------------------------------
 -- Tickets
+--------------------------------------------
 
 TicketId ::= OpaqueHash
-
 TicketAttempt ::= U8
 
 TicketEnvelope ::= SEQUENCE {
-    attempt TicketAttempt,
-    signature BandersnatchRingSignature
+    attempt   TicketAttempt,
+    signature BandersnatchRingVrfSignature
 }
 
 TicketBody ::= SEQUENCE {
-    id TicketId,
+    id      TicketId,
     attempt TicketAttempt
 }
 
@@ -203,36 +243,14 @@ TicketsAccumulator ::= SEQUENCE (SIZE(0..epoch-length)) OF TicketBody
 
 TicketsOrKeys ::= CHOICE {
     tickets SEQUENCE (SIZE(epoch-length)) OF TicketBody,
-    keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchKey
+    keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchPublic
 }
 
 TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 
--- Header
-
-EpochMark ::= SEQUENCE {
-    entropy OpaqueHash,
-    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchKey
-}
-
-TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
-
-OffendersMark ::= SEQUENCE OF Ed25519Key
-
-Header ::= SEQUENCE {
-    parent OpaqueHash,
-    parent-state-root OpaqueHash,
-    extrinsic-hash OpaqueHash,
-    slot TimeSlot,
-    epoch-mark EpochMark OPTIONAL,
-    tickets-mark TicketsMark OPTIONAL,
-    offenders-mark OffendersMark,
-    author-index ValidatorIndex,
-    entropy-source BandersnatchVrfSignature,
-    seal BandersnatchVrfSignature
-}
-
+--------------------------------------------
 -- Disputes
+--------------------------------------------
 
 Judgement ::= SEQUENCE {
     vote BOOLEAN,
@@ -248,26 +266,26 @@ Verdict ::= SEQUENCE {
 
 Culprit ::= SEQUENCE {
     target WorkReportHash,
-    key Ed25519Key,
+    key Ed25519Public,
     signature Ed25519Signature
 }
 
 Fault ::= SEQUENCE {
     target WorkReportHash,
     vote BOOLEAN,
-    key Ed25519Key,
+    key Ed25519Public,
     signature Ed25519Signature
 }
 
 DisputesRecords ::= SEQUENCE {
-    -- Good verdicts
-    psi-g  SEQUENCE OF WorkReportHash,
-    -- Bad verdicts
-    psi-b  SEQUENCE OF WorkReportHash,
-    -- Wonky verdicts
-    psi-w  SEQUENCE OF WorkReportHash,
-    -- Offenders
-    psi-o  SEQUENCE OF Ed25519Key
+    -- Good verdicts (psi_g)
+    good      SEQUENCE OF WorkReportHash,
+    -- Bad verdicts (psi_b)
+    bad       SEQUENCE OF WorkReportHash,
+    -- Wonky verdicts (psi_w)
+    wonky     SEQUENCE OF WorkReportHash,
+    -- Offenders (psi_o)
+    offenders SEQUENCE OF Ed25519Public
 }
 
 DisputesExtrinsic ::= SEQUENCE {
@@ -276,7 +294,9 @@ DisputesExtrinsic ::= SEQUENCE {
     faults SEQUENCE OF Fault
 }
 
+--------------------------------------------
 -- Preimages
+--------------------------------------------
 
 Preimage ::= SEQUENCE {
     requester ServiceId,
@@ -285,7 +305,9 @@ Preimage ::= SEQUENCE {
 
 PreimagesExtrinsic ::= SEQUENCE OF Preimage
 
+--------------------------------------------
 -- Assurances
+--------------------------------------------
 
 AvailAssurance ::= SEQUENCE {
     anchor OpaqueHash,
@@ -296,7 +318,9 @@ AvailAssurance ::= SEQUENCE {
 
 AssurancesExtrinsic ::= SEQUENCE (SIZE(0..validators-count)) OF AvailAssurance
 
+--------------------------------------------
 -- Guarantees
+--------------------------------------------
 
 ValidatorSignature ::= SEQUENCE {
     validator-index ValidatorIndex,
@@ -311,7 +335,35 @@ ReportGuarantee ::= SEQUENCE {
 
 GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 
+--------------------------------------------
+-- Header
+--------------------------------------------
+
+EpochMark ::= SEQUENCE {
+    entropy    Entropy,
+    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchPublic
+}
+
+TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
+
+OffendersMark ::= SEQUENCE OF Ed25519Public
+
+Header ::= SEQUENCE {
+    parent             HeaderHash,
+    parent-state-root  StateRoot,
+    extrinsic-hash     OpaqueHash,
+    slot               TimeSlot,
+    epoch-mark         EpochMark OPTIONAL,
+    tickets-mark       TicketsMark OPTIONAL,
+    offenders-mark     OffendersMark,
+    author-index       ValidatorIndex,
+    entropy-source     BandersnatchVrfSignature,
+    seal               BandersnatchVrfSignature
+}
+
+--------------------------------------------
 -- Block
+--------------------------------------------
 
 Extrinsic ::= SEQUENCE {
     tickets TicketsExtrinsic,
