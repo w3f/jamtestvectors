@@ -1,0 +1,36 @@
+SimpleTypes DEFINITIONS ::= BEGIN
+
+-- Generic Primitive Types
+
+U8 ::= INTEGER (0..255)
+U16 ::= INTEGER (0..65535)
+U32 ::= INTEGER (0..4294967295)
+U64 ::= INTEGER (0..18446744073709551615)
+
+ByteSequence ::= OCTET STRING
+ByteArray32 ::= OCTET STRING (SIZE(32))
+
+-- Application Specific Primitive Types
+
+OpaqueHash ::= ByteArray32
+
+TimeSlot ::= U32
+Gas ::= U64
+ValidatorIndex ::= U16
+CoreIndex ::= U16
+
+BandersnatchKey ::= OCTET STRING (SIZE(32))
+Ed25519Key ::= OCTET STRING (SIZE(32))
+BlsKey ::= OCTET STRING (SIZE(144))
+
+BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
+BandersnatchRingSignature ::= OCTET STRING (SIZE(784))
+Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+ValidatorMetadata ::= OCTET STRING (SIZE(128))
+
+WorkReportHash ::= OpaqueHash
+
+Entropy ::= OpaqueHash
+
+END
