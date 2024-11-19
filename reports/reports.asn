@@ -1,0 +1,86 @@
+-- Guarantee reports STF test vectors schema
+
+ReportsModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
+    ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
+    GuaranteesExtrinsic, Ed25519Key, SegmentRootLookupItem
+        FROM JamTypes;
+
+
+ServiceItem ::= SEQUENCE {
+    id       ServiceId,
+    info     ServiceInfo
+}
+
+Services ::= SEQUENCE OF ServiceItem
+
+AuthPool ::= SEQUENCE OF OpaqueHash
+
+AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+
+State ::= SEQUENCE {
+    avail-assignments AvailabilityAssignments,
+    curr-validators ValidatorsData,
+    prev-validators ValidatorsData,
+    recent-blocks BlocksHistory,
+    auth-pools AuthPools,
+    services Services
+}
+
+Input ::= SEQUENCE {
+    guarantees  GuaranteesExtrinsic,
+    slot        TimeSlot,
+    entropy     EntropyBuffer,
+    offenders   SEQUENCE OF Ed25519Key
+}
+
+ReportedPackage ::= SegmentRootLookupItem
+
+OutputData ::= SEQUENCE {
+    reported    SEQUENCE OF ReportedPackage,
+    reporters   SEQUENCE OF Ed25519Key
+}
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    bad-core-index (0),
+    future-report-slot (1),
+    report-epoch-before-last (2),
+    insufficient-guarantees (3),
+    out-of-order-guarantee (4),
+    duplicate-guarantors (5),
+    wrong-assignment (6),
+    core-engaged (7),
+    anchor-not-recent (8),
+    bad-service-id (9),
+    bad-code-hash (10),
+    dependency-missing (11),
+    duplicate-package (12),
+    bad-state-root (13),
+    bad-beefy-mmr-root (14),
+    core-unauthorized (15),
+    bad-validator-index (16),
+    work-report-gas-too-high (17),
+    service-item-gas-too-low (18),
+    too-many-dependencies (19),
+    segment-root-lookup-invalid (20),
+    bad-signature (21)
+}
+
+Output ::= CHOICE {
+    ok  OutputData,
+    err ErrorCode
+}
+
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END
