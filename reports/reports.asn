@@ -3,39 +3,44 @@
 ReportsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    cores-count, OpaqueHash,
-    ServiceId, Service, ValidatorsData, BlocksHistory, AvailabilityAssignments,
-    GuaranteeExtrinsic
+    cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
+    ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
+    GuaranteesExtrinsic, Ed25519Key, SegmentRootLookupItem
         FROM JamTypes;
 
 
 ServiceItem ::= SEQUENCE {
-    service-id ServiceId,
-    service    Service
+    id       ServiceId,
+    info     ServiceInfo
 }
 
 Services ::= SEQUENCE OF ServiceItem
 
-
 AuthPool ::= SEQUENCE OF OpaqueHash
 
 AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
-    
 
 State ::= SEQUENCE {
-    avail_assignments AvailabilityAssignments,
-    curr_validators ValidatorsData,
-    prev_validators ValidatorsData,
-    recent_blocks BlocksHistory,
-    auth_pools AuthPools,
-    services Services,
+    avail-assignments AvailabilityAssignments,
+    curr-validators ValidatorsData,
+    prev-validators ValidatorsData,
+    recent-blocks BlocksHistory,
+    auth-pools AuthPools,
+    services Services
 }
 
 Input ::= SEQUENCE {
-    guarantees GuaranteeExtrinsic
+    guarantees  GuaranteesExtrinsic,
+    slot        TimeSlot,
+    entropy     EntropyBuffer,
+    offenders   SEQUENCE OF Ed25519Key
 }
 
+ReportedPackage ::= SegmentRootLookupItem
+
 OutputData ::= SEQUENCE {
+    reported    SEQUENCE OF ReportedPackage,
+    reporters   SEQUENCE OF Ed25519Key
 }
 
 -- State transition function execution error.
@@ -49,7 +54,7 @@ ErrorCode ::= ENUMERATED {
     out-of-order-guarantee (4),
     duplicate-guarantors (5),
     wrong-assignment (6),
-    core-engaged (7
+    core-engaged (7),
     anchor-not-recent (8),
     bad-service-id (9),
     bad-code-hash (10),
@@ -67,16 +72,15 @@ ErrorCode ::= ENUMERATED {
 }
 
 Output ::= CHOICE {
-    ok OutputData,
+    ok  OutputData,
     err ErrorCode
 }
 
--- Reports STF execution dump
 TestCase ::= SEQUENCE {
-    input      Input,
-    pre-state  State,
-    output     Output,
-    post-state State
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
 }
 
 END

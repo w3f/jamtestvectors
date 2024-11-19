@@ -6,24 +6,37 @@ from pathlib import Path
 
 import asn1tools
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../asn1-schema')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
 from utils import get_schema_files, validate
 
 
-# # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
-# def tweak_sequence_options(state_obj):
-#     items = state_obj['rho']
-#     for i in range(len(items)):
-#         if items[i] is None:
-#             items[i] = {"none": None}
-#         else:
-#             items[i] = {"some": items[i]}
-#     return state_obj
+# Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
+def tweak_assignments_sequence_of_options(state_obj):
+    items = state_obj['avail_assignments']
+    for i in range(len(items)):
+        if items[i] is None:
+            items[i] = {"none": None}
+        else:
+            items[i] = {"some": items[i]}
+
+
+# Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
+def tweak_mmr_sequence_of_options(state_obj):
+    for entry in state_obj['recent_blocks']:
+        peaks = entry['mmr']['peaks']
+        for i in range(len(peaks)):
+            if peaks[i] is None:
+                peaks[i] = {"none": None}
+            else:
+                peaks[i] = {"some": peaks[i]}
+    return state_obj
 
 
 def tweak_callback(json_obj):
-    # json_obj['pre-state'] = tweak_sequence_options(json_obj['pre-state'])
-    # json_obj['post-state'] = tweak_sequence_options(json_obj['post-state'])
+    tweak_assignments_sequence_of_options(json_obj['pre_state'])
+    tweak_mmr_sequence_of_options(json_obj['pre_state'])
+    tweak_assignments_sequence_of_options(json_obj['post_state'])
+    tweak_mmr_sequence_of_options(json_obj['post_state'])
     return json_obj
 
 
