@@ -4,11 +4,11 @@ import json
 
 
 def get_schema_files(full = False):
-    schema_files = [ "../jam-types-asn/simple.asn", "../jam-types-asn/jam-types.asn" ]
+    schema_files = [ "../jam-types-asn/jam-types.asn" ]
     if full:
-        schema_files += [ "../jam-types-asn/constants-full.asn" ]
+        schema_files += [ "../jam-types-asn/full-const.asn" ]
     else:
-        schema_files += [ "../jam-types-asn/constants-tiny.asn" ]
+        schema_files += [ "../jam-types-asn/tiny-const.asn" ]
     return schema_files
     
 

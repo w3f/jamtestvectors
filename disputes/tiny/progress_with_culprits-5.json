@@ -51,12 +51,12 @@
     },
     "pre_state": {
         "psi": {
-            "psi_g": [],
-            "psi_b": [
+            "good": [],
+            "bad": [
                 "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
             ],
-            "psi_w": [],
-            "psi_o": []
+            "wonky": [],
+            "offenders": []
         },
         "rho": [
             null,
@@ -145,12 +145,12 @@
     },
     "post_state": {
         "psi": {
-            "psi_g": [],
-            "psi_b": [
+            "good": [],
+            "bad": [
                 "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
             ],
-            "psi_w": [],
-            "psi_o": []
+            "wonky": [],
+            "offenders": []
         },
         "rho": [
             null,

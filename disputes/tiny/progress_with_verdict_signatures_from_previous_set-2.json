@@ -51,10 +51,10 @@
     },
     "pre_state": {
         "psi": {
-            "psi_g": [],
-            "psi_b": [],
-            "psi_w": [],
-            "psi_o": []
+            "good": [],
+            "bad": [],
+            "wonky": [],
+            "offenders": []
         },
         "rho": [
             null,
@@ -143,10 +143,10 @@
     },
     "post_state": {
         "psi": {
-            "psi_g": [],
-            "psi_b": [],
-            "psi_w": [],
-            "psi_o": []
+            "good": [],
+            "bad": [],
+            "wonky": [],
+            "offenders": []
         },
         "rho": [
             null,
