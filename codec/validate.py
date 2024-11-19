@@ -5,7 +5,7 @@ import asn1tools
 import os
 import sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../asn1-schema')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
 
 from utils import get_schema_files, validate
 

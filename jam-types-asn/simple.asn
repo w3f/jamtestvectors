@@ -15,7 +15,6 @@ ByteArray32 ::= OCTET STRING (SIZE(32))
 OpaqueHash ::= ByteArray32
 
 TimeSlot ::= U32
-ServiceId ::= U32
 Gas ::= U64
 ValidatorIndex ::= U16
 CoreIndex ::= U16

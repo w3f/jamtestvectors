@@ -17,7 +17,7 @@ IMPORTS
     BandersnatchKey, BandersnatchVrfSignature, BandersnatchRingSignature,
     Ed25519Key, Ed25519Signature,
     BlsKey,
-    ServiceId, Gas,
+    Gas,
     WorkReportHash,
     TicketAttempt
 		FROM SimpleTypes;
@@ -34,6 +34,20 @@ ValidatorData ::= SEQUENCE {
 
 ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
 
+----
+-- Service Account
+----
+
+ServiceId ::= U32
+
+ServiceInfo ::= SEQUENCE {
+    code-hash      OpaqueHash,
+    balance        U64,
+    min-item-gas   Gas,
+    min-memo-gas   Gas,
+    bytes          U64,
+    items          U32
+}
 
 -- Availability assignment.
 AvailabilityAssignment ::= SEQUENCE {
@@ -175,6 +189,11 @@ TicketId ::= OpaqueHash
 
 TicketAttempt ::= U8
 
+TicketEnvelope ::= SEQUENCE {
+    attempt TicketAttempt,
+    signature BandersnatchRingSignature
+}
+
 TicketBody ::= SEQUENCE {
     id TicketId,
     attempt TicketAttempt
@@ -186,6 +205,8 @@ TicketsOrKeys ::= CHOICE {
     tickets SEQUENCE (SIZE(epoch-length)) OF TicketBody,
     keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchKey
 }
+
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 
 -- Header
 
@@ -210,15 +231,6 @@ Header ::= SEQUENCE {
     entropy-source BandersnatchVrfSignature,
     seal BandersnatchVrfSignature
 }
-
--- Tickets
-
-TicketEnvelope ::= SEQUENCE {
-    attempt TicketAttempt,
-    signature BandersnatchRingSignature
-}
-
-TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
 
 -- Disputes
 
@@ -247,7 +259,6 @@ Fault ::= SEQUENCE {
     signature Ed25519Signature
 }
 
--- Recorded disputes sequences and offenders
 DisputesRecords ::= SEQUENCE {
     -- Good verdicts
     psi-g  SEQUENCE OF WorkReportHash,

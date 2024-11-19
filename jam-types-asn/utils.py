@@ -4,24 +4,24 @@ import json
 
 
 def get_schema_files(full = False):
-    schema_files = [ "../asn1-schema/simple.asn", "../asn1-schema/jam-types.asn" ]
+    schema_files = [ "../jam-types-asn/simple.asn", "../jam-types-asn/jam-types.asn" ]
     if full:
-        schema_files += [ "../asn1-schema/constants-full.asn" ]
+        schema_files += [ "../jam-types-asn/constants-full.asn" ]
     else:
-        schema_files += [ "../asn1-schema/constants-tiny.asn" ]
+        schema_files += [ "../jam-types-asn/constants-tiny.asn" ]
     return schema_files
     
 
 # Tweaks:
+# - Support for user defined tweak callback. This is called first.
 # - JSON uses snake case, ASN.1 requires kebab case.
 # - JSON prefix octet strings with '0x', ASN doesn't like it.
-# - Support for user defined tweak callback.
 def make_asn1_parsable(json_str, json_tweaks_callback):
-    json_str = json_str.replace('_', '-').replace('0x', '')
     if json_tweaks_callback is not None:
         json_obj = json.loads(json_str)
         json_obj = json_tweaks_callback(json_obj)
         json_str = json.dumps(json_obj, indent=4)
+    json_str = json_str.replace('_', '-').replace('0x', '')
     return json_str
 
 
