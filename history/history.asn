@@ -6,7 +6,6 @@ IMPORTS
     OpaqueHash, ReportedWorkPackage, BlocksHistory
         FROM JamTypes;
 
--- State relevant to History STF
 State ::= SEQUENCE {
     beta    BlocksHistory
 }
