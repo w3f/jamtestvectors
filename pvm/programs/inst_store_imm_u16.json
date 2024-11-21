@@ -1,0 +1,68 @@
+{
+  "name": "inst_store_imm_u16",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    79,
+    3,
+    0,
+    0,
+    2,
+    52,
+    18,
+    1
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 7,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        52,
+        18
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}

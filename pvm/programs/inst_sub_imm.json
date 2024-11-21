@@ -1,0 +1,50 @@
+{
+  "name": "inst_sub_imm",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    2,
+    121,
+    255,
+    1
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 3,
+  "expected-memory": [],
+  "expected-gas": 9998
+}
