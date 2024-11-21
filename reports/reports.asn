@@ -52,7 +52,7 @@ ErrorCode ::= ENUMERATED {
     report-epoch-before-last (2),
     insufficient-guarantees (3),
     out-of-order-guarantee (4),
-    duplicate-guarantors (5),
+    not-sorted-or-unique-guarantors (5),
     wrong-assignment (6),
     core-engaged (7),
     anchor-not-recent (8),
