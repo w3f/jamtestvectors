@@ -27,7 +27,7 @@
                             "service_id": 42,
                             "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
                             "payload_hash": "0x3cf2d09da453bbdd6b68d8a1acd5f15ba23ba46d4ff087592b3d319432500a50",
-                            "gas": 9,
+                            "gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
                             }
@@ -38,15 +38,15 @@
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x71bb0fcdae91caa007b36106b8b341737791f5f1cd9d44cf6e67e677345d283c4f0bd8a7b81e040326cd27eb6280afb1f059b8f838f63e46271fd24f232c400a"
+                        "signature": "0xd45fd9e3917ba9549be4025d7c7d44e4525459e021eb6ca27d373738dad16ab4ff6cbac07f7b9bb2ff9e009058ceda6bf07d438fb9e58a55b9d9068be355fc02"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x67663d3413ab0270cc4e0ec2904a7f4fe32a678ed0949873bff5536da3f65fb0af10ef4cbd1073abbe60605ff05166f19f85c524c192061513b014252749270a"
+                        "signature": "0x3f6b789841017e611b1ca768b56c40bd9e53bcdbc971ac7b50aaa9a9db6e3c5ab212b164be27b088d61f24af1e286c5846b3fdddb072440d405381c0e32f7c01"
                     },
                     {
-                        "validator_index": 5,
-                        "signature": "0x62fa27be79537036587518c4e19f34e338739dfb528557ad56ac111227088674f6b31b85e4031513cfba5c554e2bf0a5525a64d096c9a3704ec5b6ddf3539b06"
+                        "validator_index": 6,
+                        "signature": "0xf8eda0f28e7a6e6119b34e84e2a545a63d2cfb9e655c11a59b402d19935dbc686f6a1630300fec51598e2451280d3942e87f7926887d64ea93958f4dd8c82f00"
                     }
                 ]
             }
@@ -268,7 +268,7 @@
         ]
     },
     "output": {
-        "err": "service_item_gas_too_low"
+        "err": "bad_validator_index"
     },
     "post_state": {
         "avail_assignments": [
