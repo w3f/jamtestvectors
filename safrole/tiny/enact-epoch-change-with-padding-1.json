@@ -190,6 +190,7 @@
         "ok": {
             "epoch_mark": {
                 "entropy": "0x03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c111314",
+                "tickets_entropy": "0xee155ace9c40292074cb6aff8c9ccdd273c81648ff1149ef36bcea6ebb8a3e25",
                 "validators": [
                     "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
                     "0x0000000000000000000000000000000000000000000000000000000000000000",

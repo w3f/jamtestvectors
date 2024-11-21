@@ -340,8 +340,9 @@ GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 --------------------------------------------
 
 EpochMark ::= SEQUENCE {
-    entropy    Entropy,
-    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchPublic
+    entropy         Entropy,
+    tickets-entropy Entropy,
+    validators      SEQUENCE (SIZE(validators-count)) OF BandersnatchPublic
 }
 
 TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody

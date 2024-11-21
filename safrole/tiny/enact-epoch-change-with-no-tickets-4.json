@@ -188,6 +188,7 @@
         "ok": {
             "epoch_mark": {
                 "entropy": "0xf164ce89b10488598cb295e4eef273fb8977722f4d6b2754b970ac77b45fa29b",
+                "tickets_entropy": "0xee155ace9c40292074cb6aff8c9ccdd273c81648ff1149ef36bcea6ebb8a3e25",
                 "validators": [
                     "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
                     "0xf16e5352840afb47e206b5c89f560f2611835855cf2e6ebad1acc9520a72591d",
