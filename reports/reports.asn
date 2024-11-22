@@ -5,7 +5,7 @@ ReportsModule DEFINITIONS ::= BEGIN
 IMPORTS
     cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
     ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
-    GuaranteesExtrinsic, Ed25519Key, SegmentRootLookupItem
+    GuaranteesExtrinsic, Ed25519Public, SegmentRootLookupItem
         FROM JamTypes;
 
 
@@ -33,14 +33,14 @@ Input ::= SEQUENCE {
     guarantees  GuaranteesExtrinsic,
     slot        TimeSlot,
     entropy     EntropyBuffer,
-    offenders   SEQUENCE OF Ed25519Key
+    offenders   SEQUENCE OF Ed25519Public
 }
 
 ReportedPackage ::= SegmentRootLookupItem
 
 OutputData ::= SEQUENCE {
     reported    SEQUENCE OF ReportedPackage,
-    reporters   SEQUENCE OF Ed25519Key
+    reporters   SEQUENCE OF Ed25519Public
 }
 
 -- State transition function execution error.
@@ -52,7 +52,7 @@ ErrorCode ::= ENUMERATED {
     report-epoch-before-last (2),
     insufficient-guarantees (3),
     out-of-order-guarantee (4),
-    duplicate-guarantors (5),
+    not-sorted-or-unique-guarantors (5),
     wrong-assignment (6),
     core-engaged (7),
     anchor-not-recent (8),
