@@ -5,7 +5,7 @@ SafroleModule DEFINITIONS ::= BEGIN
 IMPORTS
     TimeSlot, ValidatorsData, Entropy, EntropyBuffer,
     TicketBody, TicketsAccumulator, TicketsOrKeys, TicketsExtrinsic,
-    EpochMark, TicketsMark, Ed25519Key
+    EpochMark, TicketsMark, Ed25519Public
         FROM JamTypes;
 
 
@@ -38,7 +38,7 @@ Input ::= SEQUENCE {
     -- Tickets extrinsic
     extrinsic TicketsExtrinsic,
     -- Offenders sequence
-    post-offenders SEQUENCE OF Ed25519Key
+    post-offenders SEQUENCE OF Ed25519Public
 }
 
 OutputData ::= SEQUENCE {
