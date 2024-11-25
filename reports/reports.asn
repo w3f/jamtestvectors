@@ -5,7 +5,7 @@ ReportsModule DEFINITIONS ::= BEGIN
 IMPORTS
     cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
     ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
-    GuaranteesExtrinsic, Ed25519Public, SegmentRootLookupItem
+    GuaranteesExtrinsic, Ed25519Public, WorkPackageHash
         FROM JamTypes;
 
 
@@ -21,25 +21,52 @@ AuthPool ::= SEQUENCE OF OpaqueHash
 AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
 
 State ::= SEQUENCE {
+    -- [ρ^‡] rho double dagger, which is the pending reports (ϱ) after that any
+    -- work report judged as uncertain or invalid has been removed from it (ϱ^†),
+    -- and the availability reports were processed (ϱ^‡), freeing up the
+    -- corresponding entry for a new report.
     avail-assignments AvailabilityAssignments,
+
+    -- [κ'] posterior active validators.
     curr-validators ValidatorsData,
+
+    -- [λ'] posterior previous validators.
     prev-validators ValidatorsData,
+
+    -- [β] Recent blocks.
     recent-blocks BlocksHistory,
+
+    -- [α] Authorization pools.
     auth-pools AuthPools,
+
+    -- Services.
+    -- Encoded δ dictionary items are encoded according to T(σ) in Appendix D.
     services Services
 }
 
 Input ::= SEQUENCE {
-    guarantees  GuaranteesExtrinsic,
-    slot        TimeSlot,
-    entropy     EntropyBuffer,
-    offenders   SEQUENCE OF Ed25519Public
+    -- [E_G] Guarantees extrinsic.
+    guarantees GuaranteesExtrinsic,
+
+    -- [H_t] Block's timeslot.
+    slot TimeSlot,
+
+    -- [η'] Posterior entropy buffer.
+    entropy EntropyBuffer,
+
+    -- [ψ_o'] Posterior offenders.
+    offenders SEQUENCE OF Ed25519Public
 }
 
-ReportedPackage ::= SegmentRootLookupItem
+ReportedPackage ::= SEQUENCE {
+    work-package-hash WorkPackageHash,
+    segment-tree-root OpaqueHash
+}
 
 OutputData ::= SEQUENCE {
+    -- Reported packages hash and segment tree root
     reported    SEQUENCE OF ReportedPackage,
+    -- Reporters for reported packages
     reporters   SEQUENCE OF Ed25519Public
 }
 
