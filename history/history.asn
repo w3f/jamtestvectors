@@ -3,18 +3,23 @@
 HistoryModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    OpaqueHash, ReportedWorkPackage, BlocksHistory
+    OpaqueHash, ReportedWorkPackage, BlocksHistory, HeaderHash, StateRoot
         FROM JamTypes;
 
 State ::= SEQUENCE {
-    beta    BlocksHistory
+    -- [β] Recent blocks history
+    beta BlocksHistory
 }
 
 Input ::= SEQUENCE {
-    header-hash       OpaqueHash,
-    parent-state-root OpaqueHash,
-    accumulate-root   OpaqueHash,
-    work-packages     SEQUENCE OF ReportedWorkPackage
+    -- [Hash(H)] Header hash
+    header-hash HeaderHash,
+    -- [H_r] Parent state root
+    parent-state-root StateRoot,
+    -- [r] Accumulation result Merkle tree root
+    accumulate-root OpaqueHash,
+    -- [(((g_w)_s)_h, ((g_w)_s)_e) | g ∈ E_G] Sequence of reported work packages
+    work-packages SEQUENCE OF ReportedWorkPackage
 }
 
 Output ::= NULL
