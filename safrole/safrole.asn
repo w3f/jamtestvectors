@@ -28,6 +28,8 @@ State ::= SEQUENCE {
     gamma-s TicketsOrKeys,
     -- [γ_z] Bandersnatch ring commitment.
     gamma-z BandersnatchRingCommitment
+    -- [ψ_o'] Posterior offenders sequence.
+    post-offenders SEQUENCE OF Ed25519Public
 }
 
 Input ::= SEQUENCE {
@@ -37,8 +39,6 @@ Input ::= SEQUENCE {
     entropy Entropy,
     -- [E_T] Tickets extrinsic.
     extrinsic TicketsExtrinsic,
-    -- [ψ_o'] : Posterior offenders sequence.
-    post-offenders SEQUENCE OF Ed25519Public
 }
 
 OutputData ::= SEQUENCE {
