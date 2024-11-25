@@ -15,7 +15,7 @@
                         "state_root": "0xcbd0759945c0954d1f0958bc9c84ec67626cafdbff1c2f81643f098f7420b2f8",
                         "beefy_root": "0x26822a122fc6578289d5f7e5d9392c0fcdc458861859827a3fe4640bc23268c8",
                         "lookup_anchor": "0x0f520ef99a40ab4d0c3985a87a1e674f4795f60c5dafc340fb3781438696a956",
-                        "lookup_anchor_slot": 594,
+                        "lookup_anchor_slot": 595,
                         "prerequisites": [
                             "0xc7e675b7e3450cf70d436172644faef291c2aa905b1fe81c068785cd6e1e44e5"
                         ]
@@ -36,19 +36,19 @@
                         }
                     ]
                 },
-                "slot": 602,
+                "slot": 603,
                 "signatures": [
                     {
                         "validator_index": 16,
-                        "signature": "0x84fd55500b51a99436501fa3ae40256f4e5fdfd40f35edd9a578e5142a2283bdd000a8de63b912cc2ed06cb4b647dd5a35c08cbdeb8714d7c34697ec538fe50d"
+                        "signature": "0x61240d744fc9cd8cc8595d34151a97ef70b461ce933942c34dcbce81ee4f61128d5c0f746fbb9b746ae0b5f6b2836065138a45cb1b5d231846660a774da6e80a"
                     },
                     {
                         "validator_index": 450,
-                        "signature": "0x57340b92b09e2b662e85674faa594441dd9bc0c9221667af358241c7b8792cfe2efec40954614bba0dfd8b80fa9d57175eb892b30bc08f3ac9ddbb3c28f7610a"
+                        "signature": "0x9553bb36a083316fccaa7dc737c6980c57d5da747d68af1b5056bf568d439792d099e3aec706248718148afbf061c784ff9fa2bdfa8d3d1bfc5cdeffb290d00d"
                     },
                     {
                         "validator_index": 1014,
-                        "signature": "0xdb27380ea69e3d888d7bf780da4a2601de1659afb2537909b7cb44de7177d411a786611b89ff2c1e15b3960158fb809634ff290ba193a6a02ef70311e3ecfb04"
+                        "signature": "0x2c811ec057c7f85b983194e0a5d7acf1080ce860c79a6f4837537affa4aa757aee1335d82de9f092d66081a00e286f066f35a4578625c94714a2e19f90fc9307"
                     }
                 ]
             },
@@ -66,7 +66,7 @@
                         "state_root": "0xcbd0759945c0954d1f0958bc9c84ec67626cafdbff1c2f81643f098f7420b2f8",
                         "beefy_root": "0x26822a122fc6578289d5f7e5d9392c0fcdc458861859827a3fe4640bc23268c8",
                         "lookup_anchor": "0x0f520ef99a40ab4d0c3985a87a1e674f4795f60c5dafc340fb3781438696a956",
-                        "lookup_anchor_slot": 594,
+                        "lookup_anchor_slot": 595,
                         "prerequisites": [
                             "0x63c03371b9dad9f1c60473ec0326c970984e9c90c0b5ed90eba6ada471ba4d86"
                         ]
@@ -87,31 +87,24 @@
                         }
                     ]
                 },
-                "slot": 602,
+                "slot": 603,
                 "signatures": [
                     {
                         "validator_index": 624,
-                        "signature": "0x513ddcc86c7c764ec339c7ab7ea41eb3881ac190a149d6528e7f589613aeb3f5bc0b058243291fbe169d98137d2c239ef3977c7953805f5d2ac46d10bffd7d0d"
+                        "signature": "0x3909380ccfd6a72df8272644407db99dc1ebfbf98117330b26bf42e0de03863b0ef8761b6db78c72827611faad682c52274693dc14807e4db6ec2e9f0ed25d04"
                     },
                     {
                         "validator_index": 664,
-                        "signature": "0xbaf55d217965c907b1133a42fb90dbfc1d60e323086df5509d76158da46d2af2014dd1f77519e853f039ad16d2d8a0f4048ad1cab4107aeb72ef7e1e69eac605"
+                        "signature": "0xb1d04cea49beea28db014c09f3869080b10c0a56735e32ca0b8345a83f19a2dfe58a7b6c4e4abeb36502dbebf7ed43ce7e7d4e135de36d5ffcfa8a4a9fa60f02"
                     },
                     {
                         "validator_index": 698,
-                        "signature": "0x4c3b1355ce680f697ad5ca02d0d586e8ac15daca1b3486ed4aa79349d2f10e437272af1b83315e0869774d7add8452820097553a8052254cfcbc5df47d19dc03"
+                        "signature": "0x78dba1c70d144fe922ad8ef2a433e1265ea1a1f89dcb1f900380f580136e5e034b5a54dcb459c014ecc69c94edc45183eb925b5eb6afea19e8bb59631b39e509"
                     }
                 ]
             }
         ],
-        "slot": 602,
-        "entropy": [
-            "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
-            "0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35",
-            "0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8",
-            "0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7"
-        ],
-        "offenders": []
+        "slot": 603
     },
     "pre_state": {
         "avail_assignments": [
@@ -12737,6 +12730,13 @@
                 "metadata": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
             }
         ],
+        "entropy": [
+            "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
+            "0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35",
+            "0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8",
+            "0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7"
+        ],
+        "offenders": [],
         "recent_blocks": [
             {
                 "header_hash": "0x93c68132264ead4b122212a561dcf034f61f6169cda03c9a2d1dc626af4442b6",
@@ -13291,7 +13291,7 @@
                         "state_root": "0xcbd0759945c0954d1f0958bc9c84ec67626cafdbff1c2f81643f098f7420b2f8",
                         "beefy_root": "0x26822a122fc6578289d5f7e5d9392c0fcdc458861859827a3fe4640bc23268c8",
                         "lookup_anchor": "0x0f520ef99a40ab4d0c3985a87a1e674f4795f60c5dafc340fb3781438696a956",
-                        "lookup_anchor_slot": 594,
+                        "lookup_anchor_slot": 595,
                         "prerequisites": [
                             "0xc7e675b7e3450cf70d436172644faef291c2aa905b1fe81c068785cd6e1e44e5"
                         ]
@@ -13312,7 +13312,7 @@
                         }
                     ]
                 },
-                "timeout": 612
+                "timeout": 613
             },
             {
                 "report": {
@@ -13328,7 +13328,7 @@
                         "state_root": "0xcbd0759945c0954d1f0958bc9c84ec67626cafdbff1c2f81643f098f7420b2f8",
                         "beefy_root": "0x26822a122fc6578289d5f7e5d9392c0fcdc458861859827a3fe4640bc23268c8",
                         "lookup_anchor": "0x0f520ef99a40ab4d0c3985a87a1e674f4795f60c5dafc340fb3781438696a956",
-                        "lookup_anchor_slot": 594,
+                        "lookup_anchor_slot": 595,
                         "prerequisites": [
                             "0x63c03371b9dad9f1c60473ec0326c970984e9c90c0b5ed90eba6ada471ba4d86"
                         ]
@@ -13349,7 +13349,7 @@
                         }
                     ]
                 },
-                "timeout": 612
+                "timeout": 613
             },
             null,
             null,
@@ -25971,6 +25971,13 @@
                 "metadata": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
             }
         ],
+        "entropy": [
+            "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
+            "0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35",
+            "0x7b0aa1735e5ba58d3236316c671fe4f00ed366ee72417c9ed02a53a8019e85b8",
+            "0x8c039ff7caa17ccebfcadc44bd9fce6a4b6699c4d03de2e3349aa1dc11193cd7"
+        ],
+        "offenders": [],
         "recent_blocks": [
             {
                 "header_hash": "0x93c68132264ead4b122212a561dcf034f61f6169cda03c9a2d1dc626af4442b6",
