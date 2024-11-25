@@ -35,6 +35,8 @@ BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
 BandersnatchRingVrfSignature ::= OCTET STRING (SIZE(784))
 Ed25519Signature ::= OCTET STRING (SIZE(64))
 
+BandersnatchRingCommitment ::= OCTET STRING (SIZE(144))
+
 --------------------------------------------
 -- Application Specific Core
 --------------------------------------------
