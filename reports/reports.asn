@@ -27,11 +27,17 @@ State ::= SEQUENCE {
     -- corresponding entry for a new report.
     avail-assignments AvailabilityAssignments,
 
-    -- [κ'] posterior active validators.
+    -- [κ'] Posterior active validators.
     curr-validators ValidatorsData,
 
-    -- [λ'] posterior previous validators.
+    -- [λ'] Posterior previous validators.
     prev-validators ValidatorsData,
+
+    -- [η'] Posterior entropy buffer.
+    entropy EntropyBuffer,
+
+    -- [ψ_o'] Posterior offenders.
+    offenders SEQUENCE OF Ed25519Public,
 
     -- [β] Recent blocks.
     recent-blocks BlocksHistory,
@@ -39,8 +45,8 @@ State ::= SEQUENCE {
     -- [α] Authorization pools.
     auth-pools AuthPools,
 
-    -- Services.
-    -- Encoded δ dictionary items are encoded according to T(σ) in Appendix D.
+    -- Encoded services dictionary [δ]
+    -- Refer to T(σ) in Appendix D.
     services Services
 }
 
@@ -49,13 +55,7 @@ Input ::= SEQUENCE {
     guarantees GuaranteesExtrinsic,
 
     -- [H_t] Block's timeslot.
-    slot TimeSlot,
-
-    -- [η'] Posterior entropy buffer.
-    entropy EntropyBuffer,
-
-    -- [ψ_o'] Posterior offenders.
-    offenders SEQUENCE OF Ed25519Public
+    slot TimeSlot
 }
 
 ReportedPackage ::= SEQUENCE {
