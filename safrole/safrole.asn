@@ -5,46 +5,46 @@ SafroleModule DEFINITIONS ::= BEGIN
 IMPORTS
     TimeSlot, ValidatorsData, Entropy, EntropyBuffer,
     TicketBody, TicketsAccumulator, TicketsOrKeys, TicketsExtrinsic,
-    EpochMark, TicketsMark, Ed25519Public
+    EpochMark, TicketsMark, Ed25519Public, BandersnatchRingCommitment
         FROM JamTypes;
 
 
 State ::= SEQUENCE {
-    -- Most recent block's timeslot.
+    -- [τ] Most recent block's timeslot.
     tau TimeSlot,
-    -- Entropy accumulator and epochal randomness.
+    -- [η] Entropy accumulator and epochal randomness.
     eta EntropyBuffer,
-    -- Validator keys and metadata which were active in the prior epoch.
+    -- [λ] Validator keys and metadata which were active in the prior epoch.
     lambda ValidatorsData,
-    -- Validator keys and metadata currently active.
+    -- [κ] Validator keys and metadata currently active.
     kappa ValidatorsData,
-    -- Validator keys for the following epoch.
+    -- [γ_k] Validator keys for the following epoch.
     gamma-k ValidatorsData,
-    -- Validator keys and metadata to be drawn from next.
+    -- [ι] Validator keys and metadata to be drawn from next.
     iota ValidatorsData,
-    -- Sealing-key contest ticket accumulator.
+    -- [γ_a] Sealing-key contest ticket accumulator.
     gamma-a TicketsAccumulator,
-    -- Sealing-key series of the current epoch.
+    -- [γ_s] Sealing-key series of the current epoch.
     gamma-s TicketsOrKeys,
-    -- Bandersnatch ring commitment.
-    gamma-z OCTET STRING (SIZE(144))
+    -- [γ_z] Bandersnatch ring commitment.
+    gamma-z BandersnatchRingCommitment
 }
 
 Input ::= SEQUENCE {
-    -- Current time slot (as stored within the block header)
+    -- [H_t] Current time slot as found within the block header.
     slot TimeSlot,
-    -- Per block entropy (originated from per block entropy source VRF output)
+    -- [Y(H_v)] Per block entropy generated using per block entropy source.
     entropy Entropy,
-    -- Tickets extrinsic
+    -- [E_T] Tickets extrinsic.
     extrinsic TicketsExtrinsic,
-    -- Offenders sequence
+    -- [ψ_o'] : Posterior offenders sequence.
     post-offenders SEQUENCE OF Ed25519Public
 }
 
 OutputData ::= SEQUENCE {
-    -- New epoch signal.
+    -- [H_e] New epoch marker.
     epoch-mark [0] EpochMark OPTIONAL,
-    -- Tickets signal.
+    -- [H_w] Winning tickets marker.
     tickets-mark [1] TicketsMark OPTIONAL
 }
 
