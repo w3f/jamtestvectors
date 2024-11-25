@@ -9,16 +9,22 @@ We offer two types of test vectors:
 - Full: These vectors use production validators count (1023) and epoch duration (600).
   Similar to the tiny vectors, they are available in JSON and SCALE format.
 
-Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./disputes.asn).
+Both JSON and SCALE formats conform to the JAM types ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and the Disputes test vectors specific [schema](./disputes.asn).
 
-## Error Output
+## STF Output
 
-On STF (State Transition Function) execution error, post-state must match pre-state.
+Technically, the STF execution process does not inherently produce auxiliary
+outputs beyond the success or failure result. In this context, we propose
+an extension to include additional information that may be beneficial for
+implementors or useful for executing other subsystems reliant on values
+generated post-STF execution.
 
-Possible error codes returned as output are not part of the specification,
-feel free to ignore actual numeric values.
+When the error or success values are not pertinent to your test vector
+processing procedures, you may disregard them as necessary.
 
-A map for errors codes semantics used by for the test vectors is given in the ASN.1 schema.
+A mapping of error code semantics is provided within the ASN.1 schema for this
+subsystem.
 
 ## Availability Assignments
 

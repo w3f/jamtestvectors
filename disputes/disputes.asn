@@ -9,24 +9,26 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- Disputes verdicts and offenders
-    psi       DisputesRecords,
-    -- Availability cores assignments
-    rho       AvailabilityAssignments,
-    -- Timeslot
-    tau       TimeSlot,
-    -- Validators active in the current epoch
-    kappa     ValidatorsData,
-    -- Validators active in the previous epoch
-    lambda    ValidatorsData
+    -- [ψ] Disputes verdicts and offenders
+    psi  DisputesRecords,
+    -- [ρ] Availability cores assignments
+    rho AvailabilityAssignments,
+    -- [τ] Timeslot
+    tau TimeSlot,
+    -- [κ] Validators active in the current epoch
+    kappa ValidatorsData,
+    -- [λ] Validators active in the previous epoch
+    lambda ValidatorsData
 }
 
 Input ::= SEQUENCE {
-    disputes    DisputesExtrinsic
+    -- [E_D] Disputes extrinsic
+    disputes DisputesExtrinsic
 }
 
 OutputData ::= SEQUENCE {
-    offenders-mark    OffendersMark
+    -- [H_o] Offenders marker
+    offenders-mark OffendersMark
 }
 
 -- STF execution error codes.
