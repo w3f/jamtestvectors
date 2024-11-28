@@ -137,7 +137,7 @@
                         }
                     ]
                 },
-                "timeout": 17
+                "timeout": 13
             },
             null
         ],
@@ -390,7 +390,7 @@
                         }
                     ]
                 },
-                "timeout": 17
+                "timeout": 13
             },
             null
         ],

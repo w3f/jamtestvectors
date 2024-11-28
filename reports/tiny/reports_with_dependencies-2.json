@@ -381,7 +381,7 @@
                         }
                     ]
                 },
-                "timeout": 25
+                "timeout": 15
             },
             {
                 "report": {
@@ -418,7 +418,7 @@
                         }
                     ]
                 },
-                "timeout": 25
+                "timeout": 15
             }
         ],
         "curr_validators": [
