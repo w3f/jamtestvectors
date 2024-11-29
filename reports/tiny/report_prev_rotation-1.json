@@ -317,7 +317,7 @@
                         }
                     ]
                 },
-                "timeout": 24
+                "timeout": 14
             },
             null
         ],
