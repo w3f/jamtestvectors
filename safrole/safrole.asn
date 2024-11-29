@@ -27,7 +27,7 @@ State ::= SEQUENCE {
     -- [γ_s] Sealing-key series of the current epoch.
     gamma-s TicketsOrKeys,
     -- [γ_z] Bandersnatch ring commitment.
-    gamma-z BandersnatchRingCommitment
+    gamma-z BandersnatchRingCommitment,
     -- [ψ_o'] Posterior offenders sequence.
     post-offenders SEQUENCE OF Ed25519Public
 }
@@ -38,7 +38,7 @@ Input ::= SEQUENCE {
     -- [Y(H_v)] Per block entropy generated using per block entropy source.
     entropy Entropy,
     -- [E_T] Tickets extrinsic.
-    extrinsic TicketsExtrinsic,
+    extrinsic TicketsExtrinsic
 }
 
 OutputData ::= SEQUENCE {
