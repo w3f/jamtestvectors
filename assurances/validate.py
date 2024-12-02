@@ -28,12 +28,12 @@ def tweak_callback(json_obj):
 
 # Validate tiny
 schema = asn1tools.compile_files(get_schema_files(False) + ["assurances.asn"], codec="jer")
-for path in Path("prova").iterdir():
+for path in Path("tiny").iterdir():
     if path.is_file() and path.suffix == ".json":
         validate(schema, path, "TestCase", tweak_callback)
 
 # Validate full
-# schema = asn1tools.compile_files(get_schema_files(True) + ["assurances.asn"], codec="jer")
-# for path in Path("full").iterdir():
-#     if path.is_file() and path.suffix == ".json":
-#         validate(schema, path, "TestCase", tweak_callback)
+schema = asn1tools.compile_files(get_schema_files(True) + ["assurances.asn"], codec="jer")
+for path in Path("full").iterdir():
+    if path.is_file() and path.suffix == ".json":
+        validate(schema, path, "TestCase", tweak_callback)

@@ -40,9 +40,13 @@ ErrorCode ::= ENUMERATED {
     bad-signature (4)
 }
 
-Output ::= CHOICE {
+OutputData ::= SEQUENCE {
     -- Items removed from ρ† to get ρ'
-    ok  SEQUENCE OF WorkReport,
+    reported SEQUENCE OF WorkReport
+}
+
+Output ::= CHOICE {
+    ok  OutputData,
     err ErrorCode
 }
 
