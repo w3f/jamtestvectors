@@ -381,6 +381,8 @@
             ]
         },
         "gamma_z": "0x9282d1d1b77276674a249d64a67abd0b5f129233644fc1968688135d4875f5830943eab43463be74c069718daf91d35e93c7a05457a3fda5ecbbd7bfd74982b2d53a1e3e53ca5813bf8a376a55e1a16a9a2ddc18cbbd58e9f17e82ba544aca0292e630ae2b14e758ab0960e372172203f4c9a41777dadd529971d7ab9d23ab29fe0e9c85ec450505dde7f5ac038274cf",
-        "post_offenders": []
+        "post_offenders": [
+            "0x837ce344bc9defceb0d7de7e9e9925096768b7adb4dad932e532eb6551e0ea02"
+        ]
     }
 }
