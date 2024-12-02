@@ -28,7 +28,7 @@ subsystem.
 
 ## Tiny Vectors
 
-- TODO
+- 
 
 ## Full Vectors
 

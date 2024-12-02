@@ -154,7 +154,7 @@
         ]
     },
     "output": {
-        "err": "other_error"
+        "err": "report_timeout"
     },
     "post_state": {
         "avail_assignments": [

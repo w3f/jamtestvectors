@@ -120,7 +120,7 @@
         ]
     },
     "output": {
-        "err": "bad_signature"
+        "err": "core_not_engaged"
     },
     "post_state": {
         "avail_assignments": [

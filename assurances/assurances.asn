@@ -3,7 +3,8 @@
 ReportsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    TimeSlot, ValidatorsData, AvailabilityAssignments, AssurancesExtrinsic
+    TimeSlot, ValidatorsData, HeaderHash, WorkReport,
+    AvailabilityAssignments, AssurancesExtrinsic
         FROM JamTypes;
 
 
@@ -14,7 +15,7 @@ State ::= SEQUENCE {
     avail-assignments AvailabilityAssignments,
 
     -- [κ'] Posterior active validators.
-    curr-validators ValidatorsData,
+    curr-validators ValidatorsData
 }
 
 Input ::= SEQUENCE {
@@ -22,7 +23,7 @@ Input ::= SEQUENCE {
     assurances AssurancesExtrinsic,
 
     -- [H_t] Block's timeslot.
-    slot TimeSlot
+    slot TimeSlot,
 
     -- [H_p] Parent hash.
     parent HeaderHash
@@ -32,28 +33,11 @@ Input ::= SEQUENCE {
 -- Error codes **are not specified** in the the Graypaper.
 -- Feel free to ignore the actual value.
 ErrorCode ::= ENUMERATED {
-    bad-core-index (0),
-    future-report-slot (1),
-    report-epoch-before-last (2),
-    insufficient-guarantees (3),
-    out-of-order-guarantee (4),
-    not-sorted-or-unique-guarantors (5),
-    wrong-assignment (6),
-    core-engaged (7),
-    anchor-not-recent (8),
-    bad-service-id (9),
-    bad-code-hash (10),
-    dependency-missing (11),
-    duplicate-package (12),
-    bad-state-root (13),
-    bad-beefy-mmr-root (14),
-    core-unauthorized (15),
-    bad-validator-index (16),
-    work-report-gas-too-high (17),
-    service-item-gas-too-low (18),
-    too-many-dependencies (19),
-    segment-root-lookup-invalid (20),
-    bad-signature (21)
+    report-timeout (0),
+    bad-attestation-parent (1),
+    bad-validator-index (2),
+    core-not-engaged (3),
+    bad-signature (4)
 }
 
 Output ::= CHOICE {

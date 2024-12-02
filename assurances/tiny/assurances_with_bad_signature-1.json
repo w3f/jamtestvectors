@@ -154,7 +154,7 @@
         ]
     },
     "output": {
-        "err": "other_error"
+        "err": "bad_signature"
     },
     "post_state": {
         "avail_assignments": [
