@@ -6,3 +6,5 @@
 - [Safrole](./safrole/README.md)
 - [Disputes](./disputes/README.md)
 - [History](./history/README.md)
+- [Reports](./reports/README.md)
+- [Assurances](./assurances/README.md)
