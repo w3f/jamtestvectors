@@ -5,6 +5,7 @@
     "slot": 42,
     "epoch_mark": {
         "entropy": "0xae85d6635e9ae539d0846b911ec86a27fe000f619b78bcac8a74b77e36f6dbcf",
+        "tickets_entropy": "0x333a7e328f0c4183f4b947e1d8f68aa4034f762e5ecdb5a7f6fbf0afea2fd8cd",
         "validators": [
             "0x5e465beb01dbafe160ce8216047f2155dd0569f058afd52dcea601025a8d161d",
             "0x3d5e5a51aab2b048f8686ecd79712a80e3265a114cc73f14bdb2a59233fb66d0",
