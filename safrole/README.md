@@ -24,7 +24,7 @@ regarding the verification of Bandersnatch tickets, please ensure that you
 are using the same `ark-ec-vrfs` revision employed for the production of these
 vectors.
 
-Used `ark-ec-vrfs` revision: [e491b41](https://github.com/davxy/ark-ec-vrfs/tree/e491b41b48d9132f59ff2a4d4f1c6c3e853deab7)
+Used `ark-ec-vrfs` revision: [d90e180](https://github.com/davxy/ark-ec-vrfs/tree/d90e1800d571f32163e6f7b5d956d065668c899f)
 
 ## zk-SNARK SRS
 
