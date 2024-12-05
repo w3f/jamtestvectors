@@ -8,7 +8,7 @@ IMPORTS
     -- Constants
     validators-count, epoch-length, cores-count,
     validators-super-majority, avail-bitfield-bytes,
-    max-blocks-history
+    max-blocks-history, max-tickets-per-block
         FROM Constants;
 
 --------------------------------------------
@@ -248,7 +248,7 @@ TicketsOrKeys ::= CHOICE {
     keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchPublic
 }
 
-TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..max-tickets-per-block)) OF TicketEnvelope
 
 --------------------------------------------
 -- Disputes

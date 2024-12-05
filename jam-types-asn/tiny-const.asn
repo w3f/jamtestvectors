@@ -8,6 +8,8 @@ validators-count INTEGER ::= 6
 cores-count INTEGER ::= 2
 epoch-length INTEGER ::= 12
 
+max-tickets-per-block INTEGER ::= 3
+
 max-blocks-history INTEGER ::= 8
 
 -- Derived constants

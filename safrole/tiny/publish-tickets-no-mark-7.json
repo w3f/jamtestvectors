@@ -191,20 +191,8 @@
                 "attempt": 1
             },
             {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
                 "id": "0x8d803b93b5820db802c0b1efbb97de8f9b0ee9a6b4f0e5d63fbab4be47f17a9e",
                 "attempt": 2
-            },
-            {
-                "id": "0xb88b448158831229360cec5a09f1aec8ebe80b3cfade6654decc2b1e9844c1f7",
-                "attempt": 2
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
             }
         ],
         "gamma_s": {
@@ -411,20 +399,8 @@
                 "attempt": 1
             },
             {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
                 "id": "0x8d803b93b5820db802c0b1efbb97de8f9b0ee9a6b4f0e5d63fbab4be47f17a9e",
                 "attempt": 2
-            },
-            {
-                "id": "0xb88b448158831229360cec5a09f1aec8ebe80b3cfade6654decc2b1e9844c1f7",
-                "attempt": 2
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
             }
         ],
         "gamma_s": {

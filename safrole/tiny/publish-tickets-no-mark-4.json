@@ -189,18 +189,6 @@
             {
                 "id": "0x3a5d10abc80dda33fe3f40b3bb2e3eefd3e97dda3d617a860c9d94eb70b832ad",
                 "attempt": 1
-            },
-            {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
-                "id": "0xb88b448158831229360cec5a09f1aec8ebe80b3cfade6654decc2b1e9844c1f7",
-                "attempt": 2
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
             }
         ],
         "gamma_s": {
@@ -397,18 +385,6 @@
             {
                 "id": "0x3a5d10abc80dda33fe3f40b3bb2e3eefd3e97dda3d617a860c9d94eb70b832ad",
                 "attempt": 1
-            },
-            {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
-                "id": "0xb88b448158831229360cec5a09f1aec8ebe80b3cfade6654decc2b1e9844c1f7",
-                "attempt": 2
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
             }
         ],
         "gamma_s": {
