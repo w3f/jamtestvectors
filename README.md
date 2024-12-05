@@ -8,3 +8,4 @@
 - [History](./history/README.md)
 - [Assurances](./assurances/README.md)
 - [Reports](./reports/README.md)
+- [Statistics](./statistics/README.md)
