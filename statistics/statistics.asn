@@ -1,0 +1,40 @@
+-- Disputes STF test vectors schema
+
+DisputesModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, ValidatorIndex, Statistics, Ed25519Public, Extrinsic, ValidatorsData
+        FROM JamTypes;
+
+
+State ::= SEQUENCE {
+    -- [π] Statistics
+    pi  Statistics,
+    -- [τ] Timeslot
+    tau TimeSlot,
+    -- [κ'] Posterior active validators
+    kappa-prime ValidatorsData
+}
+
+Input ::= SEQUENCE {
+    -- [H_t] Block timeslot
+    slot TimeSlot,
+    -- [H_i] Block author
+    author-index ValidatorIndex,
+    -- [E] Extrinsic
+    extrinsic Extrinsic,
+    -- [R] Guarantees reporters (derived)
+    reporters SEQUENCE OF Ed25519Public
+}
+
+Output ::= NULL
+
+-- Disputes STF execution dump
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END

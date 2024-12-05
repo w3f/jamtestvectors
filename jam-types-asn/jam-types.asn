@@ -225,6 +225,26 @@ BlockInfo ::= SEQUENCE {
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 
 --------------------------------------------
+-- Statistics
+--------------------------------------------
+
+ActivityRecord ::= SEQUENCE {
+    blocks      U32,
+    tickets     U32,
+    pre-images  U32,
+    pre-images-size U32,
+    guarantees  U32,
+    assurances  U32
+}
+
+ActivityRecords ::= SEQUENCE (SIZE(validators-count)) OF ActivityRecord
+
+Statistics ::= SEQUENCE {
+    current    ActivityRecords,
+    last       ActivityRecords
+}
+
+--------------------------------------------
 -- Tickets
 --------------------------------------------
 

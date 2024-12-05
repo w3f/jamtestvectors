@@ -4,3 +4,4 @@
 
 - [Codec](./codec/README.md)
 - [Safrole](./safrole/README.md)
+- [Statistics](./statistics/README.md)
