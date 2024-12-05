@@ -1,6 +1,6 @@
--- Disputes STF test vectors schema
+-- Statistics STF test vectors schema
 
-DisputesModule DEFINITIONS ::= BEGIN
+StatisticsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
     TimeSlot, ValidatorIndex, Statistics, Ed25519Public, Extrinsic, ValidatorsData

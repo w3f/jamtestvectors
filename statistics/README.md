@@ -20,10 +20,16 @@ Most of the content of the extrinsic is irrelevant and primarily consists of pla
 ## Tiny Vectors
 
 - [stats_with_empty_extrinsic-1](./tiny/stats_with_empty_extrinsic-1.json)
+  - Empty extrinsic with no epoch change.
+  - Only author blocks counter is incremented.
 
 - [stats_with_epoch_change-1](./tiny/stats_with_epoch_change-1.json)
+  - Misc extrinsic information with no epoch change.
+  - See "Extrinsic Semantic Validity" section.
 
 - [stats_with_some_extrinsic-1](./tiny/stats_with_some_extrinsic-1.json)
+  - Misc extrinsic information with no epoch change.
+  - See "Extrinsic Semantic Validity" section.
 
 
 ## Full Vectors
