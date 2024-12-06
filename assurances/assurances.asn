@@ -37,7 +37,8 @@ ErrorCode ::= ENUMERATED {
     bad-attestation-parent (1),
     bad-validator-index (2),
     core-not-engaged (3),
-    bad-signature (4)
+    bad-signature (4),
+    not-sorted-or-unique-assurers (5)
 }
 
 OutputData ::= SEQUENCE {
