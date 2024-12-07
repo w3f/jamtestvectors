@@ -136,7 +136,8 @@ WorkItem ::= SEQUENCE {
     service ServiceId,
     code-hash OpaqueHash,
     payload ByteSequence,
-    gas-limit Gas,
+    refine-gas-limit Gas,
+    accumulate-gas-limit Gas,
     import-segments SEQUENCE OF ImportSpec,
     extrinsic SEQUENCE OF ExtrinsicSpec,
     export-count U16
@@ -166,7 +167,7 @@ WorkResult ::= SEQUENCE {
     service-id ServiceId,
     code-hash OpaqueHash,
     payload-hash OpaqueHash,
-    gas Gas,
+    accumulate-gas Gas,
     result WorkExecResult
 }
 
