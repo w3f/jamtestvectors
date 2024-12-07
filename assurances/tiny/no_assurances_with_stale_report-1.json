@@ -32,14 +32,14 @@
                             "service_id": 129,
                             "code_hash": "0x8178abf4f459e8ed591be1f7f629168213a5ac2a487c28c0ef1a806198096c7a",
                             "payload_hash": "0xfa99b97e72fcfaef616108de981a59dc3310e2a9f5e73cd44d702ecaaccd8696",
-                            "gas": 120,
+                            "accumulate_gas": 120,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
                             }
                         }
                     ]
                 },
-                "timeout": 7
+                "timeout": 6
             },
             {
                 "report": {
@@ -67,7 +67,7 @@
                             "service_id": 198,
                             "code_hash": "0xc69d09eaac7e1af761c2448987e69929cf86960d091556dab5caf7ded9b3e766",
                             "payload_hash": "0xd55e07438aeeeb0d6509ab28af8a758d1fb70424db6b27c7e1ef6473e721c328",
-                            "gas": 157,
+                            "accumulate_gas": 157,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
                             }
@@ -123,7 +123,41 @@
     },
     "post_state": {
         "avail_assignments": [
-            null,
+            {
+                "report": {
+                    "package_spec": {
+                        "hash": "0x63c03371b9dad9f1c60473ec0326c970984e9c90c0b5ed90eba6ada471ba4d86",
+                        "length": 12345,
+                        "erasure_root": "0x58e5c51934af8039cde6c9683669a9802021c0e9fc3bda4e9ecc986def429389",
+                        "exports_root": "0xc74f0ee9bf7e8531eae672a7995b9a209153d1891610d032572ecea56cc11d9b",
+                        "exports_count": 3
+                    },
+                    "context": {
+                        "anchor": "0xc0564c5e0de0942589df4343ad1956da66797240e2a2f2d6f8116b5047768986",
+                        "state_root": "0xf6967658df626fa39cbfb6014b50196d23bc2cfbfa71a7591ca7715472dd2b48",
+                        "beefy_root": "0x9329de635d4bbb8c47cdccbbc1285e48bf9dbad365af44b205343e99dea298f3",
+                        "lookup_anchor": "0x168490e085497fcb6cbe3b220e2fa32456f30c1570412edd76ccb93be9254fef",
+                        "lookup_anchor_slot": 4,
+                        "prerequisites": []
+                    },
+                    "core_index": 0,
+                    "authorizer_hash": "0x022e5e165cc8bd586404257f5cd6f5a31177b5c951eb076c7c10174f90006eef",
+                    "auth_output": "0x",
+                    "segment_root_lookup": [],
+                    "results": [
+                        {
+                            "service_id": 129,
+                            "code_hash": "0x8178abf4f459e8ed591be1f7f629168213a5ac2a487c28c0ef1a806198096c7a",
+                            "payload_hash": "0xfa99b97e72fcfaef616108de981a59dc3310e2a9f5e73cd44d702ecaaccd8696",
+                            "accumulate_gas": 120,
+                            "result": {
+                                "ok": "0x64756d6d792d726573756c74"
+                            }
+                        }
+                    ]
+                },
+                "timeout": 6
+            },
             {
                 "report": {
                     "package_spec": {
@@ -150,7 +184,7 @@
                             "service_id": 198,
                             "code_hash": "0xc69d09eaac7e1af761c2448987e69929cf86960d091556dab5caf7ded9b3e766",
                             "payload_hash": "0xd55e07438aeeeb0d6509ab28af8a758d1fb70424db6b27c7e1ef6473e721c328",
-                            "gas": 157,
+                            "accumulate_gas": 157,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
                             }

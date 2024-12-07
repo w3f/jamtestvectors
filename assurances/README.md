@@ -35,7 +35,7 @@ subsystem.
     of the cores.
 - [no_assurances_with_stale_report-1](tiny/no_assurances_with_stale_report-1.json) 🟢
 	- Progress with an empty assurances extrinsic.
-	- Drops a stale work report assignment.
+	- Stale work report assignment is left untouched.
 - [assurances_with_bad_signature-1](tiny/assurances_with_bad_signature-1.json)🔴
   - One assurance has a bad signature.
 - [assurances_with_bad_validator_index-1](tiny/assurances_with_bad_validator_index-1.json)🔴
