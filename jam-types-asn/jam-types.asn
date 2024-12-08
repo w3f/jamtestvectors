@@ -8,7 +8,7 @@ IMPORTS
     -- Constants
     validators-count, epoch-length, cores-count,
     validators-super-majority, avail-bitfield-bytes,
-    max-blocks-history
+    max-blocks-history, max-tickets-per-block
         FROM Constants;
 
 --------------------------------------------
@@ -34,6 +34,8 @@ BlsPublic ::= OCTET STRING (SIZE(144))
 BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
 BandersnatchRingVrfSignature ::= OCTET STRING (SIZE(784))
 Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+BandersnatchRingCommitment ::= OCTET STRING (SIZE(144))
 
 --------------------------------------------
 -- Application Specific Core
@@ -224,6 +226,26 @@ BlockInfo ::= SEQUENCE {
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 
 --------------------------------------------
+-- Statistics
+--------------------------------------------
+
+ActivityRecord ::= SEQUENCE {
+    blocks      U32,
+    tickets     U32,
+    pre-images  U32,
+    pre-images-size U32,
+    guarantees  U32,
+    assurances  U32
+}
+
+ActivityRecords ::= SEQUENCE (SIZE(validators-count)) OF ActivityRecord
+
+Statistics ::= SEQUENCE {
+    current    ActivityRecords,
+    last       ActivityRecords
+}
+
+--------------------------------------------
 -- Tickets
 --------------------------------------------
 
@@ -247,7 +269,7 @@ TicketsOrKeys ::= CHOICE {
     keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchPublic
 }
 
-TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..max-tickets-per-block)) OF TicketEnvelope
 
 --------------------------------------------
 -- Disputes
