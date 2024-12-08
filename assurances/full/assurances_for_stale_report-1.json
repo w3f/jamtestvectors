@@ -6178,7 +6178,7 @@
                         }
                     ]
                 },
-                "timeout": 594
+                "timeout": 595
             },
             {
                 "report": {
@@ -13717,12 +13717,9 @@
         ]
     },
     "output": {
-        "err": "report_timeout"
-    },
-    "post_state": {
-        "avail_assignments": [
-            {
-                "report": {
+        "ok": {
+            "reported": [
+                {
                     "package_spec": {
                         "hash": "0x63c03371b9dad9f1c60473ec0326c970984e9c90c0b5ed90eba6ada471ba4d86",
                         "length": 12345,
@@ -13754,10 +13751,7 @@
                         }
                     ]
                 },
-                "timeout": 594
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xc7e675b7e3450cf70d436172644faef291c2aa905b1fe81c068785cd6e1e44e5",
                         "length": 12345,
@@ -13789,10 +13783,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xb50191ed3f9c39b65a2260c255cf65ebe517257a1351cc36fdd4bfcecea9e220",
                         "length": 12345,
@@ -13824,10 +13815,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x316504b8883be5404f8d50c253fa1875f3a5e051b691a0ddecc79466df543ea4",
                         "length": 12345,
@@ -13859,10 +13847,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x7edfc4555d560a4b3b40be688931f44be64c33b6b20d92cd6494b478d8ccb755",
                         "length": 12345,
@@ -13894,10 +13879,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x05a2365d03715c938e7ae510f451b0598f8d82086b5c570c9d2a8dd9837b116d",
                         "length": 12345,
@@ -13929,10 +13911,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xce479cf92b368f39ab06739921f09f10953754e76446bba6c54c6e49c26aaa83",
                         "length": 12345,
@@ -13964,10 +13943,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x057aa0ca5ae6880492fb57dd1d6836141ea850332501fc6e18c65c7642930a1e",
                         "length": 12345,
@@ -13999,10 +13975,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xdcd88501cc2e14bb228b2dfdd2ed4fb451c0f195affdf899826ef3df60e8217d",
                         "length": 12345,
@@ -14034,10 +14007,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xdba0cf9b8d803b9042a81ddb06d8bd8f95c4738e90809a6c71cf02936eab7020",
                         "length": 12345,
@@ -14069,10 +14039,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xa324af1804577b1039a210604b64d9045e0a0ec823ed73d5753bf041d39f8c50",
                         "length": 12345,
@@ -14104,10 +14071,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x04d42a25de17c950422181de39fa0aed93d0ceb9805ad3b6f542cc4ea0c83acc",
                         "length": 12345,
@@ -14139,10 +14103,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x341b8745e0367123827271fba6192c97ca4b2da617854859d491c38afc4bfbb7",
                         "length": 12345,
@@ -14174,10 +14135,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x0e03b3135985dbb7642cff29006bf151f8a9449ee310b8bca3db8d30e0b43df5",
                         "length": 12345,
@@ -14209,10 +14167,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x4312ee488416dad7f9dbfd983d2584f510ee9636c7df3067e0961264302c4afb",
                         "length": 12345,
@@ -14244,10 +14199,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xbe2ddc13e2baac854f18a66aae6c8d4d33701f6f6215a226d258a52068d4065d",
                         "length": 12345,
@@ -14279,10 +14231,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x678e73dfa75fb9081142ccebd884afae0785841584629f7d20ee4e2274339a67",
                         "length": 12345,
@@ -14314,10 +14263,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xcbc376f96c32be3a7145a8262c5d3c61d7f5aa9428c1c1d1e7a2ec0dc54a8f81",
                         "length": 12345,
@@ -14349,10 +14295,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x6344f95fdb23f7cc614dfc02774e52bf7d0a1689ac81db894612fb00ea75d1c7",
                         "length": 12345,
@@ -14384,10 +14327,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x829d30d5d6c7a54f1ebf51e995780636361ea92f320bf333abb013dba9ea6faf",
                         "length": 12345,
@@ -14419,10 +14359,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x75f8b5ab1062a270a94a49c0ed787326e132a73e8296e30dc1b3b37df34974ac",
                         "length": 12345,
@@ -14454,10 +14391,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xf6f0a43f2a673a56fddea5664c361cc2c869cc53f545f4ba276ffa7d8e735240",
                         "length": 12345,
@@ -14489,10 +14423,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x5dc042fe143e1cc2ada0c07b6e566240f0efaf0e62427c62b2ca81e5520ee5ec",
                         "length": 12345,
@@ -14524,10 +14455,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x1134b97567be10baa3d17839a8eeebf665473a5af1e3a95229a544b2986cb3aa",
                         "length": 12345,
@@ -14559,10 +14487,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xea02791b434df1f077c3749001996e1dc5ea9fda8e7722814f8375d18f77f972",
                         "length": 12345,
@@ -14594,10 +14519,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xcf8001871c73992118d826ad789fde5f5259c1fc3b76e2c2d5d40ca09b2bdf57",
                         "length": 12345,
@@ -14629,10 +14551,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xfa23fb0d403a7f49fd0df46553af30514e7f5ba58f789ca92832cab3dc23ab2a",
                         "length": 12345,
@@ -14664,10 +14583,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xcb529416885f3d46f1202bcd6cdfbc3130e44796635379cf95074feff51c6cd9",
                         "length": 12345,
@@ -14699,10 +14615,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0x99c64b8e0f4aae56aefb09eda497d8156b73857342854ea136d2c5c868c547fe",
                         "length": 12345,
@@ -14734,10 +14647,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xb7950e6cf71c0604acdf7b5450605a65cf55d46ea61901e4a812787229488b2b",
                         "length": 12345,
@@ -14769,10 +14679,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xbb0ce2064f6ef18c2a10ff41c0c853bab8112e366cb0ba6dc59ff97ac8e5dd6b",
                         "length": 12345,
@@ -14804,10 +14711,7 @@
                         }
                     ]
                 },
-                "timeout": 599
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xcb0b91b1322bc9807b9d0484b34443f6cc186931b194c19e7d7f157c80265390",
                         "length": 12345,
@@ -14838,9 +14742,44 @@
                             }
                         }
                     ]
-                },
-                "timeout": 599
-            },
+                }
+            ]
+        }
+    },
+    "post_state": {
+        "avail_assignments": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
             null,
             null,
             null,

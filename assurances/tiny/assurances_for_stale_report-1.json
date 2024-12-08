@@ -76,7 +76,7 @@
                         }
                     ]
                 },
-                "timeout": 6
+                "timeout": 7
             },
             {
                 "report": {
@@ -154,12 +154,9 @@
         ]
     },
     "output": {
-        "err": "report_timeout"
-    },
-    "post_state": {
-        "avail_assignments": [
-            {
-                "report": {
+        "ok": {
+            "reported": [
+                {
                     "package_spec": {
                         "hash": "0x63c03371b9dad9f1c60473ec0326c970984e9c90c0b5ed90eba6ada471ba4d86",
                         "length": 12345,
@@ -191,10 +188,7 @@
                         }
                     ]
                 },
-                "timeout": 6
-            },
-            {
-                "report": {
+                {
                     "package_spec": {
                         "hash": "0xc7e675b7e3450cf70d436172644faef291c2aa905b1fe81c068785cd6e1e44e5",
                         "length": 12345,
@@ -225,9 +219,14 @@
                             }
                         }
                     ]
-                },
-                "timeout": 11
-            }
+                }
+            ]
+        }
+    },
+    "post_state": {
+        "avail_assignments": [
+            null,
+            null
         ],
         "curr_validators": [
             {
