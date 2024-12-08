@@ -71,6 +71,8 @@ subsystem.
   - Work report per core gas is very high, still less than the limit.
 - [too_high_work_report_gas](./tiny/too_high_work_report_gas-1.json) 🔴
   - Work report per core gas is too much high.
+- [service_item_gas_too_low](./tiny/service_item_gas_too_low.json) 🔴
+  - Accumulate gas is below the service minimum.
 - [many_dependencies](./tiny/many_dependencies-1.json) 🟢
   - Work report has many dependencies, still less than the limit.
 - [too_many_dependencies](./tiny/too_many_dependencies-1.json) 🔴
