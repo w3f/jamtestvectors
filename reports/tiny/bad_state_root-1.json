@@ -13,7 +13,7 @@
                     "context": {
                         "anchor": "0x39cb518983b02695034b3b92cb31a7334e1a2ec3ef7dbfa32c68e4e8444363f1",
                         "state_root": "0x1248fd314e6ca467f0305f3494a66c75c37aa084512c6066ee211d49bb1f39bc",
-                        "beefy_root": "0xe446a484bf9e32fbb190c0d66ce3021dd1d81e958b16818ffe2bb12858e1b82d",
+                        "beefy_root": "0x71c150347dc035847d5944c864a2d3ed0fa410341b2ffbfdeeaa1c9d6aa9cacd",
                         "lookup_anchor": "0x16bda47e5a68daf53c39ddee8af4ecaced7e87f3f0ac9da5a6f4f9e41350d319",
                         "lookup_anchor_slot": 6,
                         "prerequisites": []
@@ -27,7 +27,7 @@
                             "service_id": 42,
                             "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
                             "payload_hash": "0x3cf2d09da453bbdd6b68d8a1acd5f15ba23ba46d4ff087592b3d319432500a50",
-                            "gas": 10000,
+                            "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
                             }
@@ -38,15 +38,15 @@
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x70b10bb060a714d12f3b7ad0979716244b0eeb997dab74472f0cb0bc903baad3084002cb08996e77a309197276173cb0a4149f3f58bdb87be9d28472daa68208"
+                        "signature": "0x47d92d28ea66e13615f73b5675f41b20cb99af3378b6329bcf0e0b4e5d6b7abe25f01f2324308918c2b72dca29da64a41f1a852b6fef018a1ced0ccc42b2d60c"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x81c963e14bcdca2d8940805d665c526b36de327d5427a25efb2b7ce042f8edd430b9d8bf9f0992a5baeb06e44541bada074dd5620e817299b512a6699132dd0f"
+                        "signature": "0x159efb04b739b822ee38fdab2bad34df1d030b679abd0b9464a5f21fdb56ad7f22afd282945b51af3d9d0f8bdb2a1d0794a8ad2129f215e2a2303848b59c730c"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0x86c74a76d02e15c8f46db49f80219ea98433ec067526b959addbb719601c8410ed8a7fb3d2d1883bb4b31ad4a9621284882d3d72aab7479f3cfaf1647f759702"
+                        "signature": "0x4a8a2159e0e8599e05ae44a6286a1441b6c87d4d74545cc65604cc10c1fca4a19c2c16a5c0e31b2963a5b9f21002ce8a80d58b2d916f6c07dbbc9b67581ca307"
                     }
                 ]
             }
