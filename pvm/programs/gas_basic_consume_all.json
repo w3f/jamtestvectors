@@ -1,0 +1,49 @@
+{
+  "name": "gas_basic_consume_all",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 2,
+  "program": [
+    0,
+    0,
+    2,
+    82,
+    0,
+    1
+  ],
+  "expected-status": "trap",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 2,
+  "expected-memory": [],
+  "expected-gas": 0
+}
