@@ -1,5 +1,7 @@
 # Test Vectors for the JAM Protocol
 
+JAM protocol version 0.5.1
+
 ## Index
 
 - [Codec](./codec/README.md)
