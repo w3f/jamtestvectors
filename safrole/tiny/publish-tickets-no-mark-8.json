@@ -174,6 +174,10 @@
                 "attempt": 1
             },
             {
+                "id": "0x13fecb426e0a73b84b58b9a0832b11582dc971e79c5399e69f0baf1a244c7787",
+                "attempt": 2
+            },
+            {
                 "id": "0x1ec38833e785b52adca8c791f8bf479c8cae805c93ce1ed245b32b273e3c9322",
                 "attempt": 0
             },
@@ -182,12 +186,8 @@
                 "attempt": 1
             },
             {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
+                "id": "0x8d803b93b5820db802c0b1efbb97de8f9b0ee9a6b4f0e5d63fbab4be47f17a9e",
+                "attempt": 2
             }
         ],
         "gamma_s": {
@@ -206,7 +206,8 @@
                 "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33"
             ]
         },
-        "gamma_z": "0x96a4b479612d8d2770d6a4785fa2f44e0befca6f008b176de51e309e2ee796d2b596e315fcb044495b75c3cb5c7fd4cdae0959758cac93d4ab8789c6aec4ba8f683c6b103cf6888f70edfcb8dcbbc1d85a8fa3832e0cd4503c7a1796c8d0c3f792e630ae2b14e758ab0960e372172203f4c9a41777dadd529971d7ab9d23ab29fe0e9c85ec450505dde7f5ac038274cf"
+        "gamma_z": "0xa949a60ad754d683d398a0fb674a9bbe525ca26b0b0b9c8d79f210291b40d286d9886a9747a4587d497f2700baee229ca72c54ad652e03e74f35f075d0189a40d41e5ee65703beb5d7ae8394da07aecf9056b98c61156714fd1d9982367bee2992e630ae2b14e758ab0960e372172203f4c9a41777dadd529971d7ab9d23ab29fe0e9c85ec450505dde7f5ac038274cf",
+        "post_offenders": []
     },
     "output": {
         "ok": {
@@ -384,6 +385,10 @@
                 "attempt": 1
             },
             {
+                "id": "0x13fecb426e0a73b84b58b9a0832b11582dc971e79c5399e69f0baf1a244c7787",
+                "attempt": 2
+            },
+            {
                 "id": "0x1ec38833e785b52adca8c791f8bf479c8cae805c93ce1ed245b32b273e3c9322",
                 "attempt": 0
             },
@@ -392,12 +397,8 @@
                 "attempt": 1
             },
             {
-                "id": "0x5d91e5951d2b62c424b767220498e6d64280fc84ffb16951d93a00c009341498",
-                "attempt": 0
-            },
-            {
-                "id": "0xf28c553c54ea497bb39e20344e7a687523d06390bb8a24a919183599e584e813",
-                "attempt": 0
+                "id": "0x8d803b93b5820db802c0b1efbb97de8f9b0ee9a6b4f0e5d63fbab4be47f17a9e",
+                "attempt": 2
             }
         ],
         "gamma_s": {
@@ -416,6 +417,7 @@
                 "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33"
             ]
         },
-        "gamma_z": "0x96a4b479612d8d2770d6a4785fa2f44e0befca6f008b176de51e309e2ee796d2b596e315fcb044495b75c3cb5c7fd4cdae0959758cac93d4ab8789c6aec4ba8f683c6b103cf6888f70edfcb8dcbbc1d85a8fa3832e0cd4503c7a1796c8d0c3f792e630ae2b14e758ab0960e372172203f4c9a41777dadd529971d7ab9d23ab29fe0e9c85ec450505dde7f5ac038274cf"
+        "gamma_z": "0xa949a60ad754d683d398a0fb674a9bbe525ca26b0b0b9c8d79f210291b40d286d9886a9747a4587d497f2700baee229ca72c54ad652e03e74f35f075d0189a40d41e5ee65703beb5d7ae8394da07aecf9056b98c61156714fd1d9982367bee2992e630ae2b14e758ab0960e372172203f4c9a41777dadd529971d7ab9d23ab29fe0e9c85ec450505dde7f5ac038274cf",
+        "post_offenders": []
     }
 }
