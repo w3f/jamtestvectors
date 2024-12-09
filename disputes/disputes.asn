@@ -9,15 +9,15 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- [ψ] Disputes verdicts and offenders
+    -- [ψ] Prior disputes verdicts and offenders. Mutated to ψ'.
     psi  DisputesRecords,
-    -- [ρ] Availability cores assignments
+    -- [ρ] Prior availability cores assignments.
     rho AvailabilityAssignments,
-    -- [τ] Timeslot
+    -- [τ] Prior timeslot.
     tau TimeSlot,
-    -- [κ] Validators active in the current epoch
+    -- [κ] Prior current epoch validators.
     kappa ValidatorsData,
-    -- [λ] Validators active in the previous epoch
+    -- [λ] Prior previous epoch validators.
     lambda ValidatorsData
 }
 

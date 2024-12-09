@@ -10,25 +10,25 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- [τ] Most recent block's timeslot.
+    -- [τ] Prior most recent block's timeslot. Mutated to τ'.
     tau TimeSlot,
-    -- [η] Entropy accumulator and epochal randomness.
+    -- [η] Prior entropy buffer. Mutated to η'.
     eta EntropyBuffer,
-    -- [λ] Validator keys and metadata which were active in the prior epoch.
+    -- [λ] Prior previous epoch validator keys and metadata. Mutated to λ'.
     lambda ValidatorsData,
-    -- [κ] Validator keys and metadata currently active.
+    -- [κ] Prior current epoch validator keys and metadata. Mutated to κ'.
     kappa ValidatorsData,
-    -- [γ_k] Validator keys for the following epoch.
+    -- [γ_k] Prior next epoch validator keys and metadata. Mutated to γ'_k.
     gamma-k ValidatorsData,
-    -- [ι] Validator keys and metadata to be drawn from next.
+    -- [ι] Prior scheduled validator keys and metadata. Mutated to ι'.
     iota ValidatorsData,
-    -- [γ_a] Sealing-key contest ticket accumulator.
+    -- [γ_a] Prior sealing-key contest ticket accumulator. Mutated to γ'_a.
     gamma-a TicketsAccumulator,
-    -- [γ_s] Sealing-key series of the current epoch.
+    -- [γ_s] Prior sealing-key series of the current epoch. Mutated to γ'_s.
     gamma-s TicketsOrKeys,
-    -- [γ_z] Bandersnatch ring commitment.
+    -- [γ_z] Prior Bandersnatch ring commitment. Mutated to γ'_z.
     gamma-z BandersnatchRingCommitment,
-    -- [ψ_o'] Posterior offenders sequence.
+    -- [ψ'_o] Posterior offenders sequence.
     post-offenders SEQUENCE OF Ed25519Public
 }
 

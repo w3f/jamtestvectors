@@ -8,11 +8,11 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- [π] Statistics
+    -- [π] Prior statistics. Mutated to π'.
     pi  Statistics,
-    -- [τ] Timeslot
+    -- [τ] Prior timeslot.
     tau TimeSlot,
-    -- [κ'] Posterior active validators
+    -- [κ'] Posterior active validators.
     kappa-prime ValidatorsData
 }
 

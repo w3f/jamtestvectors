@@ -21,10 +21,9 @@ AuthPool ::= SEQUENCE OF OpaqueHash
 AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
 
 State ::= SEQUENCE {
-    -- [ρ^‡] rho double dagger, which is the pending reports (ϱ) after that any
-    -- work report judged as uncertain or invalid has been removed from it (ϱ^†),
-    -- and the availability reports were processed (ϱ^‡), freeing up the
-    -- corresponding entry for a new report.
+    -- [ρ‡] Intermediate pending reports after that any work report judged as
+    -- uncertain or invalid has been removed from it (ϱ†), and the availability
+    -- assurances are processed. Mutated to ϱ'.
     avail-assignments AvailabilityAssignments,
 
     -- [κ'] Posterior active validators.
@@ -36,7 +35,7 @@ State ::= SEQUENCE {
     -- [η'] Posterior entropy buffer.
     entropy EntropyBuffer,
 
-    -- [ψ_o'] Posterior offenders.
+    -- [ψ'_o] Posterior offenders.
     offenders SEQUENCE OF Ed25519Public,
 
     -- [β] Recent blocks.
@@ -45,8 +44,7 @@ State ::= SEQUENCE {
     -- [α] Authorization pools.
     auth-pools AuthPools,
 
-    -- Encoded services dictionary [δ]
-    -- Refer to T(σ) in Appendix D.
+    -- [δ] Encoded services dictionary. Refer to T(σ) in Appendix D.
     services Services
 }
 

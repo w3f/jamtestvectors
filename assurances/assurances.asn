@@ -9,9 +9,8 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- [ρ†] rho dagger, which is the pending reports (ϱ) after that any
-    -- work report judged as uncertain or invalid has been removed from it.
-    -- On success, mutated to get [ϱ‡].
+    -- [ρ†] Intermediate pending reports after that any work report judged as
+    -- uncertain or invalid has been removed from it. Mutated to ϱ‡.
     avail-assignments AvailabilityAssignments,
 
     -- [κ'] Posterior active validators.

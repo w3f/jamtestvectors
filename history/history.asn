@@ -7,7 +7,7 @@ IMPORTS
         FROM JamTypes;
 
 State ::= SEQUENCE {
-    -- [β] Recent blocks history
+    -- [β] Prior recent blocks history. Mutated to ϐ'.
     beta BlocksHistory
 }
 
