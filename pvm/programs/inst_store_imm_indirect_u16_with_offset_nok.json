@@ -1,5 +1,5 @@
 {
-  "name": "gas_basic_consume_all",
+  "name": "inst_store_imm_indirect_u16_with_offset_nok",
   "initial-regs": [
     0,
     0,
@@ -8,7 +8,7 @@
     0,
     0,
     0,
-    0,
+    135166,
     0,
     0,
     0,
@@ -16,15 +16,24 @@
     0
   ],
   "initial-pc": 0,
-  "initial-page-map": [],
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
   "initial-memory": [],
-  "initial-gas": 2,
+  "initial-gas": 10000,
   "program": [
     0,
     0,
-    2,
-    82,
-    0,
+    5,
+    71,
+    23,
+    1,
+    52,
+    18,
     1
   ],
   "expected-status": "trap",
@@ -36,14 +45,14 @@
     0,
     0,
     0,
-    0,
+    135166,
     0,
     0,
     0,
     0,
     0
   ],
-  "expected-pc": 2,
+  "expected-pc": 0,
   "expected-memory": [],
-  "expected-gas": 0
+  "expected-gas": 9998
 }
