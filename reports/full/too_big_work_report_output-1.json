@@ -13208,7 +13208,7 @@
         ]
     },
     "output": {
-        "err": "other_error"
+        "err": "work_report_too_big"
     },
     "post_state": {
         "avail_assignments": [

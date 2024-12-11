@@ -93,7 +93,8 @@ ErrorCode ::= ENUMERATED {
     service-item-gas-too-low (18),
     too-many-dependencies (19),
     segment-root-lookup-invalid (20),
-    bad-signature (21)
+    bad-signature (21),
+    work-report-too-big (22)
 }
 
 Output ::= CHOICE {
