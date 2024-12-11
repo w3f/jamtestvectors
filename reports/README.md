@@ -52,9 +52,6 @@ subsystem.
   - Context state root doesn't match the one at anchor.
 - [bad_validator_index](./tiny/bad_validator_index-1.json) 🔴
   - Validator index is too big.
-- [consume_authorization_once](./tiny/consume_authorization_once-1.json) 🔴
-  - Multiple authorizers are available for the same work report.
-  - Only one is consumed. 
 - [core_engaged](./tiny/core_engaged-1.json) 🔴
   - A core is not available.
 - [dependency_missing](./tiny/dependency_missing-1.json) 🔴
