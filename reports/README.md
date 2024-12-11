@@ -111,6 +111,10 @@ subsystem.
     an unexpected value.
 - [wrong_assignment](./tiny/wrong_assignment-1.json) 🔴
   - Unexpected guarantor for work report core.
+- [big_work_report_output](./tiny/big_work_report_output-1.json) 🟢
+  - Work report output is very big, still less than the limit.
+- [too_big_work_report_output](./tiny/big_work_report_output-1.json) 🔴
+  - Work report output is size is over the limit.
 
 ## Full Vectors
 
