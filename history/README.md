@@ -2,6 +2,9 @@
 
 Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./history.asn).
 
+Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and this subsystem STF specific [schema](./history.asn).
+
 ## Input Origin
 
 **While the origin of the input data is irrelevant for these test vectors and has

@@ -11,3 +11,4 @@ JAM protocol version 0.5.2
 - [Assurances](./assurances/README.md)
 - [Reports](./reports/README.md)
 - [Statistics](./statistics/README.md)
+- [Authorizations](./authorizations/README.md)
