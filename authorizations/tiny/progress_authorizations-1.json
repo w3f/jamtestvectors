@@ -1,7 +1,7 @@
 {
     "input": {
         "slot": 42,
-        "guarantees": []
+        "auths": []
     },
     "pre_state": {
         "auth_pools": [

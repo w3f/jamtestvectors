@@ -13,6 +13,9 @@ tickets-per-validator INTEGER ::= 3
 
 max-blocks-history INTEGER ::= 8
 
+auth-pool-max-size INTEGER ::= 8
+auth-queue-size INTEGER::= 80
+
 -- Derived constants
 
 -- ceil(validators-count * 2/3 + 1)

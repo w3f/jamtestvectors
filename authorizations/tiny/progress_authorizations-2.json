@@ -1,7 +1,7 @@
 {
     "input": {
         "slot": 45,
-        "guarantees": [
+        "auths": [
             {
                 "core": 0,
                 "auth_hash": "0xb6abd7a763ad270047eccf4880b0eacf1c6c9c7b13a7dd790cb1c7c5e3109329"
