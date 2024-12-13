@@ -9,6 +9,7 @@ cores-count INTEGER ::= 341
 epoch-length INTEGER ::= 600
 
 max-tickets-per-block INTEGER ::= 16
+tickets-per-validator INTEGER ::= 2
 
 max-blocks-history INTEGER ::= 8
 
