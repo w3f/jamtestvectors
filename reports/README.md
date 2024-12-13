@@ -3,16 +3,12 @@
 We offer two types of test vectors:
 
 - Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
-  cores count (2) and report core assignment rotation period (4). They are provided in both
-  JSON format for easy inspection and modification, and in SCALE format, which is the production
-  binary codec.
-
+  cores count (2) and report core assignment rotation period (4).
 - Full: These vectors use production validators (1023), cores count (341) and report core
   assignment rotation period (10).
-  Similar to the tiny vectors, they are available in JSON and SCALE format.
 
-Both JSON and SCALE formats conform to the JAM types ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and the Reports test vectors specific [schema](./reports.asn).
+Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and this subsystem STF specific [schema](./reports.asn).
 
 ## STF Output
 

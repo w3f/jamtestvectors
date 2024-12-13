@@ -3,14 +3,11 @@
 We offer two types of test vectors:
 
 - Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
-  and cores count (2). They are provided in both JSON format for easy inspection and modification,
-  and in SCALE format, which is the production binary codec.
-
+  and cores count (2).
 - Full: These vectors use production validators (1023) and cores count (341)
-  Similar to the tiny vectors, they are available in JSON and SCALE format.
 
-Both JSON and SCALE formats conform to the JAM types ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and the Assurances test vectors specific [schema](./assurances.asn).
+Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and this subsystem STF specific [schema](./assurances.asn).
 
 ## STF Output
 

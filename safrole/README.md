@@ -5,15 +5,11 @@ We offer two types of test vectors:
 - Tiny: These are designed for quick adjustments and prototyping, with reduced validators
   count (6) and epoch duration (12). Tickets per validator max attempts is 3 in order to
   be able to fill the full epoch when only the supermajority of validators is honest (5).
-  They are provided in both JSON format for easy inspection and modification, and in SCALE
-  format, which is the production binary codec.
-
 - Full: These vectors use production validators count (1023) and epoch duration (600).
   Tickets per validator max attempts is aligned to the GP (2).
-  Similar to the tiny vectors, they are available in JSON and SCALE format.
 
-Both JSON and SCALE formats conform to the JAM types ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and the Safrole test vectors specific [schema](./safrole.asn).
+Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and this subsystem STF specific [schema](./safrole.asn).
 
 ## ⚠️ WARNING  ⚠️
 
