@@ -1,0 +1,24 @@
+-- Authorizations STF test vectors schema
+
+AuthorizationsModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    OpaqueHash, ReportedWorkPackage, BlocksAuthorizations, HeaderHash, StateRoot
+        FROM JamTypes;
+
+State ::= SEQUENCE {
+}
+
+Input ::= SEQUENCE {
+}
+
+Output ::= NULL
+
+TestCase ::= SEQUENCE {
+    input      Input,
+    pre-state  State,
+    output     Output,
+    post-state State
+}
+
+END
