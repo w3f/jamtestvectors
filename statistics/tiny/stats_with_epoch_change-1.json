@@ -54,7 +54,7 @@
                                 "service_id": 0,
                                 "code_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
                                 "payload_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                                "gas": 0,
+                                "accumulate_gas": 0,
                                 "result": {
                                     "ok": "0x"
                                 }
@@ -99,7 +99,7 @@
                                 "service_id": 0,
                                 "code_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
                                 "payload_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                                "gas": 0,
+                                "accumulate_gas": 0,
                                 "result": {
                                     "ok": "0x"
                                 }
@@ -138,8 +138,7 @@
                 "culprits": [],
                 "faults": []
             }
-        },
-        "reporters": []
+        }
     },
     "pre_state": {
         "pi": {
@@ -293,7 +292,7 @@
                     "tickets": 0,
                     "pre_images": 0,
                     "pre_images_size": 0,
-                    "guarantees": 0,
+                    "guarantees": 1,
                     "assurances": 1
                 },
                 {
@@ -301,7 +300,7 @@
                     "tickets": 2,
                     "pre_images": 3,
                     "pre_images_size": 51,
-                    "guarantees": 0,
+                    "guarantees": 1,
                     "assurances": 1
                 },
                 {
@@ -309,7 +308,7 @@
                     "tickets": 0,
                     "pre_images": 0,
                     "pre_images_size": 0,
-                    "guarantees": 0,
+                    "guarantees": 1,
                     "assurances": 0
                 },
                 {
@@ -317,7 +316,7 @@
                     "tickets": 0,
                     "pre_images": 0,
                     "pre_images_size": 0,
-                    "guarantees": 0,
+                    "guarantees": 1,
                     "assurances": 0
                 },
                 {

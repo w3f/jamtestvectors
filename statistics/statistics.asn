@@ -3,7 +3,7 @@
 StatisticsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    TimeSlot, ValidatorIndex, Statistics, Ed25519Public, Extrinsic, ValidatorsData
+    TimeSlot, ValidatorIndex, Statistics, Extrinsic, ValidatorsData
         FROM JamTypes;
 
 
@@ -22,9 +22,7 @@ Input ::= SEQUENCE {
     -- [H_i] Block author
     author-index ValidatorIndex,
     -- [E] Extrinsic
-    extrinsic Extrinsic,
-    -- [R] Guarantees reporters (derived)
-    reporters SEQUENCE OF Ed25519Public
+    extrinsic Extrinsic
 }
 
 Output ::= NULL
