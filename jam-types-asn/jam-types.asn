@@ -8,7 +8,8 @@ IMPORTS
     -- Constants
     validators-count, epoch-length, cores-count,
     validators-super-majority, avail-bitfield-bytes,
-    max-blocks-history
+    max-blocks-history, max-tickets-per-block,
+    auth-pool-max-size, auth-queue-size
         FROM Constants;
 
 --------------------------------------------
@@ -34,6 +35,8 @@ BlsPublic ::= OCTET STRING (SIZE(144))
 BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
 BandersnatchRingVrfSignature ::= OCTET STRING (SIZE(784))
 Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+BandersnatchRingCommitment ::= OCTET STRING (SIZE(144))
 
 --------------------------------------------
 -- Application Specific Core
@@ -114,6 +117,24 @@ RefineContext ::= SEQUENCE {
 }
 
 --------------------------------------------
+-- Authorizations
+--------------------------------------------
+
+Authorizer ::= SEQUENCE {
+    code-hash OpaqueHash,
+    params ByteSequence
+}
+
+-- Hash of encoded Authorizer
+AuthorizerHash ::= OpaqueHash
+
+AuthPool ::= SEQUENCE (SIZE(0..auth-pool-max-size)) OF AuthorizerHash
+AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+
+AuthQueue ::= SEQUENCE (SIZE(auth-queue-size)) OF AuthorizerHash
+AuthQueues ::= SEQUENCE (SIZE(cores-count)) OF AuthQueue
+
+--------------------------------------------
 -- Work Package
 --------------------------------------------
 
@@ -125,11 +146,6 @@ ImportSpec ::= SEQUENCE {
 ExtrinsicSpec ::= SEQUENCE {
     hash OpaqueHash,
     len U32
-}
-
-Authorizer ::= SEQUENCE {
-    code-hash OpaqueHash,
-    params ByteSequence
 }
 
 WorkItem ::= SEQUENCE {
@@ -224,6 +240,26 @@ BlockInfo ::= SEQUENCE {
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 
 --------------------------------------------
+-- Statistics
+--------------------------------------------
+
+ActivityRecord ::= SEQUENCE {
+    blocks      U32,
+    tickets     U32,
+    pre-images  U32,
+    pre-images-size U32,
+    guarantees  U32,
+    assurances  U32
+}
+
+ActivityRecords ::= SEQUENCE (SIZE(validators-count)) OF ActivityRecord
+
+Statistics ::= SEQUENCE {
+    current    ActivityRecords,
+    last       ActivityRecords
+}
+
+--------------------------------------------
 -- Tickets
 --------------------------------------------
 
@@ -247,7 +283,7 @@ TicketsOrKeys ::= CHOICE {
     keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchPublic
 }
 
-TicketsExtrinsic ::= SEQUENCE (SIZE(0..16)) OF TicketEnvelope
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..max-tickets-per-block)) OF TicketEnvelope
 
 --------------------------------------------
 -- Disputes

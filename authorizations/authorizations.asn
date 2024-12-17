@@ -1,0 +1,46 @@
+-- Authorizations STF test vectors schema
+
+AuthorizationsModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    AuthPools, AuthQueues, OpaqueHash, TimeSlot, CoreIndex
+        FROM JamTypes;
+
+
+State ::= SEQUENCE {
+    auth-pools AuthPools,
+    auth-queues AuthQueues
+}
+
+CoreAuthorizer ::= SEQUENCE {
+    core CoreIndex,
+    auth-hash OpaqueHash
+}
+
+-- This sequence is out of GP spec and derived from the Guarantees Extrinsic (E_G).  
+--
+-- For the sake of construction simplicity, we prefer not to include the complete
+-- extrinsic here but rather focus only on the components relevant to advancing
+-- this subsystem's STF.
+--
+-- CoreAuthorizers[i] = CoreAuthorizer {
+--     core: E_G[i].w.core,
+--     auth-hash: E_G[i].w.auth-hash
+-- }
+CoreAuthorizers ::= SEQUENCE OF CoreAuthorizer
+
+Input ::= SEQUENCE {
+    slot TimeSlot,
+    auths CoreAuthorizers
+}
+
+Output ::= NULL
+
+TestCase ::= SEQUENCE {
+    input      Input,
+    pre-state  State,
+    output     Output,
+    post-state State
+}
+
+END
