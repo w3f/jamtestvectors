@@ -1,0 +1,56 @@
+{
+    "input": {
+        "preimages": [
+            {
+                "requester": 3,
+                "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1"
+            },
+            {
+                "requester": 3,
+                "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8bf"
+            }
+        ],
+        "slot": 42
+    },
+    "pre_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "info": {
+                    "preimages": [],
+                    "history": [
+                        {
+                            "key": {
+                                "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
+                                "length": 18
+                            },
+                            "value": []
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "output": {
+        "err": "preimage_unneeded"
+    },
+    "post_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "info": {
+                    "preimages": [],
+                    "history": [
+                        {
+                            "key": {
+                                "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
+                                "length": 18
+                            },
+                            "value": []
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
