@@ -2,14 +2,25 @@
 
 We offer two types of test vectors:
 
-- Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
-  and a shorter epoch duration (12). They are provided in both JSON format for easy inspection
-  and modification, and in SCALE format, which is the production binary codec.
-
+- Tiny: These are designed for quick adjustments and prototyping, with reduced validators
+  count (6) and epoch duration (12). Tickets per validator max attempts is 3 in order to
+  be able to fill the full epoch when only the supermajority of validators is honest (5).
 - Full: These vectors use production validators count (1023) and epoch duration (600).
-  Similar to the tiny vectors, they are available in JSON and SCALE format.
+  Tickets per validator max attempts is aligned to the GP (2).
 
-Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./safrole.asn).
+Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
+and this subsystem STF specific [schema](./safrole.asn).
+
+## ⚠️ WARNING  ⚠️
+
+The ring-proof backend used by `ark-ec-vrfs` remains subject to modifications.
+
+If you encounter any issues when processing these vectors, particularly
+regarding the verification of Bandersnatch tickets, please ensure that you
+are using the same `ark-ec-vrfs` revision employed for the production of these
+vectors.
+
+Used `ark-ec-vrfs` revision: [d90e180](https://github.com/davxy/ark-ec-vrfs/tree/d90e1800d571f32163e6f7b5d956d065668c899f)
 
 ## zk-SNARK SRS
 
@@ -40,30 +51,36 @@ Here are some key differences:
 
 Most of these differences aim to provide a clear and concise protocol specification.
 
-## Error Output
+## STF Output
 
-On STF (State Transition Function) execution error, post-state must match pre-state.
+Technically, the STF execution process does not inherently produce auxiliary
+outputs beyond the success or failure result. In this context, we propose
+an extension to include additional information that may be beneficial for
+implementors or useful for executing other subsystems reliant on values
+generated post-STF execution.
 
-Possible error codes returned as output are not part of the specification,
-feel free to ignore actual numeric values.
+When the error or success values are not pertinent to your test vector
+processing procedures, you may disregard them as necessary.
 
-A map for errors codes semantics used by for the test vectors is given in the ASN.1 schema.
+A mapping of error code semantics is provided within the ASN.1 schema for this
+subsystem.
+
 
 ## Tiny Vectors
 
-- [enact_epoch_change_with_no_tickets-1.json](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
+- [enact_epoch_change_with_no_tickets-1](./tiny/enact-epoch-change-with-no-tickets-1.json) 🟢
   - Progress by one slot.
   - Randomness accumulator is updated.
 
-- [enact_epoch_change_with_no_tickets-2.json](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
+- [enact_epoch_change_with_no_tickets-2](./tiny/enact-epoch-change-with-no-tickets-2.json) 🔴
   - Progress from slot X to slot X.
   - Timeslot must be strictly monotonic.
 
-- [enact_epoch_change_with_no_tickets-3.json](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
-  - Progress from a slot at the begin of the epoch to a slot in the epoch's tail.
+- [enact_epoch_change_with_no_tickets-3](./tiny/enact-epoch-change-with-no-tickets-3.json) 🟢
+  - Progress from a slot at the begining of the epoch to a slot in the epoch's tail.
   - Tickets mark is not generated (no enough tickets).
 
-- [enact_epoch_change_with_no_tickets-4.json](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
+- [enact_epoch_change_with_no_tickets-4](./tiny/enact-epoch-change-with-no-tickets-4.json) 🟢
   - Progress from epoch's tail to next epoch.
   - Authorities and entropies are rotated. Epoch mark is generated.
 
@@ -123,6 +140,12 @@ A map for errors codes semantics used by for the test vectors is given in the AS
 - [publish_tickets_with_mark-5](./tiny/publish-tickets-with-mark-5.json) 🟢
   - With a published tickets mark, progress into next epoch.
   - Epoch mark is generated. Tickets are enacted.
+
+- [enact-epoch-change-with-padding-1](./tiny/enact-epoch-change-with-padding-1.json) 🟢
+  - On epoch change we recompute the ring commitment.
+  - One of the keys to be used is invalidated (zeroed out) because it belongs to the (posterior) offenders list.
+  - One of the keys is just invalid (i.e. it can't be decoded into a valid Bandersnatch point).
+  - Both the invalid keys are replaced with the padding point during ring commitment computation.
 
 ## Full Vectors
 

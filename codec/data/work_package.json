@@ -18,7 +18,8 @@
             "service": 16909060,
             "code_hash": "0x70a50829851e8f6a8c80f92806ae0e95eb7c06ad064e311cc39107b3219e532e",
             "payload": "0x0102030405",
-            "gas_limit": 42,
+            "refine_gas_limit": 42,
+            "accumulate_gas_limit": 42,
             "import_segments": [
                 {
                     "tree_root": "0x461236a7eb29dcffc1dd282ce1de0e0ed691fc80e91e02276fe8f778f088a1b8",
@@ -49,7 +50,8 @@
             "service": 84281096,
             "code_hash": "0xfcfc857dab216daf41f409c2012685846e4d34aedfeacaf84d9adfebda73fae6",
             "payload": "0x030201",
-            "gas_limit": 77,
+            "refine_gas_limit": 77,
+            "accumulate_gas_limit": 77,
             "import_segments": [
                 {
                     "tree_root": "0x3e5d0bea78537414bd1cfdaeb0f22d743bcaba5dbffacbabce8457f4cd78f69b",
