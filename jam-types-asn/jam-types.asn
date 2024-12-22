@@ -175,8 +175,9 @@ WorkExecResult ::= CHOICE {
     ok [0] ByteSequence,
     out-of-gas [1] NULL,
     panic [2] NULL,
-    bad-code [3] NULL,
-    code-oversize [4] NULL
+    bad-exports [3] NULL,
+    bad-code [4] NULL,
+    code-oversize [5] NULL
 }
 
 WorkResult ::= SEQUENCE {
