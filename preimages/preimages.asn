@@ -1,0 +1,42 @@
+-- Preimages STF test vectors schema
+
+PreimagesModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, OpaqueHash, PreimagesExtrinsic
+        FROM JamTypes;
+
+
+State ::= SEQUENCE {
+    -- [..] Accounts.
+    accounts SEQUENCE OF AccountsMapEntry,
+}
+
+Input ::= SEQUENCE {
+    -- [E_P] Preimages extrinsic.
+    preimages PreimagesExtrinsic,
+
+    -- [H_t] Block's timeslot.
+    slot TimeSlot
+}
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    preimage-unneeded (0)
+}
+
+Output ::= CHOICE {
+    ok  NULL,
+    err ErrorCode
+}
+
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END
