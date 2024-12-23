@@ -1,0 +1,88 @@
+{
+    "input": {
+        "preimages": [
+            {
+                "requester": 3,
+                "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1"
+            }
+        ],
+        "slot": 43
+    },
+    "pre_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "info": {
+                    "preimages": [
+                        {
+                            "hash": "0x7a71eb4834e36bcea488abf607e408569bd27cab1ca9c6075f4a4cf64d0a6048",
+                            "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8bf"
+                        }
+                    ],
+                    "history": [
+                        {
+                            "key": {
+                                "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
+                                "length": 18
+                            },
+                            "value": []
+                        },
+                        {
+                            "key": {
+                                "hash": "0x7a71eb4834e36bcea488abf607e408569bd27cab1ca9c6075f4a4cf64d0a6048",
+                                "length": 49
+                            },
+                            "value": [
+                                37,
+                                40
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "output": {
+        "ok": null
+    },
+    "post_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "info": {
+                    "preimages": [
+                        {
+                            "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
+                            "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1"
+                        },
+                        {
+                            "hash": "0x7a71eb4834e36bcea488abf607e408569bd27cab1ca9c6075f4a4cf64d0a6048",
+                            "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8bf"
+                        }
+                    ],
+                    "history": [
+                        {
+                            "key": {
+                                "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
+                                "length": 18
+                            },
+                            "value": [
+                                43
+                            ]
+                        },
+                        {
+                            "key": {
+                                "hash": "0x7a71eb4834e36bcea488abf607e408569bd27cab1ca9c6075f4a4cf64d0a6048",
+                                "length": 49
+                            },
+                            "value": [
+                                37,
+                                40
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
