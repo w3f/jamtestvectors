@@ -1,0 +1,34 @@
+-- Recent blocks history STF test vectors schema
+
+HistoryModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    OpaqueHash, ReportedWorkPackage, BlocksHistory, HeaderHash, StateRoot
+        FROM JamTypes;
+
+State ::= SEQUENCE {
+    -- [β] Prior recent blocks history. Mutated to ϐ'.
+    beta BlocksHistory
+}
+
+Input ::= SEQUENCE {
+    -- [Hash(H)] Header hash
+    header-hash HeaderHash,
+    -- [H_r] Parent state root
+    parent-state-root StateRoot,
+    -- [r] Accumulation result Merkle tree root
+    accumulate-root OpaqueHash,
+    -- [(((g_w)_s)_h, ((g_w)_s)_e) | g ∈ E_G] Sequence of reported work packages
+    work-packages SEQUENCE OF ReportedWorkPackage
+}
+
+Output ::= NULL
+
+TestCase ::= SEQUENCE {
+    input      Input,
+    pre-state  State,
+    output     Output,
+    post-state State
+}
+
+END
