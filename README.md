@@ -1,6 +1,6 @@
 # Test Vectors for the JAM Protocol
 
-JAM protocol version 0.5.2
+JAM protocol version 0.5.3
 
 ## Index
 
@@ -13,3 +13,4 @@ JAM protocol version 0.5.2
 - [Statistics](./statistics/README.md)
 - [Authorizations](./authorizations/README.md)
 - [Preimages](./preimages/README.md)
+- [Accumulate](./accumulate/README.md)
