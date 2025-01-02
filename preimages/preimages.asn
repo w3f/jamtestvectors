@@ -8,7 +8,7 @@ IMPORTS
 
 
 State ::= SEQUENCE {
-    -- [..] Accounts.
+    -- [..] Accounts. TODO
     accounts SEQUENCE OF AccountsMapEntry,
 }
 
