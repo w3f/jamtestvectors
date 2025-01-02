@@ -9,9 +9,6 @@ We offer two types of test vectors:
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./accumulate.asn).
 
-
-
-
 ## Services Accounts
 
 TODO
