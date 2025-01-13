@@ -1,0 +1,68 @@
+{
+  "name": "hostMachineOOB",
+  "initial-gas": 10000,
+  "initial-regs": {
+    "7": 131072,
+    "8": 9,
+    "9": 0
+  },
+  "initial-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          0,
+          0,
+          5,
+          61,
+          7,
+          0,
+          0,
+          2,
+          1
+        ],
+        "access": {
+          "inaccessible": true,
+          "writable": false,
+          "readable": false
+        }
+      }
+    }
+  },
+  "initial-refine-map": {},
+  "initial-export-segment": null,
+  "initial-import-segment": null,
+  "initial-export-segment-index": 0,
+  "initial-service-index": 0,
+  "initial-delta": {},
+  "initial-timeslot": 0,
+  "expected-gas": 9990,
+  "expected-regs": {
+    "7": 18446744073709551613,
+    "8": 9,
+    "9": 0
+  },
+  "expected-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          0,
+          0,
+          5,
+          61,
+          7,
+          0,
+          0,
+          2,
+          1
+        ],
+        "access": {
+          "inaccessible": true,
+          "writable": false,
+          "readable": false
+        }
+      }
+    }
+  },
+  "expected-refine-map": {},
+  "expected-export-segment": null
+}

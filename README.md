@@ -4,3 +4,4 @@
 
 - [Codec](./codec/README.md)
 - [Safrole](./safrole/README.md)
+- [Host Function](./host_function/README.md)
