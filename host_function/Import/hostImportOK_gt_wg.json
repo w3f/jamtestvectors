@@ -1,0 +1,112 @@
+{
+  "name": "hostImportOK_gt_wg",
+  "initial-gas": 10000,
+  "initial-regs": {
+    "7": 0,
+    "8": 131072,
+    "9": 36
+  },
+  "initial-memory": {
+    "pages": {
+      "32": {
+        "value": [],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "initial-refine-map": null,
+  "initial-export-segment": null,
+  "initial-import-segment": [
+    [
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      13,
+      13,
+      14,
+      14,
+      15,
+      15,
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      13,
+      13,
+      14,
+      14,
+      15,
+      15,
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      13,
+      13,
+      14,
+      14,
+      15,
+      15
+    ]
+  ],
+  "initial-export-segment-index": 0,
+  "initial-service-index": 0,
+  "initial-delta": null,
+  "initial-timeslot": 0,
+  "expected-gas": 9990,
+  "expected-regs": {
+    "7": 0,
+    "8": 131072,
+    "9": 36
+  },
+  "expected-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15
+        ],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "expected-refine-map": null,
+  "expected-export-segment": null
+}

@@ -1,0 +1,76 @@
+{
+  "name": "hostExportOOB",
+  "initial-gas": 10000,
+  "initial-regs": {
+    "7": 131072,
+    "8": 12
+  },
+  "initial-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15
+        ],
+        "access": {
+          "inaccessible": true,
+          "writable": false,
+          "readable": false
+        }
+      }
+    }
+  },
+  "initial-refine-map": null,
+  "initial-export-segment": [
+    []
+  ],
+  "initial-import-segment": null,
+  "initial-export-segment-index": 0,
+  "initial-service-index": 0,
+  "initial-delta": null,
+  "initial-timeslot": 0,
+  "expected-gas": 9990,
+  "expected-regs": {
+    "7": 18446744073709551613,
+    "8": 12
+  },
+  "expected-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15
+        ],
+        "access": {
+          "inaccessible": true,
+          "writable": false,
+          "readable": false
+        }
+      }
+    }
+  },
+  "expected-refine-map": null,
+  "expected-export-segment": [
+    []
+  ]
+}

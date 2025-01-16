@@ -1,0 +1,124 @@
+{
+  "name": "hostPokeWHO",
+  "initial-gas": 10000,
+  "initial-regs": {
+    "10": 9,
+    "7": 999,
+    "8": 131072,
+    "9": 135168
+  },
+  "initial-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          0,
+          0,
+          5,
+          61,
+          7,
+          0,
+          0,
+          2,
+          1
+        ],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "initial-refine-map": {
+    "0": {
+      "P": [
+        0,
+        0,
+        5,
+        61,
+        7,
+        0,
+        0,
+        2,
+        1
+      ],
+      "U": {
+        "pages": {
+          "33": {
+            "value": [],
+            "access": {
+              "inaccessible": false,
+              "writable": true,
+              "readable": false
+            }
+          }
+        }
+      },
+      "I": 0
+    }
+  },
+  "initial-export-segment": null,
+  "initial-import-segment": null,
+  "initial-export-segment-index": 0,
+  "initial-service-index": 0,
+  "initial-delta": {},
+  "initial-timeslot": 0,
+  "expected-gas": 9990,
+  "expected-regs": {
+    "10": 9,
+    "7": 18446744073709551612,
+    "8": 131072,
+    "9": 135168
+  },
+  "expected-memory": {
+    "pages": {
+      "32": {
+        "value": [
+          0,
+          0,
+          5,
+          61,
+          7,
+          0,
+          0,
+          2,
+          1
+        ],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "expected-refine-map": {
+    "0": {
+      "P": [
+        0,
+        0,
+        5,
+        61,
+        7,
+        0,
+        0,
+        2,
+        1
+      ],
+      "U": {
+        "pages": {
+          "33": {
+            "value": [],
+            "access": {
+              "inaccessible": false,
+              "writable": true,
+              "readable": false
+            }
+          }
+        }
+      },
+      "I": 0
+    }
+  },
+  "expected-export-segment": null
+}
