@@ -23,12 +23,12 @@
     0,
     0,
     3,
-    56,
+    137,
     121,
     246,
     1
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,

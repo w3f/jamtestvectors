@@ -1,4 +1,4 @@
-# PVM Test Vectors, version 0.3
+# PVM Test Vectors, version 0.4
 
 ## How to use this
 
@@ -16,18 +16,23 @@ See [TESTCASES.md](./TESTCASES.md) for a human-readable index of all of the test
 
    * 100% instruction coverage
    * Tests for abnormal skip values for each instruction type
-   * Tests for when the initial instruction counter (ı) starts somewhere else than 0
    * Tests involving host calls
    * Tests for invalid/malformed program blobs
-   * Add bigger integration-like tests
    * More gas metering tests; proper gas cost model (current one is a placeholder)
 
 ## Changelog
 
+### v0.4
+
+   * The tests now target 64-bit PVM, in alignment with GP 0.5.4.
+   * The `trap` exit status is now called `panic` to align with the GP.
+   * Added new exit status: `page-fault`; tests which previously panicked when accessing unpaged memory now generate page faults.
+   * Added 106 new tests from the [RISC-V test suite](https://github.com/riscv-software-src/riscv-tests) transpiled into PVM.
+
 ### v0.3
 
    * Removed tests which were testing gas behavior that is not yet described in the GP:
-        - `inst_load_u8_trap.json`,
+        - `inst_load_u8_trap`
         - `inst_store_u8_trap_inaccessible`
         - `inst_store_u8_trap_read_only`
 

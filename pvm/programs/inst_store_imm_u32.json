@@ -29,7 +29,7 @@
     0,
     0,
     9,
-    38,
+    32,
     3,
     0,
     0,
@@ -41,7 +41,7 @@
     1,
     0
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,
