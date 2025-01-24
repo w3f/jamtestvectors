@@ -22,16 +22,15 @@
   "program": [
     0,
     0,
-    6,
+    5,
     157,
     137,
-    117,
+    1,
     0,
-    0,
-    128,
+    255,
     1
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,
@@ -42,12 +41,12 @@
     0,
     0,
     3,
-    18446744073441116174,
+    18446744073709543424,
     0,
     0,
     0
   ],
-  "expected-pc": 6,
+  "expected-pc": 5,
   "expected-memory": [],
   "expected-gas": 9998
 }
