@@ -1,5 +1,5 @@
 {
-  "name": "inst_load_u8_trap",
+  "name": "inst_add_32_with_truncation",
   "initial-regs": [
     0,
     0,
@@ -8,8 +8,8 @@
     0,
     0,
     0,
-    0,
-    0,
+    3689348814169248017,
+    3689348814169248017,
     0,
     0,
     0,
@@ -22,15 +22,13 @@
   "program": [
     0,
     0,
-    5,
-    52,
-    7,
-    0,
-    0,
-    2,
+    3,
+    190,
+    135,
+    9,
     1
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,
@@ -39,14 +37,14 @@
     0,
     0,
     0,
-    0,
-    0,
-    0,
+    3689348814169248017,
+    3689348814169248017,
+    572662306,
     0,
     0,
     0
   ],
-  "expected-pc": 0,
+  "expected-pc": 3,
   "expected-memory": [],
   "expected-gas": 9998
 }

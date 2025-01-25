@@ -43,7 +43,7 @@
     120,
     1
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,

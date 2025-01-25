@@ -8,7 +8,7 @@
     0,
     0,
     0,
-    18446744073150512879,
+    3735928559,
     0,
     0,
     0,
@@ -44,7 +44,7 @@
     2,
     1
   ],
-  "expected-status": "trap",
+  "expected-status": "panic",
   "expected-regs": [
     0,
     0,
