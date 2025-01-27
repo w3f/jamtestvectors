@@ -1,0 +1,78 @@
+{
+  "name": "inst_load_indirect_u32_with_offset",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        17,
+        34,
+        51,
+        68,
+        85
+      ]
+    }
+  ],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    128,
+    120,
+    1,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    1430532898,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 3,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        17,
+        34,
+        51,
+        68,
+        85
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}

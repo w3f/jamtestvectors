@@ -1,0 +1,58 @@
+{
+  "name": "inst_store_indirect_u32_with_offset_nok",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    305419896,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    122,
+    120,
+    1,
+    16,
+    1
+  ],
+  "expected-status": "page-fault",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    131072,
+    305419896,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 0,
+  "expected-memory": [],
+  "expected-gas": 9998,
+  "expected-page-fault-address": 135168
+}

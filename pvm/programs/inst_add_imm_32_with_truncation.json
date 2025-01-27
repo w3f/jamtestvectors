@@ -1,0 +1,53 @@
+{
+  "name": "inst_add_imm_32_with_truncation",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3689348814169248017,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    6,
+    131,
+    121,
+    17,
+    17,
+    17,
+    17,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3689348814169248017,
+    0,
+    572662306,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 6,
+  "expected-memory": [],
+  "expected-gas": 9998
+}
