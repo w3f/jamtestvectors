@@ -4042,24 +4042,6 @@ Final value of the program counter: 0
 Gas consumed: 10000 -> 9998
 
 
-## inst_store_imm_u8_trap_read_only
-
-Initial page map:
-   * RO: 0x10000-0x11000 (0x1000 bytes)
-
-```
-      :                          @0
-     0: 1e 03 00 00 01 12        u8 [0x10000] = 0x12
-     6:                          invalid
-```
-
-Program should end with: panic
-
-Final value of the program counter: 0
-
-Gas consumed: 10000 -> 9998
-
-
 ## inst_store_indirect_u16_with_offset_nok
 
 Initial page map:
@@ -4456,27 +4438,6 @@ Initial non-zero registers:
 ```
 
 Program should end with: page-fault (page address = 0x20000)
-
-Final value of the program counter: 0
-
-Gas consumed: 10000 -> 9998
-
-
-## inst_store_u8_trap_read_only
-
-Initial page map:
-   * RO: 0x10000-0x11000 (0x1000 bytes)
-
-Initial non-zero registers:
-   * r7 = 0x12345678
-
-```
-      :                          @0
-     0: 3b 07 00 00 01           u8 [0x10000] = r7
-     5:                          invalid
-```
-
-Program should end with: panic
 
 Final value of the program counter: 0
 
