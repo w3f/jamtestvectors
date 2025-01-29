@@ -1,6 +1,6 @@
 # Test Vectors for the JAM Protocol
 
-JAM protocol version 0.5.2
+JAM protocol version 0.5.3
 
 ## Index
 
