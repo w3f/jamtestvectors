@@ -18,7 +18,7 @@
                     "lookup_anchor_slot": 40,
                     "prerequisites": []
                 },
-                "core_index": 1,
+                "core_index": 0,
                 "authorizer_hash": "0xddd61398037e2d0ea720ed134a5955853bfa7d4ae78fea6499084e3db4e49118",
                 "auth_output": "0x",
                 "segment_root_lookup": [],

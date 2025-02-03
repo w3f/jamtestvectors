@@ -4,6 +4,38 @@
         "reports": [
             {
                 "package_spec": {
+                    "hash": "0xdf49de52326d7d3c99391cdd32b2ca7c06398e798b520970347160ecf8d9ce32",
+                    "length": 6,
+                    "erasure_root": "0x8d90b95102807622d9141af359592056f20177884cc3618b56eaa36f5b95cc1c",
+                    "exports_root": "0xf50d52acb7c406bc20650930bb0b276d7f9de8eed8ec6efd9ba154a3c558bf10",
+                    "exports_count": 9
+                },
+                "context": {
+                    "anchor": "0x8836be2c9d284e4a5ab82fdf3d5133250c66297f4eba658d903d205ae6cadfb7",
+                    "state_root": "0x0a0f8575cc44c450ff9bd5bb0947787b15a25f41121dd1846a780d0900f4117c",
+                    "beefy_root": "0xbfd9b6d854f5b901c9bfff6f711708968f4c7769b881a18530377a5ffb7c46e6",
+                    "lookup_anchor": "0x76695b1f45e844ac7278230c0be3387d00845464a8e6e1c81e92316553ca87ee",
+                    "lookup_anchor_slot": 1793,
+                    "prerequisites": []
+                },
+                "core_index": 0,
+                "authorizer_hash": "0xe881a5fb7ddd5b8fc35b8a49b1267052cf888c942c2f881c338aaa44ffc2baf3",
+                "auth_output": "0x",
+                "segment_root_lookup": [],
+                "results": [
+                    {
+                        "service_id": 1729,
+                        "code_hash": "0x2823707a8588a068e2ce8d8d3e790de3d0f0efd12988f848a8b9731004d44b16",
+                        "payload_hash": "0x702e6e2567740d7bcfdae72f6d1544ab0e9dfa232ecb39fd2a156629a89be8b9",
+                        "accumulate_gas": 10000,
+                        "result": {
+                            "ok": "0x64756d6d79"
+                        }
+                    }
+                ]
+            },
+            {
+                "package_spec": {
                     "hash": "0xd3d0ac423a2e9451db2e88bd75cc143b19424747fbcf2696792987436e8722a6",
                     "length": 9,
                     "erasure_root": "0xd2c4a83cadcd31129b453b9e695be4ae5d355e80dc9eb3464e79f498097d3035",
@@ -29,38 +61,6 @@
                         "service_id": 1729,
                         "code_hash": "0x2823707a8588a068e2ce8d8d3e790de3d0f0efd12988f848a8b9731004d44b16",
                         "payload_hash": "0x7502b113db6ed8d9d6bf5593b6bd85df8d30239b1346cbd072773c8208c6debc",
-                        "accumulate_gas": 10000,
-                        "result": {
-                            "ok": "0x64756d6d79"
-                        }
-                    }
-                ]
-            },
-            {
-                "package_spec": {
-                    "hash": "0xdf49de52326d7d3c99391cdd32b2ca7c06398e798b520970347160ecf8d9ce32",
-                    "length": 6,
-                    "erasure_root": "0x8d90b95102807622d9141af359592056f20177884cc3618b56eaa36f5b95cc1c",
-                    "exports_root": "0xf50d52acb7c406bc20650930bb0b276d7f9de8eed8ec6efd9ba154a3c558bf10",
-                    "exports_count": 9
-                },
-                "context": {
-                    "anchor": "0x8836be2c9d284e4a5ab82fdf3d5133250c66297f4eba658d903d205ae6cadfb7",
-                    "state_root": "0x0a0f8575cc44c450ff9bd5bb0947787b15a25f41121dd1846a780d0900f4117c",
-                    "beefy_root": "0xbfd9b6d854f5b901c9bfff6f711708968f4c7769b881a18530377a5ffb7c46e6",
-                    "lookup_anchor": "0x76695b1f45e844ac7278230c0be3387d00845464a8e6e1c81e92316553ca87ee",
-                    "lookup_anchor_slot": 1793,
-                    "prerequisites": []
-                },
-                "core_index": 1,
-                "authorizer_hash": "0xe881a5fb7ddd5b8fc35b8a49b1267052cf888c942c2f881c338aaa44ffc2baf3",
-                "auth_output": "0x",
-                "segment_root_lookup": [],
-                "results": [
-                    {
-                        "service_id": 1729,
-                        "code_hash": "0x2823707a8588a068e2ce8d8d3e790de3d0f0efd12988f848a8b9731004d44b16",
-                        "payload_hash": "0x702e6e2567740d7bcfdae72f6d1544ab0e9dfa232ecb39fd2a156629a89be8b9",
                         "accumulate_gas": 10000,
                         "result": {
                             "ok": "0x64756d6d79"
@@ -434,7 +434,7 @@
                                 "0x17e5809e4d5e9daf50361fb6557a00814301159fc81a39cd4d2687e110e0b7be"
                             ]
                         },
-                        "core_index": 1,
+                        "core_index": 0,
                         "authorizer_hash": "0x7865361073b31347cb9b53f12800084563f134c97990a3a16d365640211b58fb",
                         "auth_output": "0x",
                         "segment_root_lookup": [],
@@ -811,7 +811,7 @@
                                 "0xd3d0ac423a2e9451db2e88bd75cc143b19424747fbcf2696792987436e8722a6"
                             ]
                         },
-                        "core_index": 1,
+                        "core_index": 0,
                         "authorizer_hash": "0xfdfe51dc958e91de500cec6d90503e0f898cfdbbc95a9345277f9368ea4b4aee",
                         "auth_output": "0x",
                         "segment_root_lookup": [],
@@ -833,6 +833,45 @@
                 }
             ],
             [
+                {
+                    "report": {
+                        "package_spec": {
+                            "hash": "0x18176cfbff4a8b40f2d9cba3c2ddc4a5b75e9152c8c41452cda90bebc0632013",
+                            "length": 0,
+                            "erasure_root": "0xdb7343025515f5f740eb8452f053271cf237093686dd5ad55e14aeb807ee0a1e",
+                            "exports_root": "0x5af37df4b7827978f4ca08dceb4dbc36f1336cfa9fa4ab2664d11f4af06f405b",
+                            "exports_count": 3
+                        },
+                        "context": {
+                            "anchor": "0x56d9153b82e6d4ed4d5622dbc39cbbcddb5ccca1c6ffc07649acf89c14e61664",
+                            "state_root": "0x939f0d1b9b447e342a8521893921e11f61bec162c3d4301ec85f9a00dfc4125a",
+                            "beefy_root": "0x1cd19794124afcbb9a20800b28326eaa463401f75dab37db041f9000e460a22d",
+                            "lookup_anchor": "0xbab5dcbbeef9f56d05ff14d62bba2988b77e1ba8d71953ee72d77891b755d76c",
+                            "lookup_anchor_slot": 1793,
+                            "prerequisites": [
+                                "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
+                            ]
+                        },
+                        "core_index": 0,
+                        "authorizer_hash": "0xeefd84c154d6781c5c315084aa52fff4bf7b606be7f830867bc94a4797078d0d",
+                        "auth_output": "0x",
+                        "segment_root_lookup": [],
+                        "results": [
+                            {
+                                "service_id": 1729,
+                                "code_hash": "0x2823707a8588a068e2ce8d8d3e790de3d0f0efd12988f848a8b9731004d44b16",
+                                "payload_hash": "0x92d8adbfc61de350cdd8c7893859f6cb031954ca1b85cf41b91ef29a4e1b58dd",
+                                "accumulate_gas": 10000,
+                                "result": {
+                                    "ok": "0x64756d6d79"
+                                }
+                            }
+                        ]
+                    },
+                    "dependencies": [
+                        "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
+                    ]
+                },
                 {
                     "report": {
                         "package_spec": {
@@ -870,45 +909,6 @@
                     },
                     "dependencies": [
                         "0x18176cfbff4a8b40f2d9cba3c2ddc4a5b75e9152c8c41452cda90bebc0632013"
-                    ]
-                },
-                {
-                    "report": {
-                        "package_spec": {
-                            "hash": "0x18176cfbff4a8b40f2d9cba3c2ddc4a5b75e9152c8c41452cda90bebc0632013",
-                            "length": 0,
-                            "erasure_root": "0xdb7343025515f5f740eb8452f053271cf237093686dd5ad55e14aeb807ee0a1e",
-                            "exports_root": "0x5af37df4b7827978f4ca08dceb4dbc36f1336cfa9fa4ab2664d11f4af06f405b",
-                            "exports_count": 3
-                        },
-                        "context": {
-                            "anchor": "0x56d9153b82e6d4ed4d5622dbc39cbbcddb5ccca1c6ffc07649acf89c14e61664",
-                            "state_root": "0x939f0d1b9b447e342a8521893921e11f61bec162c3d4301ec85f9a00dfc4125a",
-                            "beefy_root": "0x1cd19794124afcbb9a20800b28326eaa463401f75dab37db041f9000e460a22d",
-                            "lookup_anchor": "0xbab5dcbbeef9f56d05ff14d62bba2988b77e1ba8d71953ee72d77891b755d76c",
-                            "lookup_anchor_slot": 1793,
-                            "prerequisites": [
-                                "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
-                            ]
-                        },
-                        "core_index": 1,
-                        "authorizer_hash": "0xeefd84c154d6781c5c315084aa52fff4bf7b606be7f830867bc94a4797078d0d",
-                        "auth_output": "0x",
-                        "segment_root_lookup": [],
-                        "results": [
-                            {
-                                "service_id": 1729,
-                                "code_hash": "0x2823707a8588a068e2ce8d8d3e790de3d0f0efd12988f848a8b9731004d44b16",
-                                "payload_hash": "0x92d8adbfc61de350cdd8c7893859f6cb031954ca1b85cf41b91ef29a4e1b58dd",
-                                "accumulate_gas": 10000,
-                                "result": {
-                                    "ok": "0x64756d6d79"
-                                }
-                            }
-                        ]
-                    },
-                    "dependencies": [
-                        "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
                     ]
                 }
             ]

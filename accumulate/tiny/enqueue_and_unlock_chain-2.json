@@ -54,7 +54,7 @@
                         "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
                     ]
                 },
-                "core_index": 0,
+                "core_index": 1,
                 "authorizer_hash": "0x6e488790b201af0e7b426a3a970d06b7d05050ce4f608c9127d27bdf3294d993",
                 "auth_output": "0x",
                 "segment_root_lookup": [],
@@ -143,7 +143,7 @@
                                 "0x6af0ea4ced28a7b06f7156c3b0f9d725187efa1932f812abd17fe66cc1553a8f"
                             ]
                         },
-                        "core_index": 0,
+                        "core_index": 1,
                         "authorizer_hash": "0x30462b1e02ed2d1d536e4250d7412fe0168d9df8aa2467708c36053afbe99e6f",
                         "auth_output": "0x",
                         "segment_root_lookup": [],
@@ -281,7 +281,7 @@
                                 "0x6af0ea4ced28a7b06f7156c3b0f9d725187efa1932f812abd17fe66cc1553a8f"
                             ]
                         },
-                        "core_index": 0,
+                        "core_index": 1,
                         "authorizer_hash": "0x30462b1e02ed2d1d536e4250d7412fe0168d9df8aa2467708c36053afbe99e6f",
                         "auth_output": "0x",
                         "segment_root_lookup": [],
@@ -362,7 +362,7 @@
                                 "0xa7a66c1635f45e0413cec365f60fb46fa0489c4d2df75f6fd9c00d1da3729222"
                             ]
                         },
-                        "core_index": 0,
+                        "core_index": 1,
                         "authorizer_hash": "0x6e488790b201af0e7b426a3a970d06b7d05050ce4f608c9127d27bdf3294d993",
                         "auth_output": "0x",
                         "segment_root_lookup": [],
