@@ -16,14 +16,14 @@
         "accounts": [
             {
                 "id": 3,
-                "info": {
+                "data": {
                     "preimages": [
                         {
                             "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
                             "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1"
                         }
                     ],
-                    "history": [
+                    "lookup_meta": [
                         {
                             "key": {
                                 "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
@@ -52,14 +52,14 @@
         "accounts": [
             {
                 "id": 3,
-                "info": {
+                "data": {
                     "preimages": [
                         {
                             "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
                             "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1"
                         }
                     ],
-                    "history": [
+                    "lookup_meta": [
                         {
                             "key": {
                                 "hash": "0x6989ea1c2d5d81e7ef17b32e23d56e5ec90d9d48e19c634e14dd630dd5dd2ce1",
