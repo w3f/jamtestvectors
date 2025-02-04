@@ -13,3 +13,4 @@ JAM protocol version 0.6.1
 - [Statistics](./statistics/README.md)
 - [Authorizations](./authorizations/README.md)
 - [Preimages](./preimages/README.md)
+- [Accumulate](./accumulate/README.md)
