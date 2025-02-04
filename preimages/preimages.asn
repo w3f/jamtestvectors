@@ -22,7 +22,7 @@ LookupMetaMapEntry ::= SEQUENCE {
     value SEQUENCE OF TimeSlot
 }
 
--- Service account information we need for this STF.
+-- Service account information relevant for this STF.
 Account ::= SEQUENCE {
     -- [a_p] Preimages blobs.
     preimages SEQUENCE OF PreimagesMapEntry,
