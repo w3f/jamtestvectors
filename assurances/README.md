@@ -1,27 +1,7 @@
 # Availability Assurances STF Test Vectors
 
-We offer two types of test vectors:
-
-- Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
-  and cores count (2).
-- Full: These vectors use production validators (1023) and cores count (341)
-
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./assurances.asn).
-
-## STF Output
-
-Technically, the STF execution process does not inherently produce auxiliary
-outputs beyond the success or failure result. In this context, we propose
-an extension to include additional information that may be beneficial for
-implementors or useful for executing other subsystems reliant on values
-generated post-STF execution.
-
-When the error or success values are not pertinent to your test vector
-processing procedures, you may disregard them as necessary.
-
-A mapping of error code semantics is provided within the ASN.1 schema for this
-subsystem.
 
 ## Tiny Vectors
 
