@@ -9,12 +9,16 @@ IMPORTS
         FROM JamTypes;
 
 
-ServiceItem ::= SEQUENCE {
-    id       ServiceId,
-    info     ServiceInfo
+-- Service account information relevant for this STF.
+Account ::= SEQUENCE {
+    -- [a_c, a_b, a_g, a_m, a_o, a_i] Service metadata.
+    service ServiceInfo
 }
 
-Services ::= SEQUENCE OF ServiceItem
+AccountsMapEntry ::= SEQUENCE {
+    id ServiceId,
+    data Account
+}
 
 AuthPool ::= SEQUENCE OF OpaqueHash
 
@@ -44,8 +48,8 @@ State ::= SEQUENCE {
     -- [α] Authorization pools.
     auth-pools AuthPools,
 
-    -- [δ] Encoded services dictionary. Refer to T(σ) in Appendix D.
-    services Services
+	-- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry
 }
 
 Input ::= SEQUENCE {
