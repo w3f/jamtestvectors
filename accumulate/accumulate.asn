@@ -1,0 +1,57 @@
+-- Accumulate STF test vectors schema
+
+AccumulateModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, ServiceId, ServiceInfo, WorkReport, OpaqueHash, ByteSequence,
+    Entropy, ReadyQueue, AccumulatedQueue, Privileges, AccumulateRoot
+        FROM JamTypes;
+
+
+PreimagesMapEntry ::= SEQUENCE {
+    hash OpaqueHash,
+    blob ByteSequence
+}
+
+-- Service account information relevant for this STF.
+Account ::= SEQUENCE {
+    -- [a_c, a_b, a_g, a_m, a_o, a_i] Service metadata.
+    service ServiceInfo,
+    --[a_p] Preimages blobs.
+    preimages SEQUENCE OF PreimagesMapEntry
+}
+
+AccountsMapEntry ::= SEQUENCE {
+    id ServiceId,
+    data Account
+}
+
+State ::= SEQUENCE {
+    slot TimeSlot,
+    entropy Entropy,
+    ready-queue ReadyQueue,
+    accumulated AccumulatedQueue,
+    privileges Privileges,
+	-- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry
+}
+
+Input ::= SEQUENCE {
+    -- [H_t] Block's timeslot.
+    slot TimeSlot,
+    reports SEQUENCE OF WorkReport
+}
+
+Output ::= CHOICE {
+    ok    AccumulateRoot,
+    err   NULL
+}
+
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END
