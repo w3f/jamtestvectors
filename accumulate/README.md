@@ -3,7 +3,7 @@
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./accumulate.asn).
 
-### Test Service Code
+## Test Service Code
 
 Test vectors invoke the `accumulate` method of the provided [test-service](./test-service).  
 

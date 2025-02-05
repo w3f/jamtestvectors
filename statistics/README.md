@@ -1,11 +1,5 @@
 # Statistics STF Test Vectors
 
-We offer two types of test vectors:
-
-- Tiny: These are designed for quick adjustments and prototyping, with reduced validators (6)
-  and a shorter epoch duration (12).
-- Full: These vectors use production validators count (1023) and epoch duration (600).
-
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./statistics.asn).
 
@@ -19,15 +13,12 @@ Most of the content of the extrinsic is irrelevant and primarily consists of pla
 - [stats_with_empty_extrinsic-1](./tiny/stats_with_empty_extrinsic-1.json)
   - Empty extrinsic with no epoch change.
   - Only author blocks counter is incremented.
-
 - [stats_with_epoch_change-1](./tiny/stats_with_epoch_change-1.json)
   - Misc extrinsic information with no epoch change.
   - See "Extrinsic Semantic Validity" section.
-
 - [stats_with_some_extrinsic-1](./tiny/stats_with_some_extrinsic-1.json)
   - Misc extrinsic information with no epoch change.
   - See "Extrinsic Semantic Validity" section.
-
 
 ## Full Vectors
 

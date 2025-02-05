@@ -1,7 +1,5 @@
 # Blocks History STF Test Vectors
 
-Both JSON and SCALE formats conform to the specified ASN.1 schema provided [here](./history.asn).
-
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./history.asn).
 
@@ -26,12 +24,9 @@ the input `accumulate_root`.
 
 - [progress_blocks_history-1](data/progress_blocks_history-1.json) 🟢 
   - Empty history queue.
-
 - [progress_blocks_history-2](data/progress_blocks_history-2.json) 🟢 
   - Not empty nor full history queue.
-
 - [progress_blocks_history-3](data/progress_blocks_history-3.json) 🟢 
   - Fill the history queue.
-
 - [progress_blocks_history-4](data/progress_blocks_history-4.json) 🟢 
   - Shift the history queue.
