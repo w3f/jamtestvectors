@@ -3,6 +3,15 @@
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./reports.asn).
 
+## Authorization Pools Management
+
+This subsystem is **not responsible** for modifying the contents of the
+authorization pools, which are read-only within the scope of this STF.
+
+Any update to the pools is delegated to the dedicated ["authorizations"](../authorizations/README.md)
+subsystem, which is tasked with removing consumed items from the authorization
+pools and introduce new authorizers from the authorization queue.
+
 ## Tiny Vectors
 
 - [report_curr_rotation](./tiny/report_curr_rotation-1.json) 🟢
