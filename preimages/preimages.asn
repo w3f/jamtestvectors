@@ -3,13 +3,41 @@
 PreimagesModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    TimeSlot, OpaqueHash, PreimagesExtrinsic
+    TimeSlot, OpaqueHash, PreimagesExtrinsic, ServiceId, ByteSequence, U32
         FROM JamTypes;
 
 
+PreimagesMapEntry ::= SEQUENCE {
+    hash OpaqueHash,
+    blob ByteSequence
+}
+
+LookupMetaMapKey ::= SEQUENCE {
+    hash OpaqueHash,
+    length U32
+}
+
+LookupMetaMapEntry ::= SEQUENCE {
+    key LookupMetaMapKey,
+    value SEQUENCE OF TimeSlot
+}
+
+-- Service account information relevant for this STF.
+Account ::= SEQUENCE {
+    -- [a_p] Preimages blobs.
+    preimages SEQUENCE OF PreimagesMapEntry,
+    -- [a_l] Preimages lookup metadata.
+    lookup-meta SEQUENCE OF LookupMetaMapEntry
+}
+
+AccountsMapEntry ::= SEQUENCE {
+    id ServiceId,
+    data Account
+}
+
 State ::= SEQUENCE {
-    -- [..] Accounts.
-    accounts SEQUENCE OF AccountsMapEntry,
+	-- Relevant services account data [δ]. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry
 }
 
 Input ::= SEQUENCE {
@@ -24,7 +52,8 @@ Input ::= SEQUENCE {
 -- Error codes **are not specified** in the the Graypaper.
 -- Feel free to ignore the actual value.
 ErrorCode ::= ENUMERATED {
-    preimage-unneeded (0)
+    preimage-unneeded (0),
+    preimages-not-sorted-unique (1)
 }
 
 Output ::= CHOICE {
