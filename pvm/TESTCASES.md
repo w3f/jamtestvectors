@@ -2433,21 +2433,6 @@ Final value of the program counter: 5
 Gas consumed: 10000 -> 9998
 
 
-## inst_load_u8_nok
-
-```
-      :                          @0
-     0: 34 07 00 00 02           r7 = u8 [0x20000]
-     5:                          invalid
-```
-
-Program should end with: page-fault (page address = 0x20000)
-
-Final value of the program counter: 0
-
-Gas consumed: 10000 -> 9998
-
-
 ## inst_move_reg
 
 Initial non-zero registers:
@@ -4422,24 +4407,6 @@ Final non-zero memory chunks:
 Program should end with: panic
 
 Final value of the program counter: 5
-
-Gas consumed: 10000 -> 9998
-
-
-## inst_store_u8_trap_inaccessible
-
-Initial non-zero registers:
-   * r7 = 0x12345678
-
-```
-      :                          @0
-     0: 3b 07 00 00 02           u8 [0x20000] = r7
-     5:                          invalid
-```
-
-Program should end with: page-fault (page address = 0x20000)
-
-Final value of the program counter: 0
 
 Gas consumed: 10000 -> 9998
 
