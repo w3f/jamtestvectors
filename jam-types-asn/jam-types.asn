@@ -374,6 +374,35 @@ ReportGuarantee ::= SEQUENCE {
 GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
 
 --------------------------------------------
+-- Accumulation
+--------------------------------------------
+
+ReadyRecord ::= SEQUENCE {
+    report WorkReport,
+    dependencies SEQUENCE OF WorkPackageHash
+}
+
+ReadyQueueItem ::= SEQUENCE OF ReadyRecord
+ReadyQueue ::= SEQUENCE (SIZE(epoch-length)) OF ReadyQueueItem
+
+AccumulatedQueueItem ::= SEQUENCE OF WorkPackageHash
+AccumulatedQueue ::= SEQUENCE (SIZE(epoch-length)) OF AccumulatedQueueItem
+
+AlwaysAccumulateMapItem ::= SEQUENCE {
+    id ServiceId,
+    gas Gas
+}
+
+Privileges ::= SEQUENCE {
+    bless ServiceId,
+    assign ServiceId,
+    designate ServiceId,
+    always-acc SEQUENCE OF AlwaysAccumulateMapItem
+}
+
+AccumulateRoot ::= OpaqueHash
+
+--------------------------------------------
 -- Header
 --------------------------------------------
 
