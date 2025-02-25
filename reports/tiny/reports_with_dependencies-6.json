@@ -13,7 +13,7 @@
                     "context": {
                         "anchor": "0x39cb518983b02695034b3b92cb31a7334e1a2ec3ef7dbfa32c68e4e8444363f1",
                         "state_root": "0xd8c577816b629241676502d0461e4eae42a375461314d64484f35f4228da23d6",
-                        "beefy_root": "0x71c150347dc035847d5944c864a2d3ed0fa410341b2ffbfdeeaa1c9d6aa9cacd",
+                        "beefy_root": "0xf5df0c11416d43c55b43e096572d450b7780ed0fd7b540f26c8ded8e0d41e183",
                         "lookup_anchor": "0x16bda47e5a68daf53c39ddee8af4ecaced7e87f3f0ac9da5a6f4f9e41350d319",
                         "lookup_anchor_slot": 11,
                         "prerequisites": []
@@ -43,15 +43,15 @@
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0x9095ff05cc0c3def748ef9d5aaca1d7ece7185f2926db9e2ae45f696bf451cd6a5f072c1298ffc024fbfdcd4d5d9797c006397b8d41fbbdd7b25a5191f94f30e"
+                        "signature": "0xc089a518c7f2ca161c682c9d664c8c86267c0f616bf66360dd82cc261df75223322f298255edbc19d8d7a7b223dc3795d1e40ae0167d1d475a53af6e63823c0e"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0x4051933f2b81cffd15cf9f729e118e9e2da4065f8f92e83c71d2ae0b16e40cc531fe554eed667ee8a9fca06538b846fce9e1cb37727095e0f55ceafcd2b79702"
+                        "signature": "0x0ab481a63a62d1217a1c634e9e929c5cf2a9a911eb08a5d028f0904b695d7cdc05a2ffa8adb34659546f68abd911da103f36bc114e10e40ae4e8c61549fcc10d"
                     },
                     {
                         "validator_index": 3,
-                        "signature": "0x53ca53561c36c80df51ac0c91e3c8d97208cab6d2bf4a8c8d106df93e4fc23e92b94223f660b87a2001db92ec7d89f39e960462c8033dc0cfbe87ddd05638307"
+                        "signature": "0x7940952cd7625c22bf5eb8e3ad7f124f040695d66c4fc6dd5678acab66b79fd7ad37d1167693782763647bb369e9654574f02a0894200e697fa45d9d08f1ee09"
                     }
                 ]
             }
@@ -270,16 +270,18 @@
                 "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb"
             ]
         ],
-        "services": [
+        "accounts": [
             {
                 "id": 42,
-                "info": {
-                    "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
-                    "balance": 20219,
-                    "min_item_gas": 10,
-                    "min_memo_gas": 10,
-                    "bytes": 19999,
-                    "items": 2
+                "data": {
+                    "service": {
+                        "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
+                        "balance": 20219,
+                        "min_item_gas": 10,
+                        "min_memo_gas": 10,
+                        "bytes": 19999,
+                        "items": 2
+                    }
                 }
             }
         ]
@@ -313,7 +315,7 @@
                     "context": {
                         "anchor": "0x39cb518983b02695034b3b92cb31a7334e1a2ec3ef7dbfa32c68e4e8444363f1",
                         "state_root": "0xd8c577816b629241676502d0461e4eae42a375461314d64484f35f4228da23d6",
-                        "beefy_root": "0x71c150347dc035847d5944c864a2d3ed0fa410341b2ffbfdeeaa1c9d6aa9cacd",
+                        "beefy_root": "0xf5df0c11416d43c55b43e096572d450b7780ed0fd7b540f26c8ded8e0d41e183",
                         "lookup_anchor": "0x16bda47e5a68daf53c39ddee8af4ecaced7e87f3f0ac9da5a6f4f9e41350d319",
                         "lookup_anchor_slot": 11,
                         "prerequisites": []
@@ -550,16 +552,18 @@
                 "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb"
             ]
         ],
-        "services": [
+        "accounts": [
             {
                 "id": 42,
-                "info": {
-                    "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
-                    "balance": 20219,
-                    "min_item_gas": 10,
-                    "min_memo_gas": 10,
-                    "bytes": 19999,
-                    "items": 2
+                "data": {
+                    "service": {
+                        "code_hash": "0x6470fd21983eae8d706f1edd5e2dc5afe095980f8fb7bd4ebfd33550d8730246",
+                        "balance": 20219,
+                        "min_item_gas": 10,
+                        "min_memo_gas": 10,
+                        "bytes": 19999,
+                        "items": 2
+                    }
                 }
             }
         ]
