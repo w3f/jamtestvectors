@@ -63,6 +63,12 @@ is available within the `accounts` map.
 - [enqueue_self_referential-4](./tiny/enqueue_self_referential-4.json)
   - New report creates a cycle with the previously queued reports.
   - This makes the reports stale, but pushed to the ready queue anyway.
+- [accumulate_ready_queued_reports-1]
+- [queues_are_shifted-1]
+- [queues_are_shifted-2]
+- [ready_queue_editing-1]
+- [ready_queue_editing-2]
+- [ready_queue_editing-3]
 
 ## Full Vectors
 
