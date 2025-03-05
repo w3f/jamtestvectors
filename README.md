@@ -1,6 +1,6 @@
 # Test Vectors for the JAM Protocol
 
-JAM protocol version 0.6.1
+JAM protocol version 0.6.3
 
 ## Codec
  

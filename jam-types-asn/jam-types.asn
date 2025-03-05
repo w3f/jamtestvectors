@@ -164,7 +164,7 @@ WorkPackage ::= SEQUENCE {
     auth-code-host ServiceId,
     authorizer Authorizer,
     context RefineContext,
-    items SEQUENCE (SIZE(1..4)) OF WorkItem
+    items SEQUENCE (SIZE(1..16)) OF WorkItem
 }
 
 --------------------------------------------
@@ -210,7 +210,7 @@ WorkReport ::= SEQUENCE {
     authorizer-hash OpaqueHash,
     auth-output ByteSequence,
     segment-root-lookup SegmentRootLookup,
-    results SEQUENCE (SIZE(1..4)) OF WorkResult
+    results SEQUENCE (SIZE(1..16)) OF WorkResult
 }
 
 --------------------------------------------
