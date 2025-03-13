@@ -9,9 +9,9 @@ from spec_config import gen_flags
 def fetch_vectors(spec: str):
     # Read the vestors from ./{spec}/{vector_name}.json
     result = []
-    for file in os.listdir(f"./safrole/{spec}"):
+    for file in os.listdir(f"./{spec}"):
         if file.endswith(".json"):
-            with open(f"./safrole/{spec}/{file}", "r") as f:
+            with open(f"./{spec}/{file}", "r") as f:
                 data = json.load(f)
                 result.append((file, data))
     return result
@@ -20,7 +20,7 @@ def transform_block(input: dict) -> dict:
     block = create_dummy_block()
     block["extrinsic"]["tickets"] = input["extrinsic"]
     block["header"]["slot"] = input["slot"]
-    block["header"]["epoch_mark"] = input["entropy"]
+    block["header"]["epoch_mark"]["entropy"] = input["entropy"]
     return block
 
 def transform_state(state: dict) -> dict:

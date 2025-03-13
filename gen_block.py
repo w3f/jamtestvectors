@@ -125,7 +125,7 @@ def create_dummy_judgements() -> list[dict]:
             "index": i,
             "signature": create_dummy_bytes(64),
         }
-        for i in range(2)
+        for i in range(5)
     ]
 
 
@@ -195,15 +195,13 @@ def create_dummy_header(spec: str = "tiny") -> dict:
             "tickets_entropy": create_dummy_bytes32(),
             "validators": [create_dummy_bytes32() for _ in range(spec_config[spec]["validator_count"])],
         },
-        "tickets_mark": {
-            "tickets": [
-                {
-                    "id": create_dummy_bytes32(),
-                    "attempt": 0,
-                }
-                for i in range(spec_config[spec]["epoch_length"])
-            ],
-        },
+        "tickets_mark": [
+            {
+                "id": create_dummy_bytes32(),
+                "attempt": 0,
+            }
+            for i in range(spec_config[spec]["epoch_length"])
+        ],
         "offenders_mark": [],
         "entropy_source": create_dummy_bytes(96),
         "author_index": 0,
