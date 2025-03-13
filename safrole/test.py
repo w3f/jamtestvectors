@@ -54,4 +54,5 @@ if __name__ == "__main__":
         result = response.json()
         if result.status != "ok":
             print(f"Failed: {file}")
+
             break
