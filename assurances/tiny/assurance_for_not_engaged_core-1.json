@@ -72,9 +72,17 @@
                             "accumulate_gas": 120,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 11
             },
@@ -153,9 +161,17 @@
                             "accumulate_gas": 120,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 11
             },
