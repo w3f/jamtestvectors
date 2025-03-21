@@ -30,23 +30,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 14,
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x243d2acd27786a5846b840a2d1da27b3dfab43f404c4304cc9426fce80110979a3ee761880a24e650c27f7389b5a820e98b8731073bf6cf04903049076e24d0a"
+                        "signature": "0xab01bd7daa0f03733a69eaeaf2cebd4423eb16bf26478f003a087937c35373fce928922ff0430159dfe22623113cb159bbaf0848960750e456a85d8dca53d004"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x2626a29c5cc344120ed1a2b30994f1e0dc17f9610b61dc0653d092ef72a20bae287c74222769f968e3e08e7cec39c73995179a3421d242ac6fe869c6341c2304"
+                        "signature": "0x9b617043268b170932bad133e1dcc20cbbd86383a00bcaae1dc65e662a953efa941ff55328269d212d94ef9852e69f337d73b57cadfe7bda2dd50d803a3ffc0d"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0x735b546fe1606ec4686d96875ecb57ab3101f12a613c3c2c299497a131e73db0d1aba3bdbca588ac5783a4c99f6d3b9f463ac0947a6de95163b240c0f4d2f109"
+                        "signature": "0x567a560235dbd07dbfb4eee4fa7e08535711429a5bc42a6b2f0edd550f908953918cb262de8cfd714859d053310be13f142254d583ec308da2e9deb4349f4008"
                     }
                 ]
             }
@@ -267,7 +275,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     },
     "output": {
         "err": "bad_state_root"
@@ -486,6 +517,29 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     }
 }
