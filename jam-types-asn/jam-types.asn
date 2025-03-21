@@ -180,12 +180,21 @@ WorkExecResult ::= CHOICE {
     code-oversize [5] NULL
 }
 
+RefineLoad ::= SEQUENCE {
+    gas-used U64,
+    imports U16,
+    extrinsic-count U16,
+    extrinsic-size U32,
+    exports U16
+}
+
 WorkResult ::= SEQUENCE {
     service-id ServiceId,
     code-hash OpaqueHash,
     payload-hash OpaqueHash,
     accumulate-gas Gas,
-    result WorkExecResult
+    result WorkExecResult,
+    refine-load RefineLoad
 }
 
 WorkPackageSpec ::= SEQUENCE {
@@ -210,7 +219,8 @@ WorkReport ::= SEQUENCE {
     authorizer-hash OpaqueHash,
     auth-output ByteSequence,
     segment-root-lookup SegmentRootLookup,
-    results SEQUENCE (SIZE(1..16)) OF WorkResult
+    results SEQUENCE (SIZE(1..16)) OF WorkResult,
+    auth-gas-used U64
 }
 
 --------------------------------------------
@@ -406,10 +416,15 @@ AccumulateRoot ::= OpaqueHash
 -- Header
 --------------------------------------------
 
+EpochMarkValidatorKeys ::= SEQUENCE {
+    bandersnatch BandersnatchPublic,
+    ed25519 Ed25519Public
+}
+
 EpochMark ::= SEQUENCE {
     entropy         Entropy,
     tickets-entropy Entropy,
-    validators      SEQUENCE (SIZE(validators-count)) OF BandersnatchPublic
+    validators      SEQUENCE (SIZE(validators-count)) OF EpochMarkValidatorKeys
 }
 
 TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
