@@ -265,9 +265,68 @@ ActivityRecord ::= SEQUENCE {
 
 ActivityRecords ::= SEQUENCE (SIZE(validators-count)) OF ActivityRecord
 
+CoreActivityRecord ::= SEQUENCE {
+	-- Total gas consumed by core for reported work. Includes all refinement and authorizations.
+	gas-used        U64,
+	-- Number of segments imported from DA made by core for reported work.
+	imports         U16,
+	-- Total number of extrinsics used by core for reported work.
+	extrinsic-count U16,
+	-- Total size of extrinsics used by core for reported work.
+	extrinsic-size  U32,
+	-- Number of segments exported into DA made by core for reported work.
+	exports         U16,
+	-- The work-bundle size. This is the size of data being placed into Audits DA by the core.
+	bundle-size     U32,
+	-- Amount of bytes which are placed into either Audits or Segments DA.
+	-- This includes the work-bundle (including all extrinsics and imports) as well as all
+	-- (exported) segments.
+	da-load         U32,
+	-- Number of validators which formed super-majority for assurance.
+	popularity      U16
+}
+
+CoresStatistics ::= SEQUENCE (SIZE(cores-count)) OF CoreActivityRecord
+
+ServiceActivityRecord ::= SEQUENCE {
+	-- Number of preimages provided to this service.
+	provided-count        U16,
+	-- Total size of preimages provided to this service.
+	provided-size         U32,
+	-- Number of work-items refined by service for reported work.
+	refinement-count      U32,
+	-- Amount of gas used for refinement by service for reported work.
+	refinement-gas-used   U64,
+	-- Number of segments imported from the DL by service for reported work.
+	imports               U32,
+	-- Total number of extrinsics used by service for reported work.
+	extrinsic-count       U32,
+	-- Total size of extrinsics used by service for reported work.
+	extrinsic-size        U32,
+	-- Number of segments exported into the DL by service for reported work.
+	exports               U32,
+	-- Number of work-items accumulated by service.
+	accumulate-count      U32,
+	-- Amount of gas used for accumulation by service.
+	accumulate-gas-used   U64,
+	-- Number of transfers processed by service.
+	on-transfers-count    U32,
+	-- Amount of gas used for processing transfers by service.
+	on-transfers-gas-used U64
+}
+
+ServicesStatisticsMapEntry ::= SEQUENCE {
+    id  ServiceId,
+    gas ServiceActivityRecord
+}
+
+ServicesStatistics ::= SEQUENCE OF ServicesStatisticsMapEntry
+
 Statistics ::= SEQUENCE {
-    current    ActivityRecords,
-    last       ActivityRecords
+    vals-current ActivityRecords,
+    vals-last    ActivityRecords,
+    cores        CoresStatistics,
+    services     ServicesStatistics
 }
 
 --------------------------------------------
@@ -398,7 +457,7 @@ ReadyQueue ::= SEQUENCE (SIZE(epoch-length)) OF ReadyQueueItem
 AccumulatedQueueItem ::= SEQUENCE OF WorkPackageHash
 AccumulatedQueue ::= SEQUENCE (SIZE(epoch-length)) OF AccumulatedQueueItem
 
-AlwaysAccumulateMapItem ::= SEQUENCE {
+AlwaysAccumulateMapEntry ::= SEQUENCE {
     id ServiceId,
     gas Gas
 }
@@ -407,7 +466,7 @@ Privileges ::= SEQUENCE {
     bless ServiceId,
     assign ServiceId,
     designate ServiceId,
-    always-acc SEQUENCE OF AlwaysAccumulateMapItem
+    always-acc SEQUENCE OF AlwaysAccumulateMapEntry
 }
 
 AccumulateRoot ::= OpaqueHash
