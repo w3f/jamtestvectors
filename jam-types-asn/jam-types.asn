@@ -316,8 +316,8 @@ ServiceActivityRecord ::= SEQUENCE {
 }
 
 ServicesStatisticsMapEntry ::= SEQUENCE {
-    id  ServiceId,
-    gas ServiceActivityRecord
+    service-id ServiceId,
+    record ServiceActivityRecord
 }
 
 ServicesStatistics ::= SEQUENCE OF ServicesStatisticsMapEntry

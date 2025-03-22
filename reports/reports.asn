@@ -5,7 +5,7 @@ ReportsModule DEFINITIONS ::= BEGIN
 IMPORTS
     cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
     ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
-    GuaranteesExtrinsic, Ed25519Public, WorkPackageHash
+    GuaranteesExtrinsic, Ed25519Public, WorkPackageHash, CoresStatistics, ServicesStatistics
         FROM JamTypes;
 
 
@@ -48,8 +48,14 @@ State ::= SEQUENCE {
     -- [α] Authorization pools.
     auth-pools AuthPools,
 
-	-- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
-    accounts SEQUENCE OF AccountsMapEntry
+    -- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry,
+
+    -- Cores statistics.
+    cores-statistics CoresStatistics,
+
+    -- Services statistics.
+    services-statistics ServicesStatistics
 }
 
 Input ::= SEQUENCE {
