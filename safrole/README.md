@@ -11,8 +11,7 @@ If you encounter any issues when processing these vectors, particularly
 regarding the verification of Bandersnatch tickets, please ensure that you
 are using the same version employed for the production of these vectors:
 
-- `ark-ec-vrfs` version: [v0.1.2](https://github.com/davxy/ark-ec-vrfs/tree/v0.1.2)
-    - [crates.io](https://crates.io/crates/ark-ec-vrfs)
+- `ark-ec-vrfs` version: [v0.1.2](https://github.com/davxy/ark-ec-vrfs/tree/v0.1.2) ([crates.io](https://crates.io/crates/ark-ec-vrfs))
 - Bandersnatch specification revision: [cc99f5c](https://github.com/davxy/bandersnatch-vrfs-spec/tree/cc99f5cf28f20c61d238d9de4be8f098e92d461b)
 
 ## zk-SNARK SRS
