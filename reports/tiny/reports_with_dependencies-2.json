@@ -32,23 +32,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 15,
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x0dcf23d1a4f2f9d412078c845ff6f81a2d21741aa488dddb96abf57fd1659b53c619cf3cc9536e241d28f8b8387d6b70a615fea560078f6c00633f17a76f550f"
+                        "signature": "0x5f4c2698a6f81d6d486de2f7e40711cce619cbbf20a462914f7dad2c82468d9a4de4ff09d6c90a2d9780f1646d495b059176a3548b2f914f53b99b791eadde08"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x00e4a7ca685662d3b2452b7c7884a06ff010e7d49777af175fde40c14a429f9c1adbd50d5f029171c09210034480ac069e410a14c751d71f02ef3b6ec5d12303"
+                        "signature": "0x4cf88b95ba59605c578fca4f2b40d76af5259a263fcecf8cf8e8e6474e4a7a51d79dc7d3faefeda989e6179fa5bd9da7f7bbb66f5f30fdec0d5305a01f7eb506"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0x043489574f93fec0d1ff921947145bf7a711e8023fffe96442b4bb01c95a2a6022ac492c837f7f42e987acef1ecb264d6aa4bff5a2665c00fcd684090e872e0e"
+                        "signature": "0x20db9d4f8b70921f42f7ee7f10633f39145df36f0a57089cbb0a1b7fbe4065cfc88529dd24a84842d2bab08248f39895a1871bf9b44ac61f21df7518f735fa09"
                     }
                 ]
             },
@@ -83,23 +91,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 15,
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0x5f56d8d30994dd9b55de0dc9bc4e4aa08eacaadd5f9fa9ba13a896e496a1023a6f9ef4d90b381236687a4f53d8300b7b34aff3bba69f1d218402abd5f4dd1902"
+                        "signature": "0x9777e5b09e2290e44955b8fe27109e8077aff1789d2fadb80640cfe6f4c807485e6af4a00d4a03407d68ccc1b1d55a63bfaf94461b15f5b5ac7322ee6aa63b0b"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0xb856c1b66719897d65dd7221fea780c219aad42c183660703a740cc8a653bb16e5931df60ceba7a2c896718434977622f7d0679caad5cdd6575edc1b1326240b"
+                        "signature": "0x6369a48b12f3a513c9bf89fee54170c7f1e1c6d786d7aa43a52f44feafb4d602283fdb8bd99c5df1420d93278cc00105619c29ea04365a47f2952658f3564700"
                     },
                     {
                         "validator_index": 3,
-                        "signature": "0x3e274a0566b4dc54eb7babfe8e3493dd0daae39b5395a4a691648fdbfdea9614b17aa852faa849a028267ab7dd0537feeeb3c2ed8bb6062e420608b425f0ee0f"
+                        "signature": "0x20b2c007985af93dcf6a3509f8d363e49dbf2c71541561df039b717534766bc1d4a4d9613c2792650fb06e92d6ad2a5ff8cccba94579be163c4c57910026ee0f"
                     }
                 ]
             }
@@ -322,7 +338,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     },
     "output": {
         "ok": {
@@ -379,9 +418,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 15
             },
@@ -416,9 +463,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 15
             }
@@ -632,6 +687,47 @@
                         "bytes": 19999,
                         "items": 2
                     }
+                }
+            }
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 12345,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 12345,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": [
+            {
+                "id": 42,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 2,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
                 }
             }
         ]

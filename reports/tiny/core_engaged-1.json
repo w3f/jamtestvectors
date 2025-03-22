@@ -30,23 +30,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 14,
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x8a08b0bdaf17ee56dbda135613f72750d7f0c0c92ab509085498459d6330e720407a856fb003e5f756feab239366d8f2692074ac0c1e4bc0597072d7bf0f020b"
+                        "signature": "0x8acee306a4a05a9b4a2c8881bdeb64cebb216e563da92b26d1309932c99e7e7774fbfaf59322f7305dc1283b98a3ed689fd246f863db5615cd48fe828151bc06"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x49cbbb49911991f6879b0fd5e1abc336f8befe72bdcc6b5f2e03d2b03ee7c8899af303b04ab8f80965ece8579265e4241a6746849a20ff18e35bb4d782e2fa08"
+                        "signature": "0x881403ffded5c74dc576df7acce51892793dcde1ed2398fb6dd581ad0de810177c8f29ece874c988c3ddd5d11183e8dc854a614be98086708c1089350286710d"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0xe38b6a71844371c880ae1abb809c8d969181a67d92f7444748f97133b0150baa2eff1ae191cb97a1da596a9689c73125832edcf73034b24a435bfb6e203da308"
+                        "signature": "0x3c5de634a6fee23799f4293128c5e8b15e5bcc283f45e49c02005274813ad0281ef89361cfae959b04854b05c3c093792149d56113d27188f0539bd93915af0f"
                     }
                 ]
             },
@@ -79,23 +87,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 14,
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0x54c6910cc8c25224d113a4f307ada8dec67294846618715e40aacad5604077bd43e5f7617be58457172b884b698b2beb667235364cd5663375d92b870167720d"
+                        "signature": "0x1ce882d06eded2b418a0d549b1051d7f8bad8e6a66472e498d2e7554c418556e2f05480c664e09f24c784b8d9c8eecf2a034f5273a61a94b99eb47cf97ec3c01"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0x485a627d9358c828a538784cdb791a30ea9688003d1cbaf887ed0e06fe248cd469c95e10d27b9c914a9e6cb70bb5bdf688ad60d4abb7fd1086fc5cf0f46b620e"
+                        "signature": "0x5b91b3241467e788ec7c389ad62db6dfd14e067d2b5c94c37f6d1bef3ee60b8b62c32c923028dc0acbea8e44490c4c38cb9c81e40e9953dd7555e57f89c6c70b"
                     },
                     {
                         "validator_index": 3,
-                        "signature": "0x7d612fb962c3902d22442b58b16087dfe1a7492dee66fdff9fe9ab62f0cac0efd6b3a058b9a847cbf3ff339ae0cdf9579c9b944c5f0dbc10f64c7e771d713500"
+                        "signature": "0xb089462412281bd0062b605610c3912fbddcc42e5a7b664318340b9f276a5954337496beb7550624455f1ca8c7d5b1b1c85a6a8f959fd1d1beef3e8d0ed5a802"
                     }
                 ]
             }
@@ -133,9 +149,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 13
             },
@@ -352,7 +376,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     },
     "output": {
         "err": "core_engaged"
@@ -388,9 +435,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 13
             },
@@ -607,6 +662,29 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     }
 }

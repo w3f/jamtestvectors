@@ -52,23 +52,31 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 14,
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0xfd3468c97bbda4428a3c3b877659c6af56ccdf43ab3376010ce83d7e9bba36b262317370fc1c6201d0d58d337095120eaaed2396c2420e758ddfd7b5c91ba30c"
+                        "signature": "0xe56273d39ead86fbcfdbee1a7ad0139713b7f7cebdda4c2d2315441eb75dfc1fd5abf003a013b39cb4f2e4128f6faf417d050c8221b228523b07776725eedd09"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x54fa4039d48981fba8280e4c27e132c323876b720ee3c40e83585a79dc002b4587cd5c8fed30b4a2cfe06033c30c1464365cb67ee345a03ec4c4f8ffba567f04"
+                        "signature": "0xd8969c4c9f6efbc2cc70e5806f30f3afb58b69c30ac74dba0f1938559557b175aa1e6135555efd5f0a4cca43c4e420b118602362eaeddcd3fe4c55392c77cd01"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0x1ad0d099db943aec3fdf5bb5fc701dce60e05da20bd35eb5deca35633ac14073bfb0e6ec09911106180dd6006a0e84f7a37e147f3b238715f750dd0414d26408"
+                        "signature": "0xdb17a815815ab8e495a603445c86501c307211b02699f08b9daad1aea0d814c7e729134180ff0fa2d69ea522f25646ccaf0c74dbff9a9b71548d7200431a940e"
                     }
                 ]
             }
@@ -329,7 +337,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": []
     },
     "output": {
         "ok": {
@@ -399,9 +430,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 14
             },
@@ -654,6 +693,47 @@
                         "bytes": 19999,
                         "items": 2
                     }
+                }
+            }
+        ],
+        "cores_statistics": [
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 12345,
+                "da_load": 0,
+                "popularity": 0
+            },
+            {
+                "gas_used": 0,
+                "imports": 0,
+                "extrinsic_count": 0,
+                "extrinsic_size": 0,
+                "exports": 0,
+                "bundle_size": 0,
+                "da_load": 0,
+                "popularity": 0
+            }
+        ],
+        "services_statistics": [
+            {
+                "id": 42,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 1,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
                 }
             }
         ]

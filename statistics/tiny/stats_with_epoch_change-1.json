@@ -57,9 +57,17 @@
                                 "accumulate_gas": 0,
                                 "result": {
                                     "ok": "0x"
+                                },
+                                "refine_load": {
+                                    "gas_used": 0,
+                                    "imports": 0,
+                                    "extrinsic_count": 0,
+                                    "extrinsic_size": 0,
+                                    "exports": 0
                                 }
                             }
-                        ]
+                        ],
+                        "auth_gas_used": 0
                     },
                     "slot": 0,
                     "signatures": [
@@ -102,9 +110,17 @@
                                 "accumulate_gas": 0,
                                 "result": {
                                     "ok": "0x"
+                                },
+                                "refine_load": {
+                                    "gas_used": 0,
+                                    "imports": 0,
+                                    "extrinsic_count": 0,
+                                    "extrinsic_size": 0,
+                                    "exports": 0
                                 }
                             }
-                        ]
+                        ],
+                        "auth_gas_used": 0
                     },
                     "slot": 0,
                     "signatures": [
@@ -141,8 +157,8 @@
         }
     },
     "pre_state": {
-        "pi": {
-            "current": [
+        "statistics": {
+            "vals_current": [
                 {
                     "blocks": 18093,
                     "tickets": 11785,
@@ -192,7 +208,7 @@
                     "assurances": 1541
                 }
             ],
-            "last": [
+            "vals_last": [
                 {
                     "blocks": 13627,
                     "tickets": 17087,
@@ -241,10 +257,33 @@
                     "guarantees": 1241,
                     "assurances": 1901
                 }
-            ]
+            ],
+            "cores": [
+                {
+                    "gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "bundle_size": 0,
+                    "da_load": 0,
+                    "popularity": 0
+                },
+                {
+                    "gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "bundle_size": 0,
+                    "da_load": 0,
+                    "popularity": 0
+                }
+            ],
+            "services": []
         },
-        "tau": 123455,
-        "kappa_prime": [
+        "slot": 123455,
+        "curr_validators": [
             {
                 "bandersnatch": "0x5e465beb01dbafe160ce8216047f2155dd0569f058afd52dcea601025a8d161d",
                 "ed25519": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",
@@ -285,8 +324,8 @@
     },
     "output": null,
     "post_state": {
-        "pi": {
-            "current": [
+        "statistics": {
+            "vals_current": [
                 {
                     "blocks": 0,
                     "tickets": 0,
@@ -336,7 +375,7 @@
                     "assurances": 0
                 }
             ],
-            "last": [
+            "vals_last": [
                 {
                     "blocks": 18093,
                     "tickets": 11785,
@@ -385,10 +424,33 @@
                     "guarantees": 1441,
                     "assurances": 1541
                 }
-            ]
+            ],
+            "cores": [
+                {
+                    "gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "bundle_size": 0,
+                    "da_load": 0,
+                    "popularity": 0
+                },
+                {
+                    "gas_used": 0,
+                    "imports": 0,
+                    "extrinsic_count": 0,
+                    "extrinsic_size": 0,
+                    "exports": 0,
+                    "bundle_size": 0,
+                    "da_load": 0,
+                    "popularity": 0
+                }
+            ],
+            "services": []
         },
-        "tau": 123455,
-        "kappa_prime": [
+        "slot": 123455,
+        "curr_validators": [
             {
                 "bandersnatch": "0x5e465beb01dbafe160ce8216047f2155dd0569f058afd52dcea601025a8d161d",
                 "ed25519": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",

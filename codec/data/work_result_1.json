@@ -5,5 +5,12 @@
     "accumulate_gas": 33,
     "result": {
         "panic": null
+    },
+    "refine_load": {
+        "gas_used": 0,
+        "imports": 0,
+        "extrinsic_count": 0,
+        "extrinsic_size": 0,
+        "exports": 0
     }
 }
