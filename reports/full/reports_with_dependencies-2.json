@@ -33356,7 +33356,7 @@
         ],
         "services_statistics": [
             {
-                "service_id": 42,
+                "id": 42,
                 "record": {
                     "provided_count": 0,
                     "provided_size": 0,
