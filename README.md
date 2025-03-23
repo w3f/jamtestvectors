@@ -3,7 +3,7 @@
 JAM protocol version 0.6.1
 
 ## Codec
- 
+
 - [Codec](./codec/README.md)
 
 ## State Transition Functions
@@ -49,3 +49,4 @@ specific subsystem.
 - [Authorizations](./authorizations/README.md)
 - [Preimages](./preimages/README.md)
 - [Accumulate](./accumulate/README.md)
+- [Host Function](./host_function/README.md)
