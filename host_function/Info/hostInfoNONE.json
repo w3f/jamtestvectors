@@ -1,0 +1,136 @@
+{
+  "name": "hostInfoNONE",
+  "initial-gas": 10000,
+  "initial-regs": {
+    "7": 999,
+    "8": 131072
+  },
+  "initial-memory": {
+    "pages": {
+      "32": {
+        "value": [],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "initial-service-account": {
+    "s_map": {},
+    "l_map": {},
+    "p_map": {},
+    "code_hash": "",
+    "balance": 0,
+    "g": 0,
+    "m": 0
+  },
+  "initial-service-index": 0,
+  "initial-delta": {
+    "0": {
+      "s_map": {
+        "0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "l_map": {
+        "0x0be802c135a8c671aa22d990fbb26116d9844a458d89d05aa013272a64160337": {
+          "t": [
+            100000
+          ],
+          "l": 12
+        }
+      },
+      "p_map": {
+        "0x3ee347e16fb6594af50ce1cc49996bb7a5e39c7d60d5371eca76dc72785cc5ad": [
+          15,
+          15,
+          14,
+          14,
+          13,
+          13,
+          12,
+          12,
+          11,
+          11,
+          10,
+          10
+        ]
+      },
+      "code_hash": "0x0be802c135a8c671aa22d990fbb26116d9844a458d89d05aa013272a64160337",
+      "balance": 1000,
+      "g": 100,
+      "m": 200
+    }
+  },
+  "expected-gas": 9990,
+  "expected-regs": {
+    "7": 18446744073709551615,
+    "8": 131072
+  },
+  "expected-memory": {
+    "pages": {
+      "32": {
+        "value": [],
+        "access": {
+          "inaccessible": false,
+          "writable": true,
+          "readable": false
+        }
+      }
+    }
+  },
+  "expected-delta": {
+    "0": {
+      "s_map": {
+        "0x81e47a19e6b29b0a65b9591762ce5143ed30d0261e5d24a3201752506b20f15c": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "l_map": {
+        "0x0be802c135a8c671aa22d990fbb26116d9844a458d89d05aa013272a64160337": {
+          "t": [
+            100000
+          ],
+          "l": 12
+        }
+      },
+      "p_map": {
+        "0x3ee347e16fb6594af50ce1cc49996bb7a5e39c7d60d5371eca76dc72785cc5ad": [
+          15,
+          15,
+          14,
+          14,
+          13,
+          13,
+          12,
+          12,
+          11,
+          11,
+          10,
+          10
+        ]
+      },
+      "code_hash": "0x0be802c135a8c671aa22d990fbb26116d9844a458d89d05aa013272a64160337",
+      "balance": 1000,
+      "g": 100,
+      "m": 200
+    }
+  },
+  "expected-service-account": {
+    "s_map": {},
+    "l_map": {},
+    "p_map": {},
+    "code_hash": "",
+    "balance": 0,
+    "g": 0,
+    "m": 0
+  }
+}
