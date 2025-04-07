@@ -48,7 +48,9 @@ ErrorCode ::= ENUMERATED {
     offender-already-reported (10),
     bad-judgement-age (11),
     bad-validator-index (12),
-    bad-signature (13)
+    bad-signature (13),
+    bad-guarantor-key (14),
+    bad-auditor-key (15)
 }
 
 Output ::= CHOICE {
