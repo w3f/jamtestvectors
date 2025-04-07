@@ -181,7 +181,7 @@ WorkExecResult ::= CHOICE {
 }
 
 RefineLoad ::= SEQUENCE {
-    gas-used U64,
+    gas-used Gas,
     imports U16,
     extrinsic-count U16,
     extrinsic-size U32,
@@ -220,7 +220,7 @@ WorkReport ::= SEQUENCE {
     auth-output ByteSequence,
     segment-root-lookup SegmentRootLookup,
     results SEQUENCE (SIZE(1..16)) OF WorkResult,
-    auth-gas-used U64
+    auth-gas-used Gas
 }
 
 --------------------------------------------
