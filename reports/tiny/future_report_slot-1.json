@@ -59,7 +59,12 @@
                 ]
             }
         ],
-        "slot": 13
+        "slot": 13,
+        "known_packages": [
+            "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+            "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+            "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad"
+        ]
     },
     "pre_state": {
         "avail_assignments": [
@@ -173,7 +178,12 @@
                     ]
                 },
                 "state_root": "0x44d5c1f3fc4b4ae9f390ea663f6150ab9160e5a847ad96db022aca10634d9faf",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+                        "exports_root": "0xa50ff479bf2aa38e7433f887780cbed02df3820194a0d9396c403678dc287161"
+                    }
+                ]
             },
             {
                 "header_hash": "0x1cf21d2cad82bbdf7a61c5ab89fedbe1a09afedaac2b9e71f8482e363417562c",
@@ -199,7 +209,12 @@
                     ]
                 },
                 "state_root": "0xcdac3d6faa0894db80d271e12d9d202d5ba7e78b7eeb9c47a842a3d6a855c798",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad",
+                        "exports_root": "0x1878eadfac12f63ecce7ccd97d55fde6ab283b6850a2d698c9474d2b2c371d1f"
+                    }
+                ]
             },
             {
                 "header_hash": "0x16bda47e5a68daf53c39ddee8af4ecaced7e87f3f0ac9da5a6f4f9e41350d319",
@@ -251,7 +266,12 @@
                     ]
                 },
                 "state_root": "0xe192165a13296d1b75224380e38a330f0597ea05e753c9f751059bc2b7ed9278",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+                        "exports_root": "0x3d16ed66bae11acbdccc7015b4ee5c1bf87c864a7c930f78f59368280551f60d"
+                    }
+                ]
             }
         ],
         "auth_pools": [
@@ -415,7 +435,12 @@
                     ]
                 },
                 "state_root": "0x44d5c1f3fc4b4ae9f390ea663f6150ab9160e5a847ad96db022aca10634d9faf",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+                        "exports_root": "0xa50ff479bf2aa38e7433f887780cbed02df3820194a0d9396c403678dc287161"
+                    }
+                ]
             },
             {
                 "header_hash": "0x1cf21d2cad82bbdf7a61c5ab89fedbe1a09afedaac2b9e71f8482e363417562c",
@@ -441,7 +466,12 @@
                     ]
                 },
                 "state_root": "0xcdac3d6faa0894db80d271e12d9d202d5ba7e78b7eeb9c47a842a3d6a855c798",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad",
+                        "exports_root": "0x1878eadfac12f63ecce7ccd97d55fde6ab283b6850a2d698c9474d2b2c371d1f"
+                    }
+                ]
             },
             {
                 "header_hash": "0x16bda47e5a68daf53c39ddee8af4ecaced7e87f3f0ac9da5a6f4f9e41350d319",
@@ -493,7 +523,12 @@
                     ]
                 },
                 "state_root": "0xe192165a13296d1b75224380e38a330f0597ea05e753c9f751059bc2b7ed9278",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+                        "exports_root": "0x3d16ed66bae11acbdccc7015b4ee5c1bf87c864a7c930f78f59368280551f60d"
+                    }
+                ]
             }
         ],
         "auth_pools": [
