@@ -28,6 +28,13 @@
                     "accumulate_gas": 42,
                     "result": {
                         "ok": "0xaabbcc"
+                    },
+                    "refine_load": {
+                        "gas_used": 0,
+                        "imports": 0,
+                        "extrinsic_count": 0,
+                        "extrinsic_size": 0,
+                        "exports": 0
                     }
                 },
                 {
@@ -37,9 +44,17 @@
                     "accumulate_gas": 33,
                     "result": {
                         "panic": null
+                    },
+                    "refine_load": {
+                        "gas_used": 0,
+                        "imports": 0,
+                        "extrinsic_count": 0,
+                        "extrinsic_size": 0,
+                        "exports": 0
                     }
                 }
-            ]
+            ],
+            "auth_gas_used": 0
         },
         "slot": 42,
         "signatures": [

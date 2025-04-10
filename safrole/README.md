@@ -9,10 +9,10 @@ The ring-proof backend used by `ark-ec-vrfs` remains subject to modifications.
 
 If you encounter any issues when processing these vectors, particularly
 regarding the verification of Bandersnatch tickets, please ensure that you
-are using the same `ark-ec-vrfs` revision employed for the production of these
-vectors.
+are using the same version employed for the production of these vectors:
 
-Used `ark-ec-vrfs` revision: [d90e180](https://github.com/davxy/ark-ec-vrfs/tree/d90e1800d571f32163e6f7b5d956d065668c899f)
+- `ark-vrf` version: [v0.1.0](https://github.com/davxy/ark-vrf/tree/v0.1.0) ([crates.io](https://crates.io/crates/ark-vrf))
+- Bandersnatch specification revision: [6b1ceba](https://github.com/davxy/bandersnatch-vrf-spec/tree/6b1ceba5b3cbc834201732bcdad1377e19e9283e)
 
 ## zk-SNARK SRS
 

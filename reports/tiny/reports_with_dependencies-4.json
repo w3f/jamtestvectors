@@ -32,28 +32,42 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "slot": 17,
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0xd7227a82011edfe8e466ce5c650fd35e07970df67884fef2d6bfa1cd51ada9fcac8a844921e5f5cbbde465975f7fb5f58430eef912b42ad9439088a5e717a800"
+                        "signature": "0xb79e97007888b5e15a746de2258f82b6003e5dfe867857bb3817074932a2080f1838dcaba2b26135ee5e9d24d862619ebbfab111b089a63f23b5f3f28c1df60f"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0x66429ae67af1ff5d8d8a2e66aba3635d2fa19bd6e42c7b0ad6acfb3b713bc1d6d28b7a488b9eac8848c0a1630c6f5907a31b0baf2189a61e317a89d0238c5a06"
+                        "signature": "0xd6327827b7b55b39f3146029ceb3e7ca3ea12af67862d68ffbba6fa79f484e40699b6addb7d92c64e789c45cdfa4eef776bc243794881dc5ad542baa65633808"
                     },
                     {
                         "validator_index": 3,
-                        "signature": "0x400e5218cf5a88abcc6f752408b37ff7c5e5b1f9f56bec317c13ae577e4e110692bbbcc3c1bc8eae191b0b90cf231753078063ac7dec2e2c63663bc080160902"
+                        "signature": "0x8f84e1eff9bd772de5e55f26ae38e0e7460f68f55a9e4e721f58d3c42859f9c112f5e229b32f384909ac9bd7a689f6460517f22167ce3cff33de28fae10c9609"
                     }
                 ]
             }
         ],
-        "slot": 17
+        "slot": 17,
+        "known_packages": [
+            "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+            "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+            "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad",
+            "0x8b64473572b083fbbd33d10a7bf783065c4c954dee7a057e8270003b9a3cb6b3"
+        ]
     },
     "pre_state": {
         "avail_assignments": [
@@ -167,7 +181,12 @@
                     ]
                 },
                 "state_root": "0x44d5c1f3fc4b4ae9f390ea663f6150ab9160e5a847ad96db022aca10634d9faf",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+                        "exports_root": "0xa50ff479bf2aa38e7433f887780cbed02df3820194a0d9396c403678dc287161"
+                    }
+                ]
             },
             {
                 "header_hash": "0x1cf21d2cad82bbdf7a61c5ab89fedbe1a09afedaac2b9e71f8482e363417562c",
@@ -194,6 +213,10 @@
                 },
                 "state_root": "0xcdac3d6faa0894db80d271e12d9d202d5ba7e78b7eeb9c47a842a3d6a855c798",
                 "reported": [
+                    {
+                        "hash": "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad",
+                        "exports_root": "0x1878eadfac12f63ecce7ccd97d55fde6ab283b6850a2d698c9474d2b2c371d1f"
+                    },
                     {
                         "hash": "0x8b64473572b083fbbd33d10a7bf783065c4c954dee7a057e8270003b9a3cb6b3",
                         "exports_root": "0xf94d70baeb6b32ec2076333bae08657982bd515ce41311a8b9890130235cbe3e"
@@ -250,7 +273,12 @@
                     ]
                 },
                 "state_root": "0xe192165a13296d1b75224380e38a330f0597ea05e753c9f751059bc2b7ed9278",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+                        "exports_root": "0x3d16ed66bae11acbdccc7015b4ee5c1bf87c864a7c930f78f59368280551f60d"
+                    }
+                ]
             }
         ],
         "auth_pools": [
@@ -276,7 +304,30 @@
                     }
                 }
             }
-        ]
+        ],
+        "cores_statistics": [
+            {
+                "da_load": 0,
+                "popularity": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "bundle_size": 0,
+                "gas_used": 0
+            },
+            {
+                "da_load": 0,
+                "popularity": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "bundle_size": 0,
+                "gas_used": 0
+            }
+        ],
+        "services_statistics": []
     },
     "output": {
         "ok": {
@@ -326,9 +377,17 @@
                             "accumulate_gas": 10000,
                             "result": {
                                 "ok": "0x64756d6d792d726573756c74"
+                            },
+                            "refine_load": {
+                                "gas_used": 0,
+                                "imports": 0,
+                                "extrinsic_count": 0,
+                                "extrinsic_size": 0,
+                                "exports": 0
                             }
                         }
-                    ]
+                    ],
+                    "auth_gas_used": 0
                 },
                 "timeout": 17
             },
@@ -441,7 +500,12 @@
                     ]
                 },
                 "state_root": "0x44d5c1f3fc4b4ae9f390ea663f6150ab9160e5a847ad96db022aca10634d9faf",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x22f6c9658e97a10aab5054000140a3355aa61c2a42d9de904ef9e8533ce4a0f2",
+                        "exports_root": "0xa50ff479bf2aa38e7433f887780cbed02df3820194a0d9396c403678dc287161"
+                    }
+                ]
             },
             {
                 "header_hash": "0x1cf21d2cad82bbdf7a61c5ab89fedbe1a09afedaac2b9e71f8482e363417562c",
@@ -468,6 +532,10 @@
                 },
                 "state_root": "0xcdac3d6faa0894db80d271e12d9d202d5ba7e78b7eeb9c47a842a3d6a855c798",
                 "reported": [
+                    {
+                        "hash": "0x35e10c83c8f715877779620be0129741216e77273aafee9d791c874b742015ad",
+                        "exports_root": "0x1878eadfac12f63ecce7ccd97d55fde6ab283b6850a2d698c9474d2b2c371d1f"
+                    },
                     {
                         "hash": "0x8b64473572b083fbbd33d10a7bf783065c4c954dee7a057e8270003b9a3cb6b3",
                         "exports_root": "0xf94d70baeb6b32ec2076333bae08657982bd515ce41311a8b9890130235cbe3e"
@@ -524,7 +592,12 @@
                     ]
                 },
                 "state_root": "0xe192165a13296d1b75224380e38a330f0597ea05e753c9f751059bc2b7ed9278",
-                "reported": []
+                "reported": [
+                    {
+                        "hash": "0x303026af983b91393c6b31e972263759f72c5e7656c00b267e9b61292252c125",
+                        "exports_root": "0x3d16ed66bae11acbdccc7015b4ee5c1bf87c864a7c930f78f59368280551f60d"
+                    }
+                ]
             }
         ],
         "auth_pools": [
@@ -548,6 +621,47 @@
                         "bytes": 19999,
                         "items": 2
                     }
+                }
+            }
+        ],
+        "cores_statistics": [
+            {
+                "da_load": 0,
+                "popularity": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "bundle_size": 12345,
+                "gas_used": 0
+            },
+            {
+                "da_load": 0,
+                "popularity": 0,
+                "imports": 0,
+                "exports": 0,
+                "extrinsic_size": 0,
+                "extrinsic_count": 0,
+                "bundle_size": 0,
+                "gas_used": 0
+            }
+        ],
+        "services_statistics": [
+            {
+                "id": 42,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 1,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
                 }
             }
         ]
