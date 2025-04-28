@@ -4,34 +4,69 @@
         "reports": [
             {
                 "package_spec": {
-                    "hash": "0xd54f425784ed0e9dfc311eb56a162711e68d0b21b5e87fb701b4f1c578a02651",
-                    "length": 3,
-                    "erasure_root": "0x237c8988dd49f8f83c7284bc2b14925e801f73a099be84044d6837165a2bb386",
-                    "exports_root": "0x7b6ef6a7f2acbcf5519b146c6b80ca97a156d56a88df9705e764909b2a38bdf2",
-                    "exports_count": 1
+                    "hash": "0x2a762f984bcb960c32e78fb31b648c3bab5b8ebc0ac2b945f936d30cdc4bec9c",
+                    "length": 7,
+                    "erasure_root": "0x6ed9220726ab97172ac71f2b7324bfcc4f0f5b9f68d324adf5350e9a00afba1f",
+                    "exports_root": "0x51f9df1925c1adae33dc75126996fe1200fe80fcc27e70c177fa259081296236",
+                    "exports_count": 3
                 },
                 "context": {
-                    "anchor": "0x33926f279dad41c596e17ea3e5973c23e15c2030f95825a50d8ec2a41f0bcbae",
-                    "state_root": "0xbf45720986a0e0f9455972d951ccada04ea496fc2dfac0da9a4da4b5c8a0cde2",
-                    "beefy_root": "0xbdb9486a4e898fd94a22801c2644a1c0ff38e391c20059f50506de3c9f24ccde",
-                    "lookup_anchor": "0xf22a637ce7f290182f6616c5406179b4e6009018aec70a4e38670d42809a39c4",
+                    "anchor": "0xced16a60f39f8301f9570700a3e0a4f8102b5b140281c454b40c20c0070f52e7",
+                    "state_root": "0xbf3cd248797e73bfb1c35ac59e5114c2d73f90435c9c504c8d279537aa84909d",
+                    "beefy_root": "0x3bec0d644b5790afd619d71fa19461dc5adf2aec96a86da1e3cdf410feb34b6e",
+                    "lookup_anchor": "0x026a56bab72f90fd17289a9097ffe6643d2e545f58d1e036f21b1e8281d7b6d9",
                     "lookup_anchor_slot": 40,
                     "prerequisites": []
                 },
-                "core_index": 1,
-                "authorizer_hash": "0x30462b1e02ed2d1d536e4250d7412fe0168d9df8aa2467708c36053afbe99e6f",
+                "core_index": 0,
+                "authorizer_hash": "0xbf52de5ab6e18f3a407ae0952c67b624a56a6eafd7c40feb2ade331a18b4c929",
                 "auth_output": "0x",
-                "segment_root_lookup": [
-                    {
-                        "work_package_hash": "0x774935b629cc42513a66c8ed1a09f88b00fe35689032bafd5a26d52f464c4808",
-                        "segment_tree_root": "0xe1bb8e99a1c4ddfa1bcb1b7568f97bf1332aae2d5775a4f7502dc441ff98935e"
-                    }
-                ],
+                "segment_root_lookup": [],
                 "results": [
                     {
                         "service_id": 1729,
                         "code_hash": "0x115eeaf60cb746672240e5774dbdd59eca1de3704481791cbaa8c71dbbf79d41",
-                        "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
+                        "payload_hash": "0x038a8a7fea081877c200733e9aad0bdf3c1f43ea76cf5c3235d70dce8c58a84a",
+                        "accumulate_gas": 10000,
+                        "result": {
+                            "ok": "0x64756d6d79"
+                        },
+                        "refine_load": {
+                            "gas_used": 0,
+                            "imports": 0,
+                            "extrinsic_count": 0,
+                            "extrinsic_size": 0,
+                            "exports": 0
+                        }
+                    }
+                ],
+                "auth_gas_used": 0
+            },
+            {
+                "package_spec": {
+                    "hash": "0x81b7ec37907b198da1ddd5c6e6c99e6c57a2c464cb0775b8906ad36dfcef25bd",
+                    "length": 8,
+                    "erasure_root": "0x90a18be1dccb34513fcff0736dcd2e940e8b4aa07c8fb4de4899d967e00f6ea5",
+                    "exports_root": "0xa1eac233c9f2877aa5ee388236317f5d1287aa901b953f3f9e1d1584adc74670",
+                    "exports_count": 7
+                },
+                "context": {
+                    "anchor": "0x3c8c8f7478709d5268c71a17ac6cf41006568b9ffacdc79a7431449fd322012d",
+                    "state_root": "0x33be2000b8a4cd7fbd91875be18711bf0885f5f25a986f1d1e71b0c0683e0339",
+                    "beefy_root": "0xdcca2c8e7497b0e0fc29b59454f44ddd083cb3b8d63a45e400b9ca4e03d2c9f3",
+                    "lookup_anchor": "0x783df48763240434053cd9f4ce9158f7d362bc1a614b23fca3f7d6690182f408",
+                    "lookup_anchor_slot": 40,
+                    "prerequisites": []
+                },
+                "core_index": 1,
+                "authorizer_hash": "0xc367f2c6c72104e52e4b2344d78b311cb5a87e746348cf5af35940acc7006bd3",
+                "auth_output": "0x",
+                "segment_root_lookup": [],
+                "results": [
+                    {
+                        "service_id": 1730,
+                        "code_hash": "0x115eeaf60cb746672240e5774dbdd59eca1de3704481791cbaa8c71dbbf79d41",
+                        "payload_hash": "0xe52633ce4ae594665e375636db82d92c01c5992d03625f91fddd5111afb56532",
                         "accumulate_gas": 10000,
                         "result": {
                             "ok": "0x64756d6d79"
@@ -106,6 +141,20 @@
                         }
                     ]
                 }
+            },
+            {
+                "id": 1730,
+                "data": {
+                    "service": {
+                        "code_hash": "0x115eeaf60cb746672240e5774dbdd59eca1de3704481791cbaa8c71dbbf79d41",
+                        "balance": 19766,
+                        "min_item_gas": 10,
+                        "min_memo_gas": 10,
+                        "bytes": 19546,
+                        "items": 2
+                    },
+                    "preimages": []
+                }
             }
         ]
     },
@@ -123,58 +172,7 @@
             [],
             [],
             [],
-            [
-                {
-                    "report": {
-                        "package_spec": {
-                            "hash": "0xd54f425784ed0e9dfc311eb56a162711e68d0b21b5e87fb701b4f1c578a02651",
-                            "length": 3,
-                            "erasure_root": "0x237c8988dd49f8f83c7284bc2b14925e801f73a099be84044d6837165a2bb386",
-                            "exports_root": "0x7b6ef6a7f2acbcf5519b146c6b80ca97a156d56a88df9705e764909b2a38bdf2",
-                            "exports_count": 1
-                        },
-                        "context": {
-                            "anchor": "0x33926f279dad41c596e17ea3e5973c23e15c2030f95825a50d8ec2a41f0bcbae",
-                            "state_root": "0xbf45720986a0e0f9455972d951ccada04ea496fc2dfac0da9a4da4b5c8a0cde2",
-                            "beefy_root": "0xbdb9486a4e898fd94a22801c2644a1c0ff38e391c20059f50506de3c9f24ccde",
-                            "lookup_anchor": "0xf22a637ce7f290182f6616c5406179b4e6009018aec70a4e38670d42809a39c4",
-                            "lookup_anchor_slot": 40,
-                            "prerequisites": []
-                        },
-                        "core_index": 1,
-                        "authorizer_hash": "0x30462b1e02ed2d1d536e4250d7412fe0168d9df8aa2467708c36053afbe99e6f",
-                        "auth_output": "0x",
-                        "segment_root_lookup": [
-                            {
-                                "work_package_hash": "0x774935b629cc42513a66c8ed1a09f88b00fe35689032bafd5a26d52f464c4808",
-                                "segment_tree_root": "0xe1bb8e99a1c4ddfa1bcb1b7568f97bf1332aae2d5775a4f7502dc441ff98935e"
-                            }
-                        ],
-                        "results": [
-                            {
-                                "service_id": 1729,
-                                "code_hash": "0x115eeaf60cb746672240e5774dbdd59eca1de3704481791cbaa8c71dbbf79d41",
-                                "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
-                                "accumulate_gas": 10000,
-                                "result": {
-                                    "ok": "0x64756d6d79"
-                                },
-                                "refine_load": {
-                                    "gas_used": 0,
-                                    "imports": 0,
-                                    "extrinsic_count": 0,
-                                    "extrinsic_size": 0,
-                                    "exports": 0
-                                }
-                            }
-                        ],
-                        "auth_gas_used": 0
-                    },
-                    "dependencies": [
-                        "0x774935b629cc42513a66c8ed1a09f88b00fe35689032bafd5a26d52f464c4808"
-                    ]
-                }
-            ],
+            [],
             [],
             [],
             [],
@@ -192,7 +190,10 @@
             [],
             [],
             [],
-            []
+            [
+                "0x2a762f984bcb960c32e78fb31b648c3bab5b8ebc0ac2b945f936d30cdc4bec9c",
+                "0x81b7ec37907b198da1ddd5c6e6c99e6c57a2c464cb0775b8906ad36dfcef25bd"
+            ]
         ],
         "privileges": {
             "bless": 0,
@@ -200,7 +201,42 @@
             "designate": 0,
             "always_acc": []
         },
-        "statistics": [],
+        "statistics": [
+            {
+                "id": 1729,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 1,
+                    "accumulate_gas_used": 2865,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
+                }
+            },
+            {
+                "id": 1730,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 1,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
+                }
+            }
+        ],
         "accounts": [
             {
                 "id": 1729,

@@ -18,7 +18,7 @@
                     "lookup_anchor_slot": 40,
                     "prerequisites": []
                 },
-                "core_index": 1,
+                "core_index": 0,
                 "authorizer_hash": "0xbf52de5ab6e18f3a407ae0952c67b624a56a6eafd7c40feb2ade331a18b4c929",
                 "auth_output": "0x",
                 "segment_root_lookup": [],
@@ -27,6 +27,46 @@
                         "service_id": 1729,
                         "code_hash": "0x5b5e0e0f92a87ed18a14c56e67d8b8428b73be0439578a4a4c071f6702ae2ea9",
                         "payload_hash": "0x038a8a7fea081877c200733e9aad0bdf3c1f43ea76cf5c3235d70dce8c58a84a",
+                        "accumulate_gas": 10000,
+                        "result": {
+                            "ok": "0x64756d6d79"
+                        },
+                        "refine_load": {
+                            "gas_used": 0,
+                            "imports": 0,
+                            "extrinsic_count": 0,
+                            "extrinsic_size": 0,
+                            "exports": 0
+                        }
+                    }
+                ],
+                "auth_gas_used": 0
+            },
+            {
+                "package_spec": {
+                    "hash": "0x81b7ec37907b198da1ddd5c6e6c99e6c57a2c464cb0775b8906ad36dfcef25bd",
+                    "length": 8,
+                    "erasure_root": "0x90a18be1dccb34513fcff0736dcd2e940e8b4aa07c8fb4de4899d967e00f6ea5",
+                    "exports_root": "0xa1eac233c9f2877aa5ee388236317f5d1287aa901b953f3f9e1d1584adc74670",
+                    "exports_count": 7
+                },
+                "context": {
+                    "anchor": "0x3c8c8f7478709d5268c71a17ac6cf41006568b9ffacdc79a7431449fd322012d",
+                    "state_root": "0x33be2000b8a4cd7fbd91875be18711bf0885f5f25a986f1d1e71b0c0683e0339",
+                    "beefy_root": "0xdcca2c8e7497b0e0fc29b59454f44ddd083cb3b8d63a45e400b9ca4e03d2c9f3",
+                    "lookup_anchor": "0x783df48763240434053cd9f4ce9158f7d362bc1a614b23fca3f7d6690182f408",
+                    "lookup_anchor_slot": 40,
+                    "prerequisites": []
+                },
+                "core_index": 1,
+                "authorizer_hash": "0xc367f2c6c72104e52e4b2344d78b311cb5a87e746348cf5af35940acc7006bd3",
+                "auth_output": "0x",
+                "segment_root_lookup": [],
+                "results": [
+                    {
+                        "service_id": 1730,
+                        "code_hash": "0x5b5e0e0f92a87ed18a14c56e67d8b8428b73be0439578a4a4c071f6702ae2ea9",
+                        "payload_hash": "0xe52633ce4ae594665e375636db82d92c01c5992d03625f91fddd5111afb56532",
                         "accumulate_gas": 10000,
                         "result": {
                             "ok": "0x64756d6d79"
@@ -1277,6 +1317,20 @@
                         }
                     ]
                 }
+            },
+            {
+                "id": 1730,
+                "data": {
+                    "service": {
+                        "code_hash": "0x5b5e0e0f92a87ed18a14c56e67d8b8428b73be0439578a4a4c071f6702ae2ea9",
+                        "balance": 19766,
+                        "min_item_gas": 10,
+                        "min_memo_gas": 10,
+                        "bytes": 19546,
+                        "items": 2
+                    },
+                    "preimages": []
+                }
             }
         ]
     },
@@ -2489,7 +2543,8 @@
             [],
             [],
             [
-                "0x2a762f984bcb960c32e78fb31b648c3bab5b8ebc0ac2b945f936d30cdc4bec9c"
+                "0x2a762f984bcb960c32e78fb31b648c3bab5b8ebc0ac2b945f936d30cdc4bec9c",
+                "0x81b7ec37907b198da1ddd5c6e6c99e6c57a2c464cb0775b8906ad36dfcef25bd"
             ]
         ],
         "privileges": {
@@ -2512,6 +2567,23 @@
                     "extrinsic_count": 0,
                     "accumulate_count": 1,
                     "accumulate_gas_used": 2865,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
+                }
+            },
+            {
+                "id": 1730,
+                "record": {
+                    "provided_count": 0,
+                    "provided_size": 0,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 1,
+                    "accumulate_gas_used": 0,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
