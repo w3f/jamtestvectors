@@ -63,7 +63,12 @@ Input ::= SEQUENCE {
     guarantees GuaranteesExtrinsic,
 
     -- [H_t] Block's timeslot.
-    slot TimeSlot
+    slot TimeSlot,
+
+    -- This is a derived sequence of all known packages
+    -- The set is constructed from all the recently reported WPs using recent_blocks (β),
+    -- accumulated reports (ξ), availability (ρ), and ready queue (φ).
+    known-packages SEQUENCE OF WorkPackageHash
 }
 
 ReportedPackage ::= SEQUENCE {
