@@ -53,3 +53,4 @@ specific subsystem.
 ## Block Import Traces
 
 - [Fallback](./traces/fallback): fallback block authoring, no-safrole, no-work-packages
+- [Safrole](./traces/safrole): safrole block authoring, no-work-packages
