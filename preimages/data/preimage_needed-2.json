@@ -40,7 +40,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     },
     "output": {
         "ok": null
@@ -81,6 +82,25 @@
                             ]
                         }
                     ]
+                }
+            }
+        ],
+        "statistics": [
+            {
+                "id": 3,
+                "record": {
+                    "provided_count": 1,
+                    "provided_size": 46,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
                 }
             }
         ]

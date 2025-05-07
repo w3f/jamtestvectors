@@ -43,7 +43,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     },
     "output": {
         "err": "preimage_unneeded"
@@ -79,6 +80,7 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     }
 }

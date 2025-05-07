@@ -84,7 +84,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     },
     "output": {
         "ok": null
@@ -179,6 +180,42 @@
                             ]
                         }
                     ]
+                }
+            }
+        ],
+        "statistics": [
+            {
+                "id": 36,
+                "record": {
+                    "provided_count": 3,
+                    "provided_size": 181,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
+                }
+            },
+            {
+                "id": 45,
+                "record": {
+                    "provided_count": 2,
+                    "provided_size": 111,
+                    "refinement_count": 0,
+                    "refinement_gas_used": 0,
+                    "imports": 0,
+                    "exports": 0,
+                    "extrinsic_size": 0,
+                    "extrinsic_count": 0,
+                    "accumulate_count": 0,
+                    "accumulate_gas_used": 0,
+                    "on_transfers_count": 0,
+                    "on_transfers_gas_used": 0
                 }
             }
         ]

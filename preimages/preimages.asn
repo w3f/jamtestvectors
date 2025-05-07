@@ -3,7 +3,7 @@
 PreimagesModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    TimeSlot, OpaqueHash, PreimagesExtrinsic, ServiceId, ByteSequence, U32
+    TimeSlot, OpaqueHash, PreimagesExtrinsic, ServiceId, ByteSequence, ServicesStatistics, U32
         FROM JamTypes;
 
 
@@ -37,7 +37,9 @@ AccountsMapEntry ::= SEQUENCE {
 
 State ::= SEQUENCE {
 	-- Relevant services account data [δ]. Refer to T(σ) in GP Appendix D.
-    accounts SEQUENCE OF AccountsMapEntry
+    accounts SEQUENCE OF AccountsMapEntry,
+    -- Statistics updated by the preimages STF subsystem.
+    statistics ServicesStatistics
 }
 
 Input ::= SEQUENCE {
