@@ -256,6 +256,20 @@
                         }
                     ]
                 }
+            },
+            {
+                "id": 1730,
+                "data": {
+                    "service": {
+                        "code_hash": "0x115eeaf60cb746672240e5774dbdd59eca1de3704481791cbaa8c71dbbf79d41",
+                        "balance": 19766,
+                        "min_item_gas": 10,
+                        "min_memo_gas": 10,
+                        "bytes": 19546,
+                        "items": 2
+                    },
+                    "preimages": []
+                }
             }
         ]
     }
