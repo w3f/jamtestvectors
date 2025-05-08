@@ -3,6 +3,12 @@
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./preimages.asn).
 
+## Statistics
+
+A subset of `ServiceActivityRecord` structure is updated by the STF involved processing these test vectors.
+In particular the `provided-count` and `provided-size` items are updated when new preimages are provided
+to be included in the chain storage via the extrinsic.
+
 ## Vectors
 
 - [preimage_needed-1](./data/preimage_needed-1.json) 🟢

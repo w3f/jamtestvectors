@@ -2731,8 +2731,8 @@
                     "exports": 0,
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
-                    "accumulate_count": 7,
-                    "accumulate_gas_used": 13880,
+                    "accumulate_count": 5,
+                    "accumulate_gas_used": 9385,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
