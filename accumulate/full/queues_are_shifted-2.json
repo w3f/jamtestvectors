@@ -1936,25 +1936,7 @@
             "designate": 0,
             "always_acc": []
         },
-        "statistics": [
-            {
-                "id": 1729,
-                "record": {
-                    "provided_count": 0,
-                    "provided_size": 0,
-                    "refinement_count": 0,
-                    "refinement_gas_used": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "accumulate_count": 1,
-                    "accumulate_gas_used": 2865,
-                    "on_transfers_count": 0,
-                    "on_transfers_gas_used": 0
-                }
-            }
-        ],
+        "statistics": [],
         "accounts": [
             {
                 "id": 1729,
@@ -3911,25 +3893,7 @@
             "designate": 0,
             "always_acc": []
         },
-        "statistics": [
-            {
-                "id": 1729,
-                "record": {
-                    "provided_count": 0,
-                    "provided_size": 0,
-                    "refinement_count": 0,
-                    "refinement_gas_used": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "accumulate_count": 1,
-                    "accumulate_gas_used": 2865,
-                    "on_transfers_count": 0,
-                    "on_transfers_gas_used": 0
-                }
-            }
-        ],
+        "statistics": [],
         "accounts": [
             {
                 "id": 1729,
