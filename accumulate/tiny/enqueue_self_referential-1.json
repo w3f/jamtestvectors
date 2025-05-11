@@ -31,7 +31,7 @@
                         "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x64756d6d79"
+                            "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -42,7 +42,7 @@
                         }
                     }
                 ],
-                "auth_gas_used": 0
+                "auth_gas_used": 10
             }
         ]
     },
@@ -96,6 +96,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x05204540d227a422eb4e65570a9f74d4505214350e7cf0c18f9be70912570697",
@@ -151,7 +152,7 @@
                                 "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x64756d6d79"
+                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -162,7 +163,7 @@
                                 }
                             }
                         ],
-                        "auth_gas_used": 0
+                        "auth_gas_used": 10
                     },
                     "dependencies": [
                         "0x774935b629cc42513a66c8ed1a09f88b00fe35689032bafd5a26d52f464c4808"
@@ -207,6 +208,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x05204540d227a422eb4e65570a9f74d4505214350e7cf0c18f9be70912570697",

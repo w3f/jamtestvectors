@@ -31,7 +31,7 @@
                         "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x64756d6d79"
+                            "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -42,7 +42,7 @@
                         }
                     }
                 ],
-                "auth_gas_used": 0
+                "auth_gas_used": 10
             },
             {
                 "package_spec": {
@@ -74,7 +74,7 @@
                         "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x64756d6d79"
+                            "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -85,7 +85,7 @@
                         }
                     }
                 ],
-                "auth_gas_used": 0
+                "auth_gas_used": 10
             }
         ]
     },
@@ -1315,6 +1315,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x1915094f0cb11dd7dbc7124056d94f2626aa2865516edd5410df4c14e0ca7408",
@@ -1406,7 +1407,7 @@
                                 "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x64756d6d79"
+                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1417,7 +1418,7 @@
                                 }
                             }
                         ],
-                        "auth_gas_used": 0
+                        "auth_gas_used": 10
                     },
                     "dependencies": [
                         "0x38b7a75bd6d296f01fc6b4b6569c38980af6ba2ea34e22d429cccfb6f5b7432a"
@@ -1454,7 +1455,7 @@
                                 "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x64756d6d79"
+                                    "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1465,7 +1466,7 @@
                                 }
                             }
                         ],
-                        "auth_gas_used": 0
+                        "auth_gas_used": 10
                     },
                     "dependencies": [
                         "0x18176cfbff4a8b40f2d9cba3c2ddc4a5b75e9152c8c41452cda90bebc0632013",
@@ -2651,6 +2652,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x1915094f0cb11dd7dbc7124056d94f2626aa2865516edd5410df4c14e0ca7408",

@@ -1229,6 +1229,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x1915094f0cb11dd7dbc7124056d94f2626aa2865516edd5410df4c14e0ca7408",
@@ -2468,6 +2469,7 @@
                         "bytes": 35769,
                         "items": 2
                     },
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x1915094f0cb11dd7dbc7124056d94f2626aa2865516edd5410df4c14e0ca7408",
