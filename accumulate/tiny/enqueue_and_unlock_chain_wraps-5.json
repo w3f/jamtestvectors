@@ -29,7 +29,7 @@
                         "payload_hash": "0x702e6e2567740d7bcfdae72f6d1544ab0e9dfa232ecb39fd2a156629a89be8b9",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x1000b7115af7d16c7a7af511bed703e43203bf5d98d5cebb16b028417fa16498"
+                            "ok": "0x1000b7115af7d16c7a7af511bed703e432"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -71,7 +71,7 @@
                         "payload_hash": "0x7502b113db6ed8d9d6bf5593b6bd85df8d30239b1346cbd072773c8208c6debc",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x55261f6cb14cabc2c5349179dcbb600ae0d2911059de3f740f9eb0e316c8d945"
+                            "ok": "0x55261f6cb14cabc2c5349179dcbb600ae0d2911059de"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -122,7 +122,7 @@
                                 "payload_hash": "0xcfcd32108073504a4c664b876577ed5fd6a58244db338bc1fb8b9f7a07e2e583",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x82aa36f2dd65314aae589295777f6164bc54455c11fbd6834b34a3056ec7f256"
+                                    "ok": "0x82aa36"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -175,7 +175,7 @@
                                 "payload_hash": "0x1c48d58df38166afd30f8123173c0e62192a1cb4f3820a73e2d39e3024622c47",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x6ec3712f0d991a2b3bd1b0482e376a9e9cc79e8ee1ae3e9b01be0346dd01772e"
+                                    "ok": "0x6ec3712f0d991a2b3bd1b0482e376a"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -222,7 +222,7 @@
                                 "payload_hash": "0x487cbf655111d7b4476598cbd474bac56fafbf52ca9cc8eebba753b32e8846b7",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x033fde3d6864e8c937046098c9142d2962ffabb4b276ec0cc7573df8e44b0449"
+                                    "ok": "0x033fde3d"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -274,7 +274,7 @@
                                 "payload_hash": "0xeb2579a6a43ec9cf3ef30059f68ba4691c2c996e32411f35bc8630f89dfa5b86",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x7c2f1bf3a8e1550edddc5cc603f68b0c560cb144bc8a157f22c9ef67d8e762fa"
+                                    "ok": "0x7c2f1bf3a8e1550edddc5cc603f68b0c560cb144bc8a157f22c9ef67d8"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -323,7 +323,7 @@
                                 "payload_hash": "0x92d8adbfc61de350cdd8c7893859f6cb031954ca1b85cf41b91ef29a4e1b58dd",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x7590395cb74faf4702139b782f1b9329885a772b2fce98d344076defd1c56a09"
+                                    "ok": "0x7590395cb74faf4702139b782f1b9329885a772b2fce"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -370,7 +370,7 @@
                                 "payload_hash": "0xeee9294bb414759ddfe7731e6ff76fec82d8c2c00ab0d52399604ef0b8c698b3",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xec2cb6003a4d3d460b8e42ec48c6ce9de93dc7f9ab08180ad4e49dfa935f326b"
+                                    "ok": "0xec2cb6003a4d3d460b8e42ec48"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -432,7 +432,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 1,
-                    "accumulate_gas_used": 3499,
+                    "accumulate_gas_used": 3535,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -447,7 +447,7 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35833,
+                        "bytes": 35813,
                         "items": 3
                     },
                     "storage": [],
@@ -533,7 +533,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 8,
-                    "accumulate_gas_used": 15895,
+                    "accumulate_gas_used": 16062,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -548,7 +548,7 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35833,
+                        "bytes": 35813,
                         "items": 3
                     },
                     "storage": [],

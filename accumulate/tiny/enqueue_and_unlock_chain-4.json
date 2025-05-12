@@ -29,7 +29,7 @@
                         "payload_hash": "0x1c48d58df38166afd30f8123173c0e62192a1cb4f3820a73e2d39e3024622c47",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x6ec3712f0d991a2b3bd1b0482e376a9e9cc79e8ee1ae3e9b01be0346dd01772e"
+                            "ok": "0x6ec3712f0d991a2b3bd1b0482e376a"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -86,7 +86,7 @@
                                 "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
+                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -134,7 +134,7 @@
                                 "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
+                                    "ok": "0xc0"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -184,7 +184,7 @@
                                 "payload_hash": "0xd550b4288c20f8b00057121e74c978c9216cfcff6c69dcc65a22e9c0ca2a6e20",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x13105b532e72300d3e5f94fa6467ecb274f0f45f14e1346f1eefa2cb14d6e2b1"
+                                    "ok": "0x13105b532e72300d3e5f94fa6467ecb274f0f45f"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -234,7 +234,7 @@
                                 "payload_hash": "0x92d8adbfc61de350cdd8c7893859f6cb031954ca1b85cf41b91ef29a4e1b58dd",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x7590395cb74faf4702139b782f1b9329885a772b2fce98d344076defd1c56a09"
+                                    "ok": "0x7590395cb74faf4702139b782f1b9329885a772b2fce"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -290,7 +290,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 2,
-                    "accumulate_gas_used": 5509,
+                    "accumulate_gas_used": 5463,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -305,13 +305,13 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35833,
+                        "bytes": 35814,
                         "items": 3
                     },
                     "storage": [
                         {
                             "key": "0x6c617374",
-                            "value": "0xec2cb6003a4d3d460b8e42ec48c6ce9de93dc7f9ab08180ad4e49dfa935f326b"
+                            "value": "0xec2cb6003a4d3d460b8e42ec48"
                         }
                     ],
                     "preimages": [
@@ -386,7 +386,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 5,
-                    "accumulate_gas_used": 10603,
+                    "accumulate_gas_used": 10696,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -401,7 +401,7 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35833,
+                        "bytes": 35814,
                         "items": 3
                     },
                     "storage": [],

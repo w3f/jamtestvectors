@@ -31,7 +31,7 @@
                         "payload_hash": "0x8b1765b2db5e5bfae86923a2e831a19154f16431ac27a3431ea2f00be242c9a0",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x4ed31d55bebdc8c3f5463ec0877704edb193ab1b9137753d0e4dff67bcd30b71"
+                            "ok": "0x4ed31d55bebdc8c3f5463ec0877704"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -124,7 +124,7 @@
                                 "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
+                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -173,7 +173,7 @@
                                 "payload_hash": "0x702e6e2567740d7bcfdae72f6d1544ab0e9dfa232ecb39fd2a156629a89be8b9",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x1000b7115af7d16c7a7af511bed703e43203bf5d98d5cebb16b028417fa16498"
+                                    "ok": "0x1000b7115af7d16c7a7af511bed703e432"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -220,7 +220,7 @@
                                 "payload_hash": "0xb93dae0c9f75a716e0509361c73cc284e8ec968ed13e096be3bc6bb3ab7e033c",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xe931cfc476a0afbb6f3ebda5756db15c3a17a2404641d05c95cb0db27826acf6"
+                                    "ok": "0xe931cfc476a0afbb6f3e"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -269,7 +269,7 @@
                                 "payload_hash": "0x0f53a54c4323830d0092a5b0632f02b90d13b0b24edadc35a01181e6c417936c",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x0053b5138069895c70a6c10c957dc1090332302b841fbe3e1f2b45bccb737005"
+                                    "ok": "0x00"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -316,7 +316,7 @@
                                 "payload_hash": "0x3b0cff51b8f9682e4e7b38d07eca6507e0d6fefedaed0e1532c43268afb819c0",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x58dd822da45c00c65190502ea112b514af221967b7f7d0be1796cec6dd964631"
+                                    "ok": "0x58dd822da45c00c65190502ea112b514af221967b7f7d0be17"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1602,7 +1602,7 @@
                                 "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
+                                    "ok": "0x4e7d087383aadf7301a9a6ebff2d02"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1651,7 +1651,7 @@
                                 "payload_hash": "0x702e6e2567740d7bcfdae72f6d1544ab0e9dfa232ecb39fd2a156629a89be8b9",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x1000b7115af7d16c7a7af511bed703e43203bf5d98d5cebb16b028417fa16498"
+                                    "ok": "0x1000b7115af7d16c7a7af511bed703e432"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1698,7 +1698,7 @@
                                 "payload_hash": "0xb93dae0c9f75a716e0509361c73cc284e8ec968ed13e096be3bc6bb3ab7e033c",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xe931cfc476a0afbb6f3ebda5756db15c3a17a2404641d05c95cb0db27826acf6"
+                                    "ok": "0xe931cfc476a0afbb6f3e"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1747,7 +1747,7 @@
                                 "payload_hash": "0x0f53a54c4323830d0092a5b0632f02b90d13b0b24edadc35a01181e6c417936c",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x0053b5138069895c70a6c10c957dc1090332302b841fbe3e1f2b45bccb737005"
+                                    "ok": "0x00"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1794,7 +1794,7 @@
                                 "payload_hash": "0x3b0cff51b8f9682e4e7b38d07eca6507e0d6fefedaed0e1532c43268afb819c0",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x58dd822da45c00c65190502ea112b514af221967b7f7d0be1796cec6dd964631"
+                                    "ok": "0x58dd822da45c00c65190502ea112b514af221967b7f7d0be17"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -1843,7 +1843,7 @@
                                 "payload_hash": "0x8b1765b2db5e5bfae86923a2e831a19154f16431ac27a3431ea2f00be242c9a0",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0x4ed31d55bebdc8c3f5463ec0877704edb193ab1b9137753d0e4dff67bcd30b71"
+                                    "ok": "0x4ed31d55bebdc8c3f5463ec0877704"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,

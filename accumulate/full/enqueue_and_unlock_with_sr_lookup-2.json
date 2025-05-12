@@ -29,7 +29,7 @@
                         "payload_hash": "0x9a00110a56ecaf8954ecc77d17076b4260ffd6844e83b2f35ee42aa17effc89e",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0x4e7d087383aadf7301a9a6ebff2d02d6f077ce3d50b6feb29e3586083213534d"
+                            "ok": "0x4e7d087383aadf7301a9a6ebff2d02"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -125,7 +125,7 @@
                                 "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
+                                    "ok": "0xc0"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
@@ -2564,7 +2564,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 2,
-                    "accumulate_gas_used": 5509,
+                    "accumulate_gas_used": 5487,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -2579,13 +2579,13 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35833,
+                        "bytes": 35802,
                         "items": 3
                     },
                     "storage": [
                         {
                             "key": "0x6c617374",
-                            "value": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
+                            "value": "0xc0"
                         }
                     ],
                     "preimages": [

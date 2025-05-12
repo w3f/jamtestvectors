@@ -31,7 +31,7 @@
                         "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                         "accumulate_gas": 10000,
                         "result": {
-                            "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
+                            "ok": "0xc0"
                         },
                         "refine_load": {
                             "gas_used": 0,
@@ -1364,7 +1364,7 @@
                                 "payload_hash": "0xf544ac85166b6c54c757226eab7fd7b264e6893312c043ea29d02a7ae77b38e3",
                                 "accumulate_gas": 10000,
                                 "result": {
-                                    "ok": "0xc0897fc0223b692884cbb1f6ddb5c43f61b1d22c4522373ff2b0f39eff15fad0"
+                                    "ok": "0xc0"
                                 },
                                 "refine_load": {
                                     "gas_used": 0,
