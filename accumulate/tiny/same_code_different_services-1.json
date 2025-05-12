@@ -248,8 +248,8 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35769,
-                        "items": 2
+                        "bytes": 35833,
+                        "items": 3
                     },
                     "storage": [
                         {

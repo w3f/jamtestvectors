@@ -1464,7 +1464,7 @@
                     "extrinsic_size": 0,
                     "extrinsic_count": 0,
                     "accumulate_count": 1,
-                    "accumulate_gas_used": 3585,
+                    "accumulate_gas_used": 3499,
                     "on_transfers_count": 0,
                     "on_transfers_gas_used": 0
                 }
@@ -1479,15 +1479,10 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35769,
-                        "items": 2
+                        "bytes": 35833,
+                        "items": 3
                     },
-                    "storage": [
-                        {
-                            "key": "0x6c617374",
-                            "value": "0xab8d3783fe9b1b088e788e8e0af30aa4bcac4c9e493bce24b5854b64393c2a3d"
-                        }
-                    ],
+                    "storage": [],
                     "preimages": [
                         {
                             "hash": "0x1915094f0cb11dd7dbc7124056d94f2626aa2865516edd5410df4c14e0ca7408",
@@ -2969,8 +2964,8 @@
                         "balance": 35989,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 35769,
-                        "items": 2
+                        "bytes": 35833,
+                        "items": 3
                     },
                     "storage": [],
                     "preimages": [
