@@ -15,131 +15,106 @@
         }
     },
     "pre_state": {
-        "statistics": {
-            "vals_current": [
-                {
-                    "blocks": 18093,
-                    "tickets": 11785,
-                    "pre_images": 27,
-                    "pre_images_size": 575,
-                    "guarantees": 1363,
-                    "assurances": 1359
-                },
-                {
-                    "blocks": 15610,
-                    "tickets": 17650,
-                    "pre_images": 39,
-                    "pre_images_size": 731,
-                    "guarantees": 1319,
-                    "assurances": 1379
-                },
-                {
-                    "blocks": 13127,
-                    "tickets": 8155,
-                    "pre_images": 34,
-                    "pre_images_size": 442,
-                    "guarantees": 1882,
-                    "assurances": 1586
-                },
-                {
-                    "blocks": 15860,
-                    "tickets": 14436,
-                    "pre_images": 121,
-                    "pre_images_size": 965,
-                    "guarantees": 1457,
-                    "assurances": 1749
-                },
-                {
-                    "blocks": 13377,
-                    "tickets": 20301,
-                    "pre_images": 6,
-                    "pre_images_size": 270,
-                    "guarantees": 1310,
-                    "assurances": 1734
-                },
-                {
-                    "blocks": 10894,
-                    "tickets": 10806,
-                    "pre_images": 1,
-                    "pre_images_size": 941,
-                    "guarantees": 1441,
-                    "assurances": 1541
-                }
-            ],
-            "vals_last": [
-                {
-                    "blocks": 13627,
-                    "tickets": 17087,
-                    "pre_images": 88,
-                    "pre_images_size": 504,
-                    "guarantees": 1448,
-                    "assurances": 1808
-                },
-                {
-                    "blocks": 11144,
-                    "tickets": 2376,
-                    "pre_images": 86,
-                    "pre_images_size": 926,
-                    "guarantees": 1070,
-                    "assurances": 1870
-                },
-                {
-                    "blocks": 8661,
-                    "tickets": 8241,
-                    "pre_images": 98,
-                    "pre_images_size": 826,
-                    "guarantees": 1250,
-                    "assurances": 1842
-                },
-                {
-                    "blocks": 6178,
-                    "tickets": 19322,
-                    "pre_images": 107,
-                    "pre_images_size": 271,
-                    "guarantees": 1851,
-                    "assurances": 1599
-                },
-                {
-                    "blocks": 8911,
-                    "tickets": 5027,
-                    "pre_images": 53,
-                    "pre_images_size": 465,
-                    "guarantees": 1061,
-                    "assurances": 1225
-                },
-                {
-                    "blocks": 6428,
-                    "tickets": 10892,
-                    "pre_images": 65,
-                    "pre_images_size": 365,
-                    "guarantees": 1241,
-                    "assurances": 1901
-                }
-            ],
-            "cores": [
-                {
-                    "da_load": 0,
-                    "popularity": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "bundle_size": 0,
-                    "gas_used": 0
-                },
-                {
-                    "da_load": 0,
-                    "popularity": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "bundle_size": 0,
-                    "gas_used": 0
-                }
-            ],
-            "services": []
-        },
+        "vals_curr_stats": [
+            {
+                "blocks": 18093,
+                "tickets": 11785,
+                "pre_images": 27,
+                "pre_images_size": 575,
+                "guarantees": 1363,
+                "assurances": 1359
+            },
+            {
+                "blocks": 15610,
+                "tickets": 17650,
+                "pre_images": 39,
+                "pre_images_size": 731,
+                "guarantees": 1319,
+                "assurances": 1379
+            },
+            {
+                "blocks": 13127,
+                "tickets": 8155,
+                "pre_images": 34,
+                "pre_images_size": 442,
+                "guarantees": 1882,
+                "assurances": 1586
+            },
+            {
+                "blocks": 15860,
+                "tickets": 14436,
+                "pre_images": 121,
+                "pre_images_size": 965,
+                "guarantees": 1457,
+                "assurances": 1749
+            },
+            {
+                "blocks": 13377,
+                "tickets": 20301,
+                "pre_images": 6,
+                "pre_images_size": 270,
+                "guarantees": 1310,
+                "assurances": 1734
+            },
+            {
+                "blocks": 10894,
+                "tickets": 10806,
+                "pre_images": 1,
+                "pre_images_size": 941,
+                "guarantees": 1441,
+                "assurances": 1541
+            }
+        ],
+        "vals_last_stats": [
+            {
+                "blocks": 13627,
+                "tickets": 17087,
+                "pre_images": 88,
+                "pre_images_size": 504,
+                "guarantees": 1448,
+                "assurances": 1808
+            },
+            {
+                "blocks": 11144,
+                "tickets": 2376,
+                "pre_images": 86,
+                "pre_images_size": 926,
+                "guarantees": 1070,
+                "assurances": 1870
+            },
+            {
+                "blocks": 8661,
+                "tickets": 8241,
+                "pre_images": 98,
+                "pre_images_size": 826,
+                "guarantees": 1250,
+                "assurances": 1842
+            },
+            {
+                "blocks": 6178,
+                "tickets": 19322,
+                "pre_images": 107,
+                "pre_images_size": 271,
+                "guarantees": 1851,
+                "assurances": 1599
+            },
+            {
+                "blocks": 8911,
+                "tickets": 5027,
+                "pre_images": 53,
+                "pre_images_size": 465,
+                "guarantees": 1061,
+                "assurances": 1225
+            },
+            {
+                "blocks": 6428,
+                "tickets": 10892,
+                "pre_images": 65,
+                "pre_images_size": 365,
+                "guarantees": 1241,
+                "assurances": 1901
+            }
+        ],
         "slot": 123456,
         "curr_validators": [
             {
@@ -182,131 +157,106 @@
     },
     "output": null,
     "post_state": {
-        "statistics": {
-            "vals_current": [
-                {
-                    "blocks": 18093,
-                    "tickets": 11785,
-                    "pre_images": 27,
-                    "pre_images_size": 575,
-                    "guarantees": 1363,
-                    "assurances": 1359
-                },
-                {
-                    "blocks": 15611,
-                    "tickets": 17650,
-                    "pre_images": 39,
-                    "pre_images_size": 731,
-                    "guarantees": 1319,
-                    "assurances": 1379
-                },
-                {
-                    "blocks": 13127,
-                    "tickets": 8155,
-                    "pre_images": 34,
-                    "pre_images_size": 442,
-                    "guarantees": 1882,
-                    "assurances": 1586
-                },
-                {
-                    "blocks": 15860,
-                    "tickets": 14436,
-                    "pre_images": 121,
-                    "pre_images_size": 965,
-                    "guarantees": 1457,
-                    "assurances": 1749
-                },
-                {
-                    "blocks": 13377,
-                    "tickets": 20301,
-                    "pre_images": 6,
-                    "pre_images_size": 270,
-                    "guarantees": 1310,
-                    "assurances": 1734
-                },
-                {
-                    "blocks": 10894,
-                    "tickets": 10806,
-                    "pre_images": 1,
-                    "pre_images_size": 941,
-                    "guarantees": 1441,
-                    "assurances": 1541
-                }
-            ],
-            "vals_last": [
-                {
-                    "blocks": 13627,
-                    "tickets": 17087,
-                    "pre_images": 88,
-                    "pre_images_size": 504,
-                    "guarantees": 1448,
-                    "assurances": 1808
-                },
-                {
-                    "blocks": 11144,
-                    "tickets": 2376,
-                    "pre_images": 86,
-                    "pre_images_size": 926,
-                    "guarantees": 1070,
-                    "assurances": 1870
-                },
-                {
-                    "blocks": 8661,
-                    "tickets": 8241,
-                    "pre_images": 98,
-                    "pre_images_size": 826,
-                    "guarantees": 1250,
-                    "assurances": 1842
-                },
-                {
-                    "blocks": 6178,
-                    "tickets": 19322,
-                    "pre_images": 107,
-                    "pre_images_size": 271,
-                    "guarantees": 1851,
-                    "assurances": 1599
-                },
-                {
-                    "blocks": 8911,
-                    "tickets": 5027,
-                    "pre_images": 53,
-                    "pre_images_size": 465,
-                    "guarantees": 1061,
-                    "assurances": 1225
-                },
-                {
-                    "blocks": 6428,
-                    "tickets": 10892,
-                    "pre_images": 65,
-                    "pre_images_size": 365,
-                    "guarantees": 1241,
-                    "assurances": 1901
-                }
-            ],
-            "cores": [
-                {
-                    "da_load": 0,
-                    "popularity": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "bundle_size": 0,
-                    "gas_used": 0
-                },
-                {
-                    "da_load": 0,
-                    "popularity": 0,
-                    "imports": 0,
-                    "exports": 0,
-                    "extrinsic_size": 0,
-                    "extrinsic_count": 0,
-                    "bundle_size": 0,
-                    "gas_used": 0
-                }
-            ],
-            "services": []
-        },
+        "vals_curr_stats": [
+            {
+                "blocks": 18093,
+                "tickets": 11785,
+                "pre_images": 27,
+                "pre_images_size": 575,
+                "guarantees": 1363,
+                "assurances": 1359
+            },
+            {
+                "blocks": 15611,
+                "tickets": 17650,
+                "pre_images": 39,
+                "pre_images_size": 731,
+                "guarantees": 1319,
+                "assurances": 1379
+            },
+            {
+                "blocks": 13127,
+                "tickets": 8155,
+                "pre_images": 34,
+                "pre_images_size": 442,
+                "guarantees": 1882,
+                "assurances": 1586
+            },
+            {
+                "blocks": 15860,
+                "tickets": 14436,
+                "pre_images": 121,
+                "pre_images_size": 965,
+                "guarantees": 1457,
+                "assurances": 1749
+            },
+            {
+                "blocks": 13377,
+                "tickets": 20301,
+                "pre_images": 6,
+                "pre_images_size": 270,
+                "guarantees": 1310,
+                "assurances": 1734
+            },
+            {
+                "blocks": 10894,
+                "tickets": 10806,
+                "pre_images": 1,
+                "pre_images_size": 941,
+                "guarantees": 1441,
+                "assurances": 1541
+            }
+        ],
+        "vals_last_stats": [
+            {
+                "blocks": 13627,
+                "tickets": 17087,
+                "pre_images": 88,
+                "pre_images_size": 504,
+                "guarantees": 1448,
+                "assurances": 1808
+            },
+            {
+                "blocks": 11144,
+                "tickets": 2376,
+                "pre_images": 86,
+                "pre_images_size": 926,
+                "guarantees": 1070,
+                "assurances": 1870
+            },
+            {
+                "blocks": 8661,
+                "tickets": 8241,
+                "pre_images": 98,
+                "pre_images_size": 826,
+                "guarantees": 1250,
+                "assurances": 1842
+            },
+            {
+                "blocks": 6178,
+                "tickets": 19322,
+                "pre_images": 107,
+                "pre_images_size": 271,
+                "guarantees": 1851,
+                "assurances": 1599
+            },
+            {
+                "blocks": 8911,
+                "tickets": 5027,
+                "pre_images": 53,
+                "pre_images_size": 465,
+                "guarantees": 1061,
+                "assurances": 1225
+            },
+            {
+                "blocks": 6428,
+                "tickets": 10892,
+                "pre_images": 65,
+                "pre_images_size": 365,
+                "guarantees": 1241,
+                "assurances": 1901
+            }
+        ],
         "slot": 123456,
         "curr_validators": [
             {

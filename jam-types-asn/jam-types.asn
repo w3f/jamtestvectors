@@ -254,7 +254,7 @@ BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
 -- Statistics
 --------------------------------------------
 
-ActivityRecord ::= SEQUENCE {
+ValidatorActivityRecord ::= SEQUENCE {
     blocks      U32,
     tickets     U32,
     pre-images  U32,
@@ -263,7 +263,7 @@ ActivityRecord ::= SEQUENCE {
     assurances  U32
 }
 
-ActivityRecords ::= SEQUENCE (SIZE(validators-count)) OF ActivityRecord
+ValidatorsStatistics ::= SEQUENCE (SIZE(validators-count)) OF ValidatorActivityRecord
 
 CoreActivityRecord ::= SEQUENCE {
 	-- Amount of bytes which are placed into either Audits or Segments DA.
@@ -323,8 +323,8 @@ ServicesStatisticsMapEntry ::= SEQUENCE {
 ServicesStatistics ::= SEQUENCE OF ServicesStatisticsMapEntry
 
 Statistics ::= SEQUENCE {
-    vals-current ActivityRecords,
-    vals-last    ActivityRecords,
+    vals-curr    ValidatorsStatistics,
+    vals-last    ValidatorsStatistics,
     cores        CoresStatistics,
     services     ServicesStatistics
 }
