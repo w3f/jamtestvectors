@@ -5,12 +5,12 @@ and this subsystem STF specific [schema](./preimages.asn).
 
 ## Statistics
 
-A subset of `ServiceActivityRecord` structure is updated by the STF involved
-processing these test vectors.
+A subset of service activity statistics ($π_S$) updated by the STF subsystem used
+to process these test vectors.
 
-In particular the `provided-count` and `provided-size` items are updated
-when new preimages are provided to be included in the chain storage via the
-extrinsic.
+In particular the `provided-count` (p.0) and `provided-size` (p.1) items are
+updated when new preimages are provided to be included in the chain storage via
+the extrinsic.
 
 ## Vectors
 

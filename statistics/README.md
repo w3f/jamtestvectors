@@ -10,7 +10,7 @@ These vectors exclusively contribute to updating validator-related statistics
 
 In contrast, service and core statistics ($π_S$ and $π_C$) are updated by
 vectors that more directly influence the state changes relevant to those
-metrics (i.e. see `preimages`, `reports` and `accumulate`).
+metrics (i.e. see [preimages](../preimages/README.md#statistics), `reports` and `accumulate`).
 
 ## ⚠️Extrinsic Semantic Validity
 
