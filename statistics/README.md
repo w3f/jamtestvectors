@@ -1,7 +1,16 @@
-# Statistics STF Test Vectors
+# Validators Statistics STF Test Vectors
 
 Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
 and this subsystem STF specific [schema](./statistics.asn).
+
+## Validators Statistics
+
+These vectors exclusively contribute to updating validator-related statistics
+($π_V$ and $π_L$).
+
+In contrast, service and core statistics ($π_S$ and $π_C$) are updated by
+vectors that more directly influence the state changes relevant to those
+metrics (i.e. see `preimages`, `reports` and `accumulate`).
 
 ## ⚠️Extrinsic Semantic Validity
 
