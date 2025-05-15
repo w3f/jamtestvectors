@@ -16,6 +16,14 @@ artifact frequently varies, even when generated from identical source code. As
 a result, you can just rely on the code blob embedded in the test vectors, which
 is available within the `accounts` map.
 
+## Statistics
+
+A subset of service activity statistics ($π_S$) updated by the STF subsystem used
+to process these test vectors.
+
+In particular the `accumulate-count` (a.0), `accumulate-gas-used` (a.1),
+`on-transfers-count` (t.0) and `on-transfers-gas-used` (t.1).
+
 ## Tiny Vectors
  
 - [no_available_reports-1](./tiny/no_available_reports-1.json)

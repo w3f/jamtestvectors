@@ -39,19 +39,29 @@ AccountsMapEntry ::= SEQUENCE {
 }
 
 State ::= SEQUENCE {
+	-- [τ] Most recent block's timeslot.
     slot TimeSlot,
+	-- [n_0']  Posterior entropy accumulator.
     entropy Entropy,
+	-- [ϑ] Work packages ready to be accumulated.
     ready-queue ReadyQueue,
+	-- [ξ] Work packages recently accumulated.
     accumulated AccumulatedQueue,
+	-- [χ] Privileged service indices.
     privileges Privileges,
+	-- [π_S] Services statistics.
+	-- Note: Only stats related to accumulate STF are updated, in particular:
+	-- accumulate_count (a.0), accumulate_gas_used (a.1),
+	-- on_transfers_count (t.0), on_transfers_gas_used (t.1)
     statistics ServicesStatistics,
 	-- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
     accounts SEQUENCE OF AccountsMapEntry
 }
 
 Input ::= SEQUENCE {
-    -- [H_t] Block's timeslot.
+	-- [H_t] Current time slot as found within the block header.
     slot TimeSlot,
+	-- Newly available work reports (W).
     reports SEQUENCE OF WorkReport
 }
 
