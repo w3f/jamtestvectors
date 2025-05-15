@@ -303,8 +303,8 @@
                         "balance": 136128,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 36151,
-                        "items": 5
+                        "bytes": 36052,
+                        "items": 3
                     },
                     "storage": [
                         {
@@ -617,10 +617,15 @@
                         "balance": 136128,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 36151,
-                        "items": 5
+                        "bytes": 36052,
+                        "items": 3
                     },
-                    "storage": [],
+                    "storage": [
+                        {
+                            "key": "0x6c617374",
+                            "value": "0xab8d3783fe9b1b088e788e8e"
+                        }
+                    ],
                     "preimages": [
                         {
                             "hash": "0xdcbf90c3bd116c62c94a1ca7b575153e3e277cfc7341f5d7a1159404ed6126f6",

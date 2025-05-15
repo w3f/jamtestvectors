@@ -1623,8 +1623,8 @@
                         "balance": 136128,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 36257,
-                        "items": 7
+                        "bytes": 36071,
+                        "items": 3
                     },
                     "storage": [
                         {
@@ -2905,8 +2905,8 @@
                         "balance": 136128,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 36302,
-                        "items": 8
+                        "bytes": 36053,
+                        "items": 3
                     },
                     "storage": [
                         {

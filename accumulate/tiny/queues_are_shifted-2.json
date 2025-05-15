@@ -922,7 +922,12 @@
                         "bytes": 36056,
                         "items": 3
                     },
-                    "storage": [],
+                    "storage": [
+                        {
+                            "key": "0x6c617374",
+                            "value": "0xefd36b4ce7a69729081481c50119dbe4"
+                        }
+                    ],
                     "preimages": [
                         {
                             "hash": "0xdcbf90c3bd116c62c94a1ca7b575153e3e277cfc7341f5d7a1159404ed6126f6",
