@@ -3,13 +3,15 @@
 StatisticsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    TimeSlot, ValidatorIndex, Statistics, Extrinsic, ValidatorsData
+    TimeSlot, ValidatorIndex, ValidatorsStatistics, Extrinsic, ValidatorsData
         FROM JamTypes;
 
 
 State ::= SEQUENCE {
-    -- [π] Prior statistics. Mutated to π'.
-    statistics Statistics,
+    -- [π_V] Current validators statistics. Mutated to π_V'.
+    vals-curr-stats ValidatorsStatistics,
+    -- [π_L] Last validators statistics. Mutated to π_L'.
+    vals-last-stats ValidatorsStatistics,
     -- [τ] Prior timeslot.
     slot TimeSlot,
     -- [κ'] Posterior active validators.
