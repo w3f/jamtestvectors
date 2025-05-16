@@ -46,15 +46,15 @@
                 "signatures": [
                     {
                         "validator_index": 624,
-                        "signature": "0x9e8f9ec02620adaac310cdf12dd5b35bd73fa72afd6de15a30f4d07cc3c9276663df6748ee73d59590ebb90e15f831662006a0bb4e3d3fb247bf04e011fc8a01"
+                        "signature": "0x6b05f1cdd55ae3315f1580dee14cc2de9795ff0fb8944284f49d875c7936575b256cd929f0a8dbc16cd82824c20901b1eda09a53554f8c195053369fe43c9d00"
                     },
                     {
                         "validator_index": 664,
-                        "signature": "0x9f55d0d2efebd8f734dbb3eeb101ca7d0a3d82e4a933517d00f3666813ab74e52a5aace4a74f609db4ab388a281e3834dbbeaed83d7eecefba7cd6f9946ffa0a"
+                        "signature": "0x79ada50c10e0ac23f56ad8e24b33a4cf21b0a67a8ffd7be3d8b138a6e7ce4b27b6ecf3ecf4c119d3a460bb4195c473d30e3ba6a3acf580e121cf8f6e3c424404"
                     },
                     {
                         "validator_index": 698,
-                        "signature": "0xfd008c7cf1c7777f8dfa136b3c24be765a7c58a7b61bf0581a7c0dc8997753b5cf7df0c3d36e26c957439cd6039f55cb8de8db181c66641fb6113bc6960c0e03"
+                        "signature": "0x4efe9a42821ef166be99c4835d70ba24b2d68882c4276856bc06f8f0176c409b26b2077136a75b9d9ccbb446d73fa3c86a05503c6b0360d5550aa3b015836707"
                     }
                 ]
             }
