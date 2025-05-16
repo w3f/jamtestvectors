@@ -46,7 +46,7 @@
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x91b883fa33cd9feee3ff3948943173bfedd0ebd7e0620b8071f39f26c57a3858d5fed0c182f3473dd48500cb05934f74c469d152232a2733ecb639e65b851506"
+                        "signature": "0xdcfc668f9d8f4a831d3a6e6fbce903694be13fef1f8d5e57185755a17d461dad9f6c7b3fa0482a3b586e7393598cb432272c7dc5389b9220dd9a8b6a3a7f0804"
                     }
                 ]
             }

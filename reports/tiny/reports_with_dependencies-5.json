@@ -51,15 +51,15 @@
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0x19fa74a1faf59fec9c8da6e6ea8d9e09518d4ac4c0b6a8b18abe5d398ca174c60529b0e3753afb4d945c55fb828fa4160dbdef90523fe3590ecf73d5c37aeb0a"
+                        "signature": "0x465d23b0eea17df0aac03d66476fce6b8d9a521cd9621738d5df983a1576c7efc7dea906d9574c7483eb10d82accfdb75d53fc0393c95f75f1634dbcbeb48c05"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0x2a8af6699ae4246bbd5b7df08abc8e2a81d044cf80752d656acc6ff0f018e93a25c06991d9c0fb50d3c09ed4e41e0c31f60ac346bec2ebd149765e904141c206"
+                        "signature": "0x17639409c207b7216f3b7bc001f3463ecf85aa43fce68259ebcfafbb895df7d0558aba2e79b8bb04eb3f38a5bff663c62d43a4a40ac3808d7b034a20d76ec003"
                     },
                     {
                         "validator_index": 3,
-                        "signature": "0xc59c97bff05ce5da7c853e93d2a8d6d853bd59b3f05bfbd99dfbf65f7ed7bdf578dddd5be3d6d2a0a010b9c8fb46c30db0f34ec3a884d07c0b736234fb430001"
+                        "signature": "0x0f9431e7ff3675998abe524bcf30fb00f14869509748eca8f889c9a2442b77fa498395cf80698867716a0cc5235ea616e1e47be90d2e693873c14cf28ed32b04"
                     }
                 ]
             },
@@ -108,15 +108,15 @@
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x9cdeaf99d14833562c2839780571ff45ee14c5acadaca18deb0ac4aec0ae78c9dcaab16a2ccd5f8742cce0f464a374b678cd30ca8fb85bab128ffad909555502"
+                        "signature": "0xd6ed54d8f118f8e064cfa9d2b5230e11de8c03a0a9d000c7f35585522e9b82d1757c300e3ba0bd9369c80efd042fdf4468f57f46d64bbe71b03096c641f20f0e"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x59c6f2710d9af3963322ebc48afb9e87795d55f3addb622bf71994d3cbda0edc1a59399a8770a6c7ea874d6034fbfa7d819ed8fdfb5c1dea65f4581c91996f0c"
+                        "signature": "0x53a0f6bc9a5af91d5ed8ec9124301b0bfcaf5e7f3a069929ebe350e7402475eda323fd664b71bdad04cf9e93c342d60653ee0615ea81c52bd2a3fabf3208600b"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0xd64244683eab8d885d50126f834c9d5628286e08dc6cb6c066b565bdfaf13f64e60a1d4b013ac7bdb9a51c926237c2d0b17b6526a0460053ae5bd3fe6c154c0a"
+                        "signature": "0xd230441231a483f66f4ed5fe5867ea3050a1b683f1f0843c35df67cca3559aa4974848da377a7e852c4cd7eceb0771faccf15fecc037897c1a2ea4bbdcd2240f"
                     }
                 ]
             }

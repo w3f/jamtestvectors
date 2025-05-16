@@ -46,15 +46,15 @@
                 "signatures": [
                     {
                         "validator_index": 1,
-                        "signature": "0x91b883fa33cd9feee3ff3948943173bfedd0ebd7e0620b8071f39f26c57a3858d5fed0c182f3473dd48500cb05934f74c469d152232a2733ecb639e65b851506"
+                        "signature": "0xdcfc668f9d8f4a831d3a6e6fbce903694be13fef1f8d5e57185755a17d461dad9f6c7b3fa0482a3b586e7393598cb432272c7dc5389b9220dd9a8b6a3a7f0804"
                     },
                     {
                         "validator_index": 4,
-                        "signature": "0x20f1ae3761b749037d3c989ed25cf0de993fa687d9d6fe4effe48d01bad919937a80e26128b01bca43c3bd05a96cf352fb03147d25387ae6150ef1e4640bdb06"
+                        "signature": "0xd46f33ce11515976b673dbd6d26311cb6385c73ef749616d282316654d770eed6c63884512b0408a629ca2cd57c7595e7360feb49866b38038a5272943edb40e"
                     },
                     {
                         "validator_index": 5,
-                        "signature": "0x3f7f5158f0754575c0cb037d4e3c8368d43500c31c6ee1275e2ee361068d92b54a9446e63f3d7f73e27680f29e673a519cfabe6db2b80910eeb0354b3916100e"
+                        "signature": "0x939c76652641416f92ac95b886de5ab23477c41b799942d004e314ccc28e34d01c2bf266659133ae9fc0aa373ea781495b2045b646a8807ac078e885cfc2f103"
                     }
                 ]
             },
@@ -103,11 +103,11 @@
                 "signatures": [
                     {
                         "validator_index": 0,
-                        "signature": "0xd26b8c2eb5de14ad2a1bcc4a598c314ea7219587cb530a0617e91994ca54a3246e350ef729d05d648d54cfb92e60abdaf286efdd2c93a21563560d616bbe070e"
+                        "signature": "0xd6d9a2d04b8f01faf86d3c003df187eb049395d05716f80945e3a5e9e2caf4fd46e10996588cadb66d009ba316357128745c7659ff06eabe0e9867b33dfafa0d"
                     },
                     {
                         "validator_index": 2,
-                        "signature": "0x67ef713aad25e1a887bfe98a11f10cbb7a222c4e338930e7ca927a83b1eb49f41e6393ed871bb8741c169fce51cd7ef229cf24b3cdaa10c5796f9da03519c702"
+                        "signature": "0x38bd1e1a9861564e1e1e6433637fe69f380912e4866da65a2be2730adc793d820b5652fac56cc13dfe69e7283ee9e1ed1eb7eec953ac8e6a2ada8ad0759f7807"
                     }
                 ]
             }
