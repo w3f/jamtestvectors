@@ -1,0 +1,133 @@
+-- Guarantee reports STF test vectors schema
+
+ReportsModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
+    ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
+    GuaranteesExtrinsic, Ed25519Public, WorkPackageHash, CoresStatistics, ServicesStatistics
+        FROM JamTypes;
+
+
+-- Service account information relevant for this STF.
+Account ::= SEQUENCE {
+    -- [a_c, a_b, a_g, a_m, a_o, a_i] Service metadata.
+    service ServiceInfo
+}
+
+AccountsMapEntry ::= SEQUENCE {
+    id ServiceId,
+    data Account
+}
+
+AuthPool ::= SEQUENCE OF OpaqueHash
+
+AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+
+State ::= SEQUENCE {
+    -- [ρ‡] Intermediate pending reports after that any work report judged as
+    -- uncertain or invalid has been removed from it (ϱ†), and the availability
+    -- assurances are processed. Mutated to ϱ'.
+    avail-assignments AvailabilityAssignments,
+
+    -- [κ'] Posterior active validators.
+    curr-validators ValidatorsData,
+
+    -- [λ'] Posterior previous validators.
+    prev-validators ValidatorsData,
+
+    -- [η'] Posterior entropy buffer.
+    entropy EntropyBuffer,
+
+    -- [ψ'_o] Posterior offenders.
+    offenders SEQUENCE OF Ed25519Public,
+
+    -- [β] Recent blocks.
+    recent-blocks BlocksHistory,
+
+    -- [α] Authorization pools.
+    auth-pools AuthPools,
+
+    -- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry,
+
+	-- [π_C] Cores statistics.
+	-- Note: Only stats related to reports STF are updated, in particular:
+	-- imports (i), exports (e), extrinsic_size (z), extrinsic_count (x),
+	-- bundle_size (b), gas_used (u).
+    cores-statistics CoresStatistics,
+
+	-- [π_S] Services statistics.
+	-- Note: Only stats related to reports STF are updated, in particular:
+	-- refinement_count (r.0), refinement_gas_used (r.1), imports (i),
+	-- exports (x), extrinsic_size (z), extrinsic_count (x).
+    services-statistics ServicesStatistics
+}
+
+Input ::= SEQUENCE {
+    -- [E_G] Guarantees extrinsic.
+    guarantees GuaranteesExtrinsic,
+
+    -- [H_t] Block's timeslot.
+    slot TimeSlot,
+
+    -- This is a derived sequence of all known packages
+    -- The set is constructed from all the recently reported WPs using recent_blocks (β),
+    -- accumulated reports (ξ), availability (ρ), and ready queue (φ).
+    known-packages SEQUENCE OF WorkPackageHash
+}
+
+ReportedPackage ::= SEQUENCE {
+    work-package-hash WorkPackageHash,
+    segment-tree-root OpaqueHash
+}
+
+OutputData ::= SEQUENCE {
+    -- Reported packages hash and segment tree root
+    reported    SEQUENCE OF ReportedPackage,
+    -- Reporters for reported packages
+    reporters   SEQUENCE OF Ed25519Public
+}
+
+-- State transition function execution error.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    bad-core-index (0),
+    future-report-slot (1),
+    report-epoch-before-last (2),
+    insufficient-guarantees (3),
+    out-of-order-guarantee (4),
+    not-sorted-or-unique-guarantors (5),
+    wrong-assignment (6),
+    core-engaged (7),
+    anchor-not-recent (8),
+    bad-service-id (9),
+    bad-code-hash (10),
+    dependency-missing (11),
+    duplicate-package (12),
+    bad-state-root (13),
+    bad-beefy-mmr-root (14),
+    core-unauthorized (15),
+    bad-validator-index (16),
+    work-report-gas-too-high (17),
+    service-item-gas-too-low (18),
+    too-many-dependencies (19),
+    segment-root-lookup-invalid (20),
+    bad-signature (21),
+    work-report-too-big (22)
+}
+
+Output ::= CHOICE {
+    ok  OutputData,
+    err ErrorCode
+}
+
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END

@@ -1,33 +1,57 @@
--- Syntax for Safrole protocol test vectors
+-- Safrole STF test vectors schema
 
 SafroleModule DEFINITIONS ::= BEGIN
 
--- Define constants
-IMPORTS validators-count, epoch-length FROM SafroleConstants;
+IMPORTS
+    TimeSlot, ValidatorsData, Entropy, EntropyBuffer,
+    TicketBody, TicketsAccumulator, TicketsOrKeys, TicketsExtrinsic,
+    EpochMark, TicketsMark, Ed25519Public, BandersnatchRingCommitment
+        FROM JamTypes;
 
--- Define basic types
-U8 ::= INTEGER (0..255)
-U32 ::= INTEGER (0..4294967295)
 
--- Define fixed-length arrays
-ByteArray32 ::= SEQUENCE (SIZE(32)) OF U8
-OpaqueHash ::= ByteArray32
-Ed25519Key ::= ByteArray32
-BlsKey ::= SEQUENCE (SIZE(144)) OF U8
-BandersnatchKey ::= ByteArray32
-EpochKeys ::= SEQUENCE (SIZE(epoch-length)) OF BandersnatchKey
-TicketsBodies ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
+State ::= SEQUENCE {
+    -- [τ] Prior most recent block's timeslot. Mutated to τ'.
+    tau TimeSlot,
+    -- [η] Prior entropy buffer. Mutated to η'.
+    eta EntropyBuffer,
+    -- [λ] Prior previous epoch validator keys and metadata. Mutated to λ'.
+    lambda ValidatorsData,
+    -- [κ] Prior current epoch validator keys and metadata. Mutated to κ'.
+    kappa ValidatorsData,
+    -- [γ_k] Prior next epoch validator keys and metadata. Mutated to γ'_k.
+    gamma-k ValidatorsData,
+    -- [ι] Prior scheduled validator keys and metadata. Mutated to ι'.
+    iota ValidatorsData,
+    -- [γ_a] Prior sealing-key contest ticket accumulator. Mutated to γ'_a.
+    gamma-a TicketsAccumulator,
+    -- [γ_s] Prior sealing-key series of the current epoch. Mutated to γ'_s.
+    gamma-s TicketsOrKeys,
+    -- [γ_z] Prior Bandersnatch ring commitment. Mutated to γ'_z.
+    gamma-z BandersnatchRingCommitment,
+    -- [ψ'_o] Posterior offenders sequence.
+    post-offenders SEQUENCE OF Ed25519Public
+}
 
--- Define enumerations
-TicketsOrKeys ::= CHOICE {
-    tickets TicketsBodies,
-    keys EpochKeys 
+Input ::= SEQUENCE {
+    -- [H_t] Current time slot as found within the block header.
+    slot TimeSlot,
+    -- [Y(H_v)] Per block entropy generated using per block entropy source.
+    entropy Entropy,
+    -- [E_T] Tickets extrinsic.
+    extrinsic TicketsExtrinsic
+}
+
+OutputData ::= SEQUENCE {
+    -- [H_e] New epoch marker.
+    epoch-mark [0] EpochMark OPTIONAL,
+    -- [H_w] Winning tickets marker.
+    tickets-mark [1] TicketsMark OPTIONAL
 }
 
 -- State transition function execution error.
 -- Error codes **are not specified** in the the Graypaper.
 -- Feel free to ignore the actual value.
-CustomErrorCode ::= ENUMERATED {
+ErrorCode ::= ENUMERATED {
     -- Timeslot value must be strictly monotonic.
     bad-slot (0),
     -- Received a ticket while in epoch's tail.
@@ -44,99 +68,16 @@ CustomErrorCode ::= ENUMERATED {
     duplicate-ticket (6)
 }
 
--- Define structures
-TicketBody ::= SEQUENCE {
-    id OpaqueHash,
-    attempt U8
-}
-
-ValidatorData ::= SEQUENCE {
-    bandersnatch BandersnatchKey,
-    ed25519 Ed25519Key,
-    bls BlsKey,
-    metadata SEQUENCE (SIZE(128)) OF U8
-}
-
-ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
-
-TicketEnvelope ::= SEQUENCE {
-    attempt U8,
-    signature SEQUENCE (SIZE(784)) OF U8
-}
-
-EpochMark ::= SEQUENCE {
-    entropy OpaqueHash,
-    validators SEQUENCE (SIZE(validators-count)) OF BandersnatchKey
-}
-
-TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
-
--- Output markers.
-OutputMarks ::= SEQUENCE {
-    -- New epoch signal.
-    epoch-mark [0] EpochMark OPTIONAL,
-    -- Tickets signal.
-    tickets-mark [1] TicketsMark OPTIONAL
-}
-
--- State relevant to Safrole protocol
-State ::= SEQUENCE {
-    -- Most recent block's timeslot.
-    tau U32,
-
-    -- Entropy accumulator and epochal randomness.
-    eta SEQUENCE (SIZE(4)) OF OpaqueHash,
-
-    -- Validator keys and metadata which were active in the prior epoch.
-    lambda ValidatorsData,
-
-    -- Validator keys and metadata currently active.
-    kappa ValidatorsData,
-
-    -- Validator keys for the following epoch.
-    gamma-k ValidatorsData,
-
-    -- Validator keys and metadata to be drawn from next.
-    iota ValidatorsData,
-
-    -- Sealing-key contest ticket accumulator.
-    gamma-a SEQUENCE (SIZE(0..epoch-length)) OF TicketBody,
-
-    -- Sealing-key series of the current epoch.
-    gamma-s TicketsOrKeys,
-
-    -- Bandersnatch ring commitment.
-    gamma-z SEQUENCE (SIZE(144)) OF U8
-}
-
--- Input for Safrole protocol.
-Input ::= SEQUENCE {
-    -- Current slot.
-    slot U32,
-    -- Per block entropy (originated from block entropy source VRF).
-    entropy OpaqueHash,
-    -- Safrole extrinsic.
-    extrinsic SEQUENCE (SIZE(0..16)) OF TicketEnvelope
-}
-
--- Output from Safrole protocol
 Output ::= CHOICE {
-    -- Markers
-    ok OutputMarks,
-    -- Error code (not specified in the Graypaper)
-    err CustomErrorCode
+    ok   OutputData,
+    err  ErrorCode
 }
 
--- Safrole state transition function execution dump
-Testcase ::= SEQUENCE {
-    -- Input.
-    input Input,
-    -- Pre-execution state.
-    pre-state State,
-    -- Output.
-    output Output,
-    -- Post-execution state.
-    post-state State
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
 }
 
 END

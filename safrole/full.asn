@@ -1,6 +1,0 @@
-SafroleConstants DEFINITIONS ::= BEGIN
-
-validators-count INTEGER ::= 1023
-epoch-length INTEGER ::= 600
-
-END

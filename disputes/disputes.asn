@@ -1,0 +1,69 @@
+-- Disputes STF test vectors schema
+
+DisputesModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, DisputesRecords, AvailabilityAssignments, ValidatorsData, DisputesExtrinsic,
+    OffendersMark
+        FROM JamTypes;
+
+
+State ::= SEQUENCE {
+    -- [ψ] Prior disputes verdicts and offenders. Mutated to ψ'.
+    psi  DisputesRecords,
+    -- [ρ] Prior availability cores assignments.
+    rho AvailabilityAssignments,
+    -- [τ] Prior timeslot.
+    tau TimeSlot,
+    -- [κ] Prior current epoch validators.
+    kappa ValidatorsData,
+    -- [λ] Prior previous epoch validators.
+    lambda ValidatorsData
+}
+
+Input ::= SEQUENCE {
+    -- [E_D] Disputes extrinsic
+    disputes DisputesExtrinsic
+}
+
+OutputData ::= SEQUENCE {
+    -- [H_o] Offenders marker
+    offenders-mark OffendersMark
+}
+
+-- STF execution error codes.
+-- Error codes **are not specified** in the the Graypaper.
+-- Feel free to ignore the actual value.
+ErrorCode ::= ENUMERATED {
+    already-judged (0),
+    bad-vote-split (1),
+    verdicts-not-sorted-unique (2),
+    judgements-not-sorted-unique (3),
+    culprits-not-sorted-unique (4),
+    faults-not-sorted-unique (5),
+    not-enough-culprits (6),
+    not-enough-faults (7),
+    culprits-verdict-not-bad (8),
+    fault-verdict-wrong (9),
+    offender-already-reported (10),
+    bad-judgement-age (11),
+    bad-validator-index (12),
+    bad-signature (13),
+    bad-guarantor-key (14),
+    bad-auditor-key (15)
+}
+
+Output ::= CHOICE {
+    ok    OutputData,
+    err   ErrorCode
+}
+
+-- Disputes STF execution dump
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END

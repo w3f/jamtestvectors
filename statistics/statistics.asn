@@ -1,0 +1,40 @@
+-- Statistics STF test vectors schema
+
+StatisticsModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, ValidatorIndex, ValidatorsStatistics, Extrinsic, ValidatorsData
+        FROM JamTypes;
+
+
+State ::= SEQUENCE {
+    -- [π_V] Current validators statistics. Mutated to π_V'.
+    vals-curr-stats ValidatorsStatistics,
+    -- [π_L] Last validators statistics. Mutated to π_L'.
+    vals-last-stats ValidatorsStatistics,
+    -- [τ] Prior timeslot.
+    slot TimeSlot,
+    -- [κ'] Posterior active validators.
+    curr-validators ValidatorsData
+}
+
+Input ::= SEQUENCE {
+    -- [H_t] Block timeslot
+    slot TimeSlot,
+    -- [H_i] Block author
+    author-index ValidatorIndex,
+    -- [E] Extrinsic
+    extrinsic Extrinsic
+}
+
+Output ::= NULL
+
+-- Disputes STF execution dump
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END
