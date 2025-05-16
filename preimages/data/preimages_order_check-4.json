@@ -88,7 +88,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     },
     "output": {
         "err": "preimages_not_sorted_unique"
@@ -153,6 +154,7 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     }
 }

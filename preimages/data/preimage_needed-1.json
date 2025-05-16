@@ -35,7 +35,8 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     },
     "output": {
         "ok": null
@@ -72,6 +73,7 @@
                     ]
                 }
             }
-        ]
+        ],
+        "statistics": []
     }
 }
