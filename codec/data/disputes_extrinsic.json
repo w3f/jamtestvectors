@@ -66,12 +66,12 @@
     "culprits": [
         {
             "target": "0x99841f584606ab31badcdf38e8122874a699e0cb3989d8ddc7c0874b8f5f76bf",
-            "key": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",
+            "key": "0x39648547f495eaac909f7840330e73cdf837f8db8a4f583728742c958adac82b",
             "signature": "0x99841f584606ab31badcdf38e8122874a699e0cb3989d8ddc7c0874b8f5f76bfc87c17f29dfbde33cfe599f3fb71d0fc211140801080ec105fbf435a977f784a"
         },
         {
             "target": "0xd0e1f11843bda78bec027cd2046488ec6c54bbbfa8170442c988768eb006a16a",
-            "key": "0x22351e22105a19aabb42589162ad7f1ea0df1c25cebf0e4a9fcd261301274862",
+            "key": "0xebf47a0ff95ae6c7e8a6c0f97ff993d8b62fb9177d09fb088e5441cd9b2fe469",
             "signature": "0xd0e1f11843bda78bec027cd2046488ec6c54bbbfa8170442c988768eb006a16ad1d7e7fd185aebad9fd4ddbd0a8707eeb17bf9e70509aaf7b176da7a72e2e54a"
         }
     ],
@@ -79,7 +79,7 @@
         {
             "target": "0x536fd52c4f4b1330e67d49717974435bf1c18edd91b69d343186a784844415bc",
             "vote": false,
-            "key": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29",
+            "key": "0x39648547f495eaac909f7840330e73cdf837f8db8a4f583728742c958adac82b",
             "signature": "0x557e5ee3660be9247c4908c74a46c91eebd713925dd7f2ede3ef4900ba277039f7d46ec15432116176cce8ce39d8ae21eabafdf71796eeb724ee7e4ff1dd1fd7"
         }
     ]
