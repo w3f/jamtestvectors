@@ -24,6 +24,12 @@ to process these test vectors.
 In particular the `accumulate-count` (a.0), `accumulate-gas-used` (a.1),
 `on-transfers-count` (t.0) and `on-transfers-gas-used` (t.1).
 
+## Host Calls Gas Costs
+
+All host calls have a gas cost of **$10$**, with the following exceptions:
+- **`transfer`**: Gas cost is set to **$10 + \omega_9$**, as specified in the GP.
+- **`log`**: Gas cost is set to **0**, as defined in [JIP-1](https://hackmd.io/@polkadot/jip1).
+
 ## Tiny Vectors
  
 - [no_available_reports-1](./tiny/no_available_reports-1.json)
