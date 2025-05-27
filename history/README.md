@@ -1,7 +1,10 @@
 # Blocks History STF Test Vectors
 
-Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and this subsystem STF specific [schema](./history.asn).
+## Schema
+
+Both the binary and json formats adhere to the overarching JAM protocol ASN.1
+[schema](../jam-types-asn/jam-types.asn), as well as the specific vectors
+[schema](./history.asn) defined for these test cases.
 
 ## Input Origin
 

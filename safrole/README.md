@@ -1,27 +1,31 @@
 # Safrole Test Vectors
 
-Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and this subsystem STF specific [schema](./safrole.asn).
+## Schema
 
-## ⚠️ WARNING ⚠️
+Both the binary and json formats adhere to the overarching JAM protocol ASN.1
+[schema](../jam-types-asn/jam-types.asn), as well as the specific vectors
+[schema](./safrole.asn) defined for these test cases.
 
-The ring-proof backend used by `ark-ec-vrfs` remains subject to modifications.
+## VRF Cryptography
 
-If you encounter any issues when processing these vectors, particularly
-regarding the verification of Bandersnatch tickets, please ensure that you
-are using the same version employed for the production of these vectors:
+### Scheme
 
-- `ark-vrf` version: [v0.1.0](https://github.com/davxy/ark-vrf/tree/v0.1.0) ([crates.io](https://crates.io/crates/ark-vrf))
-- Bandersnatch specification revision: [6b1ceba](https://github.com/davxy/bandersnatch-vrf-spec/tree/6b1ceba5b3cbc834201732bcdad1377e19e9283e)
+- Bandersnatch VRF specification: https://github.com/davxy/bandersnatch-vrf-spec
+- Ring proof specification: https://github.com/davxy/ring-proof-spec
 
-## zk-SNARK SRS
+### Scheme Implementations
+
+- Rust: `ark-vrf` [v0.1.0](https://github.com/davxy/ark-vrf/tree/v0.1.0) ([crates.io](https://crates.io/crates/ark-vrf))
+- Python: `dotring` [WiP](https://github.com/PolkadotOpenSourceGrants/apply/pull/14)
+
+### zk-SNARK SRS
 
 Ring proofs were constructed using a SNARK built using the the [Zcash SRS paramaters](zcash-srs-2-11-uncompressed.bin).
 ([powers of tau ceremony details](https://zfnd.org/conclusion-of-the-powers-of-tau-ceremony)).
 
-For construction and usage refer to Bandersnatch vrfs spec [example](https://github.com/davxy/bandersnatch-vrfs-spec/tree/main/example).
+For construction and usage refer to Bandersnatch vrfs spec [example](https://github.com/davxy/bandersnatch-vrf-spec/tree/main/assets/example).
 
-NOTE: for "tiny" initialize the `RingContext` with `ring_size = 6`; while for full `ring size = 1023`.
+NOTE: for "tiny" initialize the `RingProofParams` with `ring_size = 6`; while for full `ring size = 1023`.
 
 ## Safrole **is not** Sassafras
 
@@ -42,7 +46,6 @@ Here are some key differences:
   it includes only the "attempt" and the "ring proof".
 
 Most of these differences aim to provide a clear and concise protocol specification.
-
 
 ## Tiny Vectors
 

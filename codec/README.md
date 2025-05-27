@@ -5,7 +5,10 @@ their content.
 
 They are provided for a tiny validator set (6), epoch duration (12) and core count (2).
 
-Both binary and json formats conform to the provided ASN.1 [schema](../asn1-schema/README.md).
+## Schema
+
+Both the binary and json formats adhere to the overarching JAM protocol ASN.1
+[schema](../jam-types-asn/jam-types.asn).
 
 ## Variable-Length encoding
 
