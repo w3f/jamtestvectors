@@ -22,6 +22,8 @@ We offer two types of test vectors:
   - core assignment rotation period: 10
   - ticket attempts: 2
 
+For more information refer to the community [docs](https://docs.jamcha.in/basics/chain-spec).
+
 ### STF Output
 
 Technically, the STF execution process does not inherently produce auxiliary

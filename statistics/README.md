@@ -1,7 +1,10 @@
 # Validators Statistics STF Test Vectors
 
-Both JSON and SCALE formats conform to the JAM ASN.1 [schema](../jam-types-asn/jam-types.asn)
-and this subsystem STF specific [schema](./statistics.asn).
+## Schema
+
+Both the binary and json formats adhere to the overarching JAM protocol ASN.1
+[schema](../jam-types-asn/jam-types.asn), as well as the specific vectors
+[schema](./statistics.asn) defined for these test cases.
 
 ## Validators Statistics
 
