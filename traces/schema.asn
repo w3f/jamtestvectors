@@ -1,0 +1,25 @@
+-- Block import test vectors schema
+
+BlockImportModule DEFINITIONS ::= BEGIN
+
+IMPORTS Block, StateRoot, ByteSequence FROM JamTypes;
+
+StorageKey ::= ByteSequence (SIZE(31))
+
+KeyValue ::= SEQUENCE {
+	key StorageKey,
+	value ByteSequence
+}
+
+RawState ::= SEQUENCE {
+	state-root StateRoot,
+	keyvals SEQUENCE OF KeyValue
+}
+
+TestCase ::= SEQUENCE {
+	pre-state RawState,
+	block Block,
+	post-state RawState
+}
+
+END
