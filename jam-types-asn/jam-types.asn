@@ -166,7 +166,7 @@ AvailabilityAssignmentsItem ::= CHOICE {
 }
 
 -- Assignments for all cores in the system
-AvailabilityAssignments ::= SEQUENCE SIZE(cores-count) OF AvailabilityAssignmentsItem
+AvailabilityAssignments ::= SEQUENCE (SIZE(cores-count)) OF AvailabilityAssignmentsItem
 
 --------------------------------------------------------------------------------
 -- Refine Context
@@ -693,7 +693,7 @@ ReportGuarantee ::= SEQUENCE {
 }
 
 -- Extrinsic containing guarantees for work reports
-GuaranteesExtrinsic ::= SEQUENCE SIZE(0..cores-count) OF ReportGuarantee
+GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..cores-count)) OF ReportGuarantee
 
 --------------------------------------------------------------------------------
 -- Accumulation
