@@ -4,7 +4,7 @@ AccumulateModule DEFINITIONS ::= BEGIN
 
 IMPORTS
     TimeSlot, ServiceId, ServiceInfo, WorkReport, OpaqueHash, ByteSequence,
-    Entropy, ReadyQueue, AccumulatedQueue, Privileges, AccumulateRoot, ServicesStatistics
+    Entropy, ReadyQueue, AccumulatedQueue, Privileges, ServicesStatistics
         FROM JamTypes;
 
 StorageMapEntry ::= SEQUENCE {
@@ -66,8 +66,10 @@ Input ::= SEQUENCE {
 }
 
 Output ::= CHOICE {
-    ok    AccumulateRoot,
-    err   NULL
+    -- Accumulated reports keccak Merkle root
+    ok OpaqueHash,
+    -- Error
+    err NULL
 }
 
 TestCase ::= SEQUENCE {
