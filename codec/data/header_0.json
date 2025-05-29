@@ -8,34 +8,34 @@
         "tickets_entropy": "0x333a7e328f0c4183f4b947e1d8f68aa4034f762e5ecdb5a7f6fbf0afea2fd8cd",
         "validators": [
             {
-                "bandersnatch": "0x5e465beb01dbafe160ce8216047f2155dd0569f058afd52dcea601025a8d161d",
-                "ed25519": "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29"
+                "bandersnatch": "0xff71c6c03ff88adb5ed52c9681de1629a54e702fc14729f6b50d2f0a76f185b3",
+                "ed25519": "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace"
             },
             {
-                "bandersnatch": "0x3d5e5a51aab2b048f8686ecd79712a80e3265a114cc73f14bdb2a59233fb66d0",
-                "ed25519": "0x22351e22105a19aabb42589162ad7f1ea0df1c25cebf0e4a9fcd261301274862"
+                "bandersnatch": "0xdee6d555b82024f1ccf8a1e37e60fa60fd40b1958c4bb3006af78647950e1b91",
+                "ed25519": "0xad93247bd01307550ec7acd757ce6fb805fcf73db364063265b30a949e90d933"
             },
             {
-                "bandersnatch": "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
-                "ed25519": "0xe68e0cf7f26c59f963b5846202d2327cc8bc0c4eff8cb9abd4012f9a71decf00"
+                "bandersnatch": "0x9326edb21e5541717fde24ec085000b28709847b8aab1ac51f84e94b37ca1b66",
+                "ed25519": "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341"
             },
             {
-                "bandersnatch": "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33",
-                "ed25519": "0xb3e0e096b02e2ec98a3441410aeddd78c95e27a0da6f411a09c631c0f2bea6e9"
+                "bandersnatch": "0x0746846d17469fb2f95ef365efcab9f4e22fa1feb53111c995376be8019981cc",
+                "ed25519": "0xf30aa5444688b3cab47697b37d5cac5707bb3289e986b19b17db437206931a8d"
             },
             {
-                "bandersnatch": "0x48e5fcdce10e0b64ec4eebd0d9211c7bac2f27ce54bca6f7776ff6fee86ab3e3",
-                "ed25519": "0x5c7f34a4bd4f2d04076a8c6f9060a0c8d2c6bdd082ceb3eda7df381cb260faff"
+                "bandersnatch": "0x151e5c8fe2b9d8a606966a79edd2f9e5db47e83947ce368ccba53bf6ba20a40b",
+                "ed25519": "0x8b8c5d436f92ecf605421e873a99ec528761eb52a88a2f9a057b3b3003e6f32a"
             },
             {
-                "bandersnatch": "0xf16e5352840afb47e206b5c89f560f2611835855cf2e6ebad1acc9520a72591d",
-                "ed25519": "0x837ce344bc9defceb0d7de7e9e9925096768b7adb4dad932e532eb6551e0ea02"
+                "bandersnatch": "0x2105650944fcd101621fd5bb3124c9fd191d114b7ad936c1d79d734f9f21392e",
+                "ed25519": "0xab0084d01534b31c1dd87c81645fd762482a90027754041ca1b56133d0466c06"
             }
         ]
     },
     "tickets_mark": null,
     "offenders_mark": [
-        "0x3b6a27bcceb6a42d62a3a8d02a6f0d73653215771de243a63ac048a18b59da29"
+        "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace"
     ],
     "author_index": 3,
     "entropy_source": "0xae85d6635e9ae539d0846b911ec86a27fe000f619b78bcac8a74b77e36f6dbcf49a52360f74a0233cea0775356ab0512fafff0683df08fae3cb848122e296cbc50fed22418ea55f19e55b3c75eb8b0ec71dcae0d79823d39920bf8d6a2256c5f",
