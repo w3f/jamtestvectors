@@ -40,7 +40,7 @@ ErrorCode ::= ENUMERATED {
 }
 
 OutputData ::= SEQUENCE {
-    -- Items removed from ρ† to get ρ'
+    -- Items removed from ρ† to get ρ‡.
     reported SEQUENCE OF WorkReport
 }
 
