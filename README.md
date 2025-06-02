@@ -1,4 +1,4 @@
-# Test Vectors for the JAM Protocol (v0.6.5)
+# Test Vectors for the JAM Protocol
 
 ## Codec
  
