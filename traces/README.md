@@ -27,7 +27,8 @@ All host calls have a gas cost of **$10$**, with the following exceptions:
 
 - [Fallback](./fallback): fallback block authoring, no-safrole, no-work-reports
 - [Safrole](./safrole): safrole block authoring, no-work-reports
-- [Work Reports L0](./reports-l0): no-safrole, basic work reports (read/write/info/log)
+- [Reports L0](./reports-l0): no-safrole, basic work reports (read/write/info/log)
+- [Reports L1](./reports-l1): no-safrole, preimages solicit/provision (solicit/forget/info/log)
 
 ## Notes on SBRK 
 
