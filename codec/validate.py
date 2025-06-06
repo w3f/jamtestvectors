@@ -8,18 +8,17 @@ import sys
 # Change to script directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-filepath = os.path.abspath(os.path.dirname(__file__))
-print(filepath)
-filepath = filepath.join('jam-types-asn')
-print(filepath)
-sys.path.append(filepath)
-
-
-# print(os.path.join(os.path.dirname(__file__), '../jam-types-asn'))
-# print(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
+script_dir = os.path.dirname(os.path.abspath(__file__))
+print(script_dir)
+target_path = os.path.join(script_dir, '../jam-types-asn')
+print(target_path)
+abs_path = os.path.abspath(target_path)
+print(abs_path)
+sys.path.append(abs_path)
 print(sys.path)
 exit(0)
+
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
 
 from utils import get_schema_files, validate
 
