@@ -4,13 +4,13 @@ import json
 import asn1tools
 import glob
 
-
 def get_schema_files(full = False):
-    schema_files = [ "../jam-types-asn/jam-types.asn" ]
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    schema_files = [ os.path.join(script_dir, "jam-types.asn") ]
     if full:
-        schema_files += [ "../jam-types-asn/full-const.asn" ]
+        schema_files += [ os.path.join(script_dir, "full-const.asn") ]
     else:
-        schema_files += [ "../jam-types-asn/tiny-const.asn" ]
+        schema_files += [ os.path.join(script_dir, "tiny-const.asn") ]
     return schema_files
     
 
@@ -39,10 +39,13 @@ def path_to_root_type(path):
     return name    
 
 
-def validate(schema, json_file, root_type = None, json_tweaks_callback = None):  
+def validate(schema, json_file, json_tweaks_callback = None):  
     print("* Validating: ", json_file)
 
-    if root_type is None:
+    if "TestCase" in schema.types:
+        root_type = "TestCase"   
+    else:
+        # Auto-detect root type from schema
         root_type = path_to_root_type(json_file)
         
     # Decode from json using the schema
@@ -64,17 +67,11 @@ def validate(schema, json_file, root_type = None, json_tweaks_callback = None):
 
     assert (json_str.rstrip().lower() == json_str_org.rstrip().lower())
 
-def validate_group(group_name, group_schema, spec_name):
+def validate_group(group_name, group_schema, spec_name, json_tweaks_callback = None):
     print(f"\n[Validating {group_name} ({spec_name})]")
     schema_files = get_schema_files(spec_name == "full")
     if group_schema is not None:
         schema_files += [group_schema]
     schema = asn1tools.compile_files(schema_files, codec="jer")
-    # A bit of a hack. Consider passing the schema root type as param
-    if group_name == "codec":
-        root_type = None
-    else:
-        root_type = "TestCase"
     for json_file in glob.glob(f"{spec_name}/*.json"):
-        validate(schema, json_file, root_type)
-
+        validate(schema, json_file, json_tweaks_callback)

@@ -8,7 +8,7 @@ import sys
 script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.abspath(os.path.join(script_dir, '../jam-types-asn')))
 
-from utils import get_schema_files, validate  # noqa: E402
+from utils import validate_group # noqa: E402
 
 os.chdir(script_dir)
 
@@ -39,11 +39,5 @@ def tweak_callback(json_obj):
     tweak_mmr_sequence_of_options(json_obj['post_state'])
     return json_obj
 
-def validate_spec(spec_name):
-    print(f"[Validating Reports ({spec_name})]")
-    schema = asn1tools.compile_files(get_schema_files(spec_name == "full") + ["reports.asn"], codec="jer")
-    for json_file in glob.glob(f"{spec_name}/*.json"):
-        validate(schema, json_file, "TestCase", tweak_callback)
-
-validate_spec("tiny")
-validate_spec("full")
+for spec in ["tiny", "full"]:
+    validate_group("reports", "reports.asn", spec, tweak_callback)
