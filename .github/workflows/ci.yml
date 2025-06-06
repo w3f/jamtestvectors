@@ -21,4 +21,4 @@ jobs:
 
       - name: Validate vectors
         run: |
-          echo "TODO"
+          ./codec/validate.py
