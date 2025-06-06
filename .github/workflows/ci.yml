@@ -25,6 +25,7 @@ jobs:
           pip install git+https://github.com/davxy/asn1tools.git
       - name: Validate vectors
         run: |
-          for v in codec accumulate; do
+          for v in codec accumulate assurances authorizations; do
+            echo "========= Validating $v vectors ========="
             ./$v/validate.py
           done
