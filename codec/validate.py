@@ -9,6 +9,8 @@ import sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
+print(sys.path)
+exit(0)
 
 from utils import get_schema_files, validate
 
