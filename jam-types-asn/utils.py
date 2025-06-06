@@ -1,6 +1,8 @@
 import os
 import re
 import json
+import asn1tools
+import glob
 
 
 def get_schema_files(full = False):
@@ -61,3 +63,10 @@ def validate(schema, path, schema_name = None, json_tweaks_callback = None):
     json_str = json.dumps(json_obj, indent = 4)
 
     assert (json_str.rstrip().lower() == json_str_org.rstrip().lower())
+
+def validate_group(group_name, group_schema, spec_name):
+    print(f"\n[Validating {group_name} ({spec_name})]")
+    schema = asn1tools.compile_files(get_schema_files(spec_name == "full") + [group_schema], codec="jer")
+    for json_file in glob.glob(f"{spec_name}/*.json"):
+        validate(schema, json_file, "TestCase")
+

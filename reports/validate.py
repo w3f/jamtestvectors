@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
+import asn1tools
+import glob
 import os
 import sys
-from pathlib import Path
 
-import asn1tools
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(script_dir, '../jam-types-asn')))
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
-from utils import get_schema_files, validate
+from utils import get_schema_files, validate  # noqa: E402
 
+os.chdir(script_dir)
 
 # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
 def tweak_assignments_sequence_of_options(state_obj):
@@ -18,7 +20,6 @@ def tweak_assignments_sequence_of_options(state_obj):
             items[i] = {"none": None}
         else:
             items[i] = {"some": items[i]}
-
 
 # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
 def tweak_mmr_sequence_of_options(state_obj):
@@ -31,7 +32,6 @@ def tweak_mmr_sequence_of_options(state_obj):
                 peaks[i] = {"some": peaks[i]}
     return state_obj
 
-
 def tweak_callback(json_obj):
     tweak_assignments_sequence_of_options(json_obj['pre_state'])
     tweak_mmr_sequence_of_options(json_obj['pre_state'])
@@ -39,15 +39,11 @@ def tweak_callback(json_obj):
     tweak_mmr_sequence_of_options(json_obj['post_state'])
     return json_obj
 
+def validate_spec(spec_name):
+    print(f"[Validating Reports ({spec_name})]")
+    schema = asn1tools.compile_files(get_schema_files(spec_name == "full") + ["reports.asn"], codec="jer")
+    for json_file in glob.glob(f"{spec_name}/*.json"):
+        validate(schema, json_file, "TestCase", tweak_callback)
 
-# Validate tiny
-schema = asn1tools.compile_files(get_schema_files(False) + ["reports.asn"], codec="jer")
-for path in Path("tiny").iterdir():
-    if path.is_file() and path.suffix == ".json":
-        validate(schema, path, "TestCase", tweak_callback)
-
-# Validate full
-schema = asn1tools.compile_files(get_schema_files(True) + ["reports.asn"], codec="jer")
-for path in Path("full").iterdir():
-    if path.is_file() and path.suffix == ".json":
-        validate(schema, path, "TestCase", tweak_callback)
+validate_spec("tiny")
+validate_spec("full")
