@@ -10,5 +10,5 @@ from utils import validate_group  # noqa: E402
 
 os.chdir(script_dir)
 
-validate_group("safrole", "safrole.asn", "tiny")
-validate_group("safrole", "safrole.asn", "full")
+for spec in ["tiny", "full"]:
+    validate_group("safrole", "safrole.asn", spec)
