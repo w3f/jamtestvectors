@@ -1,6 +1,14 @@
 name: CI Workflow
 
-on: [push, pull_request]
+on:
+  # Run CI on push only for 'main' branch
+  push:
+    branches: [main]
+    tags:
+      - "v*"
+  # Run CI on pull request for all branches
+  pull_request:
+    branches: ["**"]
 
 jobs:
   validate:
