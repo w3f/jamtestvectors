@@ -8,10 +8,16 @@ import sys
 # Change to script directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-print(os.path.dirname(__file__))
-print(os.path.join(os.path.dirname(__file__), '../jam-types-asn'))
-print(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
+filepath = os.path.abspath(os.path.dirname(__file__))
+print(filepath)
+filepath = filepath.join('jam-types-asn')
+print(filepath)
+sys.path.append(filepath)
+
+
+# print(os.path.join(os.path.dirname(__file__), '../jam-types-asn'))
+# print(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
 print(sys.path)
 exit(0)
 
