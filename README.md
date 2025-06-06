@@ -55,3 +55,9 @@ specific subsystem.
 - [Fallback](./traces/fallback): fallback block authoring, no-safrole, no-work-reports
 - [Safrole](./traces/safrole): safrole block authoring, no-work-reports
 - [Work Reports L0](./traces/reports-l0): basic work reports, no-safrole
+
+## Vectors Validation
+
+Validation scripts are included to verify the JSON files against the expected
+ASN.1 syntax provided with the test vectors. These scripts currently rely on my
+[asn1tools](https://github.com/davxy/asn1tools) fork.
