@@ -1,0 +1,24 @@
+name: CI Workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install git+https://github.com/davxy/asn1tools.git
+
+      - name: Validate vectors
+        run: |
+          echo "TODO"
