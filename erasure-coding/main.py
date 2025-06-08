@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Convert SCALE encoded test vectors to JSON.
+# Convert binary encoded test vectors to JSON.
 #
 # Depends on: [jam_types](https://github.com/davxy/jam-types)
 
