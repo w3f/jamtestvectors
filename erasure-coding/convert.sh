@@ -3,10 +3,12 @@
 # Convert erasure-coding binary vectors to JSON.
 
 set -euo pipefail
- 
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
+BIN2JSON="./bin2json.py"
+ 
 # Relative to this script folder
 # It will be extended with full/tiny depending on the JAM_SPEC variable value
 DEFAULT_JAM_SPEC="full"
@@ -81,9 +83,9 @@ function prepare_environment() {
         exit 1
     fi
 
-    # Validate main.py exists
-    if [[ ! -x "./main.py" ]]; then
-        echo "Error: main.py not found or not executable" >&2
+    # Validate bin2json.py exists
+    if [[ ! -x "$BIN2JSON" ]]; then
+        echo "Error: $BIN2JSON not found or not executable" >&2
         exit 1
     fi
 
@@ -150,7 +152,7 @@ for src_file in "$VECTORS_DIR"/*.bin; do
     fi
     
     # Convert to JSON
-    if ./main.py "$src_file" > "$dst_json"; then
+    if $BIN2JSON "$src_file" > "$dst_json"; then
         processed=$((processed + 1))
         [[ "$VERBOSE" == true ]] && echo "    ✓ Success"
     else
