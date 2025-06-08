@@ -15,7 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        validator: [codec, accumulate, assurances, authorizations, disputes, history, preimages, reports, safrole, statistics]
+        validator:
+          - codec
+          - accumulate
+          - assurances
+          - authorizations
+          - disputes
+          - history
+          - preimages
+          - reports
+          - safrole
+          - statistics
+          - erasure-coding
     steps:
       - name: Checkout
         uses: actions/checkout@v2
