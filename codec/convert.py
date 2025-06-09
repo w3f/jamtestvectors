@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-#
-# Convert SCALE encoded test vectors to JSON.
-#
-# Depends on: [jam_types](https://github.com/davxy/jam-types)
 
-import argparse
-import json
+import glob
+import os
+import re
 import sys
-
 from jam_types import (
     AssurancesXt,
     Block,
@@ -26,8 +22,14 @@ from jam_types import (
     WorkPackageAvailSpec,
     WorkReport,
     WorkResult,
+    spec
 )
-from scalecodec import ScaleBytes
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(script_dir, '../lib')))
+from bin_to_json import convert_to_json # noqa: E402
+
+os.chdir(script_dir)
 
 # Map the subsystem's parameter to the corresponding dump class
 dump_classes = {
@@ -50,23 +52,16 @@ dump_classes = {
     "block": Block,
 }
 
-def main():
-    parser = argparse.ArgumentParser(description='STF execution dump SCALE to JSON')
-    parser.add_argument('filename', type=str, help='File dump to parse')
-    parser.add_argument('--type', type=str, required=True, choices=dump_classes.keys(), help='Type to parse')
 
-    if len(sys.argv) == 1:
-        parser.print_help(sys.stderr)
-        sys.exit(1)
+def convert(spec_name):
+    print(f"\n[Converting codec ({spec_name})]")
+    spec.set_spec(spec_name)
+    for filename in glob.glob(f"{spec_name}/*.bin"):
+        print("Converting ", filename)
+        basename = os.path.splitext(os.path.basename(filename))[0]
+        basename = re.sub(r'_\d+$', '', basename)
+        class_type = dump_classes[basename]
+        convert_to_json(filename, class_type)   
 
-    args = parser.parse_args()
-
-    with open(args.filename, 'rb') as file:
-        blob = file.read()
-        scale_bytes = ScaleBytes(blob)
-        dump = dump_classes[args.type](data=scale_bytes)
-        decoded = dump.decode()
-        print(json.dumps(decoded, indent=4))
-
-if __name__ == '__main__':
-    main()
+for spec_name in ["tiny", "full"]:
+    convert(spec_name)
