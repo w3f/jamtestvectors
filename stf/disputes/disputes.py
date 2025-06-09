@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     AvailabilityAssignments,
     Disputes,
@@ -39,7 +39,7 @@ class DisputesOutput(Enum):
         1: ('err', n(Errno))
     }
 
-class DisputesDump(Dump):
+class DisputesTestVector(StfTestVector):
     state_class = n(DisputesState)
     input_class = n(DisputesInput)
     output_class = n(DisputesOutput)

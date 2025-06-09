@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     AssurancesXt,
     AvailabilityAssignments,
@@ -37,7 +37,7 @@ class AssurancesOutput(Enum):
     }
 
 
-class AssurancesDump(Dump):
+class AssurancesTestVector(StfTestVector):
     state_class = 'AssurancesState'
     input_class = 'AssurancesInput'
     output_class = 'AssurancesOutput'

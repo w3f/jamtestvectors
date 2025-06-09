@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     Null,
     OpaqueHash,
@@ -62,7 +62,7 @@ class PreimagesOutput(Enum):
         1: ('err', n(Errno))
     }
 
-class PreimagesDump(Dump):
+class PreimagesTestVector(StfTestVector):
     state_class = n(PreimagesState)
     input_class = n(PreimagesInput)
     output_class = n(PreimagesOutput)

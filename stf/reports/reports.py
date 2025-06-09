@@ -1,5 +1,4 @@
-from common import Dump
-from history import BlocksInfo
+from bin_to_json import StfTestVector
 from jam_types import (
     AuthPools,
     AvailabilityAssignments,
@@ -15,10 +14,15 @@ from jam_types import (
     ValidatorsData,
     WorkPackageHash,
     CoresStatistics,
-    ServicesStatistics
+    ServicesStatistics,
+    BlockInfo,
+    Vec
 )
 from jam_types import class_name as n
 
+
+class ReportsBlocksInfo(Vec):
+    sub_type = n(BlockInfo)
 
 class ReportsAccountMapData(Struct):
     type_mapping = [
@@ -38,7 +42,7 @@ class ReportsState(Struct):
         ('prev_validators', n(ValidatorsData)),
         ('entropy', n(EntropyBuffer)),
         ('offenders', 'Vec<Ed25519Public>'),
-        ('recent_blocks', n(BlocksInfo)),
+        ('recent_blocks', n(ReportsBlocksInfo)),
         ('auth_pools', n(AuthPools)),
         ('accounts', 'Vec<ReportsAccountMapEntry>'),
         ('cores_statistics', n(CoresStatistics)),
@@ -71,7 +75,7 @@ class ReportsOutput(Enum):
     }
 
 
-class ReportsDump(Dump):
+class ReportsTestVector(StfTestVector):
     state_class = 'ReportsState'
     input_class = 'ReportsInput'
     output_class = 'ReportsOutput'

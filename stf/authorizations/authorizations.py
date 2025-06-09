@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     Null,
     OpaqueHash,
@@ -32,7 +32,7 @@ class AuthorizationsInput(Struct):
 class AuthorizationsOutput(Null):
     pass
 
-class AuthorizationsDump(Dump):
+class AuthorizationsTestVector(StfTestVector):
     state_class = n(AuthorizationsState)
     input_class = n(AuthorizationsInput)
     output_class = n(AuthorizationsOutput)

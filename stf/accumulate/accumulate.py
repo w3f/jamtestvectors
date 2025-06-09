@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     Enum,
     Errno,
@@ -64,8 +64,7 @@ class AccumulateOutput(Enum):
         1: ('err', n(Errno))
     }
 
-
-class AccumulateDump(Dump):
+class AccumulateTestVector(StfTestVector):
     state_class = 'AccumulateState'
     input_class = 'AccumulateInput'
     output_class = 'AccumulateOutput'

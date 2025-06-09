@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     BandersnatchRingCommitment,
     BandersnatchRingVrfSignature,
@@ -70,7 +70,7 @@ class SafroleOutput(Enum):
         1: ('err', n(Errno))
     }
 
-class SafroleDump(Dump):
+class SafroleTestVector(StfTestVector):
     state_class = n(SafroleState)
     input_class = n(SafroleInput)
     output_class = n(SafroleOutput)

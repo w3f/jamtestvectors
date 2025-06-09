@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     Extrinsics,
     Null,
@@ -36,7 +36,7 @@ class StatisticsInput(Struct):
 class StatisticsOutput(Null):
     pass
 
-class StatisticsDump(Dump):
+class StatisticsTestVector(StfTestVector):
     state_class = n(StatisticsState)
     input_class = n(StatisticsInput)
     output_class = n(StatisticsOutput)

@@ -1,4 +1,4 @@
-from common import Dump
+from bin_to_json import StfTestVector
 from jam_types import (
     BlockInfo,
     HeaderHash,
@@ -34,7 +34,7 @@ class HistoryInput(Struct):
 class HistoryOutput(Null):
     pass
 
-class HistoryDump(Dump):
+class HistoryTestVector(StfTestVector):
     state_class = n(HistoryState)
     input_class = n(HistoryInput)
     output_class = n(HistoryOutput)
