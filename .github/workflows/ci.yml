@@ -18,6 +18,14 @@ jobs:
         validator:
           - codec
           - stf/accumulate
+          - stf/assurances
+          - stf/authorizations
+          - stf/disputes
+          - stf/history
+          - stf/preimages
+          - stf/reports
+          - stf/safrole
+          - stf/statistics
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,4 +39,3 @@ jobs:
       - name: Validate ${{ matrix.validator }}
         run: ./${{ matrix.validator }}/validate.py
 
-# , stf/assurances, stf/authorizations, disputes, history, preimages, reports, safrole, statistics]
