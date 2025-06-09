@@ -1,3 +1,7 @@
+# JSON validation using ASN.1 schema support utilities.
+#
+# Depends on [`asn1tools`](https://github.com/davxy/asn1tools)
+ 
 import os
 import re
 import json
