@@ -13,7 +13,7 @@ State ::= SEQUENCE {
     -- uncertain or invalid has been removed from it. Mutated to ϱ‡.
     avail-assignments AvailabilityAssignments,
 
-    -- [κ'] Posterior active validators.
+    -- [κ] Prior active validators.
     curr-validators ValidatorsData
 }
 
