@@ -44,15 +44,15 @@ specific subsystem.
 
 ### Vectors
 
-- [Safrole](./safrole/README.md)
-- [Disputes](./disputes/README.md)
-- [History](./history/README.md)
-- [Assurances](./assurances/README.md)
-- [Reports](./reports/README.md)
-- [Statistics](./statistics/README.md)
-- [Authorizations](./authorizations/README.md)
-- [Preimages](./preimages/README.md)
-- [Accumulate](./accumulate/README.md)
+- [Safrole](./stf/safrole/README.md)
+- [Disputes](./stf/disputes/README.md)
+- [History](./stf/history/README.md)
+- [Assurances](./stf/assurances/README.md)
+- [Reports](./stf/reports/README.md)
+- [Statistics](./stf/statistics/README.md)
+- [Authorizations](./stf/authorizations/README.md)
+- [Preimages](./stf/preimages/README.md)
+- [Accumulate](./stf/accumulate/README.md)
 
 ## Block Import Traces
 

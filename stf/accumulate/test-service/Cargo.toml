@@ -1,0 +1,17 @@
+[package]
+name = "test-service"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["nobody"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+jam-pvm-common = { version = "0.1.22", default-features = false, features = ["service", "logging"] }
+jam-types = { version = "0.1.22", default-features = false }
+polkavm-derive = "0.24.0"
+
+[features]
+tiny = ["jam-types/tiny", "jam-pvm-common/tiny"]

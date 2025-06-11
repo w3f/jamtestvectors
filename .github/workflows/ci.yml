@@ -17,16 +17,16 @@ jobs:
       matrix:
         validator:
           - codec
-          - accumulate
-          - assurances
-          - authorizations
-          - disputes
-          - history
-          - preimages
-          - reports
-          - safrole
-          - statistics
           - erasure-coding
+          - stf/accumulate
+          - stf/assurances
+          - stf/authorizations
+          - stf/disputes
+          - stf/history
+          - stf/preimages
+          - stf/reports
+          - stf/safrole
+          - stf/statistics
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -39,3 +39,4 @@ jobs:
           pip install git+https://github.com/davxy/asn1tools.git
       - name: Validate ${{ matrix.validator }}
         run: ./${{ matrix.validator }}/validate.py
+
