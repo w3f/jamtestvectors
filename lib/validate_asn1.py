@@ -88,6 +88,8 @@ def validate(schema, json_file, json_tweaks_callback=None):
         json_file: Path to JSON file to validate
         json_tweaks_callback: Optional callback to modify JSON before validation
     """
+    print("* Validating:", json_file)
+
     # Determine root type used for decoding
     if "TestCase" in schema.types:
         root_type = "TestCase"
@@ -121,7 +123,7 @@ def validate_group(group_name, group_schema, spec_name, json_tweaks_callback=Non
     Args:
         group_name: Name of the validation group (for display)
         group_schema: ASN.1 schema file name (or None for base schema only)
-        spec_name: Specification name ("tiny", "full", or "data")
+        spec_name: Specification name ("tiny", "full")
         json_tweaks_callback: Optional callback to modify JSON before validation
     """
     print(f"\n[Validating {group_name} ({spec_name})]")
@@ -134,5 +136,4 @@ def validate_group(group_name, group_schema, spec_name, json_tweaks_callback=Non
     # Compile schema and validate all JSON files
     schema = asn1tools.compile_files(schema_files, codec="jer")
     for json_file in glob.glob(f"{spec_name}/*.json"):
-        print("* Validating:", json_file)
         validate(schema, json_file, json_tweaks_callback)

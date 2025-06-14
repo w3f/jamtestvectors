@@ -26,4 +26,5 @@ def tweak_callback(json_obj):
     tweak_sequence_of_options(json_obj['post_state'])
     return json_obj
 
-validate_group("history", "history.asn", "data", tweak_callback)
+for spec in ["tiny", "full"]:
+    validate_group("history", "history.asn", spec, tweak_callback)

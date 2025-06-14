@@ -61,3 +61,16 @@ specific subsystem.
 Validation scripts are included to verify the JSON files against the expected
 ASN.1 syntax provided with the test vectors. These scripts currently rely on my
 [asn1tools](https://github.com/davxy/asn1tools) fork.
+
+## Binary To JSON
+
+The repository binary test vector files can be converted to their JSON
+equivalents for easier inspection and debugging. Use the provided conversion
+script to transform binary files into human-readable JSON format:
+
+```bash
+./scripts/convert-all.sh
+```
+
+This conversion script requires the [jam-types](https://github.com/davxy/jam-types)
+Python library to be installed.

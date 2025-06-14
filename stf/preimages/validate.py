@@ -10,4 +10,5 @@ from validate_asn1 import validate_group  # noqa: E402
 
 os.chdir(script_dir)
 
-validate_group("preimages", "preimages.asn", "data")
+for spec in ["tiny", "full"]:
+    validate_group("preimages", "preimages.asn", spec)
