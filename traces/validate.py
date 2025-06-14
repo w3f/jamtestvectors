@@ -3,11 +3,14 @@
 import os
 import sys
 from pathlib import Path
-
 import asn1tools
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib')))
-from validate_asn1 import get_schema_files, validate
+
+from validate_asn1 import get_schema_files, validate # noqa: E402
+
+os.chdir(script_dir)
 
 schema = asn1tools.compile_files(get_schema_files(False) + ["schema.asn"], codec="jer")
 
