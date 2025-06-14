@@ -121,7 +121,7 @@ def validate_group(group_name, group_schema, spec_name, json_tweaks_callback=Non
     Args:
         group_name: Name of the validation group (for display)
         group_schema: ASN.1 schema file name (or None for base schema only)
-        spec_name: Specification name ("tiny", "full", or "data")
+        spec_name: Specification name ("tiny", "full")
         json_tweaks_callback: Optional callback to modify JSON before validation
     """
     print(f"\n[Validating {group_name} ({spec_name})]")

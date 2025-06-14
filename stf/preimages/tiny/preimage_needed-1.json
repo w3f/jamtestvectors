@@ -1,0 +1,79 @@
+{
+    "input": {
+        "preimages": [],
+        "slot": 42
+    },
+    "pre_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "data": {
+                    "preimages": [
+                        {
+                            "hash": "0xb9de73a1057386205aed59c4dbfda7fcfc1b83aa95ad20583dfa3611253f74c2",
+                            "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8"
+                        }
+                    ],
+                    "lookup_meta": [
+                        {
+                            "key": {
+                                "hash": "0x9e0e7d324d129dfbd86462546e6c3aaa533bb6f2079c639f85943c95a53a70a9",
+                                "length": 46
+                            },
+                            "value": []
+                        },
+                        {
+                            "key": {
+                                "hash": "0xb9de73a1057386205aed59c4dbfda7fcfc1b83aa95ad20583dfa3611253f74c2",
+                                "length": 48
+                            },
+                            "value": [
+                                37,
+                                40
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "statistics": []
+    },
+    "output": {
+        "ok": null
+    },
+    "post_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "data": {
+                    "preimages": [
+                        {
+                            "hash": "0xb9de73a1057386205aed59c4dbfda7fcfc1b83aa95ad20583dfa3611253f74c2",
+                            "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8"
+                        }
+                    ],
+                    "lookup_meta": [
+                        {
+                            "key": {
+                                "hash": "0x9e0e7d324d129dfbd86462546e6c3aaa533bb6f2079c639f85943c95a53a70a9",
+                                "length": 46
+                            },
+                            "value": []
+                        },
+                        {
+                            "key": {
+                                "hash": "0xb9de73a1057386205aed59c4dbfda7fcfc1b83aa95ad20583dfa3611253f74c2",
+                                "length": 48
+                            },
+                            "value": [
+                                37,
+                                40
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "statistics": []
+    }
+}
