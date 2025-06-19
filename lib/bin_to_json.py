@@ -40,7 +40,7 @@ def convert_to_json(filename, subsystem_type, spec_name = None):
         scale_bytes = ScaleBytes(blob)
         dump = subsystem_type(data=scale_bytes)
         decoded = dump.decode()
-        json_filename = filename.replace('.bin', '.json')
+        json_filename = str(filename).replace('.bin', '.json')
         with open(json_filename, 'w') as json_file:
             json.dump(decoded, json_file, indent=4)
             json_file.write('\n')

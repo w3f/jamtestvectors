@@ -51,9 +51,9 @@ def convert_dir(dir):
     for filename in Path(dir).iterdir():
         if filename.is_file() and filename.suffix == ".bin":
             if filename.name == "genesis.bin":
-                convert_to_json(str(filename), Genesis)
+                convert_to_json(filename, Genesis)
             else:
-                convert_to_json(str(filename), TraceStep)
+                convert_to_json(filename, TraceStep)
         elif filename.is_dir():
             print("[VALIDATING: '{}']".format(filename))
             convert_dir(filename)
