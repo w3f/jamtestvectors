@@ -55,7 +55,7 @@ def convert_dir(dir):
             else:
                 convert_to_json(filename, TraceStep)
         elif filename.is_dir():
-            print("[VALIDATING: '{}']".format(filename))
+            print("[CONVERTING: '{}']".format(filename))
             convert_dir(filename)
 
 spec.set_spec("tiny")
