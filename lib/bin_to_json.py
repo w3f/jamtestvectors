@@ -31,7 +31,10 @@ class StfTestVector(Struct):
         return decoded
 
 
-def convert_to_json(filename, subsystem_type):
+def convert_to_json(filename, subsystem_type, spec_name = None):
+    if spec_name in ("tiny", "full"):
+        spec.set_spec(spec_name)
+    print("* Converting:", filename)
     with open(filename, 'rb') as file:
         blob = file.read()
         scale_bytes = ScaleBytes(blob)
@@ -47,5 +50,4 @@ def convert_group(group_name, spec_name, subsystem_type):
         spec.set_spec(spec_name)
     print(f"\n[Converting {group_name} ({spec_name})]")
     for file in glob.glob(f"{spec_name}/*.bin"):
-        print("* Converting:", file)
         convert_to_json(file, subsystem_type)
