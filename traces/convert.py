@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-from jam_types import Struct, ByteArray, ByteSequence, Block, OpaqueHash, Vec, String, spec
+from jam_types import Struct, ByteArray, ByteSequence, Block, Header, OpaqueHash, Vec, String, spec
 from jam_types import class_name as n
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -34,11 +34,9 @@ class RawState(Struct):
 class Bootnodes(Vec):
     sub_type = n(String)
 
-class ChainSpec(Struct):
+class Genesis(Struct):
     type_mapping = [
-        ('bootonodes', n(Bootnodes)),
-        ('id', n(String)),
-        ('header', n(ByteSequence)),
+        ('header', n(Header)),
         ('state', n(RawState))
     ]
 
@@ -52,8 +50,8 @@ class TraceStep(Struct):
 def convert_dir(dir):
     for filename in Path(dir).iterdir():
         if filename.is_file() and filename.suffix == ".bin":
-            if filename.name == "chainspec.bin":
-                convert_to_json(str(filename), ChainSpec)
+            if filename.name == "genesis.bin":
+                convert_to_json(str(filename), Genesis)
             else:
                 convert_to_json(str(filename), TraceStep)
         elif filename.is_dir():
