@@ -25,11 +25,11 @@ the input `accumulate_root`.
 
 ## Vectors
 
-- [progress_blocks_history-1](data/progress_blocks_history-1.json) 🟢 
+- [progress_blocks_history-1](tiny/progress_blocks_history-1.json) 🟢 
   - Empty history queue.
-- [progress_blocks_history-2](data/progress_blocks_history-2.json) 🟢 
+- [progress_blocks_history-2](tiny/progress_blocks_history-2.json) 🟢 
   - Not empty nor full history queue.
-- [progress_blocks_history-3](data/progress_blocks_history-3.json) 🟢 
+- [progress_blocks_history-3](tiny/progress_blocks_history-3.json) 🟢 
   - Fill the history queue.
-- [progress_blocks_history-4](data/progress_blocks_history-4.json) 🟢 
+- [progress_blocks_history-4](tiny/progress_blocks_history-4.json) 🟢 
   - Shift the history queue.

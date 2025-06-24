@@ -1,0 +1,58 @@
+{
+    "input": {
+        "preimages": [
+            {
+                "requester": 3,
+                "blob": "0x31237cdb79ae1dfa7ffb87cde7ea8a80352d300ee5ac758a6cddd19d671925ec973d6a912166c954916057eb6a07d3e8"
+            },
+            {
+                "requester": 3,
+                "blob": "0x92cdf578c47085a5992256f0dcf97d0b19f1f1c9de4d5fe30c3ace6191b6e5dbcee1b3419782ad92ec2dffed6d3f"
+            }
+        ],
+        "slot": 42
+    },
+    "pre_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "data": {
+                    "preimages": [],
+                    "lookup_meta": [
+                        {
+                            "key": {
+                                "hash": "0x9e0e7d324d129dfbd86462546e6c3aaa533bb6f2079c639f85943c95a53a70a9",
+                                "length": 46
+                            },
+                            "value": []
+                        }
+                    ]
+                }
+            }
+        ],
+        "statistics": []
+    },
+    "output": {
+        "err": "preimage_unneeded"
+    },
+    "post_state": {
+        "accounts": [
+            {
+                "id": 3,
+                "data": {
+                    "preimages": [],
+                    "lookup_meta": [
+                        {
+                            "key": {
+                                "hash": "0x9e0e7d324d129dfbd86462546e6c3aaa533bb6f2079c639f85943c95a53a70a9",
+                                "length": 46
+                            },
+                            "value": []
+                        }
+                    ]
+                }
+            }
+        ],
+        "statistics": []
+    }
+}

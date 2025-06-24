@@ -11,4 +11,4 @@ from validate_asn1 import validate_group  # noqa: E402
 os.chdir(script_dir)
 
 for spec in ["tiny", "full"]:
-    validate_group("erasure-coding", "schema.asn", spec)
+    validate_group("erasure", "schema.asn", spec)

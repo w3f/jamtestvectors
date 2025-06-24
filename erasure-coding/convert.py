@@ -11,11 +11,11 @@ from bin_to_json import convert_group # noqa: E402
 
 os.chdir(script_dir)
 
-class EcTestVector(Struct):
+class ErasureTestVector(Struct):
     type_mapping = [
         ("data", n(ByteSequence)),
         ("shards", "Vec<ByteSequence>"),
     ]
 
 for spec_name in ["tiny", "full"]:
-    convert_group("erasure-coding", spec_name, EcTestVector)
+    convert_group("erasure", spec_name, ErasureTestVector)

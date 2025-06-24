@@ -17,7 +17,8 @@ jobs:
       matrix:
         validator:
           - codec
-          - erasure-coding
+          - erasure
+          - traces
           - stf/accumulate
           - stf/assurances
           - stf/authorizations
