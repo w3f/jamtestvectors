@@ -57,7 +57,7 @@ def convert(spec_name):
     print(f"\n[Converting codec ({spec_name})]")
     spec.set_spec(spec_name)
     for filename in glob.glob(f"{spec_name}/*.bin"):
-        print("Converting ", filename)
+        print("* Converting ", filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
         basename = re.sub(r'_\d+$', '', basename)
         class_type = dump_classes[basename]

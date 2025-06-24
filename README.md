@@ -4,6 +4,10 @@
  
 - [Codec](./codec/README.md)
 
+## Erasure Coding
+
+- [Erasure Coding](./erasure/README.md)
+
 ## State Transition Functions
 
 We offer two types of test vectors:
