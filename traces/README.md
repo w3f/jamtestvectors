@@ -28,7 +28,24 @@ All host calls have a gas cost of **$10$**, with the following exceptions:
 - [Fallback](./fallback): fallback block authoring, no-safrole, no-work-reports
 - [Safrole](./safrole): safrole block authoring, no-work-reports
 - [Reports L0](./reports-l0): no-safrole, basic work reports (read/write/info/log)
-- [Reports L1](./reports-l1): no-safrole, preimages solicit/provision (solicit/forget/info/log)
+- [Reports L1](./reports-l1): no-safrole, preimages provision (solicit/forget/info/log)
+
+## Preimage Expunge Delay
+
+The GP defines a constant `D`, representing the number of timeslots after which
+an unreferenced preimage may be expunged.
+
+In the `full` configuration, the GP mandates `D = 19,200`, which corresponds to
+exactly 32 full epochs (`E = 600`). Applying the same logic to the `tiny`
+configuration, where `E = 12`, would yield `D = 12 × 32 = 384` slots.
+
+However, this value is too large for a constrained set of test vectors with very
+few blocks. For testing purposes, we have therefore chosen to use **`D = 32`**
+instead.
+
+**The final value of `D` for the `tiny` testnet remains undecided**,
+and should be documented in the community-maintained
+[chain spec documentation](https://docs.jamcha.in/basics/chain-spec/tiny) once determined.
 
 ## Notes on SBRK 
 

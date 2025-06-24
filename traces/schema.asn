@@ -2,7 +2,7 @@
 
 BlockImportModule DEFINITIONS ::= BEGIN
 
-IMPORTS Block, StateRoot, ByteSequence FROM JamTypes;
+IMPORTS Block, Header, StateRoot, ByteSequence FROM JamTypes;
 
 StorageKey ::= ByteSequence (SIZE(31))
 
@@ -16,10 +16,15 @@ RawState ::= SEQUENCE {
 	keyvals SEQUENCE OF KeyValue
 }
 
-TestCase ::= SEQUENCE {
+TraceStep ::= SEQUENCE {
 	pre-state RawState,
 	block Block,
 	post-state RawState
+}
+
+Genesis ::= SEQUENCE {
+	header Header,
+	state RawState
 }
 
 END

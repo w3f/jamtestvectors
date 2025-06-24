@@ -15,11 +15,14 @@ os.chdir(script_dir)
 schema = asn1tools.compile_files(get_schema_files(False) + ["schema.asn"], codec="jer")
 
 def validate_dir(dir):
-    for path in Path(dir).iterdir():
-        if path.is_file() and path.suffix == ".json":
-            validate(schema, path)
-        elif path.is_dir():
-            print("[VALIDATING: '{}']".format(path))
-            validate_dir(path)
+    for filename in Path(dir).iterdir():
+        if filename.is_file() and filename.suffix == ".json":
+            if filename.name == "genesis.json":
+                validate(schema, filename, "Genesis")
+            else:
+                validate(schema, filename, "TraceStep")
+        elif filename.is_dir():
+            print("[VALIDATING: '{}']".format(filename))
+            validate_dir(filename)
 
 validate_dir(".")
