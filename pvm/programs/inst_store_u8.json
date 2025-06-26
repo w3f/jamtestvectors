@@ -1,0 +1,65 @@
+{
+  "name": "inst_store_u8",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    305419896,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    5,
+    59,
+    7,
+    0,
+    0,
+    2,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    305419896,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 5,
+  "expected-memory": [
+    {
+      "address": 131072,
+      "contents": [
+        120
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}
