@@ -1,0 +1,821 @@
+--------------------------------------------------------------------------------
+-- JAM Protocol Types
+--
+-- This schema defines the core data structures used in the JAM protocol.
+--------------------------------------------------------------------------------
+
+JamTypes DEFINITIONS ::= BEGIN
+
+IMPORTS
+    -- Constants
+    validators-count, epoch-length, cores-count,
+    validators-super-majority, avail-bitfield-bytes,
+    max-blocks-history, max-tickets-per-block,
+    auth-pool-max-size, auth-queue-size
+        FROM Constants;
+
+--------------------------------------------------------------------------------
+-- Simple Types
+--
+-- Basic integer and byte array types used throughout the protocol.
+-- These provide type-safe wrappers around primitive values.
+--------------------------------------------------------------------------------
+
+-- Unsigned 8-bit integer (0-255)
+U8 ::= INTEGER (0..255)
+-- Unsigned 16-bit integer (0-65535)
+U16 ::= INTEGER (0..65535)
+-- Unsigned 32-bit integer (0-4294967295)
+U32 ::= INTEGER (0..4294967295)
+-- Unsigned 64-bit integer (0-18446744073709551615)
+U64 ::= INTEGER (0..18446744073709551615)
+
+-- Variable-length byte sequence
+ByteSequence ::= OCTET STRING
+-- Fixed-size 32-byte array, commonly used for hashes
+ByteArray32 ::= OCTET STRING (SIZE(32))
+
+--------------------------------------------------------------------------------
+-- Cryptographic Types
+--
+-- Public keys and signatures used for various cryptographic operations.
+--------------------------------------------------------------------------------
+
+-- Bandersnatch public key (32 bytes)
+BandersnatchPublic ::= OCTET STRING (SIZE(32))
+-- Ed25519 public key (32 bytes)
+Ed25519Public ::= OCTET STRING (SIZE(32))
+-- BLS public key (144 bytes)
+BlsPublic ::= OCTET STRING (SIZE(144))
+
+-- Bandersnatch VRF signature (96 bytes)
+BandersnatchVrfSignature ::= OCTET STRING (SIZE(96))
+-- Bandersnatch ring VRF signature (784 bytes)
+BandersnatchRingVrfSignature ::= OCTET STRING (SIZE(784))
+-- Ed25519 signature (64 bytes)
+Ed25519Signature ::= OCTET STRING (SIZE(64))
+
+-- Bandersnatch ring commitment (144 bytes)
+BandersnatchRingCommitment ::= OCTET STRING (SIZE(144))
+
+--------------------------------------------------------------------------------
+-- Application Specific Core Types
+--
+-- Core types that define the fundamental structures of the JAM protocol,
+-- including time representation, validator identification, and various
+-- hash types used throughout the system.
+--------------------------------------------------------------------------------
+
+-- Generic 32-byte hash
+OpaqueHash ::= ByteArray32
+
+-- Protocol time unit
+TimeSlot ::= U32
+-- Index identifying a validator in the current set
+ValidatorIndex ::= U16
+-- Index identifying a core in the system
+CoreIndex ::= U16
+
+-- Hash of a block header
+HeaderHash ::= OpaqueHash
+-- Hash of the state root
+StateRoot ::= OpaqueHash
+-- BEEFY consensus root hash
+BeefyRoot ::= OpaqueHash
+-- Hash of a work package
+WorkPackageHash ::= OpaqueHash
+-- Hash of a work report
+WorkReportHash ::= OpaqueHash
+-- Root hash of exported data
+ExportsRoot ::= OpaqueHash
+-- Root hash of erasure-coded data
+ErasureRoot ::= OpaqueHash
+
+-- Gas unit
+Gas ::= U64
+
+-- Randomness seed used for various protocol operations
+Entropy ::= OpaqueHash
+-- Buffer of entropy values
+EntropyBuffer ::= SEQUENCE (SIZE(4)) OF Entropy
+
+-- Additional validator-specific metadata
+ValidatorMetadata ::= OCTET STRING (SIZE(128))
+
+-- Complete set of data associated with a validator
+ValidatorData ::= SEQUENCE {
+    -- Bandersnatch public key
+    bandersnatch BandersnatchPublic,
+    -- Ed25519 public key
+    ed25519 Ed25519Public,
+    -- BLS public key
+    bls BlsPublic,
+    -- Additional validator metadata
+    metadata ValidatorMetadata
+}
+
+-- Complete set of validator data for all validators
+ValidatorsData ::= SEQUENCE (SIZE(validators-count)) OF ValidatorData
+
+--------------------------------------------------------------------------------
+-- Service Types
+--
+-- Types related to services.
+--------------------------------------------------------------------------------
+
+-- Unique identifier for a service
+ServiceId ::= U32
+
+-- Information about a deployed service
+ServiceInfo ::= SEQUENCE {
+    -- Hash of the service's code
+    code-hash      OpaqueHash,
+    -- Current balance of the service
+    balance        U64,
+    -- Minimum gas required for processing an item
+    min-item-gas   Gas,
+    -- Minimum gas required for processing a memo
+    min-memo-gas   Gas,
+    -- Total bytes stored by the service
+    bytes          U64,
+    -- Number of items stored by the service
+    items          U32
+}
+
+--------------------------------------------------------------------------------
+-- Availability Assignments
+--
+-- Types related to the assignment of work reports to cores and tracking their
+-- availability status.
+--------------------------------------------------------------------------------
+
+-- Assignment of a work report with timeout
+AvailabilityAssignment ::= SEQUENCE {
+    -- The work report being assigned
+    report WorkReport,
+    -- Timeout value for this assignment
+    timeout U32
+}
+
+-- Optional availability assignment (Some/None pattern)
+AvailabilityAssignmentsItem ::= CHOICE {
+    -- No assignment
+    none [0] NULL,
+    -- An assignment is present
+    some [1] AvailabilityAssignment
+}
+
+-- Assignments for all cores in the system
+AvailabilityAssignments ::= SEQUENCE (SIZE(cores-count)) OF AvailabilityAssignmentsItem
+
+--------------------------------------------------------------------------------
+-- Refine Context
+--
+-- Context information needed for the refinement phase of work processing.
+--------------------------------------------------------------------------------
+
+-- Context for the refinement process
+RefineContext ::= SEQUENCE {
+    -- Anchor block hash
+    anchor HeaderHash,
+    -- State root at the anchor
+    state-root StateRoot,
+    -- BEEFY consensus root
+    beefy-root BeefyRoot,
+    -- Block hash for preimage lookups
+    lookup-anchor HeaderHash,
+    -- Time slot of the lookup anchor
+    lookup-anchor-slot TimeSlot,
+    -- Hashes of prerequisite work packages
+    prerequisites SEQUENCE OF OpaqueHash
+}
+
+--------------------------------------------------------------------------------
+-- Authorizations
+--
+-- Types related to the authorization of work packages, including pools and
+-- queues of authorizers.
+--------------------------------------------------------------------------------
+
+-- Entity that can authorize work packages
+Authorizer ::= SEQUENCE {
+    -- Hash of the authorizer's code
+    code-hash OpaqueHash,
+    -- Parameters for the authorizer
+    params ByteSequence
+}
+
+-- Hash of encoded Authorizer
+AuthorizerHash ::= OpaqueHash
+
+-- Pool of authorizer hashes for a core
+AuthPool ::= SEQUENCE (SIZE(0..auth-pool-max-size)) OF AuthorizerHash
+-- Pools of authorizers for all cores
+AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+
+-- Queue of authorizer hashes for a core
+AuthQueue ::= SEQUENCE (SIZE(auth-queue-size)) OF AuthorizerHash
+-- Queues of authorizers for all cores
+AuthQueues ::= SEQUENCE (SIZE(cores-count)) OF AuthQueue
+
+--------------------------------------------------------------------------------
+-- Work Package
+--
+-- Types defining work packages, which are sequences of Work Items, the units
+-- of computation that can be submitted to the JAM protocol.
+--------------------------------------------------------------------------------
+
+-- Specification for importing a segment
+ImportSpec ::= SEQUENCE {
+    -- Root hash of the segment tree
+    tree-root OpaqueHash,
+    -- Index of the segment
+    index U16
+}
+
+-- Specification for an extrinsic
+ExtrinsicSpec ::= SEQUENCE {
+    -- Hash of the extrinsic
+    hash OpaqueHash,
+    -- Length of the extrinsic in bytes
+    len U32
+}
+
+-- Individual work item within a package
+WorkItem ::= SEQUENCE {
+    -- Service ID that will process this item
+    service ServiceId,
+    -- Hash of the code to execute
+    code-hash OpaqueHash,
+    -- Input payload for the work item
+    payload ByteSequence,
+    -- Gas limit for refinement phase
+    refine-gas-limit Gas,
+    -- Gas limit for accumulation phase
+    accumulate-gas-limit Gas,
+    -- Segments to import
+    import-segments SEQUENCE OF ImportSpec,
+    -- Extrinsics to include
+    extrinsic SEQUENCE OF ExtrinsicSpec,
+    -- Number of exported segments
+    export-count U16
+}
+
+-- Complete work package containing multiple work items
+WorkPackage ::= SEQUENCE {
+    -- Authorization data
+    authorization ByteSequence,
+    -- Service ID hosting the authorization code
+    auth-code-host ServiceId,
+    -- Authorizer for this package
+    authorizer Authorizer,
+    -- Refinement context
+    context RefineContext,
+    -- Work items to process (1-16)
+    items SEQUENCE (SIZE(1..16)) OF WorkItem
+}
+
+--------------------------------------------------------------------------------
+-- Work Report
+--
+-- Types defining work reports, which contain the results
+-- of executing work packages.
+--------------------------------------------------------------------------------
+
+-- Result of executing a work item
+WorkExecResult ::= CHOICE {
+    -- Successful execution with output
+    ok [0] ByteSequence,
+    -- Execution ran out of gas
+    out-of-gas [1] NULL,
+    -- Execution panicked (trap)
+    panic [2] NULL,
+    -- Invalid exports
+    bad-exports [3] NULL,
+    -- Invalid code
+    bad-code [4] NULL,
+    -- Code size exceeds limits
+    code-oversize [5] NULL
+}
+
+-- Resource usage during refinement
+RefineLoad ::= SEQUENCE {
+    -- Gas used during refinement
+    gas-used Gas,
+    -- Number of imports processed
+    imports U16,
+    -- Number of extrinsics processed
+    extrinsic-count U16,
+    -- Total size of extrinsics in bytes
+    extrinsic-size U32,
+    -- Number of exports generated
+    exports U16
+}
+
+-- Result of executing a single work item
+WorkResult ::= SEQUENCE {
+    -- Service ID that processed this item
+    service-id ServiceId,
+    -- Hash of the code that was executed
+    code-hash OpaqueHash,
+    -- Hash of the input payload
+    payload-hash OpaqueHash,
+    -- Gas used during accumulation
+    accumulate-gas Gas,
+    -- Execution result
+    result WorkExecResult,
+    -- Resource usage during refinement
+    refine-load RefineLoad
+}
+
+-- Specification of a work package
+WorkPackageSpec ::= SEQUENCE {
+    -- Hash of the work package
+    hash WorkPackageHash,
+    -- Length of the work package in bytes
+    length U32,
+    -- Root hash of erasure-coded data
+    erasure-root ErasureRoot,
+    -- Root hash of exported data
+    exports-root ExportsRoot,
+    -- Number of exports
+    exports-count U16
+}
+
+-- Mapping between work package hash and segment tree root
+SegmentRootLookupItem ::= SEQUENCE {
+    -- Hash of the work package
+    work-package-hash WorkPackageHash,
+    -- Root hash of the segment tree
+    segment-tree-root OpaqueHash
+}
+
+-- Segment root lookups map
+SegmentRootLookup ::= SEQUENCE OF SegmentRootLookupItem
+
+-- Complete report of work package execution
+WorkReport ::= SEQUENCE {
+    -- Specification of the work package
+    package-spec WorkPackageSpec,
+    -- Refinement context
+    context RefineContext,
+    -- Index of the core that executed this work
+    core-index CoreIndex,
+    -- Hash of the authorizer
+    authorizer-hash OpaqueHash,
+    -- Output from the authorization process
+    auth-output ByteSequence,
+    -- Segment root lookups
+    segment-root-lookup SegmentRootLookup,
+    -- Results of executing each work item
+    results SEQUENCE (SIZE(1..16)) OF WorkResult,
+    -- Gas used during authorization
+    auth-gas-used Gas
+}
+
+--------------------------------------------------------------------------------
+-- Block History
+--
+-- Types for tracking the history of blocks and their associated work reports.
+--------------------------------------------------------------------------------
+
+-- Optional Merkle Mountain Range peak
+MmrPeak ::= CHOICE {
+    -- No peak present
+    none [0] NULL,
+    -- Peak hash
+    some [1] OpaqueHash
+}
+
+-- Merkle Mountain Range structure
+Mmr ::= SEQUENCE {
+    -- Sequence of MMR peaks
+    peaks  SEQUENCE OF MmrPeak
+}
+
+-- Information about a work package that was reported
+ReportedWorkPackage ::= SEQUENCE {
+    -- Hash of the work report
+    hash            WorkReportHash,
+    -- Root hash of exported data
+    exports-root    ExportsRoot
+}
+
+-- Information about a block
+BlockInfo ::= SEQUENCE {
+    -- Hash of the block header
+    header-hash    HeaderHash,
+    -- Merkle Mountain Range
+    mmr            Mmr,
+    -- Posterior state root at this block
+    state-root     StateRoot,
+    -- Work packages reported in this block
+    reported       SEQUENCE OF ReportedWorkPackage
+}
+ 
+-- History of recent blocks
+BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
+
+--------------------------------------------------------------------------------
+-- Statistics
+--
+-- Types for tracking various statistics about validators, cores, and services.
+--------------------------------------------------------------------------------
+
+-- Record of a validator's activity
+ValidatorActivityRecord ::= SEQUENCE {
+    -- Number of blocks produced
+    blocks      U32,
+    -- Number of Safrole tickets consumed
+    tickets     U32,
+    -- Number of pre-images provided
+    pre-images  U32,
+    -- Total size of provided pre-images in bytes
+    pre-images-size U32,
+    -- Number of guarantees provided
+    guarantees  U32,
+    -- Number of assurances provided
+    assurances  U32
+}
+
+-- Statistics for all validators
+ValidatorsStatistics ::= SEQUENCE (SIZE(validators-count)) OF ValidatorActivityRecord
+
+-- Record of a per-block core's activity
+CoreActivityRecord ::= SEQUENCE {
+    -- Total bytes written in the Data Availability (DA) layer.
+    -- Includes work bundle, extrinsic, imports and exported segments
+    da-load         U32,
+    -- Number of validators which formed super-majority for assurance
+    popularity      U16,
+    -- Number of segments imported from DA for block processing
+    imports         U16,
+    -- Number of segments exported to DA during block processing
+    exports         U16,
+    -- Total size of extrinsics for reported work.
+    extrinsic-size  U32,
+    -- Total number of extrinsics for reported work.
+    extrinsic-count U16,
+    -- Serialized work bundle size written to DA.
+    bundle-size     U32,
+    -- Total gas consumed during block processing (includes refinements and authorizations).
+    gas-used        Gas
+}
+
+-- Statistics for all cores
+CoresStatistics ::= SEQUENCE (SIZE(cores-count)) OF CoreActivityRecord
+
+-- Record of a service's activity
+ServiceActivityRecord ::= SEQUENCE {
+    -- Number of preimages provided to this service
+    provided-count        U16,
+    -- Total size of preimages provided to this service
+    provided-size         U32,
+    -- Number of work-items refined
+    refinement-count      U32,
+    -- Amount of gas used for refinement
+    refinement-gas-used   Gas,
+    -- Number of segments imported from the DL
+    imports               U32,
+    -- Number of segments exported into the DL
+    exports               U32,
+    -- Total size of extrinsics used
+    extrinsic-size        U32,
+    -- Total number of extrinsics used
+    extrinsic-count       U32,
+    -- Number of work-items accumulated
+    accumulate-count      U32,
+    -- Amount of gas used for accumulation
+    accumulate-gas-used   Gas,
+    -- Number of processed transfers
+    on-transfers-count    U32,
+    -- Amount of gas used for processing transfers
+    on-transfers-gas-used Gas
+}
+
+-- Map entry for service statistics
+ServicesStatisticsMapEntry ::= SEQUENCE {
+    -- Service ID
+    id ServiceId,
+    -- Activity record for this service
+    record ServiceActivityRecord
+}
+
+-- Statistics for all services
+ServicesStatistics ::= SEQUENCE OF ServicesStatisticsMapEntry
+
+-- Complete statistics for the system
+Statistics ::= SEQUENCE {
+    -- Current validator statistics
+    vals-curr ValidatorsStatistics,
+    -- Previous validator statistics
+    vals-last ValidatorsStatistics,
+    -- Core statistics
+    cores CoresStatistics,
+    -- Service statistics
+    services ServicesStatistics
+}
+
+--------------------------------------------------------------------------------
+-- Tickets
+--
+-- Types related to the Safrole ticket system used for validator selection.
+--------------------------------------------------------------------------------
+
+-- Unique identifier for a ticket
+TicketId ::= OpaqueHash
+-- Attempt counter for ticket submissions
+TicketAttempt ::= U8
+
+-- Envelope containing a ticket submission
+TicketEnvelope ::= SEQUENCE {
+    -- Attempt number
+    attempt TicketAttempt,
+    -- Ring VRF signature
+    -- VRF output maps to a TicketId
+    signature BandersnatchRingVrfSignature
+}
+
+-- Body of a ticket
+TicketBody ::= SEQUENCE {
+    -- Ticket identifier
+    id TicketId,
+    -- Attempt number
+    attempt TicketAttempt
+}
+
+-- Accumulator for tickets within an epoch
+TicketsAccumulator ::= SEQUENCE (SIZE(0..epoch-length)) OF TicketBody
+
+-- Either tickets or public keys
+TicketsOrKeys ::= CHOICE {
+    -- Sequence of ticket bodies
+    tickets SEQUENCE (SIZE(epoch-length)) OF TicketBody,
+    -- Sequence of public keys
+    keys    SEQUENCE (SIZE(epoch-length)) OF BandersnatchPublic
+}
+
+-- Extrinsic containing ticket submissions
+TicketsExtrinsic ::= SEQUENCE (SIZE(0..max-tickets-per-block)) OF TicketEnvelope
+
+--------------------------------------------------------------------------------
+-- Disputes
+--
+-- Types related to the dispute resolution system.
+--------------------------------------------------------------------------------
+
+-- A single validator's judgment on a disputed work report
+Judgement ::= SEQUENCE {
+    -- True for valid, False for invalid
+    vote BOOLEAN,
+    -- Index of the validator making the judgment
+    index ValidatorIndex,
+    -- Signature of the validator
+    signature Ed25519Signature
+}
+
+-- A complete verdict on a disputed work report
+Verdict ::= SEQUENCE {
+    -- Hash of the disputed work report
+    target WorkReportHash,
+    -- Epoch index of the prior state or one less depending on the key set
+    -- used to sign the votes
+    age U32,
+    -- Judgments from a super-majority of validators
+    votes SEQUENCE (SIZE(validators-super-majority)) OF Judgement
+}
+
+-- Information about a validator who submitted an invalid report
+Culprit ::= SEQUENCE {
+    -- Hash of the disputed work report
+    target WorkReportHash,
+    -- Public key of the culprit
+    key Ed25519Public,
+    -- Signature proving culpability
+    signature Ed25519Signature
+}
+
+-- Information about a validator who made an incorrect judgment
+Fault ::= SEQUENCE {
+    -- Hash of the disputed work report
+    target WorkReportHash,
+    -- The incorrect vote (True/False)
+    vote BOOLEAN,
+    -- Public key of the validator
+    key Ed25519Public,
+    -- Signature proving the fault
+    signature Ed25519Signature
+}
+
+-- Records of dispute outcomes
+DisputesRecords ::= SEQUENCE {
+    -- Reports deemed valid
+    good SEQUENCE OF WorkReportHash,
+    -- Reports deemed invalid
+    bad SEQUENCE OF WorkReportHash,
+    -- Reports with conflicting judgments
+    wonky SEQUENCE OF WorkReportHash,
+    -- Validators who submitted invalid reports
+    offenders SEQUENCE OF Ed25519Public
+}
+
+-- Extrinsic containing dispute information
+DisputesExtrinsic ::= SEQUENCE {
+    -- Verdicts on disputed items
+    verdicts SEQUENCE OF Verdict,
+    -- Information about culprits
+    culprits SEQUENCE OF Culprit,
+    -- Information about faulty judgments
+    faults SEQUENCE OF Fault
+}
+
+--------------------------------------------------------------------------------
+-- Preimages
+--
+-- Types related to preimages blobs provided to services.
+--------------------------------------------------------------------------------
+
+-- A preimage with its requester
+Preimage ::= SEQUENCE {
+    -- ID of the service requesting the preimage
+    requester ServiceId,
+    -- The preimage data
+    blob ByteSequence
+}
+
+-- Extrinsic containing preimages
+PreimagesExtrinsic ::= SEQUENCE OF Preimage
+
+--------------------------------------------------------------------------------
+-- Assurances
+--
+-- Types related to data availability assurances provided by validators.
+--------------------------------------------------------------------------------
+
+-- Assurance of data availability from a validator
+AvailAssurance ::= SEQUENCE {
+    -- The block to which this availability attestation corresponds
+    anchor HeaderHash,
+    -- The bitfield of whether any given core's reported package at anchor block
+    -- is helped made available by this validator.
+    bitfield OCTET STRING (SIZE(avail-bitfield-bytes)),
+    -- Index of the validator providing the assurance
+    validator-index ValidatorIndex,
+    -- Signature of the validator
+    signature Ed25519Signature
+}
+
+-- Extrinsic containing assurances from validators
+AssurancesExtrinsic ::= SEQUENCE (SIZE(0..validators-count)) OF AvailAssurance
+
+--------------------------------------------------------------------------------
+-- Guarantees
+--
+-- Types related to guarantees provided by validators for work reports.
+--------------------------------------------------------------------------------
+
+-- Signature from a validator
+ValidatorSignature ::= SEQUENCE {
+    -- Index of the validator
+    validator-index ValidatorIndex,
+    -- Signature of the validator
+    signature Ed25519Signature
+}
+
+-- Guarantee for a work report
+ReportGuarantee ::= SEQUENCE {
+    -- The work report being guaranteed
+    report WorkReport,
+    -- Time slot following production of the report
+    slot TimeSlot,
+    -- Signatures from validators
+    signatures SEQUENCE OF ValidatorSignature
+}
+
+-- Extrinsic containing guarantees for work reports
+GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..cores-count)) OF ReportGuarantee
+
+--------------------------------------------------------------------------------
+-- Accumulation
+--
+-- Types related to the accumulation of work reports and tracking of
+-- dependencies between work packages.
+--------------------------------------------------------------------------------
+
+-- Record of a work report that is ready for processing
+ReadyRecord ::= SEQUENCE {
+    -- The work report
+    report WorkReport,
+    -- Dependencies required by this report
+    dependencies SEQUENCE OF WorkPackageHash
+}
+
+-- A group of records that became ready at a specific slot
+ReadyQueueItem ::= SEQUENCE OF ReadyRecord
+
+-- A fixed-size FIFO queue of ready record groups (one per slot), with maximum size equal to the epoch length
+ReadyQueue ::= SEQUENCE (SIZE(epoch-length)) OF ReadyQueueItem
+
+-- A group of accumulated work packages for a specific slot
+AccumulatedQueueItem ::= SEQUENCE OF WorkPackageHash
+
+-- A fixed-size FIFO queue of accumulated work package groups (one per slot), with maximum size equal to the epoch length
+AccumulatedQueue ::= SEQUENCE (SIZE(epoch-length)) OF AccumulatedQueueItem
+
+-- Entry in the always-accumulate map
+AlwaysAccumulateMapEntry ::= SEQUENCE {
+    -- Service ID
+    id ServiceId,
+    -- Gas limit for accumulation
+    gas Gas
+}
+
+-- Special privileges for certain services
+Privileges ::= SEQUENCE {
+    -- Service ID with blessing privileges
+    bless ServiceId,
+    -- Service ID with assignment privileges
+    assign ServiceId,
+    -- Service ID with designation privileges
+    designate ServiceId,
+    -- Services that are always accumulated
+    always-acc SEQUENCE OF AlwaysAccumulateMapEntry
+}
+
+--------------------------------------------------------------------------------
+-- Block
+--
+-- Types defining the block structure, including the header and all extrinsics.
+--------------------------------------------------------------------------------
+
+-- Validator keys included in an epoch announcement
+EpochMarkValidatorKeys ::= SEQUENCE {
+    -- Bandersnatch public key
+    bandersnatch BandersnatchPublic,
+    -- Ed25519 public key
+    ed25519 Ed25519Public
+}
+
+-- Mark containing the next epoch parameters
+EpochMark ::= SEQUENCE {
+    -- Entropy for the epoch
+    entropy Entropy,
+    -- Entropy used to build the epoch's tickets
+    tickets-entropy Entropy,
+    -- Public keys of validators
+    validators SEQUENCE (SIZE(validators-count)) OF EpochMarkValidatorKeys
+}
+
+-- Mark containing the next epoch tickets
+TicketsMark ::= SEQUENCE (SIZE(epoch-length)) OF TicketBody
+
+-- Mark containing offenders
+OffendersMark ::= SEQUENCE OF Ed25519Public
+
+-- Block header
+Header ::= SEQUENCE {
+    -- Hash of the parent block header
+    parent             HeaderHash,
+    -- State root associated to the parent block
+    parent-state-root  StateRoot,
+    -- Hash of the extrinsic data
+    extrinsic-hash     OpaqueHash,
+    -- Time slot of this block
+    slot               TimeSlot,
+    -- Mark for epoch transition
+    epoch-mark         EpochMark OPTIONAL,
+    -- Mark for tickets
+    tickets-mark       TicketsMark OPTIONAL,
+    -- Mark for offenders
+    offenders-mark     OffendersMark,
+    -- Index of the validator who authored this block
+    author-index       ValidatorIndex,
+    -- Source of entropy for this block
+    entropy-source     BandersnatchVrfSignature,
+    -- Seal signature for this block
+    seal               BandersnatchVrfSignature
+}
+
+-- Collection of all extrinsics in a block
+Extrinsic ::= SEQUENCE {
+    -- Ticket submissions
+    tickets TicketsExtrinsic,
+    -- Preimage submissions
+    preimages PreimagesExtrinsic,
+    -- Work report guarantees
+    guarantees GuaranteesExtrinsic,
+    -- Data availability assurances
+    assurances AssurancesExtrinsic,
+    -- Dispute resolutions
+    disputes DisputesExtrinsic
+}
+
+-- Complete block structure
+Block ::= SEQUENCE {
+    -- Block header
+    header Header,
+    -- Block extrinsics
+    extrinsic Extrinsic
+}
+
+END

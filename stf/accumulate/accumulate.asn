@@ -1,0 +1,82 @@
+-- Accumulate STF test vectors schema
+
+AccumulateModule DEFINITIONS ::= BEGIN
+
+IMPORTS
+    TimeSlot, ServiceId, ServiceInfo, WorkReport, OpaqueHash, ByteSequence,
+    Entropy, ReadyQueue, AccumulatedQueue, Privileges, ServicesStatistics
+        FROM JamTypes;
+
+StorageMapEntry ::= SEQUENCE {
+    -- Storage key (unhashed, as managed by the service code)
+    key ByteSequence,
+    -- Storage value
+    value ByteSequence
+}
+
+PreimagesMapEntry ::= SEQUENCE {
+    -- Preimage blob full hash
+    hash OpaqueHash,
+    -- Preimage blob
+    blob ByteSequence
+}
+
+-- Service account information relevant for this STF.
+Account ::= SEQUENCE {
+    -- [a_c, a_b, a_g, a_m, a_o, a_i] Service metadata.
+    service ServiceInfo,
+    -- [a_s] Service storage.
+    storage SEQUENCE OF StorageMapEntry,
+    -- [a_p] Preimages blobs.
+    -- This is mostly provided to lookup code blob for accumulate procedure execution.
+    -- It is not supposed to be altered by this STF (i.e. posterior matches prior).
+    preimages SEQUENCE OF PreimagesMapEntry
+}
+
+AccountsMapEntry ::= SEQUENCE {
+    id ServiceId,
+    data Account
+}
+
+State ::= SEQUENCE {
+	-- [τ] Most recent block's timeslot.
+    slot TimeSlot,
+	-- [n_0']  Posterior entropy accumulator.
+    entropy Entropy,
+	-- [ϑ] Work packages ready to be accumulated.
+    ready-queue ReadyQueue,
+	-- [ξ] Work packages recently accumulated.
+    accumulated AccumulatedQueue,
+	-- [χ] Privileged service indices.
+    privileges Privileges,
+	-- [π_S] Services statistics.
+	-- Note: Only stats related to accumulate STF are updated, in particular:
+	-- accumulate_count (a.0), accumulate_gas_used (a.1),
+	-- on_transfers_count (t.0), on_transfers_gas_used (t.1)
+    statistics ServicesStatistics,
+	-- [δ] Relevant services account data. Refer to T(σ) in GP Appendix D.
+    accounts SEQUENCE OF AccountsMapEntry
+}
+
+Input ::= SEQUENCE {
+	-- [H_t] Current time slot as found within the block header.
+    slot TimeSlot,
+	-- Newly available work reports (W).
+    reports SEQUENCE OF WorkReport
+}
+
+Output ::= CHOICE {
+    -- Accumulated reports keccak Merkle root
+    ok OpaqueHash,
+    -- Error
+    err NULL
+}
+
+TestCase ::= SEQUENCE {
+    input        Input,
+    pre-state    State,
+    output       Output,
+    post-state   State
+}
+
+END

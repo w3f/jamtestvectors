@@ -3,9 +3,10 @@
 The test vectors are provided with a corresponding JSON file that describes
 their content.
 
-They are provided for a tiny validator set (6), epoch duration (12) and core count (2).
+## Schema
 
-Both binary and json formats conform to the provided ASN.1 [schema](../asn1-schema/README.md).
+Both the binary and json formats adhere to the overarching JAM protocol ASN.1
+[schema](../jam-types-asn/jam-types.asn).
 
 ## Variable-Length encoding
 
@@ -39,18 +40,18 @@ any other future vectors focused on logic testing.
 
 ## Vectors
 
-- [refine_context](data/refine_context.json)
-- [work_item](data/work_item.json)
-- [work_package](data/work_package.json)
-- [work_result_0](data/work_result_0.json)
-- [work_result_1](data/work_result_1.json)
-- [work_report](data/work_report.json)
-- [tickets_extrinsic](data/tickets_extrinsic.json)
-- [disputes_extrinsic](data/disputes_extrinsic.json)
-- [preimages_extrinsic](data/preimages_extrinsic.json)
-- [assurance_extrinsic](data/assurances_extrinsic.json)
-- [guarantees_extrinsic](data/guarantees_extrinsic.json)
-- [header_0](data/header_0.json)
-- [header_1](data/header_1.json)
-- [extrinsic](data/extrinsic.json)
-- [block](data/block.json)
+- [refine_context](tiny/refine_context.json)
+- [work_item](tiny/work_item.json)
+- [work_package](tiny/work_package.json)
+- [work_result_0](tiny/work_result_0.json)
+- [work_result_1](tiny/work_result_1.json)
+- [work_report](tiny/work_report.json)
+- [tickets_extrinsic](tiny/tickets_extrinsic.json)
+- [disputes_extrinsic](tiny/disputes_extrinsic.json)
+- [preimages_extrinsic](tiny/preimages_extrinsic.json)
+- [assurance_extrinsic](tiny/assurances_extrinsic.json)
+- [guarantees_extrinsic](tiny/guarantees_extrinsic.json)
+- [header_0](tiny/header_0.json)
+- [header_1](tiny/header_1.json)
+- [extrinsic](tiny/extrinsic.json)
+- [block](tiny/block.json)

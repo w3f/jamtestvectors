@@ -1,16 +1,14 @@
 #!/usr/bin/env python
 
-from pathlib import Path
-import asn1tools
 import os
 import sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../jam-types-asn')))
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.abspath(os.path.join(script_dir, '../lib')))
 
-from utils import get_schema_files, validate
+from validate_asn1 import validate_group  # noqa: E402
 
+os.chdir(script_dir)
 
-schema = asn1tools.compile_files(get_schema_files(), codec="jer")
-for path in Path("data").iterdir():
-    if path.is_file() and path.suffix == ".json":
-        validate(schema, path)
+for spec in ["tiny", "full"]:
+    validate_group("codec", None, spec)

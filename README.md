@@ -1,10 +1,12 @@
 # Test Vectors for the JAM Protocol
 
-JAM protocol version 0.6.4
-
 ## Codec
  
 - [Codec](./codec/README.md)
+
+## Erasure Coding
+
+- [Erasure Coding](./erasure/README.md)
 
 ## State Transition Functions
 
@@ -24,6 +26,8 @@ We offer two types of test vectors:
   - core assignment rotation period: 10
   - ticket attempts: 2
 
+For more information refer to the community [docs](https://docs.jamcha.in/basics/chain-spec).
+
 ### STF Output
 
 Technically, the STF execution process does not inherently produce auxiliary
@@ -40,12 +44,37 @@ specific subsystem.
 
 ### Vectors
 
-- [Safrole](./safrole/README.md)
-- [Disputes](./disputes/README.md)
-- [History](./history/README.md)
-- [Assurances](./assurances/README.md)
-- [Reports](./reports/README.md)
-- [Statistics](./statistics/README.md)
-- [Authorizations](./authorizations/README.md)
-- [Preimages](./preimages/README.md)
-- [Accumulate](./accumulate/README.md)
+- [Safrole](./stf/safrole/README.md)
+- [Disputes](./stf/disputes/README.md)
+- [History](./stf/history/README.md)
+- [Assurances](./stf/assurances/README.md)
+- [Reports](./stf/reports/README.md)
+- [Statistics](./stf/statistics/README.md)
+- [Authorizations](./stf/authorizations/README.md)
+- [Preimages](./stf/preimages/README.md)
+- [Accumulate](./stf/accumulate/README.md)
+
+## Block Import Traces
+
+- [Fallback](./traces/fallback): fallback block authoring, no-safrole, no-work-reports
+- [Safrole](./traces/safrole): safrole block authoring, no-work-reports
+- [Work Reports L0](./traces/reports-l0): basic work reports, no-safrole
+
+## Vectors Validation
+
+Validation scripts are included to verify the JSON files against the expected
+ASN.1 syntax provided with the test vectors. These scripts currently rely on my
+[asn1tools](https://github.com/davxy/asn1tools) fork.
+
+## Binary To JSON
+
+The repository binary test vector files can be converted to their JSON
+equivalents for easier inspection and debugging. Use the provided conversion
+script to transform binary files into human-readable JSON format:
+
+```bash
+./scripts/convert-all.sh
+```
+
+This conversion script requires the [jam-types](https://github.com/davxy/jam-types)
+Python library to be installed.

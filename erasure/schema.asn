@@ -1,0 +1,16 @@
+-- Erasure coding test vectors schema
+
+ErasureCodingModule DEFINITIONS ::= BEGIN
+
+IMPORTS ByteSequence, validators-count FROM JamTypes;
+
+-- IMPORTS validators-count FROM Constants;
+
+ErasureCodingTestVector ::= SEQUENCE {
+    data ByteSequence,
+    shards SEQUENCE (SIZE(validators-count)) OF ByteSequence
+}
+
+TestCase ::= ErasureCodingTestVector
+
+END

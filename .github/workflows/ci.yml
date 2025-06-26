@@ -1,0 +1,43 @@
+name: CI Workflow
+
+on:
+  # Run CI on push only for 'main' branch
+  push:
+    branches: [master]
+    tags:
+      - "v*"
+  # Run CI on pull request for all branches
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        validator:
+          - codec
+          - erasure
+          - traces
+          - stf/accumulate
+          - stf/assurances
+          - stf/authorizations
+          - stf/disputes
+          - stf/history
+          - stf/preimages
+          - stf/reports
+          - stf/safrole
+          - stf/statistics
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          pip install git+https://github.com/davxy/asn1tools.git
+      - name: Validate ${{ matrix.validator }}
+        run: ./${{ matrix.validator }}/validate.py
+
