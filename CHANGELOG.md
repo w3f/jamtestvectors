@@ -1,6 +1,12 @@
-## v0.6.6 [25-06-2025]
+## [0.6.7] - Unreleased
 
-### Changes
+### Changed
+
+TODO
+
+## [0.6.6] - 25-06-2025
+
+### Changed
 
 - Codebase reorganization
 - Binary to JSON conversion scripts and utilities
@@ -23,6 +29,6 @@ For the `fetch` hostcall id we're still using 18 as per GP 0.6.6. The picked cha
 * Binary to JSON conversion scripts and utilities
 * CI: ASN.1 verification
 
-## v0.6.5 [02-06-2025]
+## [0.6.5] - 02-06-2025
 
 - First Release
