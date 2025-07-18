@@ -228,9 +228,9 @@
                         "balance": 141738,
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
-                        "bytes": 41618,
+                        "bytes": 41678,
                         "deposit-offset": 0,
-                        "items": 2,
+                        "items": 3,
                         "creation-slot": 0,
                         "last-accumulation-slot": 44,
                         "parent-service": 0
