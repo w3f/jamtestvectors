@@ -138,8 +138,16 @@ ServiceInfo ::= SEQUENCE {
     min-memo-gas   Gas,
     -- Total bytes stored by the service
     bytes          U64,
+    -- Offset of storage footprint only above which a minimum deposit is needed.
+    deposit-offset U64,
     -- Number of items stored by the service
-    items          U32
+    items          U32,
+    -- Creation time slot
+    creation-slot  U32,
+    -- Most recent accumulation time slot
+    last-accumulation-slot U32,
+    -- Parent service identifier
+    parent-service U32
 }
 
 --------------------------------------------------------------------------------

@@ -350,7 +350,11 @@
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
                         "bytes": 19999,
-                        "items": 2
+                        "deposit-offset": 0,
+                        "items": 2,
+                        "creation-slot": 0,
+                        "last-accumulation-slot": 0,
+                        "parent-service": 0
                     }
                 }
             }
@@ -609,7 +613,11 @@
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
                         "bytes": 19999,
-                        "items": 2
+                        "deposit-offset": 0,
+                        "items": 2,
+                        "creation-slot": 0,
+                        "last-accumulation-slot": 0,
+                        "parent-service": 0
                     }
                 }
             }
