@@ -264,7 +264,10 @@
         ],
         "privileges": {
             "bless": 0,
-            "assign": 0,
+            "assign": [
+                0,
+                0
+            ],
             "designate": 0,
             "always_acc": []
         },
@@ -570,7 +573,10 @@
         ],
         "privileges": {
             "bless": 0,
-            "assign": 0,
+            "assign": [
+                0,
+                0
+            ],
             "designate": 0,
             "always_acc": []
         },

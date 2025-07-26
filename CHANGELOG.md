@@ -13,6 +13,8 @@
 * Accounts storage deposit offset and additional metadata
   (GP [#397](https://github.com/gavofyork/graypaper/pull/397)
    and [#400](https://github.com/gavofyork/graypaper/pull/400))
+* Privileges for core assignments is now a sequence, one per core
+  (GP #[#393](https://github.com/gavofyork/graypaper/pull/393)
 
 ## [0.6.6] - 25-06-2025
 
