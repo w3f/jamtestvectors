@@ -13,8 +13,11 @@
 * Accounts storage deposit offset and additional metadata
   (GP [#397](https://github.com/gavofyork/graypaper/pull/397)
    and [#400](https://github.com/gavofyork/graypaper/pull/400))
-* Privileges for core assignments is now a sequence, one per core
-  (GP #[#393](https://github.com/gavofyork/graypaper/pull/393)
+* Core assignment privileges is a sequence, one item per core
+  (GP [#393](https://github.com/gavofyork/graypaper/pull/393))
+* Most recent accumulation outputs are stored in state; Recent blocks history now stores
+  the MMR roots only, the full MMR structure relative to the last accumulation is kept
+  separately (GP [#405](https://github.com/gavofyork/graypaper/pull/405))
 
 ## [0.6.6] - 25-06-2025
 
