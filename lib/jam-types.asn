@@ -6,13 +6,20 @@
 
 JamTypes DEFINITIONS ::= BEGIN
 
+--------------------------------------------------------------------------------
+-- Constants
+--------------------------------------------------------------------------------
+
 IMPORTS
-    -- Constants
-    validators-count, epoch-length, cores-count,
+    validators-count, epoch-length, core-count,
     validators-super-majority, avail-bitfield-bytes,
     max-blocks-history, max-tickets-per-block,
     auth-pool-max-size, auth-queue-size
         FROM Constants;
+
+max-blocks-history INTEGER ::= 8
+auth-pool-max-size INTEGER ::= 8
+auth-queue-size INTEGER::= 80
 
 --------------------------------------------------------------------------------
 -- Simple Types
@@ -174,7 +181,7 @@ AvailabilityAssignmentsItem ::= CHOICE {
 }
 
 -- Assignments for all cores in the system
-AvailabilityAssignments ::= SEQUENCE (SIZE(cores-count)) OF AvailabilityAssignmentsItem
+AvailabilityAssignments ::= SEQUENCE (SIZE(core-count)) OF AvailabilityAssignmentsItem
 
 --------------------------------------------------------------------------------
 -- Refine Context
@@ -219,12 +226,12 @@ AuthorizerHash ::= OpaqueHash
 -- Pool of authorizer hashes for a core
 AuthPool ::= SEQUENCE (SIZE(0..auth-pool-max-size)) OF AuthorizerHash
 -- Pools of authorizers for all cores
-AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+AuthPools ::= SEQUENCE (SIZE(core-count)) OF AuthPool
 
 -- Queue of authorizer hashes for a core
 AuthQueue ::= SEQUENCE (SIZE(auth-queue-size)) OF AuthorizerHash
 -- Queues of authorizers for all cores
-AuthQueues ::= SEQUENCE (SIZE(cores-count)) OF AuthQueue
+AuthQueues ::= SEQUENCE (SIZE(core-count)) OF AuthQueue
 
 --------------------------------------------------------------------------------
 -- Work Package
@@ -479,7 +486,7 @@ CoreActivityRecord ::= SEQUENCE {
 }
 
 -- Statistics for all cores
-CoresStatistics ::= SEQUENCE (SIZE(cores-count)) OF CoreActivityRecord
+CoresStatistics ::= SEQUENCE (SIZE(core-count)) OF CoreActivityRecord
 
 -- Record of a service's activity
 ServiceActivityRecord ::= SEQUENCE {
@@ -709,7 +716,7 @@ ReportGuarantee ::= SEQUENCE {
 }
 
 -- Extrinsic containing guarantees for work reports
-GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..cores-count)) OF ReportGuarantee
+GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..core-count)) OF ReportGuarantee
 
 --------------------------------------------------------------------------------
 -- Accumulation
@@ -751,7 +758,7 @@ Privileges ::= SEQUENCE {
     -- Service ID with blessing privileges
     bless ServiceId,
     -- Service ID with assignment privileges
-    assign ServiceId,
+    assign SEQUENCE (SIZE(core-count)) OF ServiceId,
     -- Service ID with designation privileges
     designate ServiceId,
     -- Services that are always accumulated
