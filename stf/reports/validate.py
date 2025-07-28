@@ -21,13 +21,12 @@ def tweak_assignments_sequence_of_options(state_obj):
 
 # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
 def tweak_mmr_sequence_of_options(state_obj):
-    for entry in state_obj['recent_blocks']:
-        peaks = entry['mmr']['peaks']
-        for i in range(len(peaks)):
-            if peaks[i] is None:
-                peaks[i] = {"none": None}
-            else:
-                peaks[i] = {"some": peaks[i]}
+    peaks = state_obj['recent_blocks']['mmr']['peaks']
+    for i in range(len(peaks)):
+        if peaks[i] is None:
+            peaks[i] = {"none": None}
+        else:
+            peaks[i] = {"some": peaks[i]}
     return state_obj
 
 def tweak_callback(json_obj):

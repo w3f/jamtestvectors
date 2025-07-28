@@ -4,7 +4,7 @@ ReportsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
     cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
-    ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
+    ServiceId, ServiceInfo, ValidatorsData, RecentBlocks, AvailabilityAssignments,
     GuaranteesExtrinsic, Ed25519Public, WorkPackageHash, CoresStatistics, ServicesStatistics
         FROM JamTypes;
 
@@ -42,8 +42,8 @@ State ::= SEQUENCE {
     -- [ψ'_o] Posterior offenders.
     offenders SEQUENCE OF Ed25519Public,
 
-    -- [β] Recent blocks.
-    recent-blocks BlocksHistory,
+    -- [β] Recent blocks information.
+    recent-blocks RecentBlocks,
 
     -- [α] Authorization pools.
     auth-pools AuthPools,

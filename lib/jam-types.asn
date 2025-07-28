@@ -413,9 +413,9 @@ ReportedWorkPackage ::= SEQUENCE {
 BlockInfo ::= SEQUENCE {
     -- Hash of the block header
     header-hash    HeaderHash,
-    -- Merkle Mountain Range
-    mmr            Mmr,
-    -- Posterior state root at this block
+    -- Merkle Mountain Range root
+    beefy-root     OpaqueHash,
+    -- Posterior state root
     state-root     StateRoot,
     -- Work packages reported in this block
     reported       SEQUENCE OF ReportedWorkPackage
@@ -423,6 +423,14 @@ BlockInfo ::= SEQUENCE {
  
 -- History of recent blocks
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
+
+-- Imported Blocks Information
+RecentBlocks ::= SEQUENCE {
+    -- Recent blocks history
+    history    BlocksHistory,
+    -- MMR
+    mmr        Mmr
+}
 
 --------------------------------------------------------------------------------
 -- Statistics

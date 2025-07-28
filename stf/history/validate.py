@@ -12,13 +12,12 @@ os.chdir(script_dir)
 
 # Makes the SEQUENCE of OPTIONAL values ASN.1 compliant (using CHOICE)
 def tweak_sequence_of_options(state_obj):
-    for entry in state_obj['beta']:
-        peaks = entry['mmr']['peaks']
-        for i in range(len(peaks)):
-            if peaks[i] is None:
-                peaks[i] = {"none": None}
-            else:
-                peaks[i] = {"some": peaks[i]}
+    peaks = state_obj['beta']['mmr']['peaks']
+    for i in range(len(peaks)):
+        if peaks[i] is None:
+            peaks[i] = {"none": None}
+        else:
+            peaks[i] = {"some": peaks[i]}
     return state_obj
 
 def tweak_callback(json_obj):  
