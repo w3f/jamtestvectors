@@ -1,4 +1,4 @@
-## [0.6.7] - Unreleased
+## [0.6.7] - 30-07-2025
 
 ### Changed
 
@@ -18,6 +18,7 @@
 * Most recent accumulation outputs are stored in state; Recent blocks history now stores
   the MMR roots only, the full MMR structure relative to the last accumulation is kept
   separately (GP [#405](https://github.com/gavofyork/graypaper/pull/405))
+* New bundle size limit (GP [#407](https://github.com/gavofyork/graypaper/pull/407))
 
 ## [0.6.6] - 25-06-2025
 
