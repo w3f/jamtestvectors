@@ -1,3 +1,10 @@
+## [0.7.0] - Unreleased
+
+### Changed
+
+* Serialization: Move all variable-length items to end of encoding
+  (GP [#418](https://github.com/gavofyork/graypaper/pull/418))
+
 ## [0.6.7] - 31-07-2025
 
 ### Changed
