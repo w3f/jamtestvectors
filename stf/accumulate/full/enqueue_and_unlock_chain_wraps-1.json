@@ -1822,11 +1822,11 @@
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
                         "bytes": 41663,
-                        "deposit-offset": 0,
+                        "deposit_offset": 0,
                         "items": 3,
-                        "creation-slot": 0,
-                        "last-accumulation-slot": 1798,
-                        "parent-service": 0
+                        "creation_slot": 0,
+                        "last_accumulation_slot": 1798,
+                        "parent_service": 0
                     },
                     "storage": [
                         {
@@ -3658,11 +3658,11 @@
                         "min_item_gas": 10,
                         "min_memo_gas": 10,
                         "bytes": 41663,
-                        "deposit-offset": 0,
+                        "deposit_offset": 0,
                         "items": 3,
-                        "creation-slot": 0,
-                        "last-accumulation-slot": 1798,
-                        "parent-service": 0
+                        "creation_slot": 0,
+                        "last_accumulation_slot": 1798,
+                        "parent_service": 0
                     },
                     "storage": [
                         {
