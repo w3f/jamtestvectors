@@ -20,6 +20,7 @@
                     },
                     "core_index": 0,
                     "authorizer_hash": "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                    "auth_gas_used": 0,
                     "auth_output": "0x",
                     "segment_root_lookup": [],
                     "results": [
@@ -39,14 +40,13 @@
                                 "exports": 17
                             }
                         }
-                    ],
-                    "auth_gas_used": 0
+                    ]
                 },
                 "slot": 605,
                 "signatures": [
                     {
                         "validator_index": 16,
-                        "signature": "0xe64ba963d649e77214a949040312b57ad7430505c967e1edad2209811cb2efe6c6664bada2eeff5b830bd803365568bb870a8f12cbaca3b535a67158b34cef09"
+                        "signature": "0x67b45e1055e86d279228e756e3d81ffea230ac0915e254ee02f338bea78f8feb2d0e1b4228ad7bc29e2863a6c52765ea7a4eee8ef8de4f065265237bd04fe805"
                     }
                 ]
             }
