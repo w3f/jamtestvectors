@@ -209,7 +209,7 @@
         }
     },
     "post_state": {
-        "state_root": "0x02904ebded74f684c40c36e570a6edf75a9a0fde622b174319bd02d16393be22",
+        "state_root": "0x402a2a15b0439e8bdff1dd95fba30bdae31f33c38c22fbfd13eab222f9117596",
         "keyvals": [
             {
                 "key": "0x000600ef00f8002e2bc69a072846ddfa56ea66f5b51049d2640e94bde9584c",
@@ -321,7 +321,7 @@
             },
             {
                 "key": "0xff000000000000000000000000000000000000000000000000000000000000",
-                "value": "0xd1f8c2ada30847fd9c3996356b0f9b2bddec864462b561b361404cf8cd3375d8ffffffffffffffff0a000000000000000a000000000000006f78020000000000ffffffffffffffff0b000000000000000000000000000000"
+                "value": "0xd1f8c2ada30847fd9c3996356b0f9b2bddec864462b561b361404cf8cd3375d8ffffffffffffffff0a000000000000000a000000000000006f78020000000000ffffffffffffffff0b000000000000000300000000000000"
             }
         ]
     }
