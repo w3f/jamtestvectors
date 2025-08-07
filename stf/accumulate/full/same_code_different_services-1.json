@@ -3325,7 +3325,7 @@
                         "deposit_offset": 0,
                         "items": 2,
                         "creation_slot": 0,
-                        "last_accumulation_slot": 0,
+                        "last_accumulation_slot": 43,
                         "parent_service": 0
                     },
                     "storage": [],
