@@ -15,14 +15,10 @@ from jam_types import (
     WorkPackageHash,
     CoresStatistics,
     ServicesStatistics,
-    BlockInfo,
-    Vec
+    RecentBlocks,
 )
 from jam_types import class_name as n
 
-
-class ReportsBlocksInfo(Vec):
-    sub_type = n(BlockInfo)
 
 class ReportsAccountMapData(Struct):
     type_mapping = [
@@ -42,7 +38,7 @@ class ReportsState(Struct):
         ('prev_validators', n(ValidatorsData)),
         ('entropy', n(EntropyBuffer)),
         ('offenders', 'Vec<Ed25519Public>'),
-        ('recent_blocks', n(ReportsBlocksInfo)),
+        ('recent_blocks', n(RecentBlocks)),
         ('auth_pools', n(AuthPools)),
         ('accounts', 'Vec<ReportsAccountMapEntry>'),
         ('cores_statistics', n(CoresStatistics)),

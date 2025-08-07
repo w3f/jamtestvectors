@@ -6,13 +6,20 @@
 
 JamTypes DEFINITIONS ::= BEGIN
 
+--------------------------------------------------------------------------------
+-- Constants
+--------------------------------------------------------------------------------
+
 IMPORTS
-    -- Constants
-    validators-count, epoch-length, cores-count,
+    validators-count, epoch-length, core-count,
     validators-super-majority, avail-bitfield-bytes,
     max-blocks-history, max-tickets-per-block,
     auth-pool-max-size, auth-queue-size
         FROM Constants;
+
+max-blocks-history INTEGER ::= 8
+auth-pool-max-size INTEGER ::= 8
+auth-queue-size INTEGER::= 80
 
 --------------------------------------------------------------------------------
 -- Simple Types
@@ -138,8 +145,16 @@ ServiceInfo ::= SEQUENCE {
     min-memo-gas   Gas,
     -- Total bytes stored by the service
     bytes          U64,
+    -- Offset of storage footprint only above which a minimum deposit is needed.
+    deposit-offset U64,
     -- Number of items stored by the service
-    items          U32
+    items          U32,
+    -- Creation time slot
+    creation-slot  U32,
+    -- Most recent accumulation time slot
+    last-accumulation-slot U32,
+    -- Parent service identifier
+    parent-service U32
 }
 
 --------------------------------------------------------------------------------
@@ -166,7 +181,7 @@ AvailabilityAssignmentsItem ::= CHOICE {
 }
 
 -- Assignments for all cores in the system
-AvailabilityAssignments ::= SEQUENCE (SIZE(cores-count)) OF AvailabilityAssignmentsItem
+AvailabilityAssignments ::= SEQUENCE (SIZE(core-count)) OF AvailabilityAssignmentsItem
 
 --------------------------------------------------------------------------------
 -- Refine Context
@@ -211,12 +226,12 @@ AuthorizerHash ::= OpaqueHash
 -- Pool of authorizer hashes for a core
 AuthPool ::= SEQUENCE (SIZE(0..auth-pool-max-size)) OF AuthorizerHash
 -- Pools of authorizers for all cores
-AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+AuthPools ::= SEQUENCE (SIZE(core-count)) OF AuthPool
 
 -- Queue of authorizer hashes for a core
 AuthQueue ::= SEQUENCE (SIZE(auth-queue-size)) OF AuthorizerHash
 -- Queues of authorizers for all cores
-AuthQueues ::= SEQUENCE (SIZE(cores-count)) OF AuthQueue
+AuthQueues ::= SEQUENCE (SIZE(core-count)) OF AuthQueue
 
 --------------------------------------------------------------------------------
 -- Work Package
@@ -405,9 +420,9 @@ ReportedWorkPackage ::= SEQUENCE {
 BlockInfo ::= SEQUENCE {
     -- Hash of the block header
     header-hash    HeaderHash,
-    -- Merkle Mountain Range
-    mmr            Mmr,
-    -- Posterior state root at this block
+    -- Merkle Mountain Range root
+    beefy-root     OpaqueHash,
+    -- Posterior state root
     state-root     StateRoot,
     -- Work packages reported in this block
     reported       SEQUENCE OF ReportedWorkPackage
@@ -415,6 +430,14 @@ BlockInfo ::= SEQUENCE {
  
 -- History of recent blocks
 BlocksHistory ::= SEQUENCE (SIZE(0..max-blocks-history)) OF BlockInfo
+
+-- Imported Blocks Information
+RecentBlocks ::= SEQUENCE {
+    -- Recent blocks history
+    history    BlocksHistory,
+    -- MMR
+    mmr        Mmr
+}
 
 --------------------------------------------------------------------------------
 -- Statistics
@@ -463,7 +486,7 @@ CoreActivityRecord ::= SEQUENCE {
 }
 
 -- Statistics for all cores
-CoresStatistics ::= SEQUENCE (SIZE(cores-count)) OF CoreActivityRecord
+CoresStatistics ::= SEQUENCE (SIZE(core-count)) OF CoreActivityRecord
 
 -- Record of a service's activity
 ServiceActivityRecord ::= SEQUENCE {
@@ -693,7 +716,7 @@ ReportGuarantee ::= SEQUENCE {
 }
 
 -- Extrinsic containing guarantees for work reports
-GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..cores-count)) OF ReportGuarantee
+GuaranteesExtrinsic ::= SEQUENCE (SIZE(0..core-count)) OF ReportGuarantee
 
 --------------------------------------------------------------------------------
 -- Accumulation
@@ -735,7 +758,7 @@ Privileges ::= SEQUENCE {
     -- Service ID with blessing privileges
     bless ServiceId,
     -- Service ID with assignment privileges
-    assign ServiceId,
+    assign SEQUENCE (SIZE(core-count)) OF ServiceId,
     -- Service ID with designation privileges
     designate ServiceId,
     -- Services that are always accumulated

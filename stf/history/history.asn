@@ -3,12 +3,12 @@
 HistoryModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    OpaqueHash, ReportedWorkPackage, BlocksHistory, HeaderHash, StateRoot
+    OpaqueHash, ReportedWorkPackage, RecentBlocks, HeaderHash, StateRoot
         FROM JamTypes;
 
 State ::= SEQUENCE {
-    -- [β] Prior recent blocks history. Mutated to ϐ'.
-    beta BlocksHistory
+    -- [β] Prior recent blocks information. Mutated to ϐ'.
+    beta RecentBlocks
 }
 
 Input ::= SEQUENCE {
