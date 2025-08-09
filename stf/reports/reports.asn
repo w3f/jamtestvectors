@@ -3,8 +3,8 @@
 ReportsModule DEFINITIONS ::= BEGIN
 
 IMPORTS
-    cores-count, OpaqueHash, TimeSlot, EntropyBuffer,
-    ServiceId, ServiceInfo, ValidatorsData, BlocksHistory, AvailabilityAssignments,
+    core-count, OpaqueHash, TimeSlot, EntropyBuffer,
+    ServiceId, ServiceInfo, ValidatorsData, RecentBlocks, AvailabilityAssignments,
     GuaranteesExtrinsic, Ed25519Public, WorkPackageHash, CoresStatistics, ServicesStatistics
         FROM JamTypes;
 
@@ -22,7 +22,7 @@ AccountsMapEntry ::= SEQUENCE {
 
 AuthPool ::= SEQUENCE OF OpaqueHash
 
-AuthPools ::= SEQUENCE (SIZE(cores-count)) OF AuthPool
+AuthPools ::= SEQUENCE (SIZE(core-count)) OF AuthPool
 
 State ::= SEQUENCE {
     -- [ρ‡] Intermediate pending reports after that any work report judged as
@@ -42,8 +42,8 @@ State ::= SEQUENCE {
     -- [ψ'_o] Posterior offenders.
     offenders SEQUENCE OF Ed25519Public,
 
-    -- [β] Recent blocks.
-    recent-blocks BlocksHistory,
+    -- [β] Recent blocks information.
+    recent-blocks RecentBlocks,
 
     -- [α] Authorization pools.
     auth-pools AuthPools,
@@ -115,7 +115,8 @@ ErrorCode ::= ENUMERATED {
     too-many-dependencies (19),
     segment-root-lookup-invalid (20),
     bad-signature (21),
-    work-report-too-big (22)
+    work-report-too-big (22),
+    banned-validator (23)
 }
 
 Output ::= CHOICE {
