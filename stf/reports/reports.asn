@@ -116,7 +116,8 @@ ErrorCode ::= ENUMERATED {
     segment-root-lookup-invalid (20),
     bad-signature (21),
     work-report-too-big (22),
-    banned-validator (23)
+    banned-validator (23),
+    lookup-anchor-not-recent (24)
 }
 
 Output ::= CHOICE {
