@@ -15,9 +15,7 @@ Both the binary and json formats adhere to the overarching JAM protocol ASN.1
 
 ## Gas Costs
 
-The gas cost for a single instruction is set to **$1$**, unlike in GP where
-it is set to $0$. This distinction is primarily intended to verify correct
-tracking of gas consumption.
+The gas cost for a single instruction is set to **$1$**
 
 All host calls have a gas cost of **$10$**, with the following exceptions:
 - **`transfer`**: Gas cost is set to **$10 + \omega_9$**, as specified in the GP.
@@ -25,7 +23,7 @@ All host calls have a gas cost of **$10$**, with the following exceptions:
 
 ## Vectors
 
-- [Fallback](./fallback): fallback block authoring, no-safrole, no-work-reports
+- [Fallback](./fallback): fallback block authoring, no-work-reports
 - [Safrole](./safrole): safrole block authoring, no-work-reports
 - [Storage](./storage): no-safrole, storage related reports (read/write)
 - [Preimages](./preimages): no-safrole, preimages related reports (solicit/forget)
