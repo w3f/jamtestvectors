@@ -31,9 +31,6 @@ class RawState(Struct):
         ('keyvals', n(KeyValues))
     ]
 
-class Bootnodes(Vec):
-    sub_type = n(String)
-
 class Genesis(Struct):
     type_mapping = [
         ('header', n(Header)),
