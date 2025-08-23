@@ -23,10 +23,12 @@ All host calls have a gas cost of **$10$**, with the following exceptions:
 
 ## Vectors
 
-- [Fallback](./fallback): fallback block authoring, no-work-reports
-- [Safrole](./safrole): safrole block authoring, no-work-reports
-- [Storage](./storage): no-safrole, storage related reports (read/write)
-- [Preimages](./preimages): no-safrole, preimages related reports (solicit/forget)
+- [Fallback](./fallback): fallback block authoring, no work reports.
+- [Safrole](./safrole): safrole block authoring, no work reports.
+- [Storage](./storage): no-safrole, service storage related work reports.
+- [Preimages](./preimages): no-safrole, preimages related work reports.
+- [Storage Light](./storage_light): no-safrole, service related work reports.
+- [Preimages LIght](./preimages_light): no-safrole, preimages related work reports.
 
 Traces with work reports come in two variants: standard versions containing up
 to 6 work items per report, and lightweight versions limited to a single work
