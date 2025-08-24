@@ -1,23 +1,5 @@
 # State Transition Function Test Vectors
 
-We offer two types of test vectors:
-
-- **Tiny**: designed for quick adjustments and prototyping, with reduced
-  - validators count: 6
-  - cores count: 2
-  - epoch period: 12
-  - core assignment rotation period: 4
-  - ticket attempts: 3
-
-- **Full**: vectors with production specs
-  - validators count: 1023
-  - cores count: 341
-  - epoch period: 600
-  - core assignment rotation period: 10
-  - ticket attempts: 2
-
-For more information refer to the community [docs](https://docs.jamcha.in/basics/chain-spec).
-
 ## STF Output
 
 Technically, the STF execution process does not inherently produce auxiliary

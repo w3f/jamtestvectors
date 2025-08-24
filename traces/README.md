@@ -4,6 +4,10 @@ Import full blocks starting from genesis, implementing the complete logic
 required of a block importer that complies with the specifications outlined
 in Graypaper Milestone 1 (M1).
 
+## Chainspec
+
+The traces vectors are provided for **tiny** configuration only.
+
 ## Schema
 
 The schema is designed to be sufficiently generic to allow easy processing by
