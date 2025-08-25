@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import os
 import sys
 from pathlib import Path
@@ -31,9 +32,6 @@ class RawState(Struct):
         ('keyvals', n(KeyValues))
     ]
 
-class Bootnodes(Vec):
-    sub_type = n(String)
-
 class Genesis(Struct):
     type_mapping = [
         ('header', n(Header)),
@@ -60,4 +58,12 @@ def convert_dir(dir):
 
 spec.set_spec("tiny")
 
-convert_dir(".")
+def main():
+    parser = argparse.ArgumentParser(description='Convert trace files from binary to JSON format')
+    parser.add_argument('folder', nargs='?', default='.', help='Folder to convert (default: current directory)')
+    args = parser.parse_args()
+    
+    convert_dir(args.folder)
+
+if __name__ == "__main__":
+    main()

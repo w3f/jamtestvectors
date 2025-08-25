@@ -99,5 +99,6 @@ class ReportsTestVector(StfTestVector):
         20: "segment_root_lookup_invalid",
         21: "bad_signature",
         22: "work_report_too_big",
-        23: "banned_validator"
+        23: "banned_validator",
+        24: "lookup_anchor_not_recent"
      }

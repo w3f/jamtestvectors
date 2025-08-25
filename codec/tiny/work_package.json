@@ -1,10 +1,6 @@
 {
-    "authorization": "0x0102030405",
     "auth_code_host": 305419896,
-    "authorizer": {
-        "code_hash": "0x022e5e165cc8bd586404257f5cd6f5a31177b5c951eb076c7c10174f90006eef",
-        "params": "0x00010203040506070809"
-    },
+    "auth_code_hash": "0x022e5e165cc8bd586404257f5cd6f5a31177b5c951eb076c7c10174f90006eef",
     "context": {
         "anchor": "0xc0564c5e0de0942589df4343ad1956da66797240e2a2f2d6f8116b5047768986",
         "state_root": "0xf6967658df626fa39cbfb6014b50196d23bc2cfbfa71a7591ca7715472dd2b48",
@@ -13,13 +9,16 @@
         "lookup_anchor_slot": 33,
         "prerequisites": []
     },
+    "authorization": "0x0102030405",
+    "authorizer_config": "0x00010203040506070809",
     "items": [
         {
             "service": 16909060,
             "code_hash": "0x70a50829851e8f6a8c80f92806ae0e95eb7c06ad064e311cc39107b3219e532e",
-            "payload": "0x0102030405",
             "refine_gas_limit": 42,
             "accumulate_gas_limit": 42,
+            "export_count": 4,
+            "payload": "0x0102030405",
             "import_segments": [
                 {
                     "tree_root": "0x461236a7eb29dcffc1dd282ce1de0e0ed691fc80e91e02276fe8f778f088a1b8",
@@ -43,15 +42,15 @@
                     "hash": "0x6c437d85cd8327f42a35d427ede1b5871347d3aae7442f2df1ff80f834acf17a",
                     "len": 17
                 }
-            ],
-            "export_count": 4
+            ]
         },
         {
             "service": 84281096,
             "code_hash": "0xfcfc857dab216daf41f409c2012685846e4d34aedfeacaf84d9adfebda73fae6",
-            "payload": "0x030201",
             "refine_gas_limit": 77,
             "accumulate_gas_limit": 77,
+            "export_count": 7,
+            "payload": "0x030201",
             "import_segments": [
                 {
                     "tree_root": "0x3e5d0bea78537414bd1cfdaeb0f22d743bcaba5dbffacbabce8457f4cd78f69b",
@@ -75,8 +74,7 @@
                     "hash": "0xcc2f47030ff8a9fe8d02e8eb87e86d4db05b57258d30f9d81acb3b280d04e877",
                     "len": 34
                 }
-            ],
-            "export_count": 7
+            ]
         }
     ]
 }

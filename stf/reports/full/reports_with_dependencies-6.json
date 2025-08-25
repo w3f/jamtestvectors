@@ -20,6 +20,7 @@
                     },
                     "core_index": 0,
                     "authorizer_hash": "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                    "auth_gas_used": 0,
                     "auth_output": "0x",
                     "segment_root_lookup": [
                         {
@@ -44,22 +45,21 @@
                                 "exports": 17
                             }
                         }
-                    ],
-                    "auth_gas_used": 0
+                    ]
                 },
                 "slot": 610,
                 "signatures": [
                     {
                         "validator_index": 229,
-                        "signature": "0xe97a1feba4089be7ac57384c266c0526aecc87d54998408fecbfd2ea7989c548b8bb876414bbfd3240bd75009f11d4168d236210e6067bca3d85d02e849d0c06"
+                        "signature": "0x19fb113702edabfcf1bbc743f266ce8c50d8a4aaa656d4d4c3bfbfa974250286992c54719d9f2eca884f6d19c8587c8c6a92b9ca78b2bc847152ca9f23915507"
                     },
                     {
                         "validator_index": 640,
-                        "signature": "0x788fe7baaadef5f4fa95421fb786eb1f7f2f580a1f5eb283a6b8d198b536971bbac263d84999a37730ac3085a71981dd84d0060879c3c8b5178a70ef4b9e5205"
+                        "signature": "0xb4cc5a0473de949ef7339257b69a64fb574ea3f125c656d1b9702ace34cf99811e484d2fbafd36f33aca9a2fbe2c62d7f889e1a1ec416cc0d847076d614f3909"
                     },
                     {
                         "validator_index": 663,
-                        "signature": "0xae800e6e799fc18c00a0dcef02a357df04987b21d9b3894b547ca9a6877f85b57a994c4660c0978721b36bf5ed0856726adfbad7771aff90f614361f1c5e660b"
+                        "signature": "0x2738b07d952a92f332d9bf83c72b7acb363b8d4a80eae1633306e6ec3c0271bf732a450d83a5bca061cd6ee6af6549595a92e32ac66ec1fc6c73dc7dacdff00f"
                     }
                 ]
             }
@@ -17249,6 +17249,7 @@
                     },
                     "core_index": 0,
                     "authorizer_hash": "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                    "auth_gas_used": 0,
                     "auth_output": "0x",
                     "segment_root_lookup": [
                         {
@@ -17273,8 +17274,7 @@
                                 "exports": 17
                             }
                         }
-                    ],
-                    "auth_gas_used": 0
+                    ]
                 },
                 "timeout": 610
             },

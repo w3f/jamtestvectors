@@ -52,15 +52,16 @@ dump_classes = {
     "block": Block,
 }
 
-
 def convert(spec_name):
     print(f"\n[Converting codec ({spec_name})]")
     spec.set_spec(spec_name)
     for filename in glob.glob(f"{spec_name}/*.bin"):
-        print("* Converting ", filename)
         basename = os.path.splitext(os.path.basename(filename))[0]
         basename = re.sub(r'_\d+$', '', basename)
-        class_type = dump_classes[basename]
+        class_type = dump_classes.get(basename)
+        if class_type is None:
+            print("* Skipping: ", filename)
+            continue
         convert_to_json(filename, class_type)   
 
 for spec_name in ["tiny", "full"]:

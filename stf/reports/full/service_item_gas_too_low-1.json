@@ -20,6 +20,7 @@
                     },
                     "core_index": 0,
                     "authorizer_hash": "0x9a3a97d1950356ef6d3c20acb5ab6699be454b1498ecd513bdc6d849497e42eb",
+                    "auth_gas_used": 0,
                     "auth_output": "0x",
                     "segment_root_lookup": [],
                     "results": [
@@ -39,22 +40,21 @@
                                 "exports": 17
                             }
                         }
-                    ],
-                    "auth_gas_used": 0
+                    ]
                 },
                 "slot": 605,
                 "signatures": [
                     {
                         "validator_index": 16,
-                        "signature": "0xbfdf9f877afc44e805c355281193fec425941e478838a02eef78857f5a80e50b89d506821148f170bd11e13efba7b8905832473f6c6dc9aabf55a9e9eac43e00"
+                        "signature": "0xc1e7930374241c9b3e4d9906e52df6aaa4b94aaa5b00c07e6826818d0f2aa94d05e7348f2e937584856ac3d9647978cb9dabb8911ecd0facbf3f04fe6e919101"
                     },
                     {
                         "validator_index": 450,
-                        "signature": "0x01f1c86563475d1feae6a9fb5c33a8b9f7542d3f12980ceb4ecf1708298268b87a548c791a9c3a7f3ae52a8d1248e810a1bfc068253d8d4938825b0a4833250f"
+                        "signature": "0x7a35bb1f044d63b92511bab5b9bf895bf9bb9afa69a21a1f0c48670577df98f26d8f16a3c82888758c78bcc5aeb669aab5439d9d17659cb53bf4ea496b9a6302"
                     },
                     {
                         "validator_index": 1014,
-                        "signature": "0x254070314bd75e0a1a95b15cb92911fea24431c9aa497b1669a62ee770ae426fa0a3b7e6db71a744306da737f776660c83eeaaf24d37ec346f76a48bf9482600"
+                        "signature": "0x072d55b086a836eff846dd15afb8861a1b964f79eafb8265fdf5811889ea299fc9a3159f8a51513697c8c6382814e3dab72ac4d907ac282269ff072561543904"
                     }
                 ]
             }

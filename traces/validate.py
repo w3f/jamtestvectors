@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import argparse
 import os
 import sys
 from pathlib import Path
@@ -25,4 +26,12 @@ def validate_dir(dir):
             print("[VALIDATING: '{}']".format(filename))
             validate_dir(filename)
 
-validate_dir(".")
+def main():
+    parser = argparse.ArgumentParser(description='Validate trace files in JSON format')
+    parser.add_argument('folder', nargs='?', default='.', help='Folder to validate (default: current directory)')
+    args = parser.parse_args()
+    
+    validate_dir(args.folder)
+
+if __name__ == "__main__":
+    main()
