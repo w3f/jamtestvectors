@@ -1,0 +1,49 @@
+{
+  "name": "inst_move_reg",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    2,
+    100,
+    121,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 2,
+  "expected-memory": [],
+  "expected-gas": 9998
+}

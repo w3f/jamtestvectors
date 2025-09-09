@@ -1,0 +1,50 @@
+{
+  "name": "inst_set_greater_than_signed_imm_1",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    143,
+    121,
+    246,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 3,
+  "expected-memory": [],
+  "expected-gas": 9998
+}

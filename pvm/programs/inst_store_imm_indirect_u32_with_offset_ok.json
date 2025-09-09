@@ -1,0 +1,71 @@
+{
+  "name": "inst_store_imm_indirect_u32_with_offset_ok",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    134908,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [
+    {
+      "address": 131072,
+      "length": 4096,
+      "is-writable": true
+    }
+  ],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    8,
+    72,
+    39,
+    0,
+    1,
+    120,
+    86,
+    52,
+    18,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    134908,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 8,
+  "expected-memory": [
+    {
+      "address": 135164,
+      "contents": [
+        120,
+        86,
+        52,
+        18
+      ]
+    }
+  ],
+  "expected-gas": 9998
+}

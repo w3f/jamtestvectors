@@ -1,0 +1,50 @@
+{
+  "name": "inst_add_32_with_truncation_and_sign_extension",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3689348814455579170,
+    3689348815600903782,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    190,
+    135,
+    9,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3689348814455579170,
+    3689348815600903782,
+    18446744071705233544,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 3,
+  "expected-memory": [],
+  "expected-gas": 9998
+}

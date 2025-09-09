@@ -1,0 +1,50 @@
+{
+  "name": "inst_xor",
+  "initial-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial-pc": 0,
+  "initial-page-map": [],
+  "initial-memory": [],
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    211,
+    135,
+    9,
+    1
+  ],
+  "expected-status": "panic",
+  "expected-regs": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    3,
+    6,
+    0,
+    0,
+    0
+  ],
+  "expected-pc": 3,
+  "expected-memory": [],
+  "expected-gas": 9998
+}
