@@ -262,30 +262,32 @@ WorkItem ::= SEQUENCE {
     service ServiceId,
     -- Hash of the code to execute
     code-hash OpaqueHash,
-    -- Input payload for the work item
-    payload ByteSequence,
     -- Gas limit for refinement phase
     refine-gas-limit Gas,
     -- Gas limit for accumulation phase
     accumulate-gas-limit Gas,
+    -- Number of exported segments
+    export-count U16,
+    -- Input payload for the work item
+    payload ByteSequence,
     -- Segments to import
     import-segments SEQUENCE OF ImportSpec,
     -- Extrinsics to include
-    extrinsic SEQUENCE OF ExtrinsicSpec,
-    -- Number of exported segments
-    export-count U16
+    extrinsic SEQUENCE OF ExtrinsicSpec
 }
 
 -- Complete work package containing multiple work items
 WorkPackage ::= SEQUENCE {
-    -- Authorization data
-    authorization ByteSequence,
     -- Service ID hosting the authorization code
     auth-code-host ServiceId,
-    -- Authorizer for this package
-    authorizer Authorizer,
+    -- Hash of the authorizer's code
+    auth-code-hash OpaqueHash,
     -- Refinement context
     context RefineContext,
+    -- Authorization data
+    authorization ByteSequence,
+    -- Parameters for the authorizer
+    authorizer-config ByteSequence,
     -- Work items to process (1-16)
     items SEQUENCE (SIZE(1..16)) OF WorkItem
 }
@@ -378,14 +380,14 @@ WorkReport ::= SEQUENCE {
     core-index CoreIndex,
     -- Hash of the authorizer
     authorizer-hash OpaqueHash,
+    -- Gas used during authorization
+    auth-gas-used Gas,
     -- Output from the authorization process
     auth-output ByteSequence,
     -- Segment root lookups
     segment-root-lookup SegmentRootLookup,
     -- Results of executing each work item
-    results SEQUENCE (SIZE(1..16)) OF WorkResult,
-    -- Gas used during authorization
-    auth-gas-used Gas
+    results SEQUENCE (SIZE(1..16)) OF WorkResult
 }
 
 --------------------------------------------------------------------------------
@@ -473,12 +475,12 @@ CoreActivityRecord ::= SEQUENCE {
     popularity      U16,
     -- Number of segments imported from DA for block processing
     imports         U16,
-    -- Number of segments exported to DA during block processing
-    exports         U16,
-    -- Total size of extrinsics for reported work.
-    extrinsic-size  U32,
     -- Total number of extrinsics for reported work.
     extrinsic-count U16,
+    -- Total size of extrinsics for reported work.
+    extrinsic-size  U32,
+    -- Number of segments exported to DA during block processing
+    exports         U16,
     -- Serialized work bundle size written to DA.
     bundle-size     U32,
     -- Total gas consumed during block processing (includes refinements and authorizations).
@@ -500,12 +502,12 @@ ServiceActivityRecord ::= SEQUENCE {
     refinement-gas-used   Gas,
     -- Number of segments imported from the DL
     imports               U32,
-    -- Number of segments exported into the DL
-    exports               U32,
-    -- Total size of extrinsics used
-    extrinsic-size        U32,
     -- Total number of extrinsics used
     extrinsic-count       U32,
+    -- Total size of extrinsics used
+    extrinsic-size        U32,
+    -- Number of segments exported into the DL
+    exports               U32,
     -- Number of work-items accumulated
     accumulate-count      U32,
     -- Amount of gas used for accumulation
@@ -809,12 +811,12 @@ Header ::= SEQUENCE {
     epoch-mark         EpochMark OPTIONAL,
     -- Mark for tickets
     tickets-mark       TicketsMark OPTIONAL,
-    -- Mark for offenders
-    offenders-mark     OffendersMark,
     -- Index of the validator who authored this block
     author-index       ValidatorIndex,
     -- Source of entropy for this block
     entropy-source     BandersnatchVrfSignature,
+    -- Mark for offenders
+    offenders-mark     OffendersMark,
     -- Seal signature for this block
     seal               BandersnatchVrfSignature
 }

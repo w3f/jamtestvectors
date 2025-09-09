@@ -1,3 +1,12 @@
+## [0.7.0] - 26-08-2025
+
+### Changed
+
+* Serialization: Move all variable-length items to end of encoding
+  (GP [#418](https://github.com/gavofyork/graypaper/pull/418))
+* Rearrange the items in `CoreActivityRecord` and `ServiceActivityRecord`,
+  refer to the ASN.1 schema and GP (no explicit GP PR).
+
 ## [0.6.7] - 07-08-2025
 
 ### Changed

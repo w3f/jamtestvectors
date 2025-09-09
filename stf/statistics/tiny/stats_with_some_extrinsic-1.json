@@ -47,6 +47,7 @@
                         },
                         "core_index": 0,
                         "authorizer_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "auth_gas_used": 0,
                         "auth_output": "0x",
                         "segment_root_lookup": [],
                         "results": [
@@ -66,8 +67,7 @@
                                     "exports": 0
                                 }
                             }
-                        ],
-                        "auth_gas_used": 0
+                        ]
                     },
                     "slot": 0,
                     "signatures": [
@@ -100,6 +100,7 @@
                         },
                         "core_index": 0,
                         "authorizer_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "auth_gas_used": 0,
                         "auth_output": "0x",
                         "segment_root_lookup": [],
                         "results": [
@@ -119,8 +120,7 @@
                                     "exports": 0
                                 }
                             }
-                        ],
-                        "auth_gas_used": 0
+                        ]
                     },
                     "slot": 0,
                     "signatures": [

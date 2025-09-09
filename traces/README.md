@@ -4,6 +4,10 @@ Import full blocks starting from genesis, implementing the complete logic
 required of a block importer that complies with the specifications outlined
 in Graypaper Milestone 1 (M1).
 
+## Chainspec
+
+The traces vectors are provided for **tiny** configuration only.
+
 ## Schema
 
 The schema is designed to be sufficiently generic to allow easy processing by
@@ -15,9 +19,7 @@ Both the binary and json formats adhere to the overarching JAM protocol ASN.1
 
 ## Gas Costs
 
-The gas cost for a single instruction is set to **$1$**, unlike in GP where
-it is set to $0$. This distinction is primarily intended to verify correct
-tracking of gas consumption.
+The gas cost for a single instruction is set to **$1$**
 
 All host calls have a gas cost of **$10$**, with the following exceptions:
 - **`transfer`**: Gas cost is set to **$10 + \omega_9$**, as specified in the GP.
@@ -25,10 +27,12 @@ All host calls have a gas cost of **$10$**, with the following exceptions:
 
 ## Vectors
 
-- [Fallback](./fallback): fallback block authoring, no-safrole, no-work-reports
-- [Safrole](./safrole): safrole block authoring, no-work-reports
-- [Storage](./storage): no-safrole, storage related reports (read/write)
-- [Preimages](./preimages): no-safrole, preimages related reports (solicit/forget)
+- [Fallback](./fallback): fallback block authoring, no work reports.
+- [Safrole](./safrole): safrole block authoring, no work reports.
+- [Storage](./storage): no-safrole, service storage related work reports.
+- [Preimages](./preimages): no-safrole, preimages related work reports.
+- [Storage Light](./storage_light): no-safrole, service related work reports.
+- [Preimages LIght](./preimages_light): no-safrole, preimages related work reports.
 
 Traces with work reports come in two variants: standard versions containing up
 to 6 work items per report, and lightweight versions limited to a single work

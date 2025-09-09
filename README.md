@@ -1,70 +1,11 @@
-# Test Vectors for the JAM Protocol (0.6.7)
+# Test Vectors for the JAM Protocol (0.7.0)
 
-## Codec
- 
+## Classes
+
 - [Codec](./codec/README.md)
-
-## Erasure Coding
-
 - [Erasure Coding](./erasure/README.md)
-
-## State Transition Functions
-
-We offer two types of test vectors:
-
-- **Tiny**: designed for quick adjustments and prototyping, with reduced
-  - validators count: 6
-  - cores count: 2
-  - epoch period: 12
-  - core assignment rotation period: 4
-  - ticket attempts: 3
-
-- **Full**: vectors with production specs
-  - validators count: 1023
-  - cores count: 341
-  - epoch period: 600
-  - core assignment rotation period: 10
-  - ticket attempts: 2
-
-For more information refer to the community [docs](https://docs.jamcha.in/basics/chain-spec).
-
-### STF Output
-
-Technically, the STF execution process does not inherently produce auxiliary
-outputs beyond the success or failure result. In this context, we propose
-an extension to include additional information that may be beneficial for
-implementors or useful for executing other subsystems reliant on values
-generated post-STF execution.
-
-When the error or success values are not pertinent to your test vector
-processing procedures, you may disregard them as necessary.
-
-A mapping of error code semantics is provided within the ASN.1 schema for each
-specific subsystem.
-
-### Vectors
-
-- [Safrole](./stf/safrole/README.md)
-- [Disputes](./stf/disputes/README.md)
-- [History](./stf/history/README.md)
-- [Assurances](./stf/assurances/README.md)
-- [Reports](./stf/reports/README.md)
-- [Statistics](./stf/statistics/README.md)
-- [Authorizations](./stf/authorizations/README.md)
-- [Preimages](./stf/preimages/README.md)
-- [Accumulate](./stf/accumulate/README.md)
-
-## Block Import Traces
-
-- [Fallback](./traces/fallback): fallback block authoring, no-safrole, no-work-reports
-- [Safrole](./traces/safrole): safrole block authoring, no-work-reports
-- [Work Reports L0](./traces/reports-l0): basic work reports, no-safrole
-
-## Vectors Validation
-
-Validation scripts are included to verify the JSON files against the expected
-ASN.1 syntax provided with the test vectors. These scripts currently rely on my
-[asn1tools](https://github.com/davxy/asn1tools) fork.
+- [State Transition Function](./stf/README.md)
+- [Block Import Traces](./traces/README.md)
 
 ## Binary To JSON
 
@@ -76,5 +17,57 @@ script to transform binary files into human-readable JSON format:
 ./scripts/convert-all.sh
 ```
 
-This conversion script requires the [jam-types](https://github.com/davxy/jam-types)
+This script requires the [jam-types](https://github.com/davxy/jam-types-py)
 Python library to be installed.
+
+## Validation
+
+Validation scripts are included to verify the JSON files against the expected
+ASN.1 syntax provided with the test vectors. These scripts currently rely on my
+[asn1tools](https://github.com/davxy/asn1tools) fork.
+
+```bash
+./scripts/validate-all.sh.sh
+```
+
+## Chainspec Parameters
+
+For more information refer to the community [docs](https://docs.jamcha.in/basics/chain-spec).
+
+### Tiny
+
+```yaml
+chain: tiny
+num_validators: 6
+num_cores: 2
+preimage_expunge_period: 32
+slot_duration: 6
+epoch_duration: 12
+contest_duration: 10
+tickets_per_validator: 3
+max_tickets_per_extrinsic: 3
+rotation_period: 4
+num_ec_pieces_per_segment: 1026
+max_block_gas: 20000000
+max_refine_gas: 1000000000
+```
+
+### Full
+
+All parameters here must match the Gray Paper.
+
+```yaml
+chain: full
+num_validators: 1023
+num_cores: 341
+preimage_expunge_period: 19200
+slot_duration: 6
+epoch_duration: 600
+contest_duration: 500
+tickets_per_validator: 2
+max_tickets_per_extrinsic: 16
+rotation_period: 10
+num_ec_pieces_per_segment: 6
+max_block_gas: 3500000000
+max_refine_gas: 5000000000
+```
