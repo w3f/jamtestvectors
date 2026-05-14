@@ -41,7 +41,6 @@ ErrorCode ::= ENUMERATED {
     judgements-not-sorted-unique (3),
     culprits-not-sorted-unique (4),
     faults-not-sorted-unique (5),
-    not-enough-culprits (6),
     not-enough-faults (7),
     culprits-verdict-not-bad (8),
     fault-verdict-wrong (9),

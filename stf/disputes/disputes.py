@@ -50,7 +50,6 @@ class DisputesTestVector(StfTestVector):
         3: "judgements_not_sorted_unique",
         4: "culprits_not_sorted_unique",
         5: "faults_not_sorted_unique",
-        6: "not_enough_culprits",
         7: "not_enough_faults",
         8: "culprits_verdict_not_bad",
         9: "fault_verdict_wrong",
