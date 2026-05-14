@@ -3431,6 +3431,11 @@
                     "signature": "0x9a778d051dc8679b3bf67acb6e5f49ee18c55b3be99cd4b052e91df978343abeff0b2502fdae1b8c40e3ea40cd71671516cba724c31887c3ad7314b91a64c000"
                 },
                 {
+                    "target": "0xe12c22d4f162d9a012c9319233da5d3e923cc5e1029b8f90e47249c9ab256b35",
+                    "key": "0xad93247bd01307550ec7acd757ce6fb805fcf73db364063265b30a949e90d933",
+                    "signature": "0xc8d63a4378ac71db8b700357c15f7fc5e85c0346235195079febb4a7c2ed593df70ccacc78f5f001ea2bc5add7d612bb565518ff2d8849544a6de7a5d5222900"
+                },
+                {
                     "target": "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
                     "key": "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341",
                     "signature": "0x63722acdfcb17943b657d72938162138d0fba7ec4bc6c5696fbc54ffdfe0a936bb314c2185d705c02eb441bb16e9bdb232c8bcc669e724875ce33dcd2ab42c0f"
@@ -3442,9 +3447,7 @@
     "pre_state": {
         "psi": {
             "good": [],
-            "bad": [
-                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
-            ],
+            "bad": [],
             "wonky": [],
             "offenders": []
         },
@@ -16074,14 +16077,12 @@
         ]
     },
     "output": {
-        "err": "already_judged"
+        "err": "culprits_verdict_not_bad"
     },
     "post_state": {
         "psi": {
             "good": [],
-            "bad": [
-                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
-            ],
+            "bad": [],
             "wonky": [],
             "offenders": []
         },

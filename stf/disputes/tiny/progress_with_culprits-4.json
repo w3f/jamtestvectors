@@ -54,7 +54,9 @@
             "good": [],
             "bad": [],
             "wonky": [],
-            "offenders": []
+            "offenders": [
+                "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace"
+            ]
         },
         "rho": [
             null,
@@ -139,23 +141,15 @@
         ]
     },
     "output": {
-        "ok": {
-            "offenders_mark": [
-                "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace",
-                "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341"
-            ]
-        }
+        "err": "offender_already_reported"
     },
     "post_state": {
         "psi": {
             "good": [],
-            "bad": [
-                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
-            ],
+            "bad": [],
             "wonky": [],
             "offenders": [
-                "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace",
-                "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341"
+                "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace"
             ]
         },
         "rho": [

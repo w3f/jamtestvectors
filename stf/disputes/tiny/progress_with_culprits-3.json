@@ -37,13 +37,13 @@
             "culprits": [
                 {
                     "target": "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
-                    "key": "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341",
-                    "signature": "0x63722acdfcb17943b657d72938162138d0fba7ec4bc6c5696fbc54ffdfe0a936bb314c2185d705c02eb441bb16e9bdb232c8bcc669e724875ce33dcd2ab42c0f"
+                    "key": "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace",
+                    "signature": "0x9a778d051dc8679b3bf67acb6e5f49ee18c55b3be99cd4b052e91df978343abeff0b2502fdae1b8c40e3ea40cd71671516cba724c31887c3ad7314b91a64c000"
                 },
                 {
                     "target": "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9",
-                    "key": "0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace",
-                    "signature": "0x9a778d051dc8679b3bf67acb6e5f49ee18c55b3be99cd4b052e91df978343abeff0b2502fdae1b8c40e3ea40cd71671516cba724c31887c3ad7314b91a64c000"
+                    "key": "0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341",
+                    "signature": "0x63722acdfcb17943b657d72938162138d0fba7ec4bc6c5696fbc54ffdfe0a936bb314c2185d705c02eb441bb16e9bdb232c8bcc669e724875ce33dcd2ab42c0f"
                 }
             ],
             "faults": []
@@ -52,7 +52,9 @@
     "pre_state": {
         "psi": {
             "good": [],
-            "bad": [],
+            "bad": [
+                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
+            ],
             "wonky": [],
             "offenders": []
         },
@@ -139,12 +141,14 @@
         ]
     },
     "output": {
-        "err": "culprits_not_sorted_unique"
+        "err": "already_judged"
     },
     "post_state": {
         "psi": {
             "good": [],
-            "bad": [],
+            "bad": [
+                "0x11da6d1f761ddf9bdb4c9d6e5303ebd41f61858d0a5647a1a7bfe089bf921be9"
+            ],
             "wonky": [],
             "offenders": []
         },
