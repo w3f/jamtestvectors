@@ -1,0 +1,60 @@
+{
+  "name": "inst_store_imm_u8_trap_read_only",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    30,
+    3,
+    0,
+    0,
+    1,
+    18,
+    0,
+    65
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 65536,
+        "length": 4096,
+        "is-writable": false
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 65536,
+        "gas": 9975,
+        "pc": 0,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

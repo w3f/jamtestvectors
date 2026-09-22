@@ -1,0 +1,62 @@
+{
+  "name": "gas_start_execution_in_the_middle_of_block",
+  "initial-pc": 6,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    16,
+    51,
+    8,
+    1,
+    51,
+    9,
+    2,
+    51,
+    10,
+    3,
+    51,
+    11,
+    4,
+    200,
+    152,
+    7,
+    0,
+    73,
+    146
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9997,
+        "pc": 15,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          4,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 3
+    }
+  ]
+}

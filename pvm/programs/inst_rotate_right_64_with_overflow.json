@@ -1,0 +1,61 @@
+{
+  "name": "inst_rotate_right_64_with_overflow",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    222,
+    135,
+    9,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 34359738377
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 66
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34359738377,
+          66,
+          4611686027017322498,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

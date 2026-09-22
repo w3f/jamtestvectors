@@ -1,0 +1,76 @@
+{
+  "name": "inst_load_imm_and_jump_indirect_different_regs_without_offset_ok",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    1,
+    1,
+    20,
+    9,
+    51,
+    7,
+    2,
+    180,
+    120,
+    2,
+    210,
+    4,
+    0,
+    20,
+    9,
+    239,
+    190,
+    173,
+    222,
+    0,
+    0,
+    0,
+    0,
+    0,
+    9,
+    3,
+    8
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9975,
+        "pc": 19,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1234,
+          3735928559,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 23
+    },
+    {
+      "pc": 8,
+      "cost": 2
+    },
+    {
+      "pc": 9,
+      "cost": 2
+    }
+  ]
+}

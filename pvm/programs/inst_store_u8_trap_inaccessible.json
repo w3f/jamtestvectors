@@ -1,0 +1,58 @@
+{
+  "name": "inst_store_u8_trap_inaccessible",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    6,
+    59,
+    7,
+    0,
+    0,
+    2,
+    0,
+    33
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 305419896
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 131072,
+        "gas": 9975,
+        "pc": 0,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          305419896,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

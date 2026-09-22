@@ -1,0 +1,55 @@
+{
+  "name": "gas_register_move_use_all_decode_slots",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    9,
+    100,
+    133,
+    100,
+    135,
+    100,
+    40,
+    100,
+    105,
+    0,
+    85,
+    1
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9997,
+        "pc": 8,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 3
+    }
+  ]
+}

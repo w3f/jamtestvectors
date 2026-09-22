@@ -1,0 +1,70 @@
+{
+  "name": "inst_store_indirect_u16_with_offset_nok",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    5,
+    121,
+    120,
+    1,
+    16,
+    0,
+    17
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 131072,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 131072
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 305419896
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 135168,
+        "gas": 9975,
+        "pc": 0,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          131072,
+          305419896,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "inst_load_imm_and_jump_indirect_misaligned_djump_different_regs_with_offset_nok",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    1,
+    1,
+    21,
+    10,
+    51,
+    7,
+    2,
+    180,
+    120,
+    2,
+    210,
+    4,
+    1,
+    0,
+    20,
+    9,
+    239,
+    190,
+    173,
+    222,
+    0,
+    0,
+    0,
+    0,
+    0,
+    9,
+    6,
+    16
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9977,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1234,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 23
+    },
+    {
+      "pc": 9,
+      "cost": 2
+    },
+    {
+      "pc": 10,
+      "cost": 2
+    }
+  ]
+}

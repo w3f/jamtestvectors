@@ -1,0 +1,93 @@
+{
+  "name": "inst_load_indirect_u64_with_offset",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    130,
+    120,
+    1,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 131072,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "write": {
+        "address": 131072,
+        "contents": [
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137
+        ]
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 131072
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9975,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          131072,
+          9910319991864198018,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": [
+          {
+            "address": 131072,
+            "contents": [
+              129,
+              130,
+              131,
+              132,
+              133,
+              134,
+              135,
+              136,
+              137
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

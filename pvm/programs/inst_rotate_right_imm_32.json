@@ -1,0 +1,55 @@
+{
+  "name": "inst_rotate_right_imm_32",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    160,
+    121,
+    3,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 34359738377
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34359738377,
+          0,
+          536870913,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

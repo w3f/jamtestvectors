@@ -1,0 +1,52 @@
+{
+  "name": "gas_parallel_simple",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    200,
+    152,
+    7,
+    200,
+    152,
+    8,
+    0,
+    73
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 6,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

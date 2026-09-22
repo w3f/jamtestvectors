@@ -1,0 +1,57 @@
+{
+  "name": "gas_xor_and_shift",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    8,
+    133,
+    136,
+    255,
+    208,
+    135,
+    8,
+    1,
+    0,
+    201
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9995,
+        "pc": 7,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 3
+    },
+    {
+      "pc": 7,
+      "cost": 2
+    }
+  ]
+}

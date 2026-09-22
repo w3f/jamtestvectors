@@ -1,0 +1,48 @@
+{
+  "name": "gas_basic_consume_all",
+  "initial-pc": 0,
+  "initial-gas": 2,
+  "program": [
+    0,
+    0,
+    3,
+    100,
+    0,
+    0,
+    5
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 0,
+        "pc": 2,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

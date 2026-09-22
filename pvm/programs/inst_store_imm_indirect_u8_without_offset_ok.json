@@ -1,0 +1,69 @@
+{
+  "name": "inst_store_imm_indirect_u8_without_offset_ok",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    70,
+    7,
+    18,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 131072,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 135167
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9975,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          135167,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": [
+          {
+            "address": 135167,
+            "contents": [
+              18
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

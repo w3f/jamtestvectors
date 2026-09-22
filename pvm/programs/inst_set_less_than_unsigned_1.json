@@ -1,0 +1,61 @@
+{
+  "name": "inst_set_less_than_unsigned_1",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    216,
+    135,
+    9,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 10
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 18446744073709551606
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9997,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          18446744073709551606,
+          1,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 3
+    }
+  ]
+}

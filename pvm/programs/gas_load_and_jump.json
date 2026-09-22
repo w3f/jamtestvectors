@@ -1,0 +1,56 @@
+{
+  "name": "gas_load_and_jump",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    124,
+    121,
+    11,
+    81,
+    9,
+    253,
+    0,
+    73
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9974,
+        "pc": 0,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 26
+    },
+    {
+      "pc": 6,
+      "cost": 2
+    }
+  ]
+}

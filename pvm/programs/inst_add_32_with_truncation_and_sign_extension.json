@@ -1,0 +1,61 @@
+{
+  "name": "inst_add_32_with_truncation_and_sign_extension",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    190,
+    135,
+    9,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 3689348814455579170
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 3689348815600903782
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3689348814455579170,
+          3689348815600903782,
+          18446744071705233544,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

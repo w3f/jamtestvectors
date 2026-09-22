@@ -1,0 +1,67 @@
+{
+  "name": "inst_div_unsigned_32_with_overflow",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    4,
+    193,
+    135,
+    9,
+    0,
+    9
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 2147483648
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 4294967295
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 9,
+        "value": 4660
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9940,
+        "pc": 3,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2147483648,
+          4294967295,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 60
+    }
+  ]
+}

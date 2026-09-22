@@ -1,0 +1,227 @@
+{
+  "name": "multistep_paging_in_the_middle_of_block",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    23,
+    51,
+    7,
+    0,
+    0,
+    3,
+    124,
+    120,
+    124,
+    121,
+    255,
+    15,
+    124,
+    122,
+    255,
+    31,
+    200,
+    152,
+    11,
+    200,
+    171,
+    11,
+    50,
+    0,
+    161,
+    136,
+    36
+  ],
+  "steps": [
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 196608,
+        "gas": 9972,
+        "pc": 5,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          196608,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 196608,
+        "gas": 9972,
+        "pc": 5,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          196608,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    },
+    {
+      "map": {
+        "address": 196608,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "write": {
+        "address": 196608,
+        "contents": [
+          1
+        ]
+      }
+    },
+    {
+      "write": {
+        "address": 200703,
+        "contents": [
+          2
+        ]
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 200704,
+        "gas": 9972,
+        "pc": 11,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          196608,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        "memory": [
+          {
+            "address": 196608,
+            "contents": [
+              1
+            ]
+          },
+          {
+            "address": 200703,
+            "contents": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "map": {
+        "address": 200704,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "write": {
+        "address": 204799,
+        "contents": [
+          3
+        ]
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 0,
+        "value": 4294901760
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "halt",
+        "gas": 9972,
+        "pc": 21,
+        "regs": [
+          4294901760,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          196608,
+          1,
+          2,
+          3,
+          6,
+          0
+        ],
+        "memory": [
+          {
+            "address": 196608,
+            "contents": [
+              1
+            ]
+          },
+          {
+            "address": 200703,
+            "contents": [
+              2
+            ]
+          },
+          {
+            "address": 204799,
+            "contents": [
+              3
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 28
+    }
+  ]
+}

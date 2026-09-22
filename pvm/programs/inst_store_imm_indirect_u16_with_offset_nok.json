@@ -1,0 +1,65 @@
+{
+  "name": "inst_store_imm_indirect_u16_with_offset_nok",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    6,
+    71,
+    23,
+    1,
+    52,
+    18,
+    0,
+    33
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 131072,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 135166
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "page-fault",
+        "page-fault-address": 135168,
+        "gas": 9975,
+        "pc": 0,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          135166,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "inst_sign_extend_16",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    108,
+    121,
+    0,
+    5
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 43690
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 2,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          43690,
+          0,
+          18446744073709529770,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

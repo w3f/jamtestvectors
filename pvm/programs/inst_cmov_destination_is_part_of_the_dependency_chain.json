@@ -1,0 +1,58 @@
+{
+  "name": "inst_cmov_destination_is_part_of_the_dependency_chain",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    202,
+    167,
+    7,
+    218,
+    152,
+    7,
+    0,
+    73
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 8,
+        "value": 100
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9995,
+        "pc": 6,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          100,
+          100,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 5
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "name": "inst_load_i32",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    6,
+    57,
+    7,
+    0,
+    0,
+    2,
+    0,
+    33
+  ],
+  "steps": [
+    {
+      "map": {
+        "address": 131072,
+        "length": 4096,
+        "is-writable": true
+      }
+    },
+    {
+      "write": {
+        "address": 131072,
+        "contents": [
+          129,
+          130,
+          131,
+          132
+        ]
+      }
+    },
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 3735928559
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9975,
+        "pc": 5,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18446744071637795457,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "memory": [
+          {
+            "address": 131072,
+            "contents": [
+              129,
+              130,
+              131,
+              132
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 25
+    }
+  ]
+}

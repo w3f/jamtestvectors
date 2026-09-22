@@ -1,0 +1,54 @@
+{
+  "name": "inst_count_leading_zero_bits_32",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    3,
+    104,
+    121,
+    0,
+    5
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 1152921505412153344
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 2,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1152921505412153344,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}

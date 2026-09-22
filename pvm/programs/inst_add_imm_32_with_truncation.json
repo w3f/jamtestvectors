@@ -1,0 +1,58 @@
+{
+  "name": "inst_add_imm_32_with_truncation",
+  "initial-pc": 0,
+  "initial-gas": 10000,
+  "program": [
+    0,
+    0,
+    7,
+    131,
+    121,
+    17,
+    17,
+    17,
+    17,
+    0,
+    65
+  ],
+  "steps": [
+    {
+      "set-reg": {
+        "reg": 7,
+        "value": 3689348814169248017
+      }
+    },
+    {
+      "run": {}
+    },
+    {
+      "assert": {
+        "status": "panic",
+        "gas": 9998,
+        "pc": 6,
+        "regs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3689348814169248017,
+          0,
+          572662306,
+          0,
+          0,
+          0
+        ],
+        "memory": []
+      }
+    }
+  ],
+  "block-gas-costs": [
+    {
+      "pc": 0,
+      "cost": 2
+    }
+  ]
+}
